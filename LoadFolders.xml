@@ -41,6 +41,7 @@
     <li IfModActive="VanillaExpanded.VPsycastsE">1.6/Vanilla Psycasts Expanded</li>
     <li IfModActive="VanillaExpanded.VGeneticsE">1.6/Vanilla Genetics Expanded</li>
     <li IfModActive="VanillaExpanded.VIEHAR">1.6/Vanilla Ideology Expanded - Hats and Rags</li>
+    <li IfModActive="VanillaExpanded.VFEArt">1.6/Vanilla Furniture Expanded - Art</li>
 
     <li IfModActive="det.boglegs">1.6/Det's Xenotypes - Boglegs</li>
     <li IfModActive="det.halffoot">1.6/Det's Xenotypes - Half-foot</li>
