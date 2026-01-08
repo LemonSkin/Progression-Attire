@@ -8,18 +8,7 @@
       </fixedBillGiverDefs>
     </value>
   </Operation>
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/RecipeDef[@Name="DankPyon_MakeClothBase"]/recipeUsers</xpath>
-    <value>
-      <recipeUsers>
-        <li>DankPyon_SpinningWheel</li>
-      </recipeUsers>
-    </value>
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/RecipeDef[@Name="DankPyon_MakeClothBase"]/requiredGiverWorkType</xpath>
   </Operation>
-  <!-- <Operation Class="PatchOperationReplace">
-    <xpath>Defs/WorkGiverDef[defName="DankPyon_DoBillsSpinningWheel"]/workType</xpath>
-    <value>
-      <workType>Tailoring</workType>
-    </value>
-  </Operation> -->
 </Patch>

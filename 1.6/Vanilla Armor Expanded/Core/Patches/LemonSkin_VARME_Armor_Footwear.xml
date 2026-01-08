@@ -39,22 +39,11 @@
   <!-- MO Compatibility -->
   <Operation Class="PatchOperationConditional">
     <xpath>Defs/ThingDef[defName="DankPyon_Footwear_BootsPlate"]</xpath>
-    <match Class="PatchOperationFindMod">
-      <mods>
-        <li>Royalty</li>
-      </mods>
-      <match Class="PatchOperationFindMod">
-        <mods>
-          <li>Full Armor - Hands and Feet</li>
-          <li>Combat Extended</li>
-        </mods>
-        <nomatch Class="PatchOperationReplace">
-          <xpath>/Defs/PawnKindDef[@Name="ImperialFighterBase"]/apparelRequired/li[.="VAE_Footwear_PlateBoots"]</xpath>
-          <value>
-            <li>DankPyon_Footwear_BootsPlate</li>
-          </value>
-        </nomatch>
-      </match>
+    <match Class="PatchOperationReplace">
+      <xpath>/Defs/*[*]/apparelRequired/li[.="VAE_Footwear_PlateBoots"]</xpath>
+      <value>
+        <li>DankPyon_Footwear_BootsPlate</li>
+      </value>
     </match>
   </Operation>
 

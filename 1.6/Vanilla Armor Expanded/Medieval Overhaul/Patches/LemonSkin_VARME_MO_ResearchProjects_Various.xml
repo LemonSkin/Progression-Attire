@@ -10,6 +10,19 @@
       <success>Always</success>
     </nomatch>
   </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/AchievementsExpanded.AchievementDef[defName="leatherThatsKinky"]</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/AchievementsExpanded.AchievementDef[defName="leatherThatsKinky"]/tracker</xpath>
+      <value>
+        <tracker Class="AchievementsExpanded.ResearchTracker">
+          <def>DankPyon_LeatherTanning</def>
+        </tracker>
+      </value>
+    </match>
+  </Operation>
+
   <Operation Class="PatchOperationRemove">
     <xpath>Defs/ResearchProjectDef[defName="VAE_LeatherTanning"]</xpath>
   </Operation>
