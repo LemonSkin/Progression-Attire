@@ -1,36 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
-  <!-- 
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/PawnKindDef[defName="VFEM2_Raider"]/apparelRequired/li[.="VFEM2_Shield_Round"]</xpath>
-    <value>
-      <li>DankPyon_Shield</li>
-    </value>
-  </Operation>
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/PawnKindDef[defName="VFEM2_Spearman"]/apparelRequired/li[.="VFEM2_Shield_Round"]</xpath>
-    <value>
-      <li>DankPyon_Shield</li>
-    </value>
-  </Operation>
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/PawnKindDef[defName="VFEM2_SiegeRaider"]/apparelRequired/li[.="VFEM2_Shield_Round"]</xpath>
-    <value>
-      <li>DankPyon_Shield</li>
-    </value>
-  </Operation>
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/PawnKindDef[defName="VFEM2_Jarl"]/apparelRequired/li[.="VFEM2_Shield_Round"]</xpath>
-    <value>
-      <li>DankPyon_Shield</li>
-    </value>
-  </Operation>
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/PawnKindDef[defName="VFEM2_ManAtArms"]/apparelRequired/li[.="VFEM2_Shield_Heater"]</xpath>
-    <value>
-      <li>DankPyon_ShieldHeater</li>
-    </value>
-  </Operation> -->
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/*[*]/apparelRequired/li[.="VFEM2_Shield_Round"]</xpath>
     <value>
