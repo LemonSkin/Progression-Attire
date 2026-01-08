@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/WorkGiverDef[defName="DankPyon_DoBillsSpinningWheel"]/fixedBillGiverDefs</xpath>
+    <value>
+      <fixedBillGiverDefs>
+        <li>DankPyon_SpinningWheel</li>
+      </fixedBillGiverDefs>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/RecipeDef[@Name="DankPyon_MakeClothBase"]/recipeUsers</xpath>
+    <value>
+      <recipeUsers>
+        <li>DankPyon_SpinningWheel</li>
+      </recipeUsers>
+    </value>
+  </Operation>
+  <!-- <Operation Class="PatchOperationReplace">
+    <xpath>Defs/WorkGiverDef[defName="DankPyon_DoBillsSpinningWheel"]/workType</xpath>
+    <value>
+      <workType>Tailoring</workType>
+    </value>
+  </Operation> -->
+</Patch>
