@@ -46,6 +46,7 @@
     <xpath>Defs/ThingDef[defName="DankPyon_Headgear_RedBandana"]/statBases</xpath>
     <value>
       <statBases>
+        <MarketValue>7.5</MarketValue>
         <WorkToMake>1200</WorkToMake>
         <MaxHitPoints>80</MaxHitPoints>
         <Mass>0.05</Mass>
