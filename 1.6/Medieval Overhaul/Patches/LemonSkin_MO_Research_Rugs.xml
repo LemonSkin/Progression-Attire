@@ -16,15 +16,27 @@
     </value>
   </Operation>
   <!-- Royal rugs -->
-  <Operation Class="PatchOperationAdd">
-    <xpath>Defs/ThingDef[@Name="DankPyon_RugRoyalBase"]</xpath>
-    <value>
-      <recipeMaker>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ResearchProjectDef[defName="DankPyon_RoyalRusticFurniture"]</xpath>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[@Name="DankPyon_RugRoyalBase"]</xpath>
+      <value>
         <researchPrerequisites>
           <li>DankPyon_RoyalRusticFurniture</li>
         </researchPrerequisites>
-      </recipeMaker>
-    </value>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationConditional">
+      <xpath>Defs/ResearchProjectDef[defName="MF_RoyalFurniture"]</xpath>
+      <match Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[@Name="DankPyon_RugRoyalBase"]</xpath>
+        <value>
+          <researchPrerequisites>
+            <li>MF_RoyalFurniture</li>
+          </researchPrerequisites>
+        </value>
+      </match>
+    </nomatch>
   </Operation>
   <!-- Remove ability to craft silk rugs, supposed to be loot only according to documentation -->
   <Operation Class="PatchOperationAdd">
