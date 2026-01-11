@@ -26,6 +26,7 @@
         </researchPrerequisites>
       </value>
     </match>
+    <!-- Progression: Aesthetics compatibility -->
     <nomatch Class="PatchOperationConditional">
       <xpath>Defs/ResearchProjectDef[defName="MF_RoyalFurniture"]</xpath>
       <match Class="PatchOperationAdd">
