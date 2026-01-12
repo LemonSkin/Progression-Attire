@@ -27,15 +27,7 @@
       </statBases>
     </value>
   </Operation>
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="RBME_Chiton"]/thingCategories</xpath>
-    <value>
-      <thingCategories>
-        <li>LemonSkin_NeolithicApparel</li>
-      </thingCategories>
-    </value>
-  </Operation>
-  <Operation Class="PatchOperationReplace">
+  <!-- <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="RBME_Chiton"]/recipeMaker</xpath>
     <value>
       <recipeMaker>
@@ -47,7 +39,32 @@
         </recipeUsers>
       </recipeMaker>
     </value>
+  </Operation> -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ResearchProjectDef[defName="VFEC_Togas"]</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="RBME_Chiton"]/recipeMaker/researchPrerequisite</xpath>
+      <value>
+        <researchPrerequisite>VFEC_Togas</researchPrerequisite>
+      </value>
+    </match>
   </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="RBME_Chiton"]/recipeMaker/recipeUsers</xpath>
+    <value>
+      <li>CraftingSpot</li>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="RBME_Chiton"]/thingCategories</xpath>
+    <value>
+      <thingCategories>
+        <li>LemonSkin_NeolithicApparel</li>
+      </thingCategories>
+    </value>
+  </Operation>
+
+
   <!-- RBME_Panoply -->
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="RBME_Panoply"]/thingCategories</xpath>
@@ -57,6 +74,8 @@
       </thingCategories>
     </value>
   </Operation>
+
+
   <!-- RBME_HellenicHelmet -->
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="RBME_HellenicHelmet"]/costStuffCount</xpath>
@@ -94,7 +113,7 @@
       </thingCategories>
     </value>
   </Operation>
-  <Operation Class="PatchOperationReplace">
+  <!-- <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="RBME_HellenicHelmet"]/recipeMaker/researchPrerequisite</xpath>
     <value>
       <researchPrerequisites>
@@ -102,7 +121,9 @@
         <li>LemonSkin_RBME_MinotaurCraftables</li>
       </researchPrerequisites>
     </value>
-  </Operation>
+  </Operation> -->
+
+
   <!-- RBME_RoyalHellenicHelmet -->
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="RBME_RoyalHellenicHelmet"]/costStuffCount</xpath>
@@ -147,11 +168,12 @@
     <value>
       <researchPrerequisites>
         <li>PlateArmor</li>
-        <li>LemonSkin_RBME_MinotaurCraftables</li>
         <li MayRequire="Ludeon.RimWorld.Royalty">RoyalApparel</li>
       </researchPrerequisites>
     </value>
   </Operation>
+
+
   <!-- RBME_Cowbell -->
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="RBME_Cowbell"]/techLevel</xpath>
@@ -184,7 +206,7 @@
       </thingCategories>
     </value>
   </Operation>
-  <Operation Class="PatchOperationReplace">
+  <!-- <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="RBME_Cowbell"]/recipeMaker</xpath>
     <value>
       <recipeMaker>
@@ -196,6 +218,25 @@
           <li>CraftingSpot</li>
         </recipeUsers>
       </recipeMaker>
+    </value>
+  </Operation> -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/VFETribals.TribalResearchProjectDef[defName="VFET_Tribalwear"]</xpath>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="RBME_Cowbell"]/recipeMaker</xpath>
+      <value>
+        <researchPrerequisite>VFET_Tribalwear</researchPrerequisite>
+      </value>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="RBME_Cowbell"]/recipeMaker</xpath>
+    <value>
+      <recipeUsers Inherit="False">
+        <li>ElectricTailoringBench</li>
+        <li>HandTailoringBench</li>
+        <li>CraftingSpot</li>
+      </recipeUsers>
     </value>
   </Operation>
 </Patch>

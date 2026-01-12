@@ -15,10 +15,12 @@
       defName="Gunmar_Apparel_Monocle"]/recipeMaker</xpath>
     <value>
       <researchPrerequisites>
-        <li>LemonSkin_VictorianEraApparels</li>
+        <li>ComplexClothing</li>
       </researchPrerequisites>
     </value>
   </Operation>
+
+
   <!-- Gunmar_Apparel_DressA - adventure dress -->
   <!-- Gunmar_Apparel_DressB - elegant dress -->
   <Operation Class="PatchOperationReplace">
@@ -56,6 +58,8 @@
       </thingCategories>
     </value>
   </Operation>
+
+
   <!-- Gunmar_Apparel_Maid -->
   <!-- Gunmar_Apparel_Maidb -->
   <Operation Class="PatchOperationReplace">
@@ -123,6 +127,8 @@
       </thingCategories>
     </value>
   </Operation>
+
+
   <!-- Gunmar_Apparel_WalkingDress -->
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="Gunmar_Apparel_WalkingDress"]/costStuffCount</xpath>
@@ -152,6 +158,8 @@
       </thingCategories>
     </value>
   </Operation>
+
+
   <!-- Gunmar_Apparel_RidingHabit -->
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="Gunmar_Apparel_RidingHabit"]/costStuffCount</xpath>
@@ -184,6 +192,8 @@
       </thingCategories>
     </value>
   </Operation>
+
+
   <!-- Gunmar_Apparel_SimpleDress -->
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="Gunmar_Apparel_SimpleDress"]/costStuffCount</xpath>
@@ -213,6 +223,8 @@
       </thingCategories>
     </value>
   </Operation>
+
+
   <!-- Gunmar_Apparel_DressCoat -->
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="Gunmar_Apparel_DressCoat"]/costStuffCount</xpath>
@@ -245,6 +257,8 @@
       </thingCategories>
     </value>
   </Operation>
+
+
   <!-- Gunmar_Apparel_Frock_Coat -->
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="Gunmar_Apparel_Frock_Coat"]/costStuffCount</xpath>
@@ -277,6 +291,8 @@
       </thingCategories>
     </value>
   </Operation>
+
+
   <!-- Gunmar_Apparel_Smoking_Jacket -->
   <Operation Class="PatchOperationReplace">
     <xpath>
@@ -327,11 +343,13 @@
     <xpath>Defs/ThingDef[defName="Gunmar_Apparel_Smoking_Jacket"]</xpath>
     <value>
       <researchPrerequisites>
-        <li>LemonSkin_VictorianEraApparels</li>
+        <li>ComplexClothing</li>
         <li MayRequire="Ludeon.RimWorld.Royalty">NobleApparel</li>
       </researchPrerequisites>
     </value>
   </Operation>
+
+
   <!-- Gunmar_Apparel_Waistcoat -->
   <Operation Class="PatchOperationRemove">
     <xpath>Defs/ThingDef[defName="Gunmar_Apparel_Waistcoat"]/recipeMaker/skillRequirements</xpath>
@@ -377,11 +395,13 @@
     <xpath>Defs/ThingDef[defName="Gunmar_Apparel_Waistcoat"]</xpath>
     <value>
       <researchPrerequisites>
-        <li>LemonSkin_VictorianEraApparels</li>
+        <li>ComplexClothing</li>
         <li MayRequire="Ludeon.RimWorld.Royalty">NobleApparel</li>
       </researchPrerequisites>
     </value>
   </Operation>
+
+
   <!-- Gunmar_Apparel_BpWaistcoat - bulletproof waistcoat -->
   <Operation Class="PatchOperationReplace">
     <xpath>
@@ -447,15 +467,15 @@
       </thingCategories>
     </value>
   </Operation>
-  <Operation Class="PatchOperationReplace">
+  <!-- <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="Gunmar_Apparel_BpWaistcoat"]/recipeMaker/researchPrerequisite</xpath>
     <value>
       <researchPrerequisites>
-        <li>LemonSkin_VictorianEraApparels</li>
+        <li>ComplexClothing</li>
         <li>FlakArmor</li>
       </researchPrerequisites>
     </value>
-  </Operation>
+  </Operation> -->
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="Gunmar_Apparel_BpWaistcoat"]/apparel/tags</xpath>
     <value>
@@ -480,6 +500,8 @@
   <Operation Class="PatchOperationRemove">
     <xpath>Defs/ThingDef[defName="Gunmar_Apparel_BpWaistcoat"]/recipeMaker/recipeUsers</xpath>
   </Operation>
+
+
   <!-- Gunmar_Apparel_Soldier_Coat -->
   <Operation Class="PatchOperationReplace">
     <xpath>
@@ -533,6 +555,8 @@
       </thingCategories>
     </value>
   </Operation>
+
+
   <!-- Gunmar_Apparel_Hussar_Jacket -->
   <Operation Class="PatchOperationReplace">
     <xpath>
@@ -586,6 +610,8 @@
       </thingCategories>
     </value>
   </Operation>
+
+
   <!-- Gunmar_Apparel_FeatheredHat -->
   <Operation Class="PatchOperationRemove">
     <xpath>Defs/ThingDef[defName="Gunmar_Apparel_FeatheredHat"]/recipeMaker/skillRequirements</xpath>
@@ -620,14 +646,22 @@
     </value>
   </Operation>
   <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="Gunmar_Apparel_FeatheredHat"]/apparel</xpath>
+    <value>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
     <xpath>Defs/ThingDef[defName="Gunmar_Apparel_FeatheredHat"]</xpath>
     <value>
       <researchPrerequisites>
-        <li>LemonSkin_VictorianEraApparels</li>
+        <li>ComplexClothing</li>
         <li MayRequire="Ludeon.RimWorld.Royalty">NobleApparel</li>
       </researchPrerequisites>
     </value>
   </Operation>
+
+
   <!-- Gunmar_Apparel_MaidHead -->
   <Operation Class="PatchOperationRemove">
     <xpath>Defs/ThingDef[defName="Gunmar_Apparel_MaidHead"]/recipeMaker/skillRequirements</xpath>
@@ -653,6 +687,12 @@
     </value>
   </Operation>
   <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="Gunmar_Apparel_MaidHead"]/apparel</xpath>
+    <value>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
     <xpath>Defs/ThingDef[defName="Gunmar_Apparel_MaidHead"]</xpath>
     <value>
       <thingCategories Inherit="False">
@@ -660,6 +700,8 @@
       </thingCategories>
     </value>
   </Operation>
+
+
   <!-- Gunmar_Apparel_MaidHeadb -->
   <Operation Class="PatchOperationRemove">
     <xpath>Defs/ThingDef[defName="Gunmar_Apparel_MaidHeadb"]/recipeMaker/skillRequirements</xpath>
@@ -685,6 +727,12 @@
     </value>
   </Operation>
   <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="Gunmar_Apparel_MaidHeadb"]/apparel</xpath>
+    <value>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
     <xpath>Defs/ThingDef[defName="Gunmar_Apparel_MaidHeadb"]</xpath>
     <value>
       <thingCategories Inherit="False">
@@ -692,6 +740,8 @@
       </thingCategories>
     </value>
   </Operation>
+
+
   <!-- Gunmar_Apparel_BoaterHat -->
   <Operation Class="PatchOperationRemove">
     <xpath>Defs/ThingDef[defName="Gunmar_Apparel_BoaterHat"]/recipeMaker/skillRequirements</xpath>
@@ -726,6 +776,12 @@
     </value>
   </Operation>
   <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="Gunmar_Apparel_BoaterHat"]/apparel</xpath>
+    <value>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
     <xpath>Defs/ThingDef[defName="Gunmar_Apparel_BoaterHat"]</xpath>
     <value>
       <thingCategories Inherit="False">
@@ -733,6 +789,8 @@
       </thingCategories>
     </value>
   </Operation>
+
+
   <!-- Gunmar_Apparel_TopHat -->
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="Gunmar_Apparel_TopHat"]/label</xpath>
@@ -773,14 +831,22 @@
     </value>
   </Operation>
   <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="Gunmar_Apparel_TopHat"]/apparel</xpath>
+    <value>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
     <xpath>Defs/ThingDef[defName="Gunmar_Apparel_TopHat"]</xpath>
     <value>
       <researchPrerequisites>
-        <li>LemonSkin_VictorianEraApparels</li>
+        <li>ComplexClothing</li>
         <li MayRequire="Ludeon.RimWorld.Royalty">NobleApparel</li>
       </researchPrerequisites>
     </value>
   </Operation>
+
+
   <!-- Gunmar_Apparel_Soldier_Helmet - solder helmet -->
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="Gunmar_Apparel_Soldier_Helmet"]/label</xpath>
@@ -820,6 +886,12 @@
     </value>
   </Operation>
   <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="Gunmar_Apparel_Soldier_Helmet"]/apparel</xpath>
+    <value>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
     <xpath>Defs/ThingDef[defName="Gunmar_Apparel_Soldier_Helmet"]</xpath>
     <value>
       <thingCategories Inherit="False">
@@ -827,6 +899,8 @@
       </thingCategories>
     </value>
   </Operation>
+
+
   <!-- Gunmar_Apparel_Slouch_Hat -->
   <Operation Class="PatchOperationRemove">
     <xpath>Defs/ThingDef[defName="Gunmar_Apparel_Slouch_Hat"]/recipeMaker/skillRequirements</xpath>
@@ -861,6 +935,12 @@
     </value>
   </Operation>
   <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="Gunmar_Apparel_Slouch_Hat"]/apparel</xpath>
+    <value>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
     <xpath>Defs/ThingDef[defName="Gunmar_Apparel_Slouch_Hat"]</xpath>
     <value>
       <thingCategories Inherit="False">
@@ -868,6 +948,8 @@
       </thingCategories>
     </value>
   </Operation>
+
+
   <!-- Gunmar_Apparel_Shako_Hat -->
   <Operation Class="PatchOperationRemove">
     <xpath>Defs/ThingDef[defName="Gunmar_Apparel_Shako_Hat"]/recipeMaker/skillRequirements</xpath>
@@ -901,6 +983,12 @@
     </value>
   </Operation>
   <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="Gunmar_Apparel_Shako_Hat"]/apparel</xpath>
+    <value>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
     <xpath>Defs/ThingDef[defName="Gunmar_Apparel_Shako_Hat"]</xpath>
     <value>
       <thingCategories Inherit="False">
@@ -908,6 +996,8 @@
       </thingCategories>
     </value>
   </Operation>
+
+
   <!-- Gunmar_Apparel_Metal_Helmet -->
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="Gunmar_Apparel_Metal_Helmet"]/label</xpath>
@@ -945,9 +1035,15 @@
     <xpath>Defs/ThingDef[defName="Gunmar_Apparel_Metal_Helmet"]/recipeMaker/researchPrerequisite</xpath>
     <value>
       <researchPrerequisites>
-        <li>LemonSkin_VictorianEraApparels</li>
+        <li>ComplexClothing</li>
         <li>Smithing</li>
       </researchPrerequisites>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="Gunmar_Apparel_Metal_Helmet"]/apparel</xpath>
+    <value>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
     </value>
   </Operation>
   <Operation Class="PatchOperationAdd">
@@ -958,6 +1054,8 @@
       </thingCategories>
     </value>
   </Operation>
+
+
   <!-- Gunmar_Apparel_Glasses -->
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="Gunmar_Apparel_Glasses"]/label</xpath>
@@ -996,6 +1094,12 @@
     </value>
   </Operation>
   <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="Gunmar_Apparel_Glasses"]/apparel</xpath>
+    <value>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
     <xpath>Defs/ThingDef[defName="Gunmar_Apparel_Glasses"]</xpath>
     <value>
       <thingCategories Inherit="False">
@@ -1003,6 +1107,8 @@
       </thingCategories>
     </value>
   </Operation>
+
+
   <!-- Gunmar_Apparel_Monocle -->
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="Gunmar_Apparel_Monocle"]/recipeMaker/skillRequirements/Crafting</xpath>
@@ -1032,6 +1138,12 @@
       <equippedStatOffsets>
         <SocialImpact>0.1</SocialImpact>
       </equippedStatOffsets>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="Gunmar_Apparel_Monocle"]/apparel</xpath>
+    <value>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
     </value>
   </Operation>
   <Operation Class="PatchOperationAdd">

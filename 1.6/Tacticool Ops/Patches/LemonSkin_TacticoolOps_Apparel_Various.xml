@@ -37,7 +37,7 @@
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="TACTICOOL_HawaiianShirt"]/recipeMaker/researchPrerequisite</xpath>
     <value>
-      <researchPrerequisite>LemonSkin_Tacticool_TacticoolGear</researchPrerequisite>
+      <researchPrerequisite>ComplexClothing</researchPrerequisite>
     </value>
   </Operation>
   <!-- MUSCLE SHIRT -->
@@ -72,7 +72,7 @@
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="TACTICOOL_MuscleShirt"]/recipeMaker/researchPrerequisite</xpath>
     <value>
-      <researchPrerequisite>LemonSkin_Tacticool_TacticoolGear</researchPrerequisite>
+      <researchPrerequisite>ComplexClothing</researchPrerequisite>
     </value>
   </Operation>
 </Patch>

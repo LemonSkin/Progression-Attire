@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-  <ResearchProjectDef>
+  <!-- <ResearchProjectDef>
     <defName>LemonSkin_VictorianEraApparels</defName>
     <label>victorian clothing</label>
     <description>Tailor Victorian-era garments.</description>
@@ -12,5 +12,5 @@
     <prerequisites>
       <li>LemonSkin_RusticClothing</li>
     </prerequisites>
-  </ResearchProjectDef>
+  </ResearchProjectDef> -->
 </Defs>

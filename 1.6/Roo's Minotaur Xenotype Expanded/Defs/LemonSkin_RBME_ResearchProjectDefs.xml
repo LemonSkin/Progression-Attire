@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-  <ResearchProjectDef>
+  <!-- <ResearchProjectDef>
     <defName>LemonSkin_RBME_MinotaurCraftables</defName>
     <label>minotaur equipment</label>
     <description>Create weapons and apparel inspired by Hellenic traditions.</description>
@@ -8,5 +8,5 @@
     <techLevel>Neolithic</techLevel>
     <researchViewX>0.00</researchViewX>
     <researchViewY>2.8</researchViewY>
-  </ResearchProjectDef>
+  </ResearchProjectDef> -->
 </Defs>

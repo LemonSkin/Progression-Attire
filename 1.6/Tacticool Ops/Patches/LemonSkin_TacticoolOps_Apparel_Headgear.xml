@@ -34,7 +34,7 @@
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[@Name="TACTICOOL_GlassesBase"]/recipeMaker/researchPrerequisite</xpath>
     <value>
-      <researchPrerequisite>LemonSkin_Tacticool_TacticoolGear</researchPrerequisite>
+      <researchPrerequisite>ComplexClothing</researchPrerequisite>
     </value>
   </Operation>
   <!-- Aviators -->
@@ -92,7 +92,7 @@
   <Operation Class="PatchOperationAdd">
     <xpath>Defs/ThingDef[@Name="TACTICOOL_FaceBandanaBase"]/recipeMaker</xpath>
     <value>
-      <researchPrerequisite>LemonSkin_Tacticool_TacticoolGear</researchPrerequisite>
+      <researchPrerequisite>ComplexClothing</researchPrerequisite>
     </value>
   </Operation>
   <Operation Class="PatchOperationReplace">
@@ -153,7 +153,7 @@
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[@Name="TACTICOOL_BalaclavaBase"]/recipeMaker/researchPrerequisite</xpath>
     <value>
-      <researchPrerequisite>LemonSkin_Tacticool_TacticoolGear</researchPrerequisite>
+      <researchPrerequisite>ComplexClothing</researchPrerequisite>
     </value>
   </Operation>
   <Operation Class="PatchOperationReplace">
@@ -211,7 +211,7 @@
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="TACTICOOL_MeshCap"]/recipeMaker/researchPrerequisite</xpath>
     <value>
-      <researchPrerequisite>LemonSkin_Tacticool_TacticoolGear</researchPrerequisite>
+      <researchPrerequisite>ComplexClothing</researchPrerequisite>
     </value>
   </Operation>
   <Operation Class="PatchOperationReplace">

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
-  <Operation Class="PatchOperationReplace">
+  <!-- <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="RBME_EpsilonAxe"]/recipeMaker/researchPrerequisite</xpath>
     <value>
       <researchPrerequisites>
@@ -8,5 +8,5 @@
         <li>LemonSkin_RBME_MinotaurCraftables</li>
       </researchPrerequisites>
     </value>
-  </Operation>
+  </Operation> -->
 </Patch>

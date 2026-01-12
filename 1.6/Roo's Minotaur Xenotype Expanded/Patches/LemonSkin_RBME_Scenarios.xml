@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
-  <Operation Class="PatchOperationAdd">
+  <!-- <Operation Class="PatchOperationAdd">
     <xpath>Defs/ScenarioDef[defName="RBME_MinotaurNomads"]/scenario/parts</xpath>
     <order>Append</order>
     <value>
@@ -29,5 +29,5 @@
         <project>LemonSkin_RBME_MinotaurCraftables</project>
       </li>
     </value>
-  </Operation>
+  </Operation> -->
 </Patch>

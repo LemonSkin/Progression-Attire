@@ -69,6 +69,8 @@
     <li IfModActive="BiomesTeam.BiomesFossils">1.6/Biomes! Fossils</li>
     <li IfModActive="tug.Minotaur.Expanded">1.6/Roo's Minotaur Xenotype Expanded</li>
     <li IfModActive="tug.SatyrFaun.Expanded">1.6/Roo's Satyr and Faun Xenotypes Expanded</li>
+    <li IfModActive="as1aw.morehunterdrones">1.6/More Hunter Drones</li>
+
 
     <!-- For bench organization -->
     <li IfModActive="Gunmar.VictorianEraApparels">1.6/Victorian Era Apparels!</li>

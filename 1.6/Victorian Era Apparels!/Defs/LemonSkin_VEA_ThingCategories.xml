@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-  <ThingCategoryDef>
+  <!-- <ThingCategoryDef>
     <defName>LemonSkin_VictorianApparel</defName>
     <label>victorian apparel</label>
     <parent>Apparel</parent>
@@ -9,5 +9,5 @@
     <defName>LemonSkin_VictorianApparelHeadgear</defName>
     <label>headgear</label>
     <parent>LemonSkin_VictorianApparel</parent>
-  </ThingCategoryDef>
+  </ThingCategoryDef> -->
 </Defs>
