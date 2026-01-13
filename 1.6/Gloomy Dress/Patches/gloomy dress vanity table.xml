@@ -9,6 +9,7 @@
           <li>Ferny_VanityTable</li>
         </recipeUsers>
         <researchPrerequisite Inherit="False">Ferny_VanityTable</researchPrerequisite>
+        <workSkill>Crafting</workSkill>
       </recipeMaker>
     </value>
   </Operation>
