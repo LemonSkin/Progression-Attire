@@ -375,8 +375,7 @@ A full spreadsheet can be seen here: https://docs.google.com/spreadsheets/d/e/2P
 * Added various outfits to appropriate medieval categories
 * TODO: Rebalance
 
-## TODO - Other:
-* Vanilla Apparel Expanded - Accessories
+## Costumes and Vanity
 * Costumes - Add a Costume category, balance all costumes to be equivalent in stats to t-shirt + pants with worse armour. These provide no stat bonuses. Headgear provides no armour and basically no insulation.
 ``` 
     <!-- Costume - Torso -->
@@ -429,10 +428,22 @@ A full spreadsheet can be seen here: https://docs.google.com/spreadsheets/d/e/2P
         <EquipDelay>0.8</EquipDelay>
       </statBases>
 ```
-* Move shields to appropriate armour categories
-* Sort out utilities into appropriate categories
+
+
+
+## Add MO Inner Helmet support to the following items:
+* Airwire Headset - Biotech
+* Array Headset - Biotech
+* Gunlink - Royalty
+* Integrator Headset - Biotech
+* Service Headset - Det's Xenotypes - Half-foot
+
+## TODO - Other:
+* Vanilla Apparel Expanded - Accessories
 * Add support for CeleTech Arsenal MKIII
 * Add support for Rimsenal: Murder Diversified
+* Respirator Mask - Ushanka's Biological Warfare
+    * Move to Headgear layer, covering mouth
 
 # Bug Fixes
 * Fixed name capitalisations for a bunch of items in both VE and MO

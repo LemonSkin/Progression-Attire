@@ -31,4 +31,15 @@
       </thingCategories>
     </value>
   </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ApparelLayerDef[defName="DankPyon_InnerHelmet"]</xpath>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Apparel_Gunlink"]/apparel</xpath>
+      <value>
+        <layers Inherit="False">
+          <li>DankPyon_InnerHelmet</li>
+        </layers>
+      </value>
+    </match>
+  </Operation>
 </Patch>

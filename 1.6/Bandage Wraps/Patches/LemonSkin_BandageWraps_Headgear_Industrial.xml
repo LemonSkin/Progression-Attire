@@ -25,7 +25,7 @@
     <xpath>Defs/ThingDef[defName="Bandagewraps_HeadBandage"]/equippedStatOffsets</xpath>
     <value>
       <equippedStatOffsets>
-        <InjuryHealingFactor>1.03</InjuryHealingFactor>
+        <InjuryHealingFactor>0.03</InjuryHealingFactor>
         <ShootingAccuracyPawn>-8</ShootingAccuracyPawn>
       </equippedStatOffsets>
     </value>
@@ -63,7 +63,7 @@
     <xpath>Defs/ThingDef[defName="Bandagewraps_HeadBandageA"]/equippedStatOffsets</xpath>
     <value>
       <equippedStatOffsets>
-        <InjuryHealingFactor>1.03</InjuryHealingFactor>
+        <InjuryHealingFactor>0.03</InjuryHealingFactor>
         <ImmunityGainSpeed>.03</ImmunityGainSpeed>
         <ShootingAccuracyPawn>-8</ShootingAccuracyPawn>
       </equippedStatOffsets>
