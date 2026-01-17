@@ -375,6 +375,9 @@ A full spreadsheet can be seen here: https://docs.google.com/spreadsheets/d/e/2P
 * Added various outfits to appropriate medieval categories
 * TODO: Rebalance
 
+## Ushanka's Biological Warfare
+* Moved Respirator Mask to headgear layer
+
 ## Costumes and Vanity
 * Costumes - Add a Costume category, balance all costumes to be equivalent in stats to t-shirt + pants with worse armour. These provide no stat bonuses. Headgear provides no armour and basically no insulation.
 ``` 
