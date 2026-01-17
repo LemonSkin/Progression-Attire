@@ -106,18 +106,22 @@ namespace ProgressionAttire
                         value = 1.0f
                     },
                 };
+                thingDef.apparel.bodyPartGroups.RemoveAll(bpg => bpg.defName == "Hands");
+                thingDef.apparel.bodyPartGroups.RemoveAll(bpg => bpg.defName == "Feet");
             }
             else if (thingDef.apparel.bodyPartGroups.Contains(BodyPartGroupDefOf.Torso))
             {
                 thingDef.statBases = new List<StatModifier>(shirtStats);
                 thingDef.costStuffCount = 45;
-
+                thingDef.apparel.bodyPartGroups.RemoveAll(bpg => bpg.defName == "Hands");
+                thingDef.apparel.bodyPartGroups.RemoveAll(bpg => bpg.defName == "Feet");
             }
             else if (thingDef.apparel.bodyPartGroups.Contains(BodyPartGroupDefOf.Legs))
             {
                 thingDef.statBases = new List<StatModifier>(pantsStats);
                 thingDef.costStuffCount = 40;
-
+                thingDef.apparel.bodyPartGroups.RemoveAll(bpg => bpg.defName == "Hands");
+                thingDef.apparel.bodyPartGroups.RemoveAll(bpg => bpg.defName == "Feet");
             }
             else if (thingDef.apparel.bodyPartGroups.Contains(BodyPartGroupDefOf.FullHead) || thingDef.apparel.bodyPartGroups.Contains(BodyPartGroupDefOf.UpperHead))
             {

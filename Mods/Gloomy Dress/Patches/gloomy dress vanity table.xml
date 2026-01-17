@@ -9,13 +9,14 @@
           <li>Ferny_VanityTable</li>
         </recipeUsers>
         <researchPrerequisite Inherit="False">Ferny_VanityTable</researchPrerequisite>
+        <workSkill>Crafting</workSkill>
       </recipeMaker>
     </value>
   </Operation>
 
 
   <!--  GD_ApparelCustomBase -->
-  <Operation Class="PatchOperationAdd">
+  <!-- <Operation Class="PatchOperationAdd">
     <xpath>Defs/ThingDef[@Name="GD_ApparelCustomBase"]</xpath>
     <value>
       <costStuffCount>85</costStuffCount>
@@ -45,11 +46,11 @@
         <li>LemonSkin_VanityApparel</li>
       </thingCategories>
     </value>
-  </Operation>
+  </Operation> -->
 
 
   <!-- GD_HatCustomBase -->
-  <Operation Class="PatchOperationAdd">
+  <!-- <Operation Class="PatchOperationAdd">
     <xpath>Defs/ThingDef[@Name="GD_HatCustomBase"]</xpath>
     <value>
       <costStuffCount>45</costStuffCount>
@@ -79,11 +80,11 @@
         <li>LemonSkin_VanityHeadgear</li>
       </thingCategories>
     </value>
-  </Operation>
+  </Operation> -->
 
 
   <!-- Apparel_lolita -->
-  <Operation Class="PatchOperationRemove">
+  <!-- <Operation Class="PatchOperationRemove">
     <xpath>Defs/ThingDef[defName="Apparel_lolita"]/costList</xpath>
   </Operation>
   <Operation Class="PatchOperationRemove">
@@ -112,7 +113,7 @@
   </Operation>
   <Operation Class="PatchOperationRemove">
     <xpath>Defs/ThingDef[defName="Apparel_lolita"]/recipeMaker</xpath>
-  </Operation>
+  </Operation> -->
 
 
   <!-- Apparel_mini -->
@@ -128,7 +129,7 @@
       <description>A cute and stylish miniature headpiece.</description>
     </value>
   </Operation>
-  <Operation Class="PatchOperationRemove">
+  <!-- <Operation Class="PatchOperationRemove">
     <xpath>Defs/ThingDef[defName="Apparel_mini"]/costList</xpath>
   </Operation>
   <Operation Class="PatchOperationRemove">
@@ -153,7 +154,7 @@
   </Operation>
   <Operation Class="PatchOperationRemove">
     <xpath>Defs/ThingDef[defName="Apparel_mini"]/recipeMaker</xpath>
-  </Operation>
+  </Operation> -->
 
 
   <!-- Apparel_ribondress -->
@@ -169,7 +170,7 @@
       <description>A cute dress adorned with a silk ribbon.</description>
     </value>
   </Operation>
-  <Operation Class="PatchOperationRemove">
+  <!-- <Operation Class="PatchOperationRemove">
     <xpath>Defs/ThingDef[defName="Apparel_ribondress"]/costList</xpath>
   </Operation>
   <Operation Class="PatchOperationRemove">
@@ -198,7 +199,7 @@
   </Operation>
   <Operation Class="PatchOperationRemove">
     <xpath>Defs/ThingDef[defName="Apparel_ribondress"]/recipeMaker</xpath>
-  </Operation>
+  </Operation> -->
 
 
   <!-- Apparel_ribonhat -->
@@ -214,7 +215,7 @@
       <description>A stylish headpiece adorned with a silk ribbon.</description>
     </value>
   </Operation>
-  <Operation Class="PatchOperationRemove">
+  <!-- <Operation Class="PatchOperationRemove">
     <xpath>Defs/ThingDef[defName="Apparel_ribonhat"]/costList</xpath>
   </Operation>
   <Operation Class="PatchOperationRemove">
@@ -239,7 +240,7 @@
   </Operation>
   <Operation Class="PatchOperationRemove">
     <xpath>Defs/ThingDef[defName="Apparel_ribonhat"]/recipeMaker</xpath>
-  </Operation>
+  </Operation> -->
 
 
   <!-- Apparel_maid -->
@@ -249,7 +250,7 @@
       <label>cutesy maid dress</label>
     </value>
   </Operation>
-  <Operation Class="PatchOperationRemove">
+  <!-- <Operation Class="PatchOperationRemove">
     <xpath>Defs/ThingDef[defName="Apparel_maid"]/costList</xpath>
   </Operation>
   <Operation Class="PatchOperationRemove">
@@ -278,7 +279,7 @@
   </Operation>
   <Operation Class="PatchOperationRemove">
     <xpath>Defs/ThingDef[defName="Apparel_maid"]/recipeMaker</xpath>
-  </Operation>
+  </Operation> -->
 
 
   <!-- Apparel_hairband -->
@@ -294,7 +295,7 @@
       <description>A cute head band to keep hair out of the eyes while working.</description>
     </value>
   </Operation>
-  <Operation Class="PatchOperationRemove">
+  <!-- <Operation Class="PatchOperationRemove">
     <xpath>Defs/ThingDef[defName="Apparel_hairband"]/costList</xpath>
   </Operation>
   <Operation Class="PatchOperationRemove">
@@ -319,7 +320,7 @@
   </Operation>
   <Operation Class="PatchOperationRemove">
     <xpath>Defs/ThingDef[defName="Apparel_hairband"]/recipeMaker</xpath>
-  </Operation>
+  </Operation> -->
 
   <!-- Apparel_neat -->
   <Operation Class="PatchOperationReplace">
@@ -334,7 +335,7 @@
       <description>A comfortable and cute sweater.</description>
     </value>
   </Operation>
-  <Operation Class="PatchOperationRemove">
+  <!-- <Operation Class="PatchOperationRemove">
     <xpath>Defs/ThingDef[defName="Apparel_neat"]/costList</xpath>
   </Operation>
   <Operation Class="PatchOperationRemove">
@@ -363,7 +364,7 @@
   </Operation>
   <Operation Class="PatchOperationRemove">
     <xpath>Defs/ThingDef[defName="Apparel_neat"]/recipeMaker</xpath>
-  </Operation>
+  </Operation> -->
 
 
   <!-- Apparel_nuns -->
@@ -379,7 +380,7 @@
       <description>A beautiful nun's dress.</description>
     </value>
   </Operation>
-  <Operation Class="PatchOperationRemove">
+  <!-- <Operation Class="PatchOperationRemove">
     <xpath>Defs/ThingDef[defName="Apparel_nuns"]/costList</xpath>
   </Operation>
   <Operation Class="PatchOperationRemove">
@@ -408,7 +409,7 @@
   </Operation>
   <Operation Class="PatchOperationRemove">
     <xpath>Defs/ThingDef[defName="Apparel_nuns"]/recipeMaker</xpath>
-  </Operation>
+  </Operation> -->
 
 
   <!-- Apparel_nunsveil -->
@@ -424,7 +425,7 @@
       <description>A beautiful nun's veil.</description>
     </value>
   </Operation>
-  <Operation Class="PatchOperationRemove">
+  <!-- <Operation Class="PatchOperationRemove">
     <xpath>Defs/ThingDef[defName="Apparel_nunsveil"]/costList</xpath>
   </Operation>
   <Operation Class="PatchOperationRemove">
@@ -441,7 +442,7 @@
   </Operation>
   <Operation Class="PatchOperationRemove">
     <xpath>Defs/ThingDef[defName="Apparel_nunsveil"]/recipeMaker</xpath>
-  </Operation>
+  </Operation> -->
 
 
 </Patch>
