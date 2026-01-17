@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-
+using System.Linq;
 using Verse;
 
 namespace ProgressionAttire
@@ -7,6 +7,7 @@ namespace ProgressionAttire
     internal static class Utils
     {
         private static readonly HashSet<ThingCategoryDef> modifiedCategories = new HashSet<ThingCategoryDef>();
+        public static readonly HashSet<ThingDef> thingDefRecipesToRegenerate = new HashSet<ThingDef>();
         public static void ApplyCategory(ThingDef thingDef, string Category)
         {
             ThingCategoryDef apparelCategory = DefDatabase<ThingCategoryDef>.GetNamed(Category);
@@ -39,6 +40,35 @@ namespace ProgressionAttire
             }
             modifiedCategories.Clear();
         }
+
+        public static void RefreshAllModifiedRecipes()
+        {
+            foreach (RecipeDef recipe in DefDatabase<RecipeDef>.AllDefsListForReading)
+            {
+                if (recipe.products != null)
+                {
+                    ThingDef matchingThingDef = recipe.products.FirstOrDefault(p => thingDefRecipesToRegenerate.Contains(p.thingDef))?.thingDef;
+
+                    if (matchingThingDef != null)
+                    {
+                        if (recipe.ingredients != null && recipe.ingredients.Count > 0)
+                        {
+                            recipe.ingredients.RemoveAll(ingredient => ingredient.IsFixedIngredient);
+
+                            foreach (IngredientCount ingredient in recipe.ingredients)
+                            {
+                                ingredient.SetBaseCount(matchingThingDef.costStuffCount);
+                            }
+                        }
+                        recipe.ClearCachedData();
+                        recipe.ResolveReferences();
+                    }
+                }
+            }
+            thingDefRecipesToRegenerate.Clear();
+        }
     }
+
+
 
 }

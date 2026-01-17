@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
   <!-- oracle_FireNationArmor -->
-  <Operation Class="PatchOperationReplace">
+  <!-- <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="oracle_FireNationArmor"]/costStuffCount</xpath>
     <value>
       <costStuffCount>80</costStuffCount>
@@ -34,11 +34,11 @@
         <li>LemonSkin_Costume</li>
       </thingCategories>
     </value>
-  </Operation>
+  </Operation> -->
 
 
   <!-- oracle_FireNationHelmet -->
-  <Operation Class="PatchOperationReplace">
+  <!-- <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="oracle_FireNationHelmet"]/costStuffCount</xpath>
     <value>
       <costStuffCount>40</costStuffCount>
@@ -65,11 +65,11 @@
         <li>LemonSkin_CostumeHeadgear</li>
       </thingCategories>
     </value>
-  </Operation>
+  </Operation> -->
 
 
   <!-- oracle_EarthEmpireUniform -->
-  <Operation Class="PatchOperationReplace">
+  <!-- <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="oracle_EarthEmpireUniform"]/costStuffCount</xpath>
     <value>
       <costStuffCount>80</costStuffCount>
@@ -99,11 +99,11 @@
         <li>LemonSkin_Costume</li>
       </thingCategories>
     </value>
-  </Operation>
+  </Operation> -->
 
 
   <!-- oracle_EarthEmpireHelmet -->
-  <Operation Class="PatchOperationReplace">
+  <!-- <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="oracle_EarthEmpireHelmet"]/costStuffCount</xpath>
     <value>
       <costStuffCount>40</costStuffCount>
@@ -130,11 +130,11 @@
         <li>LemonSkin_CostumeHeadgear</li>
       </thingCategories>
     </value>
-  </Operation>
+  </Operation> -->
 
 
   <!-- oracle_EarthEmpireEngineer -->
-  <Operation Class="PatchOperationReplace">
+  <!-- <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="oracle_EarthEmpireEngineer"]/costStuffCount</xpath>
     <value>
       <costStuffCount>80</costStuffCount>
@@ -167,11 +167,11 @@
         <li>LemonSkin_Costume</li>
       </thingCategories>
     </value>
-  </Operation>
+  </Operation> -->
 
 
   <!-- oracle_EarthEmpireEngineerHat -->
-  <Operation Class="PatchOperationReplace">
+  <!-- <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="oracle_EarthEmpireEngineerHat"]/statBases</xpath>
     <value>
       <statBases>
@@ -195,11 +195,11 @@
         <li>LemonSkin_CostumeHeadgear</li>
       </thingCategories>
     </value>
-  </Operation>
+  </Operation> -->
 
 
   <!-- oracle_KyoshiArmor -->
-  <Operation Class="PatchOperationReplace">
+  <!-- <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="oracle_KyoshiArmor"]/costStuffCount</xpath>
     <value>
       <costStuffCount>80</costStuffCount>
@@ -229,11 +229,11 @@
         <li>LemonSkin_Costume</li>
       </thingCategories>
     </value>
-  </Operation>
+  </Operation> -->
 
 
   <!-- oracle_KyoshiHeaddress -->
-  <Operation Class="PatchOperationReplace">
+  <!-- <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="oracle_KyoshiHeaddress"]/costStuffCount</xpath>
     <value>
       <costStuffCount>40</costStuffCount>
@@ -260,11 +260,11 @@
         <li>LemonSkin_CostumeHeadgear</li>
       </thingCategories>
     </value>
-  </Operation>
+  </Operation> -->
 
 
   <!-- oracle_EqualistUniform -->
-  <Operation Class="PatchOperationReplace">
+  <!-- <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="oracle_EqualistUniform"]/costStuffCount</xpath>
     <value>
       <costStuffCount>80</costStuffCount>
@@ -294,11 +294,11 @@
         <li>LemonSkin_Costume</li>
       </thingCategories>
     </value>
-  </Operation>
+  </Operation> -->
 
 
   <!-- oracle_EqualistHat -->
-  <Operation Class="PatchOperationReplace">
+  <!-- <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="oracle_EqualistHat"]/costStuffCount</xpath>
     <value>
       <costStuffCount>40</costStuffCount>
@@ -328,11 +328,11 @@
         <li>LemonSkin_CostumeHeadgear</li>
       </thingCategories>
     </value>
-  </Operation>
+  </Operation> -->
 
 
   <!-- oracle_EqualistAmonMask -->
-  <Operation Class="PatchOperationReplace">
+  <!-- <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="oracle_EqualistAmonMask"]/costStuffCount</xpath>
     <value>
       <costStuffCount>40</costStuffCount>
@@ -359,11 +359,11 @@
         <li>LemonSkin_CostumeHeadgear</li>
       </thingCategories>
     </value>
-  </Operation>
+  </Operation> -->
 
 
   <!-- oracle_KorraOutfit -->
-  <Operation Class="PatchOperationReplace">
+  <!-- <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="oracle_KorraOutfit"]/costStuffCount</xpath>
     <value>
       <costStuffCount>80</costStuffCount>
@@ -393,11 +393,11 @@
         <li>LemonSkin_Costume</li>
       </thingCategories>
     </value>
-  </Operation>
+  </Operation> -->
 
 
   <!-- oracle_AsamiRacing -->
-  <Operation Class="PatchOperationReplace">
+  <!-- <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="oracle_AsamiRacing"]/costStuffCount</xpath>
     <value>
       <costStuffCount>80</costStuffCount>
@@ -427,11 +427,11 @@
         <li>LemonSkin_Costume</li>
       </thingCategories>
     </value>
-  </Operation>
+  </Operation> -->
 
 
   <!-- oracle_AsamiDress -->
-  <Operation Class="PatchOperationReplace">
+  <!-- <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="oracle_AsamiDress"]/costStuffCount</xpath>
     <value>
       <costStuffCount>80</costStuffCount>
@@ -461,5 +461,6 @@
         <li>LemonSkin_Costume</li>
       </thingCategories>
     </value>
-  </Operation>
+  </Operation> -->
+
 </Patch>

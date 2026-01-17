@@ -73,39 +73,72 @@ namespace ProgressionAttire
                     };
         public static int PatchApparel(ThingDef thingDef)
         {
+            Utils.ApplyCategory(thingDef, "LemonSkin_VanityApparel");
+            thingDef.costList = new List<ThingDefCountClass>();
+            thingDef.equippedStatOffsets = new List<StatModifier>
+                {
+                    new StatModifier
+                    {
+                        stat = StatDefOf.SocialImpact,
+                        value = 0.05f
+                    },
+                    new StatModifier
+                    {
+                        stat = StatDefOf.PawnBeauty,
+                        value = 0.5f
+                    },
+                };
+
             if (thingDef.apparel.bodyPartGroups.Contains(BodyPartGroupDefOf.Torso) && thingDef.apparel.bodyPartGroups.Contains(BodyPartGroupDefOf.Legs))
             {
-                return ApplyPatch(thingDef, dressStats, "LemonSkin_VanityApparel");
+                thingDef.statBases = new List<StatModifier>(dressStats);
+                thingDef.costStuffCount = 85;
+                thingDef.equippedStatOffsets = new List<StatModifier>
+                {
+                    new StatModifier
+                    {
+                        stat = StatDefOf.SocialImpact,
+                        value = 0.1f
+                    },
+                    new StatModifier
+                    {
+                        stat = StatDefOf.PawnBeauty,
+                        value = 1.0f
+                    },
+                };
             }
             else if (thingDef.apparel.bodyPartGroups.Contains(BodyPartGroupDefOf.Torso))
             {
-                return ApplyPatch(thingDef, shirtStats, "LemonSkin_VanityApparel");
+                thingDef.statBases = new List<StatModifier>(shirtStats);
+                thingDef.costStuffCount = 45;
+
             }
             else if (thingDef.apparel.bodyPartGroups.Contains(BodyPartGroupDefOf.Legs))
             {
-                return ApplyPatch(thingDef, pantsStats, "LemonSkin_VanityApparel");
+                thingDef.statBases = new List<StatModifier>(pantsStats);
+                thingDef.costStuffCount = 40;
+
             }
             else if (thingDef.apparel.bodyPartGroups.Contains(BodyPartGroupDefOf.FullHead) || thingDef.apparel.bodyPartGroups.Contains(BodyPartGroupDefOf.UpperHead))
             {
-                return ApplyPatch(thingDef, headgearStats, "LemonSkin_VanityHeadgear");
+                // Override base change
+                Utils.ApplyCategory(thingDef, "LemonSkin_VanityHeadgear");
+                thingDef.statBases = new List<StatModifier>(headgearStats);
+                thingDef.costStuffCount = 45;
             }
             else
             {
-                return ApplyPatch(thingDef, headgearStats, "LemonSkin_VanityApparel");
+                thingDef.statBases = new List<StatModifier>(headgearStats);
+                thingDef.costStuffCount = 45;
             }
-        }
 
-        public static int ApplyPatch(ThingDef thingDef, List<StatModifier> stats, string category)
-        {
-            Utils.ApplyCategory(thingDef, category);
             thingDef.apparel.tags = new List<string>();
             thingDef.apparel.defaultOutfitTags = new List<string>();
             thingDef.tradeability = Tradeability.None;
-            thingDef.equippedStatOffsets = new List<StatModifier>();
-            thingDef.statBases = new List<StatModifier>(stats);
+            Utils.thingDefRecipesToRegenerate.Add(thingDef);
+
             return 1;
         }
-
     }
 
 

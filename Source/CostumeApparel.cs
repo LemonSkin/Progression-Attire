@@ -72,39 +72,54 @@ namespace ProgressionAttire
                     };
         public static int PatchApparel(ThingDef thingDef)
         {
+            Utils.ApplyCategory(thingDef, "LemonSkin_Costume");
+            thingDef.costList = new List<ThingDefCountClass>();
+            thingDef.equippedStatOffsets = new List<StatModifier>
+                {
+                    new StatModifier
+                    {
+                        stat = StatDefOf.SocialImpact,
+                        value = 0.05f
+                    }
+                };
+
             if (thingDef.apparel.bodyPartGroups.Contains(BodyPartGroupDefOf.Torso) && thingDef.apparel.bodyPartGroups.Contains(BodyPartGroupDefOf.Legs))
             {
-                return ApplyPatch(thingDef, dressStats, "LemonSkin_Costume");
+                thingDef.statBases = new List<StatModifier>(dressStats);
+                thingDef.costStuffCount = 80;
+
             }
             else if (thingDef.apparel.bodyPartGroups.Contains(BodyPartGroupDefOf.Torso))
             {
-                return ApplyPatch(thingDef, shirtStats, "LemonSkin_Costume");
+                thingDef.statBases = new List<StatModifier>(shirtStats);
+                thingDef.costStuffCount = 40;
+
             }
             else if (thingDef.apparel.bodyPartGroups.Contains(BodyPartGroupDefOf.Legs))
             {
-                return ApplyPatch(thingDef, pantsStats, "LemonSkin_Costume");
+                thingDef.statBases = new List<StatModifier>(pantsStats);
+                thingDef.costStuffCount = 40;
+
             }
             else if (thingDef.apparel.bodyPartGroups.Contains(BodyPartGroupDefOf.FullHead) || thingDef.apparel.bodyPartGroups.Contains(BodyPartGroupDefOf.UpperHead))
             {
-                return ApplyPatch(thingDef, headgearStats, "LemonSkin_CostumeHeadgear");
+                Utils.ApplyCategory(thingDef, "LemonSkin_CostumeHeadgear");
+                thingDef.statBases = new List<StatModifier>(headgearStats);
+                thingDef.costStuffCount = 40;
             }
             else
             {
-                return ApplyPatch(thingDef, headgearStats, "LemonSkin_Costume");
+                thingDef.statBases = new List<StatModifier>(headgearStats);
+                thingDef.costStuffCount = 40;
             }
-        }
 
-        public static int ApplyPatch(ThingDef thingDef, List<StatModifier> stats, string category)
-        {
-            Utils.ApplyCategory(thingDef, category);
             thingDef.apparel.tags = new List<string>();
             thingDef.apparel.defaultOutfitTags = new List<string>();
             thingDef.tradeability = Tradeability.None;
-            thingDef.equippedStatOffsets = new List<StatModifier>();
-            thingDef.statBases = new List<StatModifier>(stats);
+            Utils.thingDefRecipesToRegenerate.Add(thingDef);
+
             return 1;
         }
-
     }
 
 
