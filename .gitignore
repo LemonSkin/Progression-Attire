@@ -1,1 +1,9 @@
 Textures/*.dds
+/.vscode/obj
+/*.sln 
+.vs
+
+# /*/Assemblies
+# /*/Assemblies/*.pdb
+# /.vscode
+# /Source

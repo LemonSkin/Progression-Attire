@@ -2,96 +2,96 @@
 <loadFolders>
   <v1.6>
     <li>/</li>
-    <li>1.6/Core</li>
-    <li IfModActive="ludeon.rimworld.royalty">1.6/Royalty</li>
-    <li IfModActive="ludeon.rimworld.ideology">1.6/Ideology</li>
-    <li IfModActive="ludeon.rimworld.biotech">1.6/Biotech</li>
-    <li IfModActive="ludeon.rimworld.anomaly">1.6/Anomaly</li>
-    <li IfModActive="ludeon.rimworld.odyssey">1.6/Odyssey</li>
+    <li>1.6</li>
+    <li IfModActive="ludeon.rimworld.royalty">Mods/Royalty</li>
+    <li IfModActive="ludeon.rimworld.ideology">Mods/Ideology</li>
+    <li IfModActive="ludeon.rimworld.biotech">Mods/Biotech</li>
+    <li IfModActive="ludeon.rimworld.anomaly">Mods/Anomaly</li>
+    <li IfModActive="ludeon.rimworld.odyssey">Mods/Odyssey</li>
 
     <!-- For rebalances -->
-    <li IfModActive="DankPyon.Medieval.Overhaul">1.6/Medieval Overhaul</li>
-    <li IfModActive="DankPyon.Medieval.Overhaul.House.Roxmont">1.6/Medieval Overhaul - House Roxmont</li>
+    <li IfModActive="DankPyon.Medieval.Overhaul">Mods/Medieval Overhaul</li>
+    <li IfModActive="DankPyon.Medieval.Overhaul.House.Roxmont">Mods/Medieval Overhaul - House Roxmont</li>
 
-    <li IfModActive="OskarPotocki.VFE.Medieval2">1.6/Vanilla Factions Expanded - Medieval 2/Core</li>
-    <li IfModActiveAll="OskarPotocki.VFE.Medieval2,DankPyon.Medieval.Overhaul">1.6/Vanilla Factions Expanded - Medieval 2/Medieval Overhaul</li>
+    <li IfModActive="OskarPotocki.VFE.Medieval2">Mods/Vanilla Factions Expanded - Medieval 2/Core</li>
+    <li IfModActiveAll="OskarPotocki.VFE.Medieval2,DankPyon.Medieval.Overhaul">Mods/Vanilla Factions Expanded - Medieval 2/Medieval Overhaul</li>
 
-    <li IfModActive="OskarPotocki.VFE.Classical">1.6/Vanilla Factions Expanded - Classical</li>
-    <li IfModActive="OskarPotocki.VFE.Tribals">1.6/Vanilla Factions Expanded - Tribals</li>
-    <li IfModActive="OskarPotocki.VFE.Empire">1.6/Vanilla Factions Expanded - Empire</li>
-    <li IfModActive="OskarPotocki.VFE.Pirates">1.6/Vanilla Factions Expanded - Pirates</li>
-    <li IfModActive="OskarPotocki.VanillaFactionsExpanded.SettlersModule">1.6/Vanilla Factions Expanded - Settlers</li>
+    <li IfModActive="OskarPotocki.VFE.Classical">Mods/Vanilla Factions Expanded - Classical</li>
+    <li IfModActive="OskarPotocki.VFE.Tribals">Mods/Vanilla Factions Expanded - Tribals</li>
+    <li IfModActive="OskarPotocki.VFE.Empire">Mods/Vanilla Factions Expanded - Empire</li>
+    <li IfModActive="OskarPotocki.VFE.Pirates">Mods/Vanilla Factions Expanded - Pirates</li>
+    <li IfModActive="OskarPotocki.VanillaFactionsExpanded.SettlersModule">Mods/Vanilla Factions Expanded - Settlers</li>
 
-    <li IfModActive="VanillaExpanded.VAPPE">1.6/Vanilla Apparel Expanded/Core</li>
-    <li IfModActiveAll="VanillaExpanded.VAPPE,ludeon.rimworld.royalty">1.6/Vanilla Apparel Expanded/Royalty</li>
-    <li IfModActiveAll="VanillaExpanded.VAPPE,ludeon.rimworld.anomaly">1.6/Vanilla Apparel Expanded/Anomaly</li>
+    <li IfModActive="VanillaExpanded.VAPPE">Mods/Vanilla Apparel Expanded/Core</li>
+    <li IfModActiveAll="VanillaExpanded.VAPPE,ludeon.rimworld.royalty">Mods/Vanilla Apparel Expanded/Royalty</li>
+    <li IfModActiveAll="VanillaExpanded.VAPPE,ludeon.rimworld.anomaly">Mods/Vanilla Apparel Expanded/Anomaly</li>
 
-    <li IfModActiveAll="VanillaExpanded.VARME">1.6/Vanilla Armor Expanded/Core</li>
-    <li IfModActiveAll="VanillaExpanded.VARME,DankPyon.Medieval.Overhaul">1.6/Vanilla Armor Expanded/Medieval Overhaul</li>
-    <li IfModActiveAll="VanillaExpanded.VARME,ludeon.rimworld.royalty">1.6/Vanilla Armor Expanded/Royalty</li>
+    <li IfModActiveAll="VanillaExpanded.VARME">Mods/Vanilla Armor Expanded/Core</li>
+    <li IfModActiveAll="VanillaExpanded.VARME,DankPyon.Medieval.Overhaul">Mods/Vanilla Armor Expanded/Medieval Overhaul</li>
+    <li IfModActiveAll="VanillaExpanded.VARME,ludeon.rimworld.royalty">Mods/Vanilla Armor Expanded/Royalty</li>
 
-    <li IfModActive="vanillaquestsexpanded.generator">1.6/Vanilla Quests Expanded - Generator</li>
-    <li IfModActive="vanillaquestsexpanded.cryptoforge">1.6/Vanilla Quests Expanded - Cryptoforge</li>
-    <li IfModActive="vanillaquestsexpanded.ancients">1.6/Vanilla Quests Expanded - Ancients</li>
-    <li IfModActive="vanillaquestsexpanded.deadlife">1.6/Vanilla Quests Expanded - Deadlife</li>
-    <li IfModActive="vanillaracesexpanded.fungoid">1.6/Vanilla Races Expanded - Fungoid</li>
-    <li IfModActive="vanillaexpanded.gravship">1.6/Vanilla Gravship Expanded - Chapter 1</li>
+    <li IfModActive="vanillaquestsexpanded.generator">Mods/Vanilla Quests Expanded - Generator</li>
+    <li IfModActive="vanillaquestsexpanded.cryptoforge">Mods/Vanilla Quests Expanded - Cryptoforge</li>
+    <li IfModActive="vanillaquestsexpanded.ancients">Mods/Vanilla Quests Expanded - Ancients</li>
+    <li IfModActive="vanillaquestsexpanded.deadlife">Mods/Vanilla Quests Expanded - Deadlife</li>
+    <li IfModActive="vanillaracesexpanded.fungoid">Mods/Vanilla Races Expanded - Fungoid</li>
+    <li IfModActive="vanillaexpanded.gravship">Mods/Vanilla Gravship Expanded - Chapter 1</li>
 
-    <li IfModActive="VanillaExpanded.VAnomalyEInsanity">1.6/Vanilla Anomaly Expanded - Insanity</li>
-    <li IfModActive="VanillaExpanded.VPsycastsE">1.6/Vanilla Psycasts Expanded</li>
-    <li IfModActive="VanillaExpanded.VGeneticsE">1.6/Vanilla Genetics Expanded</li>
-    <li IfModActive="VanillaExpanded.VIEHAR">1.6/Vanilla Ideology Expanded - Hats and Rags</li>
-    <li IfModActive="VanillaExpanded.VFEArt">1.6/Vanilla Furniture Expanded - Art</li>
+    <li IfModActive="VanillaExpanded.VAnomalyEInsanity">Mods/Vanilla Anomaly Expanded - Insanity</li>
+    <li IfModActive="VanillaExpanded.VPsycastsE">Mods/Vanilla Psycasts Expanded</li>
+    <li IfModActive="VanillaExpanded.VGeneticsE">Mods/Vanilla Genetics Expanded</li>
+    <li IfModActive="VanillaExpanded.VIEHAR">Mods/Vanilla Ideology Expanded - Hats and Rags</li>
+    <li IfModActive="VanillaExpanded.VFEArt">Mods/Vanilla Furniture Expanded - Art</li>
 
-    <li IfModActive="det.boglegs">1.6/Det's Xenotypes - Boglegs</li>
-    <li IfModActive="det.halffoot">1.6/Det's Xenotypes - Half-foot</li>
-    <li IfModActive="det.brawnum">1.6/Det's Xenotypes - Brawnum</li>
-    <li IfModActive="det.venators">1.6/Det's Xenotypes - Venators</li>
-    <li IfModActive="det.avaloi">1.6/Det's Xenotypes - Avaloi</li>
-    <li IfModActive="det.spacerarsenal">1.6/Spacer Arsenal</li>
+    <li IfModActive="det.boglegs">Mods/Det's Xenotypes - Boglegs</li>
+    <li IfModActive="det.halffoot">Mods/Det's Xenotypes - Half-foot</li>
+    <li IfModActive="det.brawnum">Mods/Det's Xenotypes - Brawnum</li>
+    <li IfModActive="det.venators">Mods/Det's Xenotypes - Venators</li>
+    <li IfModActive="det.avaloi">Mods/Det's Xenotypes - Avaloi</li>
+    <li IfModActive="det.spacerarsenal">Mods/Spacer Arsenal</li>
 
-    <li IfModActive="KidApparelExpanded.Goblins4Lyfe">1.6/Kid Apparel Expanded</li>
-    <li IfModActive="sarg.alphagenes">1.6/Alpha Genes</li>
-    <li IfModActive="hlx.UltratechAlteredCarbon">1.6/Altered Carbon</li>
-    <li IfModActive="detvisor.impactweaponryreloaded">1.6/Impact Weaponry - Reloaded</li>
-    <li IfModActive="TW.TangsBiome.RainbowForest">1.6/Rainbow Forest</li>
-    <li IfModActive="Kilo.CapVacHelm">1.6/Gravship Captain Set</li>
-    <li IfModActive="det.epochsgolems">1.6/Epochs - Golems</li>
-    <li IfModActive="Rooboid.Paintings.Ex">1.6/Roo's Painting Expansion</li>
-    <li IfModActive="ocarina.prisonerjumpsuits">1.6/Prisoner Jumpsuits</li>
-    <li IfModActive="sd.leafskirt">1.6/Leaf Skirt</li>
-    <li IfModActive="SK.BandageWrap">1.6/Bandage Wraps</li>
-    <li IfModActive="Gerrymon.StylizedSlaveCollar">1.6/Stylized Slave Collars and Headgears</li>
-    <li IfModActive="cyanobot.toddlers">1.6/Toddlers</li>
-    <li IfModActive="XMB.AncientUrbanrUins.MO">1.6/Ancient Urban Ruins</li>
-    <li IfModActive="Trickity.Samurai.Faction">1.6/Samurai Faction</li>
-    <li IfModActive="matte.rimstuff.tacticoolops">1.6/Tacticool Ops</li>
-    <li IfModActive="BiomesTeam.BiomesFossils">1.6/Biomes! Fossils</li>
-    <li IfModActive="tug.Minotaur.Expanded">1.6/Roo's Minotaur Xenotype Expanded</li>
-    <li IfModActive="tug.SatyrFaun.Expanded">1.6/Roo's Satyr and Faun Xenotypes Expanded</li>
-    <li IfModActive="as1aw.morehunterdrones">1.6/More Hunter Drones</li>
+    <li IfModActive="KidApparelExpanded.Goblins4Lyfe">Mods/Kid Apparel Expanded</li>
+    <li IfModActive="sarg.alphagenes">Mods/Alpha Genes</li>
+    <li IfModActive="hlx.UltratechAlteredCarbon">Mods/Altered Carbon</li>
+    <li IfModActive="detvisor.impactweaponryreloaded">Mods/Impact Weaponry - Reloaded</li>
+    <li IfModActive="TW.TangsBiome.RainbowForest">Mods/Rainbow Forest</li>
+    <li IfModActive="Kilo.CapVacHelm">Mods/Gravship Captain Set</li>
+    <li IfModActive="det.epochsgolems">Mods/Epochs - Golems</li>
+    <li IfModActive="Rooboid.Paintings.Ex">Mods/Roo's Painting Expansion</li>
+    <li IfModActive="ocarina.prisonerjumpsuits">Mods/Prisoner Jumpsuits</li>
+    <li IfModActive="sd.leafskirt">Mods/Leaf Skirt</li>
+    <li IfModActive="SK.BandageWrap">Mods/Bandage Wraps</li>
+    <li IfModActive="Gerrymon.StylizedSlaveCollar">Mods/Stylized Slave Collars and Headgears</li>
+    <li IfModActive="cyanobot.toddlers">Mods/Toddlers</li>
+    <li IfModActive="XMB.AncientUrbanrUins.MO">Mods/Ancient Urban Ruins</li>
+    <li IfModActive="Trickity.Samurai.Faction">Mods/Samurai Faction</li>
+    <li IfModActive="matte.rimstuff.tacticoolops">Mods/Tacticool Ops</li>
+    <li IfModActive="BiomesTeam.BiomesFossils">Mods/Biomes! Fossils</li>
+    <li IfModActive="tug.Minotaur.Expanded">Mods/Roo's Minotaur Xenotype Expanded</li>
+    <li IfModActive="tug.SatyrFaun.Expanded">Mods/Roo's Satyr and Faun Xenotypes Expanded</li>
+    <li IfModActive="as1aw.morehunterdrones">Mods/More Hunter Drones</li>
 
 
     <!-- For bench organization -->
-    <li IfModActive="Gunmar.VictorianEraApparels">1.6/Victorian Era Apparels!</li>
-    <li IfModActive="UNAGI.huyuhuku.SET">1.6/UNAGI Winter Clothing</li>
-    <li IfModActive="yamazaki.PreschoolerOutfits">1.6/Preschooler Clothes</li>
-    <li IfModActive="unagi.ap.dress">1.6/Unagi Royalty</li>
-    <li IfModActive="mo.size.valentine.apparel">1.6/Bread Mos Valentines Day Apparel</li>
-    <li IfModActive="mouse.gloomydress">1.6/Gloomy Dress</li>
-    <li IfModActive="ponpeco.ponpecoaccessories">1.6/Ponpeco Accessories</li>
-    <li IfModActive="needy.girl.overdose">1.6/Needy Girl Overdose</li>
-    <li IfModActive="hartarok.dresses">1.6/Dresses in the Rim</li>
-    <li IfModActive="xmb.ancientthreat.mo">1.6/Ancient Amorphous Threat</li>
-    <li IfModActive="loopus.primhairs">1.6/Prim's Hair</li>
-    <li IfModActive="unagi.a.d.coat">1.6/UNAGI Another Duster Coat</li>
-    <li IfModActive="mo.decorationsluxury">1.6/Decorations and dishes at Gorgeous banquet</li>
-    <li IfModActive="pu.lunartikaaa">1.6/Police Uniforms</li>
-    <li IfModActive="ponpeco.ponpecopajamas">1.6/Ponpeco Pajamas</li>
-    <li IfModActive="resplice.xotr.charmweavers">1.6/Resplice Charmweavers</li>
-    <li IfModActive="oracle.miscellania">1.6/Oracle's Miscellania</li>
-    <li IfModActive="zal.bananasuit">1.6/Banana Suit</li>
-    <li IfModActive="dress.cinderella">1.6/Cinderella Apparel</li>
-    <li IfModActive="cat.imperial.attires">1.6/Imperial Attires</li>
+    <li IfModActive="Gunmar.VictorianEraApparels">Mods/Victorian Era Apparels!</li>
+    <li IfModActive="UNAGI.huyuhuku.SET">Mods/UNAGI Winter Clothing</li>
+    <li IfModActive="yamazaki.PreschoolerOutfits">Mods/Preschooler Clothes</li>
+    <li IfModActive="unagi.ap.dress">Mods/Unagi Royalty</li>
+    <li IfModActive="mo.size.valentine.apparel">Mods/Bread Mos Valentines Day Apparel</li>
+    <li IfModActive="mouse.gloomydress">Mods/Gloomy Dress</li>
+    <li IfModActive="ponpeco.ponpecoaccessories">Mods/Ponpeco Accessories</li>
+    <li IfModActive="needy.girl.overdose">Mods/Needy Girl Overdose</li>
+    <li IfModActive="hartarok.dresses">Mods/Dresses in the Rim</li>
+    <li IfModActive="xmb.ancientthreat.mo">Mods/Ancient Amorphous Threat</li>
+    <li IfModActive="loopus.primhairs">Mods/Prim's Hair</li>
+    <li IfModActive="unagi.a.d.coat">Mods/UNAGI Another Duster Coat</li>
+    <li IfModActive="mo.decorationsluxury">Mods/Decorations and dishes at Gorgeous banquet</li>
+    <li IfModActive="pu.lunartikaaa">Mods/Police Uniforms</li>
+    <li IfModActive="ponpeco.ponpecopajamas">Mods/Ponpeco Pajamas</li>
+    <li IfModActive="resplice.xotr.charmweavers">Mods/Resplice Charmweavers</li>
+    <li IfModActive="oracle.miscellania">Mods/Oracle's Miscellania</li>
+    <li IfModActive="zal.bananasuit">Mods/Banana Suit</li>
+    <li IfModActive="dress.cinderella">Mods/Cinderella Apparel</li>
+    <li IfModActive="cat.imperial.attires">Mods/Imperial Attires</li>
   </v1.6>
 </loadFolders>
