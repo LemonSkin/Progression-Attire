@@ -447,6 +447,7 @@ A full spreadsheet can be seen here: https://docs.google.com/spreadsheets/d/e/2P
 * Add support for Rimsenal: Murder Diversified
 * Respirator Mask - Ushanka's Biological Warfare
     * Move to Headgear layer, covering mouth
+* Remove vacuum resistance from headsets
 
 # Bug Fixes
 * Fixed name capitalisations for a bunch of items in both VE and MO

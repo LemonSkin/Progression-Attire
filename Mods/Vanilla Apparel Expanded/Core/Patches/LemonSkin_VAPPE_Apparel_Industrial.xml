@@ -703,14 +703,14 @@
       </statBases>
     </value>
   </Operation>
-  <Operation Class="PatchOperationReplace">
+  <!-- <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="VAE_Apparel_Jumpsuit"]/equippedStatOffsets</xpath>
     <value>
       <equippedStatOffsets>
         <GeneralLaborSpeed>0.05</GeneralLaborSpeed>
       </equippedStatOffsets>
     </value>
-  </Operation>
+  </Operation> -->
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="VAE_Apparel_Jumpsuit"]/thingCategories</xpath>
     <value>

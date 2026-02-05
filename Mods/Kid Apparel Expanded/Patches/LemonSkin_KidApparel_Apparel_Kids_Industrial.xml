@@ -29,7 +29,7 @@
   </Operation>
   <!-- Apparel_Goblins4Lyfe_KidArmorPowerBase -->
   <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[@Name="Apparel_Goblins4Lyfe_KidArmorPowerBase"]/thingCategories</xpath>
+    <xpath>Defs/ThingDef[@Name="Apparel_KidArmorPowerBase"]/thingCategories</xpath>
     <value>
       <thingCategories Inherit="False">
         <li>LemonSkin_KidArmor</li>
@@ -38,7 +38,7 @@
   </Operation>
   <!-- Apparel_Goblins4Lyfe_KidArmorReconBase -->
   <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[@Name="Apparel_Goblins4Lyfe_KidArmorReconBase"]/thingCategories</xpath>
+    <xpath>Defs/ThingDef[@Name="Apparel_KidArmorReconBase"]/thingCategories</xpath>
     <value>
       <thingCategories Inherit="False">
         <li>LemonSkin_KidArmor</li>
