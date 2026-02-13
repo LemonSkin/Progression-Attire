@@ -9,6 +9,9 @@
       </thingCategories>
     </value>
   </Operation>
+
+  <!-- COMMENTED OUT: changes researchPrerequisite -->
+  <!--
   <Operation Class="PatchOperationConditional">
     <xpath>Defs/VFETribals.TribalResearchProjectDef[defName="VFET_Tribalwear"]</xpath>
     <match Class="PatchOperationReplace">
@@ -18,6 +21,9 @@
       </value>
     </match>
   </Operation>
+  -->
+  
+
   <!-- RBSFE_Faegarms -->
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="RBSFE_Faegarms"]/statBases</xpath>
@@ -40,6 +46,7 @@
       </equippedStatOffsets>
     </value>
   </Operation>
+
   <!-- RBSFE_KidFaegarms -->
   <Operation Class="PatchOperationAdd">
     <xpath>Defs/ThingDef[defName="RBSFE_KidFaegarms"]</xpath>
@@ -70,6 +77,7 @@
       </equippedStatOffsets>
     </value>
   </Operation>
+
   <!-- RBSFE_Faepron -->
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="RBSFE_Faepron"]/statBases</xpath>
@@ -93,6 +101,7 @@
       </equippedStatOffsets>
     </value>
   </Operation>
+
   <!-- RBSFE_Faecloak -->
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="RBSFE_Faecloak"]/statBases</xpath>
@@ -118,6 +127,7 @@
       </equippedStatOffsets>
     </value>
   </Operation>
+
   <!-- RBSFE_Faeleaf -->
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="RBSFE_Faeleaf"]/statBases</xpath>
@@ -140,6 +150,7 @@
       </equippedStatOffsets>
     </value>
   </Operation>
+
   <!-- RBSFE_Faemail -->
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="RBSFE_Faemail"]/recipeMaker/skillRequirements/Crafting</xpath>
@@ -177,6 +188,9 @@
       </equippedStatOffsets>
     </value>
   </Operation>
+
+  <!-- COMMENTED OUT: changes researchPrerequisite -->
+  <!--
   <Operation Class="PatchOperationConditional">
     <xpath>Defs/VFETribals.TribalResearchProjectDef[defName="VFET_Tribalwear"]</xpath>
     <match Class="PatchOperationReplace">
@@ -186,6 +200,8 @@
       </value>
     </match>
   </Operation>
+  -->
+
   <Operation Class="PatchOperationAdd">
     <xpath>Defs/ThingDef[defName="RBSFE_Faemail"]</xpath>
     <value>
@@ -194,7 +210,10 @@
       </thingCategories>
     </value>
   </Operation>
+
   <!-- RBSFE_Faecrown -->
+  <!-- COMMENTED OUT: changes researchPrerequisite -->
+  <!--
   <Operation Class="PatchOperationConditional">
     <xpath>Defs/VFETribals.TribalResearchProjectDef[defName="VFET_Tribalwear"]</xpath>
     <match Class="PatchOperationAdd">
@@ -210,6 +229,8 @@
       </value>
     </nomatch>
   </Operation>
+  -->
+
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="RBSFE_Faecrown"]/statBases</xpath>
     <value>
@@ -242,8 +263,9 @@
     </value>
   </Operation>
 
-
   <!-- RBSFE_Faerose -->
+  <!-- COMMENTED OUT: changes researchPrerequisite -->
+  <!--
   <Operation Class="PatchOperationConditional">
     <xpath>Defs/VFETribals.TribalResearchProjectDef[defName="VFET_Tribalwear"]</xpath>
     <match Class="PatchOperationAdd">
@@ -259,6 +281,8 @@
       </value>
     </nomatch>
   </Operation>
+  -->
+
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="RBSFE_Faerose"]/statBases</xpath>
     <value>
@@ -290,7 +314,10 @@
       </thingCategories>
     </value>
   </Operation>
+
   <!-- RBSFE_Faecap -->
+  <!-- COMMENTED OUT: changes researchPrerequisite -->
+  <!--
   <Operation Class="PatchOperationConditional">
     <xpath>Defs/VFETribals.TribalResearchProjectDef[defName="VFET_Tribalwear"]</xpath>
     <match Class="PatchOperationAdd">
@@ -306,6 +333,8 @@
       </value>
     </nomatch>
   </Operation>
+  -->
+
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="RBSFE_Faecap"]/statBases</xpath>
     <value>
@@ -338,8 +367,9 @@
     </value>
   </Operation>
 
-
   <!-- RBSFE_Faescarf -->
+  <!-- COMMENTED OUT: changes researchPrerequisite -->
+  <!--
   <Operation Class="PatchOperationConditional">
     <xpath>Defs/VFETribals.TribalResearchProjectDef[defName="VFET_Tribalwear"]</xpath>
     <match Class="PatchOperationAdd">
@@ -355,6 +385,8 @@
       </value>
     </nomatch>
   </Operation>
+  -->
+
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="RBSFE_Faescarf"]/statBases</xpath>
     <value>
@@ -395,7 +427,6 @@
     </value>
   </Operation>
 
-
   <!-- RBSF_Faehelm -->
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="RBSF_Faehelm"]/statBases</xpath>
@@ -432,6 +463,9 @@
       </recipeUsers>
     </value>
   </Operation>
+
+  <!-- COMMENTED OUT: changes researchPrerequisite -->
+  <!--
   <Operation Class="PatchOperationConditional">
     <xpath>Defs/VFETribals.TribalResearchProjectDef[defName="VFET_Tribalwear"]</xpath>
     <match Class="PatchOperationReplace">
@@ -441,6 +475,8 @@
       </value>
     </match>
   </Operation>
+  -->
+
   <Operation Class="PatchOperationAdd">
     <xpath>Defs/ThingDef[defName="RBSF_Faehelm"]</xpath>
     <value>

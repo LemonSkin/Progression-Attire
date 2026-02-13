@@ -88,6 +88,7 @@
     <li>zal.bananasuit</li>
     <li>dress.cinderella</li>
     <li>cat.imperial.attires</li>
+    <li>smiley.faced.mask</li>
     <!-- Fix conflict with Too Many Mods -->
     <li>Wara.toomanymods</li>
   </loadAfter>
