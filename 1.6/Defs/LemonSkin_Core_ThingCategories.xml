@@ -235,7 +235,7 @@
   </ThingCategoryDef>
   <ThingCategoryDef MayRequire="Ludeon.RimWorld.Biotech">
     <defName>LemonSkin_KidArmorHeadgear</defName>
-    <label>armor</label>
+    <label>headgear</label>
     <parent>LemonSkin_KidArmor</parent>
   </ThingCategoryDef>
 </Defs>
