@@ -71,6 +71,7 @@
     <li IfModActive="tug.SatyrFaun.Expanded">Mods/Roo's Satyr and Faun Xenotypes Expanded</li>
     <li IfModActive="as1aw.morehunterdrones">Mods/More Hunter Drones</li>
     <li IfModActive="Ushanka.BiologicalWarfare">Mods/Ushanka's Biological Warfare</li>
+    <li IfModActive="CatLover366.BootsAndGloves">Mods/Cat's Boots and Gloves</li>
 
     <!-- For bench organization -->
     <li IfModActive="Gunmar.VictorianEraApparels">Mods/Victorian Era Apparels!</li>

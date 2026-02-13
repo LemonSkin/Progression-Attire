@@ -39,11 +39,14 @@
   <!-- MO Compatibility -->
   <Operation Class="PatchOperationConditional">
     <xpath>Defs/ThingDef[defName="DankPyon_Footwear_BootsPlate"]</xpath>
-    <match Class="PatchOperationReplace">
+    <match Class="PatchOperationConditional">
       <xpath>/Defs/*[*]/apparelRequired/li[.="VAE_Footwear_PlateBoots"]</xpath>
-      <value>
-        <li>DankPyon_Footwear_BootsPlate</li>
-      </value>
+      <match Class="PatchOperationReplace">
+        <xpath>/Defs/*[*]/apparelRequired/li[.="VAE_Footwear_PlateBoots"]</xpath>
+        <value>
+          <li>DankPyon_Footwear_BootsPlate</li>
+        </value>
+      </match>
     </match>
   </Operation>
 
