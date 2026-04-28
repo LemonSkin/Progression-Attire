@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/RecipeDef[defName="DankPyon_MendApparel"]/researchPrerequisites</xpath>
+    <value>
+      <researchPrerequisites>
+        <li>LemonSkin_RusticClothing</li>
+      </researchPrerequisites>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/RecipeDef[defName="DankPyon_MendApparel"]/ingredients</xpath>
+    <value>
+      <ingredients>
+        <li>
+          <filter>
+            <categories>
+              <li>Apparel</li>
+            </categories>
+            <disallowedCategories>
+              <li>ApparelArmor</li>
+              <li>LemonSkin_NeolithicArmor</li>
+              <li>LemonSkin_NeolithicShields</li>
+              <li>LemonSkin_MedievalArmor</li>
+              <li>LemonSkin_MedievalShields</li>
+              <li>LemonSkin_IndustrialArmor</li>
+              <li>LemonSkin_IndustrialShields</li>
+              <li>LemonSkin_SpacerArmor</li>
+              <li>LemonSkin_SpacerShields</li>
+              <li>LemonSkin_UltraArmor</li>
+              <li>LemonSkin_UltraShields</li>
+            </disallowedCategories>
+          </filter>
+          <count>1</count>
+        </li>
+      </ingredients>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/RecipeDef[defName="DankPyon_MendApparel"]/fixedIngredientFilter</xpath>
+    <value>
+      <fixedIngredientFilter>
+        <categories>
+          <li>Apparel</li>
+        </categories>
+        <disallowedCategories>
+          <li>ApparelArmor</li>
+          <li>LemonSkin_NeolithicArmor</li>
+          <li>LemonSkin_NeolithicShields</li>
+          <li>LemonSkin_MedievalArmor</li>
+          <li>LemonSkin_MedievalShields</li>
+          <li>LemonSkin_IndustrialArmor</li>
+          <li>LemonSkin_IndustrialShields</li>
+          <li>LemonSkin_SpacerArmor</li>
+          <li>LemonSkin_SpacerShields</li>
+          <li>LemonSkin_UltraArmor</li>
+          <li>LemonSkin_UltraShields</li>
+        </disallowedCategories>
+      </fixedIngredientFilter>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/RecipeDef[defName="DankPyon_MendApparel"]/defaultIngredientFilter</xpath>
+    <value>
+      <defaultIngredientFilter>
+        <categories>
+          <li>Apparel</li>
+        </categories>
+        <disallowedCategories>
+          <li>ApparelArmor</li>
+          <li>LemonSkin_NeolithicArmor</li>
+          <li>LemonSkin_NeolithicShields</li>
+          <li>LemonSkin_MedievalArmor</li>
+          <li>LemonSkin_MedievalShields</li>
+          <li>LemonSkin_IndustrialArmor</li>
+          <li>LemonSkin_IndustrialShields</li>
+          <li>LemonSkin_SpacerArmor</li>
+          <li>LemonSkin_SpacerShields</li>
+          <li>LemonSkin_UltraArmor</li>
+          <li>LemonSkin_UltraShields</li>
+        </disallowedCategories>
+      </defaultIngredientFilter>
+    </value>
+  </Operation>
+
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/RecipeDef[defName="DankPyon_MendArmor"]/ingredients</xpath>
+    <value>
+      <ingredients>
+        <li>
+          <filter>
+            <categories>
+              <li>ApparelArmor</li>
+              <li>LemonSkin_NeolithicArmor</li>
+              <!-- <li>LemonSkin_NeolithicArmorHeadgear</li> -->
+              <li>LemonSkin_NeolithicShields</li>
+              <li>LemonSkin_MedievalArmor</li>
+              <!-- <li>LemonSkin_MedievalArmorHeadgear</li> -->
+              <li>LemonSkin_MedievalShields</li>
+              <li>LemonSkin_IndustrialArmor</li>
+              <!-- <li>LemonSkin_IndustrialArmorHeadgear</li> -->
+              <li>LemonSkin_IndustrialShields</li>
+            </categories>
+          </filter>
+          <count>1</count>
+        </li>
+      </ingredients>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/RecipeDef[defName="DankPyon_MendArmor"]/fixedIngredientFilter</xpath>
+    <value>
+      <fixedIngredientFilter>
+        <categories>
+          <li>ApparelArmor</li>
+          <li>LemonSkin_NeolithicArmor</li>
+          <!-- <li>LemonSkin_NeolithicArmorHeadgear</li> -->
+          <li>LemonSkin_NeolithicShields</li>
+          <li>LemonSkin_MedievalArmor</li>
+          <!-- <li>LemonSkin_MedievalArmorHeadgear</li> -->
+          <li>LemonSkin_MedievalShields</li>
+          <li>LemonSkin_IndustrialArmor</li>
+          <!-- <li>LemonSkin_IndustrialArmorHeadgear</li> -->
+          <li>LemonSkin_IndustrialShields</li>
+        </categories>
+      </fixedIngredientFilter>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/RecipeDef[defName="DankPyon_MendArmor"]/defaultIngredientFilter</xpath>
+    <value>
+      <defaultIngredientFilter>
+        <categories>
+          <li>ApparelArmor</li>
+          <li>LemonSkin_NeolithicArmor</li>
+          <!-- <li>LemonSkin_NeolithicArmorHeadgear</li> -->
+          <li>LemonSkin_NeolithicShields</li>
+          <li>LemonSkin_MedievalArmor</li>
+          <!-- <li>LemonSkin_MedievalArmorHeadgear</li> -->
+          <li>LemonSkin_MedievalShields</li>
+          <li>LemonSkin_IndustrialArmor</li>
+          <!-- <li>LemonSkin_IndustrialArmorHeadgear</li> -->
+          <li>LemonSkin_IndustrialShields</li>
+        </categories>
+      </defaultIngredientFilter>
+    </value>
+  </Operation>
+</Patch>
