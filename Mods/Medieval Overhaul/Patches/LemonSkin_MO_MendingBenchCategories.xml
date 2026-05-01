@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
   <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="DankPyon_MendingBench"]/comps/li[@Class="CompProperties_Refuelable"]/fuelConsumptionRate</xpath>
+    <value>
+      <fuelConsumptionRate>20.0</fuelConsumptionRate>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
     <xpath>Defs/RecipeDef[defName="DankPyon_MendApparel"]/researchPrerequisites</xpath>
     <value>
       <researchPrerequisites>
