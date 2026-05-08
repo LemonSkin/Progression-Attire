@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <!-- Remove broken PawnKindDef fields -->
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/PawnKindDef[@Name="DankPyon_CultistPawnBase"]/apparelRequired</xpath>
+        <value>
+            <apparelRequired>
+                <li>DankPyon_Headgear_CultistHood</li>
+                <li>Dankpyon_Apparel_Gambeson</li>
+                <li>DankPyon_Apparel_Trousers</li>
+                <li>DankPyon_Footwear_BootsLeather</li>
+                <li>DankPyon_Handwear_GlovesLeather</li>
+            </apparelRequired>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/PawnKindDef[@Name="DankPyon_CultistPawnBase"]/specificApparelRequirements</xpath>
+        <value>
+            <specificApparelRequirements>
+                <li>
+                    <bodyPartGroup>UpperHead</bodyPartGroup>
+                    <apparelLayer>Overhead</apparelLayer>
+                    <requiredTag>DankPyon_Headgear_CultistHood</requiredTag>
+                    <stuff>Leather_Bear</stuff>
+                    <color>(108, 78, 55)</color>
+                </li>
+                <li>
+                    <bodyPartGroup>Torso</bodyPartGroup>
+                    <apparelLayer>OnSkin</apparelLayer>
+                    <requiredTag>Dankpyon_Apparel_Gambeson</requiredTag>
+                    <stuff>Leather_Bear</stuff>
+                    <color>(108, 78, 55)</color>
+                </li>
+                <li>
+                    <bodyPartGroup>Legs</bodyPartGroup>
+                    <apparelLayer>OnSkin</apparelLayer>
+                    <requiredTag>DankPyon_Apparel_Trousers</requiredTag>
+                    <stuff>Leather_Bear</stuff>
+                    <color>(108, 78, 55)</color>
+                </li>
+                <li>
+                    <bodyPartGroup>Feet</bodyPartGroup>
+                    <apparelLayer>Middle</apparelLayer>
+                    <requiredTag>DankPyon_Footwear_BootsLeather</requiredTag>
+                    <stuff>Leather_Bear</stuff>
+                    <color>(108, 78, 55)</color>
+                </li>
+                <li>
+                    <bodyPartGroup>Hands</bodyPartGroup>
+                    <apparelLayer>Middle</apparelLayer>
+                    <requiredTag>DankPyon_Handwear_GlovesLeather</requiredTag>
+                    <stuff>Leather_Bear</stuff>
+                    <color>(108, 78, 55)</color>
+                </li>
+            </specificApparelRequirements>
+        </value>
+    </Operation>
+
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/PawnKindDef[defName="DankPyon_Cultist_Novice"]</xpath>
+        <value>
+            <apparelRequired>
+                <li>DankPyon_Apparel_Leather_Tunic</li>
+            </apparelRequired>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/PawnKindDef[defName="DankPyon_Cultist_Novice"]</xpath>
+        <value>
+            <specificApparelRequirements>
+                <li>
+                    <bodyPartGroup>Torso</bodyPartGroup>
+                    <apparelLayer>Middle</apparelLayer>
+                    <requiredTag>DankPyon_Apparel_Leather_Tunic</requiredTag>
+                    <stuff>Leather_Bear</stuff>
+                    <color>(108, 78, 55)</color>
+                </li>
+            </specificApparelRequirements>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/PawnKindDef[@Name="DankPyon_CultistAcolyteBase"]/apparelRequired</xpath>
+        <value>
+            <li>DankPyon_Apparel_Leather_Tunic</li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/PawnKindDef[@Name="DankPyon_CultistAcolyteBase"]/specificApparelRequirements</xpath>
+        <value>
+
+            <specificApparelRequirements>
+                <li>
+                    <bodyPartGroup>Torso</bodyPartGroup>
+                    <apparelLayer>Shell</apparelLayer>
+                    <requiredTag>DankPyon_Apparel_Light_Lamellar</requiredTag>
+                    <stuff>Leather_Bear</stuff>
+                    <color>(108, 78, 55)</color>
+                </li>
+                <li>
+                    <bodyPartGroup>Legs</bodyPartGroup>
+                    <apparelLayer>Middle</apparelLayer>
+                    <requiredTag>DankPyon_Apparel_ChaussesPadded</requiredTag>
+                    <stuff>Leather_Bear</stuff>
+                    <color>(108, 78, 55)</color>
+                </li>
+                <li>
+                    <bodyPartGroup>Torso</bodyPartGroup>
+                    <apparelLayer>Middle</apparelLayer>
+                    <requiredTag>DankPyon_Apparel_Leather_Tunic</requiredTag>
+                    <stuff>Leather_Bear</stuff>
+                    <color>(108, 78, 55)</color>
+                </li>
+            </specificApparelRequirements>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/PawnKindDef[@Name="DankPyon_CultistAdeptBase"]/apparelRequired</xpath>
+        <value>
+            <li>DankPyon_Apparel_Leather_Tunic</li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/PawnKindDef[@Name="DankPyon_CultistAdeptBase"]/specificApparelRequirements</xpath>
+        <value>
+            <specificApparelRequirements>
+                <li>
+                    <bodyPartGroup>Torso</bodyPartGroup>
+                    <apparelLayer>Shell</apparelLayer>
+                    <requiredTag>DankPyon_Apparel_Padded_Leather</requiredTag>
+                    <stuff>Leather_Bear</stuff>
+                    <color>(108, 78, 55)</color>
+                </li>
+                <li>
+                    <bodyPartGroup>Legs</bodyPartGroup>
+                    <apparelLayer>Middle</apparelLayer>
+                    <requiredTag>DankPyon_Apparel_ChaussesPadded</requiredTag>
+                    <stuff>Leather_Bear</stuff>
+                    <color>(108, 78, 55)</color>
+                </li>
+                <li>
+                    <bodyPartGroup>Torso</bodyPartGroup>
+                    <apparelLayer>Middle</apparelLayer>
+                    <requiredTag>DankPyon_Apparel_Leather_Tunic</requiredTag>
+                    <stuff>Leather_Bear</stuff>
+                    <color>(108, 78, 55)</color>
+                </li>
+            </specificApparelRequirements>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationRemove">
+        <xpath>Defs/PawnKindDef[@Name="DankPyon_Cultist_HighPristBase"]/apparelRequired/li[text()="DankPyon_Apparel_ChaussesPadded"]</xpath>
+    </Operation>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/PawnKindDef[@Name="DankPyon_Cultist_HighPristBase"]/specificApparelRequirements</xpath>
+        <value>
+            <specificApparelRequirements>
+                <li>
+                    <bodyPartGroup>Torso</bodyPartGroup>
+                    <apparelLayer>Shell</apparelLayer>
+                    <requiredTag>DankPyon_Apparel_Heavy_Hauberk</requiredTag>
+                    <stuff>Steel</stuff>
+                </li>
+            </specificApparelRequirements>
+        </value>
+    </Operation>
+
+</Patch>
