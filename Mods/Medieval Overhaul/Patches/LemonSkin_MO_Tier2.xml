@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ChainNasalHelmet"]/label</xpath>
+        <value>
+            <label>chain helmet</label>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ChainNasalHelmet"]/statBases</xpath>
+        <value>
+            <statBases>
+                <WorkToMake>12000</WorkToMake>
+                <MaxHitPoints>150</MaxHitPoints>
+                <Mass>2.5</Mass>
+                <StuffEffectMultiplierArmor>0.50</StuffEffectMultiplierArmor>
+                <StuffEffectMultiplierInsulation_Cold>0.15</StuffEffectMultiplierInsulation_Cold>
+                <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
+                <EquipDelay>6</EquipDelay>
+            </statBases>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ChainNasalHelmet"]/equippedStatOffsets</xpath>
+        <value>
+            <equippedStatOffsets>
+                <ShootingAccuracyPawn>-3.0</ShootingAccuracyPawn>
+                <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.05</SlaveSuppressionOffset>
+            </equippedStatOffsets>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ChainNasalHelmet"]/costStuffCount</xpath>
+        <value>
+            <costStuffCount>75</costStuffCount>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ChainNasalHelmet"]</xpath>
+        <value>
+            <randomStyleChance>0.5</randomStyleChance>
+            <randomStyle>
+                <li>
+                    <styleDef>ChainHelmet_NasalBandana</styleDef>
+                </li>
+                <li>
+                    <styleDef>ChainHelmet_Kettle</styleDef>
+                </li>
+                <li>
+                    <styleDef>ChainHelmet_FlatTop</styleDef>
+                </li>
+                <li>
+                    <styleDef>ChainHelmet_FlatTop_Closed</styleDef>
+                </li>
+            </randomStyle>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ReplaceLib.ReplacerDef[defName="ProgAttire_MedievalOverhaul"]/replacers</xpath>
+        <value>
+            <li>
+                <replace>DankPyon_Headgear_ChainNasalRedHelmet</replace>
+                <with>DankPyon_Headgear_ChainNasalHelmet</with>
+            </li>
+            <li>
+                <replace>DankPyon_Headgear_ChainKettleHelmet</replace>
+                <with>DankPyon_Headgear_ChainNasalHelmet</with>
+            </li>
+            <li>
+                <replace>DankPyon_Headgear_Chain_FlatTopHelmet</replace>
+                <with>DankPyon_Headgear_ChainNasalHelmet</with>
+            </li>
+            <li>
+                <replace>DankPyon_Headgear_ClosedChain_FlatTopHelmet</replace>
+                <with>DankPyon_Headgear_ChainNasalHelmet</with>
+            </li>
+        </value>
+    </Operation>
+</Patch>

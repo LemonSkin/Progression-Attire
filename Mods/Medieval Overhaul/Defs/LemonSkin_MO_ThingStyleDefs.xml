@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <!-- Tier 1 -->
+    <ThingStyleDef>
+        <defName>PaddedHelmet_Kettle</defName>
+        <!-- <overrideLabel>padded kettle helm</overrideLabel> -->
+        <wornGraphicPath>Things/Pawn/Humanlike/Apparel/Headgear/PaddedKettle/PaddedKettle</wornGraphicPath>
+        <graphicData>
+            <texPath>Things/Pawn/Humanlike/Apparel/Headgear/PaddedKettle/PaddedKettle</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <!-- <shaderType>CutoutComplex</shaderType> -->
+        </graphicData>
+    </ThingStyleDef>
+    <ThingStyleDef>
+        <defName>PaddedHelmet_FlatTop</defName>
+        <!-- <overrideLabel>padded flat-top helm</overrideLabel> -->
+        <wornGraphicPath>Things/Pawn/Humanlike/Apparel/Headgear/PaddedFlatTop/PaddedFlatTop</wornGraphicPath>
+        <graphicData>
+            <texPath>Things/Pawn/Humanlike/Apparel/Headgear/PaddedFlatTop/PaddedFlatTop</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>CutoutComplex</shaderType>
+        </graphicData>
+    </ThingStyleDef>
+
+
+    <!-- Tier 2 -->
+    <ThingStyleDef>
+        <defName>ChainHelmet_NasalBandana</defName>
+        <!-- <overrideLabel></overrideLabel> -->
+        <wornGraphicPath>Things/Pawn/Humanlike/Apparel/Headgear/ChainNasalRed/ChainNasalRed</wornGraphicPath>
+        <graphicData>
+            <texPath>Things/Pawn/Humanlike/Apparel/Headgear/ChainNasalRed/ChainNasalRed</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>CutoutComplex</shaderType>
+        </graphicData>
+    </ThingStyleDef>
+    <ThingStyleDef>
+        <defName>ChainHelmet_Kettle</defName>
+        <!-- <overrideLabel></overrideLabel> -->
+        <wornGraphicPath>Things/Pawn/Humanlike/Apparel/Headgear/ChainKettle/ChainKettle</wornGraphicPath>
+        <graphicData>
+            <texPath>Things/Pawn/Humanlike/Apparel/Headgear/ChainKettle/ChainKettle</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <!-- <shaderType>CutoutComplex</shaderType> -->
+        </graphicData>
+    </ThingStyleDef>
+    <ThingStyleDef>
+        <defName>ChainHelmet_FlatTop</defName>
+        <!-- <overrideLabel></overrideLabel> -->
+        <wornGraphicPath>Things/Pawn/Humanlike/Apparel/Headgear/ChainFlatTop/ChainFlatTop</wornGraphicPath>
+        <graphicData>
+            <texPath>Things/Pawn/Humanlike/Apparel/Headgear/ChainFlatTop/ChainFlatTop</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <!-- <shaderType>CutoutComplex</shaderType> -->
+        </graphicData>
+    </ThingStyleDef>
+    <ThingStyleDef>
+        <defName>ChainHelmet_FlatTop_Closed</defName>
+        <!-- <overrideLabel></overrideLabel> -->
+        <wornGraphicPath>Things/Pawn/Humanlike/Apparel/Headgear/ClosedChainFlatTop/ClosedChainFlatTop</wornGraphicPath>
+        <graphicData>
+            <texPath>Things/Pawn/Humanlike/Apparel/Headgear/ClosedChainFlatTop/ClosedChainFlatTop</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <!-- <shaderType>CutoutComplex</shaderType> -->
+        </graphicData>
+    </ThingStyleDef>
+
+
+    <!-- Tier 3 -->
+    <ThingStyleDef>
+        <defName>PlateHelmet_WolfribsBascinet</defName>
+        <!-- <overrideLabel></overrideLabel> -->
+        <wornGraphicPath>Things/Pawn/Humanlike/Apparel/Headgear/WolfBascinet/WolfBascinet</wornGraphicPath>
+        <graphicData>
+            <texPath>Things/Pawn/Humanlike/Apparel/Headgear/WolfBascinet/WolfBascinet</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+    </ThingStyleDef>
+    <ThingStyleDef>
+        <defName>PlateHelmet_HeavyBarbrute</defName>
+        <!-- <overrideLabel></overrideLabel> -->
+        <wornGraphicPath>Things/Pawn/Humanlike/Apparel/Headgear/HeavyBarbrute/HeavyBarbrute</wornGraphicPath>
+        <graphicData>
+            <texPath>Things/Pawn/Humanlike/Apparel/Headgear/HeavyBarbrute/HeavyBarbrute</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+    </ThingStyleDef>
+
+
+    <!-- Tier 4 -->
+    <ThingStyleDef>
+        <defName>PlateHelmet_KlappvisierHelmetClosed</defName>
+        <!-- <overrideLabel></overrideLabel> -->
+        <wornGraphicPath>Things/Pawn/Humanlike/Apparel/Headgear/KlappvisierHelmet/KlappvisierHelmet</wornGraphicPath>
+        <graphicData>
+            <texPath>Things/Pawn/Humanlike/Apparel/Headgear/KlappvisierHelmet/KlappvisierHelmet</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+    </ThingStyleDef>
+    <ThingStyleDef>
+        <defName>PlateHelmet_KlappvisorBascinet</defName>
+        <!-- <overrideLabel></overrideLabel> -->
+        <wornGraphicPath>Things/Pawn/Humanlike/Apparel/Headgear/KlappvisierHelmet/KlappvisierHelmet</wornGraphicPath>
+        <graphicData>
+            <texPath>Things/Pawn/Humanlike/Apparel/Headgear/KlappvisorBascinet/KlappvisorBascinet</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+    </ThingStyleDef>
+    <ThingStyleDef>
+        <defName>PlateHelmet_HounskullHelmet</defName>
+        <!-- <overrideLabel></overrideLabel> -->
+        <wornGraphicPath>Things/Pawn/Humanlike/Apparel/Headgear/HounskullHelmet/HounskullHelmet</wornGraphicPath>
+        <graphicData>
+            <texPath>Things/Pawn/Humanlike/Apparel/Headgear/HounskullHelmet/HounskullHelmet</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+    </ThingStyleDef>
+    <ThingStyleDef>
+        <defName>PlateHelmet_SalletHelmet</defName>
+        <!-- <overrideLabel></overrideLabel> -->
+        <wornGraphicPath>Things/Pawn/Humanlike/Apparel/Headgear/SalletVisored/SalletVisored</wornGraphicPath>
+        <graphicData>
+            <texPath>Things/Pawn/Humanlike/Apparel/Headgear/SalletVisored/SalletVisored</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+    </ThingStyleDef>
+    <ThingStyleDef>
+        <defName>PlateHelmet_SalletBellowFace</defName>
+        <!-- <overrideLabel></overrideLabel> -->
+        <wornGraphicPath>Things/Pawn/Humanlike/Apparel/Headgear/SalletBellowFace/SalletBellowFace</wornGraphicPath>
+        <graphicData>
+            <texPath>Things/Pawn/Humanlike/Apparel/Headgear/SalletBellowFace/SalletBellowFace</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+    </ThingStyleDef>
+    <ThingStyleDef>
+        <defName>PlateHelmet_SalletGryphon</defName>
+        <!-- <overrideLabel></overrideLabel> -->
+        <wornGraphicPath>Things/Pawn/Humanlike/Apparel/Headgear/SalletGryphon/SalletGryphon</wornGraphicPath>
+        <graphicData>
+            <texPath>Things/Pawn/Humanlike/Apparel/Headgear/SalletGryphon/SalletGryphon</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+    </ThingStyleDef>
+</Defs>

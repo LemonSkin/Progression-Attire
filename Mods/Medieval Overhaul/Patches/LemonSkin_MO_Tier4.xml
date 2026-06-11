@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ClosedBascinetHelmet"]/label</xpath>
+        <value>
+            <label>closed plate helmet</label>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ClosedBascinetHelmet"]/recipeMaker/skillRequirements/Crafting</xpath>
+        <value>
+            <Crafting>9</Crafting>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ClosedBascinetHelmet"]/statBases</xpath>
+        <value>
+            <statBases>
+                <WorkToMake>15000</WorkToMake>
+                <MaxHitPoints>200</MaxHitPoints>
+                <Mass>3.5</Mass>
+                <StuffEffectMultiplierArmor>0.65</StuffEffectMultiplierArmor>
+                <StuffEffectMultiplierInsulation_Cold>0.15</StuffEffectMultiplierInsulation_Cold>
+                <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
+                <EquipDelay>6</EquipDelay>
+            </statBases>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ClosedBascinetHelmet"]/equippedStatOffsets</xpath>
+        <value>
+            <equippedStatOffsets>
+                <ShootingAccuracyPawn>-6.0</ShootingAccuracyPawn>
+                <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.05</SlaveSuppressionOffset>
+            </equippedStatOffsets>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ClosedBascinetHelmet"]/costStuffCount</xpath>
+        <value>
+            <costStuffCount>90</costStuffCount>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ClosedBascinetHelmet"]</xpath>
+        <value>
+            <randomStyleChance>0.5</randomStyleChance>
+            <randomStyle>
+                <li>
+                    <styleDef>PlateHelmet_KlappvisierHelmetClosed</styleDef>
+                </li>
+                <li>
+                    <styleDef>PlateHelmet_KlappvisorBascinet</styleDef>
+                </li>
+                <li>
+                    <styleDef>PlateHelmet_HounskullHelmet</styleDef>
+                </li>
+                <li>
+                    <styleDef>PlateHelmet_SalletHelmet</styleDef>
+                </li>
+                <li>
+                    <styleDef>PlateHelmet_SalletBellowFace</styleDef>
+                </li>
+                <li>
+                    <styleDef>PlateHelmet_SalletGryphon</styleDef>
+                </li>
+            </randomStyle>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ReplaceLib.ReplacerDef[defName="ProgAttire_MedievalOverhaul"]/replacers</xpath>
+        <value>
+            <li>
+                <replace>DankPyon_Headgear_Bascinet_KlappvisierHelmetClosed</replace>
+                <with>DankPyon_Headgear_ClosedBascinetHelmet</with>
+            </li>
+            <li>
+                <replace>DankPyon_Headgear_KlappvisorBascinet</replace>
+                <with>DankPyon_Headgear_ClosedBascinetHelmet</with>
+            </li>
+            <li>
+                <replace>DankPyon_Headgear_HounskullHelmet</replace>
+                <with>DankPyon_Headgear_ClosedBascinetHelmet</with>
+            </li>
+            <li>
+                <replace>DankPyon_Headgear_SalletHelmet</replace>
+                <with>DankPyon_Headgear_ClosedBascinetHelmet</with>
+            </li>
+            <li>
+                <replace>DankPyon_Headgear_SalletBellowFace</replace>
+                <with>DankPyon_Headgear_ClosedBascinetHelmet</with>
+            </li>
+            <li>
+                <replace>DankPyon_Headgear_SalletGryphon</replace>
+                <with>DankPyon_Headgear_ClosedBascinetHelmet</with>
+            </li>
+        </value>
+    </Operation>
+</Patch>

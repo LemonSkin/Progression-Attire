@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_OpenBascinet"]/label</xpath>
+        <value>
+            <label>open plate helmet</label>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_OpenBascinet"]/recipeMaker</xpath>
+        <value>
+            <recipeMaker>
+                <skillRequirements>
+                    <Crafting>8</Crafting>
+                </skillRequirements>
+                <researchPrerequisite>PlateArmor</researchPrerequisite>
+            </recipeMaker>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_OpenBascinet"]/statBases</xpath>
+        <value>
+            <statBases>
+                <WorkToMake>15000</WorkToMake>
+                <MaxHitPoints>175</MaxHitPoints>
+                <Mass>3.5</Mass>
+                <StuffEffectMultiplierArmor>0.60</StuffEffectMultiplierArmor>
+                <StuffEffectMultiplierInsulation_Cold>0.15</StuffEffectMultiplierInsulation_Cold>
+                <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
+                <EquipDelay>6</EquipDelay>
+            </statBases>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_OpenBascinet"]/equippedStatOffsets</xpath>
+        <value>
+            <equippedStatOffsets>
+                <ShootingAccuracyPawn>-3.0</ShootingAccuracyPawn>
+                <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.05</SlaveSuppressionOffset>
+            </equippedStatOffsets>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_OpenBascinet"]/costStuffCount</xpath>
+        <value>
+            <costStuffCount>85</costStuffCount>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_OpenBascinet"]</xpath>
+        <value>
+            <randomStyleChance>0.5</randomStyleChance>
+            <randomStyle>
+                <li>
+                    <styleDef>PlateHelmet_WolfribsBascinet</styleDef>
+                </li>
+                <li>
+                    <styleDef>PlateHelmet_HeavyBarbrute</styleDef>
+                </li>
+            </randomStyle>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ReplaceLib.ReplacerDef[defName="ProgAttire_MedievalOverhaul"]/replacers</xpath>
+        <value>
+            <li>
+                <replace>DankPyon_Headgear_WolfBascinet</replace>
+                <with>DankPyon_Headgear_OpenBascinet</with>
+            </li>
+            <li>
+                <replace>DankPyon_Headgear_HeavyBarbrute</replace>
+                <with>DankPyon_Headgear_OpenBascinet</with>
+            </li>
+        </value>
+    </Operation>
+</Patch>
