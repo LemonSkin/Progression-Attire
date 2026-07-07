@@ -5,10 +5,12 @@
     <label>tailoring bench</label>
     <description>Tailor simple garments.</description>
     <baseCost>400</baseCost>
-    <tab></tab>
     <techLevel>Medieval</techLevel>
     <researchViewX>0.00</researchViewX>
     <researchViewY>4.90</researchViewY>
+		<prerequisites>
+			<li MayRequire="dankpyon.medieval.overhaul">DankPyon_Lumber</li>
+		</prerequisites>
   </ResearchProjectDef>
   <ResearchProjectDef>
     <defName>Ferny_VanityTable</defName>
@@ -18,6 +20,9 @@
     <techLevel>Medieval</techLevel>
     <researchViewX>0.00</researchViewX>
     <researchViewY>4.90</researchViewY>
+		<prerequisites>
+			<li>LemonSkin_RusticClothing</li>
+		</prerequisites>
   </ResearchProjectDef>
   <ResearchProjectDef>
     <defName>Ferny_CostumingTable</defName>
@@ -27,5 +32,8 @@
     <techLevel>Medieval</techLevel>
     <researchViewX>0.00</researchViewX>
     <researchViewY>4.90</researchViewY>
+		<prerequisites>
+			<li>LemonSkin_RusticClothing</li>
+		</prerequisites>
   </ResearchProjectDef>
 </Defs>
