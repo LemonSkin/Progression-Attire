@@ -49,16 +49,4 @@
       </value>
     </match>
   </Operation>
-  <!-- OCARINA_PrisonerJumpsuit_Blue -->
-  <Operation Class="PatchOperationRemove">
-    <xpath>Defs/ThingDef[defName="OCARINA_PrisonerJumpsuit_Blue"]/statBases</xpath>
-  </Operation>
-  <!-- OCARINA_PrisonerJumpsuit_Orange -->
-  <Operation Class="PatchOperationRemove">
-    <xpath>Defs/ThingDef[defName="OCARINA_PrisonerJumpsuit_Orange"]/statBases</xpath>
-  </Operation>
-  <!-- OCARINA_PrisonerJumpsuit_Red -->
-  <Operation Class="PatchOperationRemove">
-    <xpath>Defs/ThingDef[defName="OCARINA_PrisonerJumpsuit_Red"]/statBases</xpath>
-  </Operation>
 </Patch>
