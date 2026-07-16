@@ -91,6 +91,8 @@
     <li>dress.cinderella</li>
     <li>cat.imperial.attires</li>
     <li>smiley.faced.mask</li>
+    <li>BotchJob.divineorder</li>
+    <li>River.Tribal.Mittens</li>
     <!-- Fix conflict with Too Many Mods -->
     <li>Wara.toomanymods</li>
   </loadAfter>

@@ -96,6 +96,8 @@
     <li IfModActive="zal.bananasuit">Mods/Banana Suit</li>
     <li IfModActive="dress.cinderella">Mods/Cinderella Apparel</li>
     <li IfModActive="cat.imperial.attires">Mods/Imperial Attires</li>
+    <li IfModActive="BotchJob.divineorder">Mods/Divine Order</li>
+    <li IfModActive="River.Tribal.Mittens">Mods/River's Tribal Mittens</li>
     <!-- <li IfModActive="smiley.faced.mask">Mods/Smiley Face Mask</li> -->
   </v1.6>
 </loadFolders>
