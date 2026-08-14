@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
   <Operation Class="PatchOperationRemove">
-    <xpath>Defs/ThingDef[@Name="DankPyon_FurnitureBaseRug"]/researchPrerequisites</xpath>
-  </Operation>
-  <Operation Class="PatchOperationRemove">
     <xpath>Defs/ThingDef[@Name="DankPyon_RugRoyalBase"]/researchPrerequisites</xpath>
-  </Operation>
-  <!-- Base rug -->
-  <Operation Class="PatchOperationAdd">
-    <xpath>Defs/ThingDef[@Name="DankPyon_PatchedRugBase"]/recipeMaker</xpath>
-    <value>
-      <researchPrerequisites>
-        <li>LemonSkin_MO_Rugs</li>
-      </researchPrerequisites>
-    </value>
   </Operation>
   <!-- Royal rugs -->
   <Operation Class="PatchOperationConditional">
