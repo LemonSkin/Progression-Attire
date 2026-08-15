@@ -9,7 +9,7 @@
     <researchViewX>0.00</researchViewX>
     <researchViewY>4.90</researchViewY>
 		<prerequisites>
-			<li MayRequire="dankpyon.medieval.overhaul">DankPyon_Lumber</li>
+			<li MayRequire="ferny.progressionfurniture">Ferny_Tables</li>
 		</prerequisites>
   </ResearchProjectDef>
   <ResearchProjectDef>
