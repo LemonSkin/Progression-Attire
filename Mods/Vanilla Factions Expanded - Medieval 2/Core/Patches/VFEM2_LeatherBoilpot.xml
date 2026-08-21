@@ -2,16 +2,20 @@
 <Patch>
 
 	<!-- Change Research Requirement Without Medieval Overhaul -->
+	<!-- Skip if another mod (e.g. Progression: Production) already replaced ComplexClothing. -->
 
 	<Operation Class="PatchOperationFindMod">
 		<mods>
 			<li>Medieval Overhaul</li>
 		</mods>
-		<nomatch Class="PatchOperationReplace">
-		<xpath>/Defs/ThingDef[defName = "VFEM2_LeatherBoilpot"]/researchPrerequisites/li[text()="ComplexClothing"]</xpath>
-		<value>
-			<li>LemonSkin_RusticClothing</li>
-		</value>
+		<nomatch Class="PatchOperationConditional">
+			<xpath>/Defs/ThingDef[defName = "VFEM2_LeatherBoilpot"]/researchPrerequisites/li[text()="ComplexClothing"]</xpath>
+			<match Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName = "VFEM2_LeatherBoilpot"]/researchPrerequisites/li[text()="ComplexClothing"]</xpath>
+				<value>
+					<li>LemonSkin_RusticClothing</li>
+				</value>
+			</match>
 		</nomatch>
 	</Operation>
 
