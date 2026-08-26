@@ -220,14 +220,11 @@
       </recipeMaker>
     </value>
   </Operation> -->
-  <Operation Class="PatchOperationConditional">
-    <xpath>Defs/VFETribals.TribalResearchProjectDef[defName="VFET_Tribalwear"]</xpath>
-    <match Class="PatchOperationAdd">
-      <xpath>Defs/ThingDef[defName="RBME_Cowbell"]/recipeMaker</xpath>
-      <value>
-        <researchPrerequisite>VFET_Tribalwear</researchPrerequisite>
-      </value>
-    </match>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="RBME_Cowbell"]/recipeMaker</xpath>
+    <value>
+      <researchPrerequisite>LemonSkin_RBME_Cowbell</researchPrerequisite>
+    </value>
   </Operation>
   <Operation Class="PatchOperationAdd">
     <xpath>Defs/ThingDef[defName="RBME_Cowbell"]/recipeMaker</xpath>

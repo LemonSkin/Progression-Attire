@@ -212,6 +212,12 @@
   </Operation>
 
   <!-- RBSFE_Faecrown -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="RBSFE_Faecrown"]/label</xpath>
+    <value>
+      <label>leaf crown</label>
+    </value>
+  </Operation>
   <!-- COMMENTED OUT: changes researchPrerequisite -->
   <!--
   <Operation Class="PatchOperationConditional">
@@ -264,6 +270,18 @@
   </Operation>
 
   <!-- RBSFE_Faerose -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="RBSFE_Faerose"]/label</xpath>
+    <value>
+      <label>rose</label>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="RBSFE_Faerose"]/description</xpath>
+    <value>
+      <description>A romantic rose held between the teeth. It strengthens the wearer's social impact and connection with nature, but offers little else.</description>
+    </value>
+  </Operation>
   <!-- COMMENTED OUT: changes researchPrerequisite -->
   <!--
   <Operation Class="PatchOperationConditional">
@@ -316,6 +334,12 @@
   </Operation>
 
   <!-- RBSFE_Faecap -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="RBSFE_Faecap"]/label</xpath>
+    <value>
+      <label>leaf emblem cap</label>
+    </value>
+  </Operation>
   <!-- COMMENTED OUT: changes researchPrerequisite -->
   <!--
   <Operation Class="PatchOperationConditional">
@@ -368,6 +392,12 @@
   </Operation>
 
   <!-- RBSFE_Faescarf -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="RBSFE_Faescarf"]/label</xpath>
+    <value>
+      <label>leaf scarf</label>
+    </value>
+  </Operation>
   <!-- COMMENTED OUT: changes researchPrerequisite -->
   <!--
   <Operation Class="PatchOperationConditional">
@@ -425,6 +455,75 @@
         <li>LemonSkin_NeolithicHeadgear</li>
       </thingCategories>
     </value>
+  </Operation>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Vanilla Factions Expanded - Tribals</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationConditional">
+          <xpath>Defs/ThingDef[defName="RBSFE_Faecrown"]/recipeMaker/researchPrerequisite</xpath>
+          <match Class="PatchOperationReplace">
+            <xpath>Defs/ThingDef[defName="RBSFE_Faecrown"]/recipeMaker/researchPrerequisite</xpath>
+            <value>
+              <researchPrerequisite>LemonSkin_Leafwear</researchPrerequisite>
+            </value>
+          </match>
+          <nomatch Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="RBSFE_Faecrown"]/recipeMaker</xpath>
+            <value>
+              <researchPrerequisite>LemonSkin_Leafwear</researchPrerequisite>
+            </value>
+          </nomatch>
+        </li>
+        <li Class="PatchOperationConditional">
+          <xpath>Defs/ThingDef[defName="RBSFE_Faerose"]/recipeMaker/researchPrerequisite</xpath>
+          <match Class="PatchOperationReplace">
+            <xpath>Defs/ThingDef[defName="RBSFE_Faerose"]/recipeMaker/researchPrerequisite</xpath>
+            <value>
+              <researchPrerequisite>LemonSkin_Leafwear</researchPrerequisite>
+            </value>
+          </match>
+          <nomatch Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="RBSFE_Faerose"]/recipeMaker</xpath>
+            <value>
+              <researchPrerequisite>LemonSkin_Leafwear</researchPrerequisite>
+            </value>
+          </nomatch>
+        </li>
+        <li Class="PatchOperationConditional">
+          <xpath>Defs/ThingDef[defName="RBSFE_Faecap"]/recipeMaker/researchPrerequisite</xpath>
+          <match Class="PatchOperationReplace">
+            <xpath>Defs/ThingDef[defName="RBSFE_Faecap"]/recipeMaker/researchPrerequisite</xpath>
+            <value>
+              <researchPrerequisite>LemonSkin_Leafwear</researchPrerequisite>
+            </value>
+          </match>
+          <nomatch Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="RBSFE_Faecap"]/recipeMaker</xpath>
+            <value>
+              <researchPrerequisite>LemonSkin_Leafwear</researchPrerequisite>
+            </value>
+          </nomatch>
+        </li>
+        <li Class="PatchOperationConditional">
+          <xpath>Defs/ThingDef[defName="RBSFE_Faescarf"]/recipeMaker/researchPrerequisite</xpath>
+          <match Class="PatchOperationReplace">
+            <xpath>Defs/ThingDef[defName="RBSFE_Faescarf"]/recipeMaker/researchPrerequisite</xpath>
+            <value>
+              <researchPrerequisite>LemonSkin_Leafwear</researchPrerequisite>
+            </value>
+          </match>
+          <nomatch Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="RBSFE_Faescarf"]/recipeMaker</xpath>
+            <value>
+              <researchPrerequisite>LemonSkin_Leafwear</researchPrerequisite>
+            </value>
+          </nomatch>
+        </li>
+      </operations>
+    </match>
   </Operation>
 
   <!-- RBSF_Faehelm -->

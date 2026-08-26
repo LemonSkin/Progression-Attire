@@ -83,6 +83,21 @@
       </thingCategories>
     </value>
   </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Apparel_TribalHeaddress"]/recipeMaker/researchPrerequisite</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Apparel_TribalHeaddress"]/recipeMaker/researchPrerequisite</xpath>
+      <value>
+        <researchPrerequisite>LemonSkin_TribalHeaddress</researchPrerequisite>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Apparel_TribalHeaddress"]/recipeMaker</xpath>
+      <value>
+        <researchPrerequisite>LemonSkin_TribalHeaddress</researchPrerequisite>
+      </value>
+    </nomatch>
+  </Operation>
   <!-- Apparel_WarMask -->
   <Operation Class="PatchOperationAdd">
     <xpath>Defs/ThingDef[defName="Apparel_WarMask"]</xpath>
@@ -91,6 +106,26 @@
         <li>LemonSkin_NeolithicArmorHeadgear</li>
       </thingCategories>
     </value>
+  </Operation>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Vanilla Factions Expanded - Tribals</li>
+    </mods>
+    <match Class="PatchOperationConditional">
+      <xpath>Defs/ThingDef[defName="Apparel_WarMask"]/recipeMaker/researchPrerequisite</xpath>
+      <match Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="Apparel_WarMask"]/recipeMaker/researchPrerequisite</xpath>
+        <value>
+          <researchPrerequisite>LemonSkin_WarMasks</researchPrerequisite>
+        </value>
+      </match>
+      <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="Apparel_WarMask"]/recipeMaker</xpath>
+        <value>
+          <researchPrerequisite>LemonSkin_WarMasks</researchPrerequisite>
+        </value>
+      </nomatch>
+    </match>
   </Operation>
   <!-- Apparel_WarVeil -->
   <Operation Class="PatchOperationAdd">

@@ -9,6 +9,24 @@
       </thingCategories>
     </value>
   </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/VFETribals.TribalResearchProjectDef[defName="LemonSkin_VARME_WoodenArmor"]</xpath>
+    <match Class="PatchOperationConditional">
+      <xpath>Defs/ThingDef[defName="VAE_Apparel_WoodenArmor"]/recipeMaker/researchPrerequisite</xpath>
+      <match Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="VAE_Apparel_WoodenArmor"]/recipeMaker/researchPrerequisite</xpath>
+        <value>
+          <researchPrerequisite>LemonSkin_VARME_WoodenArmor</researchPrerequisite>
+        </value>
+      </match>
+      <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="VAE_Apparel_WoodenArmor"]/recipeMaker</xpath>
+        <value>
+          <researchPrerequisite>LemonSkin_VARME_WoodenArmor</researchPrerequisite>
+        </value>
+      </nomatch>
+    </match>
+  </Operation>
   <!-- VAE_Headgear_StoneWarMask -->
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="VAE_Headgear_StoneWarMask"]/thingCategories</xpath>

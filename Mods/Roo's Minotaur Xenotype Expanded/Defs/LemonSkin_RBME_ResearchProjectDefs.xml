@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-  <!-- <ResearchProjectDef>
-    <defName>LemonSkin_RBME_MinotaurCraftables</defName>
-    <label>minotaur equipment</label>
-    <description>Create weapons and apparel inspired by Hellenic traditions.</description>
-    <baseCost>700</baseCost>
+  <ResearchProjectDef>
+    <defName>LemonSkin_RBME_Cowbell</defName>
+    <label>cowbell</label>
+    <description>Craft melodic cowbells attached to collars.</description>
+    <baseCost>400</baseCost>
     <techLevel>Neolithic</techLevel>
     <researchViewX>0.00</researchViewX>
     <researchViewY>2.8</researchViewY>
-  </ResearchProjectDef> -->
+    <prerequisites>
+      <li>Smithing</li>
+      <li MayRequire="OskarPotocki.VFE.Tribals">VFET_Tribalwear</li>
+    </prerequisites>
+  </ResearchProjectDef>
 </Defs>

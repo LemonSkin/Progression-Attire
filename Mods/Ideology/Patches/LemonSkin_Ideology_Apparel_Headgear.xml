@@ -95,15 +95,18 @@
     </value>
   </Operation>
   <Operation Class="PatchOperationConditional">
-    <xpath>Defs/VFETribals.TribalResearchProjectDef[defName="VFET_Tribalwear"]</xpath>
+    <xpath>Defs/ThingDef[defName="Apparel_Shadecone"]/recipeMaker/researchPrerequisite</xpath>
     <match Class="PatchOperationReplace">
       <xpath>Defs/ThingDef[defName="Apparel_Shadecone"]/recipeMaker/researchPrerequisite</xpath>
       <value>
-        <researchPrerequisite>VFET_Tribalwear</researchPrerequisite>
+        <researchPrerequisite>LemonSkin_Shadecone</researchPrerequisite>
       </value>
     </match>
-    <nomatch Class="PatchOperationRemove">
-      <xpath>Defs/ThingDef[defName="Apparel_Shadecone"]/recipeMaker/researchPrerequisite</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Apparel_Shadecone"]/recipeMaker</xpath>
+      <value>
+        <researchPrerequisite>LemonSkin_Shadecone</researchPrerequisite>
+      </value>
     </nomatch>
   </Operation>
   <Operation Class="PatchOperationAdd">

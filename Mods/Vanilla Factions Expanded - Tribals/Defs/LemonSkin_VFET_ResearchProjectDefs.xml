@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <VFETribals.TribalResearchProjectDef>
+    <defName>LemonSkin_WarMasks</defName>
+    <label>war masks</label>
+    <description>Craft intimidating masks for ritual combat.</description>
+    <baseCost>15</baseCost>
+    <tab>VFET_Basics</tab>
+    <techLevel>Animal</techLevel>
+    <researchViewX>2.00</researchViewX>
+    <researchViewY>3.50</researchViewY>
+    <prerequisites>
+      <li>VFET_Tribalwear</li>
+    </prerequisites>
+  </VFETribals.TribalResearchProjectDef>
+
+  <VFETribals.TribalResearchProjectDef>
+    <defName>LemonSkin_VFET_HeavyTribalwear</defName>
+    <label>heavy tribalwear</label>
+    <description>Craft heavier tribal garments for harsher climates.</description>
+    <baseCost>15</baseCost>
+    <tab>VFET_Basics</tab>
+    <techLevel>Animal</techLevel>
+    <researchViewX>3.00</researchViewX>
+    <researchViewY>2.10</researchViewY>
+    <prerequisites>
+      <li>VFET_Tribalwear</li>
+    </prerequisites>
+  </VFETribals.TribalResearchProjectDef>
+
+  <VFETribals.TribalResearchProjectDef>
+    <defName>LemonSkin_VFET_WarTribalwear</defName>
+    <label>war tribalwear</label>
+    <description>Craft reinforced tribalwear for battle.</description>
+    <baseCost>20</baseCost>
+    <tab>VFET_Basics</tab>
+    <techLevel>Animal</techLevel>
+    <researchViewX>4.00</researchViewX>
+    <researchViewY>2.10</researchViewY>
+    <prerequisites>
+      <li>LemonSkin_VFET_HeavyTribalwear</li>
+    </prerequisites>
+  </VFETribals.TribalResearchProjectDef>
+
+  <VFETribals.TribalResearchProjectDef MayRequire="VanillaExpanded.VAPPE">
+    <defName>LemonSkin_VAPPE_PeltCoat</defName>
+    <label>pelt coat</label>
+    <description>Craft heavy coats from animal pelts.</description>
+    <baseCost>20</baseCost>
+    <tab>VFET_Basics</tab>
+    <techLevel>Animal</techLevel>
+    <researchViewX>4.00</researchViewX>
+    <researchViewY>2.80</researchViewY>
+    <prerequisites>
+      <li>LemonSkin_VFET_HeavyTribalwear</li>
+    </prerequisites>
+  </VFETribals.TribalResearchProjectDef>
+
+  <VFETribals.TribalResearchProjectDef MayRequire="VanillaExpanded.VARME">
+    <defName>LemonSkin_VARME_WoodenArmor</defName>
+    <label>armor</label>
+    <description>Craft simple wooden armor.</description>
+    <baseCost>30</baseCost>
+    <tab>VFET_Basics</tab>
+    <techLevel>Animal</techLevel>
+    <researchViewX>5.00</researchViewX>
+    <researchViewY>2.10</researchViewY>
+    <prerequisites>
+      <li MayRequire="OskarPotocki.VFE.Tribals">LemonSkin_VFET_WarTribalwear</li>
+    </prerequisites>
+  </VFETribals.TribalResearchProjectDef>
+
+  <VFETribals.TribalResearchProjectDef MayRequire="River.Tribal.Shoes">
+    <defName>LemonSkin_RiverTribalShoes</defName>
+    <label>shoes</label>
+    <description>Craft simple tribal footwear.</description>
+    <baseCost>15</baseCost>
+    <tab>VFET_Basics</tab>
+    <techLevel>Animal</techLevel>
+    <researchViewX>3.00</researchViewX>
+    <researchViewY>2.80</researchViewY>
+    <prerequisites>
+      <li>VFET_Tribalwear</li>
+    </prerequisites>
+  </VFETribals.TribalResearchProjectDef>
+
+  <VFETribals.TribalResearchProjectDef MayRequire="River.Tribal.Shoes">
+    <defName>LemonSkin_RiverTribalMukluks</defName>
+    <label>mukluks</label>
+    <description>Craft warm tribal footwear for cold weather.</description>
+    <baseCost>15</baseCost>
+    <tab>VFET_Basics</tab>
+    <techLevel>Animal</techLevel>
+    <researchViewX>4.00</researchViewX>
+    <researchViewY>3.50</researchViewY>
+    <prerequisites>
+      <li>LemonSkin_RiverTribalShoes</li>
+    </prerequisites>
+  </VFETribals.TribalResearchProjectDef>
+</Defs>
