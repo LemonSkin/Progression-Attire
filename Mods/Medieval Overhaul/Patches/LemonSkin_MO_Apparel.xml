@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- META PATCHES -->
+  <!-- DankPyon_HatMakeableBase -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[@Name="DankPyon_HatMakeableBase"]</xpath>
+    <value>
+      <thingCategories Inherit="False">
+        <li>LemonSkin_MedievalHeadgear</li>
+      </thingCategories>
+    </value>
+  </Operation>
+  <!-- DankPyon_AnimalHoodBase -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[@Name="DankPyon_AnimalHoodBase"]</xpath>
+    <value>
+      <thingCategories Inherit="False">
+        <li>LemonSkin_MedievalHeadgear</li>
+      </thingCategories>
+    </value>
+  </Operation>
+  <!-- DankPyon_Base_Pants -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[@Name="DankPyon_Base_Pants"]/thingCategories</xpath>
+    <value>
+      <thingCategories>
+        <li>LemonSkin_MedievalApparel</li>
+      </thingCategories>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[@Name="DankPyon_Base_Pants"]/recipeMaker/researchPrerequisite</xpath>
+    <value>
+      <researchPrerequisite>LemonSkin_RusticClothing</researchPrerequisite>
+    </value>
+  </Operation>
+
+  <!-- APPAREL -->
+  <!-- DankPyon_Apparel_Sackcloth -->
+  <Operation Class="PatchOperationRemove">
+    <!-- Shaders masks don't exist for this item, causing them to render in the world as white -->
+    <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Sackcloth"]/graphicData/shaderType</xpath>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Sackcloth"]/label</xpath>
+    <value>
+      <label>sackcloth</label>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Sackcloth"]/statBases</xpath>
+    <value>
+      <statBases>
+        <MaxHitPoints>100</MaxHitPoints>
+        <WorkToMake>1600</WorkToMake>
+        <Mass>0.25</Mass>
+        <StuffEffectMultiplierArmor>0.1</StuffEffectMultiplierArmor>
+        <StuffEffectMultiplierInsulation_Cold>0.17</StuffEffectMultiplierInsulation_Cold>
+        <StuffEffectMultiplierInsulation_Heat>0.05</StuffEffectMultiplierInsulation_Heat>
+        <EquipDelay>1.5</EquipDelay>
+      </statBases>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Sackcloth"]/apparel/bodyPartGroups</xpath>
+    <value>
+      <bodyPartGroups>
+        <li>Torso</li>
+        <li>Shoulders</li>
+      </bodyPartGroups>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Sackcloth"]/apparel/tags</xpath>
+    <value>
+      <tags>
+        <li>MedievalPeasant</li>
+      </tags>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Sackcloth"]/thingCategories</xpath>
+    <value>
+      <thingCategories>
+        <li>LemonSkin_MedievalApparel</li>
+      </thingCategories>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Sackcloth"]/recipeMaker</xpath>
+    <value>
+      <researchPrerequisite>LemonSkin_RusticClothing</researchPrerequisite>
+    </value>
+  </Operation>
+
+
+  <!-- DankPyon_Apparel_Padded_Surcoat -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Padded_Surcoat"]/label</xpath>
+    <value>
+      <label>quilted doublet</label>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Padded_Surcoat"]/costStuffCount</xpath>
+    <value>
+      <costStuffCount>60</costStuffCount>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Padded_Surcoat"]/statBases</xpath>
+    <value>
+      <statBases>
+        <WorkToMake>3600</WorkToMake>
+        <MaxHitPoints>100</MaxHitPoints>
+        <Mass>0.4</Mass>
+        <StuffEffectMultiplierArmor>0.3</StuffEffectMultiplierArmor>
+        <StuffEffectMultiplierInsulation_Cold>0.3</StuffEffectMultiplierInsulation_Cold>
+        <StuffEffectMultiplierInsulation_Heat>0.1</StuffEffectMultiplierInsulation_Heat>
+        <EquipDelay>2</EquipDelay>
+      </statBases>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Padded_Surcoat"]/apparel/bodyPartGroups</xpath>
+    <value>
+      <bodyPartGroups>
+        <li>Neck</li>
+        <li>Shoulders</li>
+        <li>Torso</li>
+        <li>Arms</li>
+      </bodyPartGroups>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Padded_Surcoat"]/apparel/tags</xpath>
+    <value>
+      <tags>
+        <li>MedievalBasic</li>
+        <li>MedievalNoble</li>
+      </tags>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Padded_Surcoat"]/thingCategories</xpath>
+    <value>
+      <thingCategories>
+        <li>LemonSkin_MedievalApparel</li>
+      </thingCategories>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Padded_Surcoat"]/recipeMaker/researchPrerequisite</xpath>
+    <value>
+      <researchPrerequisite>LemonSkin_RusticClothing</researchPrerequisite>
+    </value>
+  </Operation>
+
+
+  <!-- Dankpyon_Apparel_Gambeson -->
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/ThingDef[defName="Dankpyon_Apparel_Gambeson"]/recipeMaker/skillRequirements</xpath>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="Dankpyon_Apparel_Gambeson"]/costStuffCount</xpath>
+    <value>
+      <costStuffCount>60</costStuffCount>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="Dankpyon_Apparel_Gambeson"]/statBases</xpath>
+    <value>
+      <statBases>
+        <WorkToMake>3600</WorkToMake>
+        <MaxHitPoints>100</MaxHitPoints>
+        <Mass>0.4</Mass>
+        <StuffEffectMultiplierArmor>0.4</StuffEffectMultiplierArmor>
+        <StuffEffectMultiplierInsulation_Cold>0.3</StuffEffectMultiplierInsulation_Cold>
+        <StuffEffectMultiplierInsulation_Heat>0.1</StuffEffectMultiplierInsulation_Heat>
+        <EquipDelay>2</EquipDelay>
+      </statBases>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="Dankpyon_Apparel_Gambeson"]/apparel/tags</xpath>
+    <value>
+      <tags>
+        <li>MedievalBasic</li>
+        <li>MedievalNoble</li>
+      </tags>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="Dankpyon_Apparel_Gambeson"]/thingCategories</xpath>
+    <value>
+      <thingCategories>
+        <li>LemonSkin_MedievalApparel</li>
+      </thingCategories>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="Dankpyon_Apparel_Gambeson"]/recipeMaker/researchPrerequisite</xpath>
+    <value>
+      <researchPrerequisite>LemonSkin_RusticClothing</researchPrerequisite>
+    </value>
+  </Operation>
+
+
+  <!-- DankPyon_Apparel_Hose -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Hose"]/description</xpath>
+    <value>
+      <description>A snug, finely-woven legging favored by commoners and nobles alike for the warmth it provides.</description>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Hose"]/stuffCategories</xpath>
+    <value>
+      <stuffCategories>
+        <li>Fabric</li>
+      </stuffCategories>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Hose"]/statBases</xpath>
+    <value>
+      <statBases>
+        <MaxHitPoints>100</MaxHitPoints>
+        <WorkToMake>2000</WorkToMake>
+        <Mass>0.5</Mass>
+        <StuffEffectMultiplierArmor>0.15</StuffEffectMultiplierArmor>
+        <StuffEffectMultiplierInsulation_Cold>0.32</StuffEffectMultiplierInsulation_Cold>
+        <StuffEffectMultiplierInsulation_Heat>0.05</StuffEffectMultiplierInsulation_Heat>
+        <EquipDelay>2</EquipDelay>
+      </statBases>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Hose"]/apparel/tags</xpath>
+    <value>
+      <tags>
+        <li>MedievalBasic</li>
+        <li>MedievalNoble</li>
+      </tags>
+    </value>
+  </Operation>
+
+
+  <!-- DankPyon_Apparel_Trousers -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Trousers"]/description</xpath>
+    <value>
+      <description>Loose-fitting and roughly cut, these durable leggings favored by peasants and commoners trade refinement for toughness and breathability.</description>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Trousers"]</xpath>
+    <value>
+      <stuffCategories Inherit="False">
+        <li>Fabric</li>
+        <li>Leathery</li>
+      </stuffCategories>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Trousers"]</xpath>
+    <value>
+      <statBases>
+        <MaxHitPoints>100</MaxHitPoints>
+        <WorkToMake>2000</WorkToMake>
+        <Mass>1.0</Mass>
+        <StuffEffectMultiplierArmor>0.25</StuffEffectMultiplierArmor>
+        <StuffEffectMultiplierInsulation_Cold>0.1</StuffEffectMultiplierInsulation_Cold>
+        <StuffEffectMultiplierInsulation_Heat>0.32</StuffEffectMultiplierInsulation_Heat>
+        <EquipDelay>2</EquipDelay>
+      </statBases>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Trousers"]</xpath>
+    <value>
+      <apparel>
+        <tags Inherit="False">
+          <li>MedievalPeasant</li>
+          <li>MedievalBasic</li>
+        </tags>
+      </apparel>
+    </value>
+  </Operation>
+
+
+  <!-- DankPyon_Apparel_Braies -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Braies"]/description</xpath>
+    <value>
+      <description>A simple, inexpensive legging worn by commoners and nobles alike, offering modest and reliable protection.</description>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Braies"]</xpath>
+    <value>
+      <stuffCategories Inherit="False">
+        <li>Fabric</li>
+        <li>Leathery</li>
+      </stuffCategories>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Braies"]</xpath>
+    <value>
+      <statBases>
+        <MaxHitPoints>100</MaxHitPoints>
+        <WorkToMake>2000</WorkToMake>
+        <Mass>0.5</Mass>
+        <StuffEffectMultiplierArmor>0.2</StuffEffectMultiplierArmor>
+        <StuffEffectMultiplierInsulation_Cold>0.2</StuffEffectMultiplierInsulation_Cold>
+        <StuffEffectMultiplierInsulation_Heat>0.08</StuffEffectMultiplierInsulation_Heat>
+        <EquipDelay>2</EquipDelay>
+      </statBases>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Braies"]</xpath>
+    <value>
+      <apparel>
+        <tags Inherit="False">
+          <li>MedievalPeasant</li>
+          <li>MedievalBasic</li>
+          <li>MedievalNoble</li>
+        </tags>
+      </apparel>
+    </value>
+  </Operation>
+
+
+</Patch>

@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <!-- DankPyon_Adorned_HeavyMailCoif -->
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Adorned_HeavyMailCoif"]/label</xpath>
+        <value>
+            <label>adorned chain coif</label>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Adorned_HeavyMailCoif"]/description</xpath>
+        <value>
+            <description>A thick hood forged from chains of metal and padded with linen for warmth. It provides excellent protection to the head against slashing and thrusting attacks.</description>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Adorned_HeavyMailCoif"]/recipeMaker/skillRequirements/Crafting</xpath>
+        <value>
+            <Crafting>8</Crafting>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Adorned_HeavyMailCoif"]/statBases</xpath>
+        <value>
+            <statBases>
+                <WorkToMake>12000</WorkToMake>
+                <MaxHitPoints>150</MaxHitPoints>
+                <Mass>2</Mass>
+                <StuffEffectMultiplierArmor>0.4</StuffEffectMultiplierArmor>
+                <StuffEffectMultiplierInsulation_Cold>0.15</StuffEffectMultiplierInsulation_Cold>
+                <Insulation_Cold>5</Insulation_Cold>
+                <StuffEffectMultiplierInsulation_Heat>0.0</StuffEffectMultiplierInsulation_Heat>
+                <EquipDelay>3</EquipDelay>
+            </statBases>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="DankPyon_Adorned_HeavyMailCoif"]</xpath>
+        <value>
+            <equippedStatOffsets>
+                <PainShockThreshold>0.025</PainShockThreshold>
+                <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.05</SlaveSuppressionOffset>
+            </equippedStatOffsets>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Adorned_HeavyMailCoif"]/apparel/bodyPartGroups</xpath>
+        <value>
+            <bodyPartGroups>
+                <li>UpperHead</li>
+            </bodyPartGroups>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="DankPyon_Adorned_HeavyMailCoif"]</xpath>
+        <value>
+            <thingCategories Inherit="False">
+                <li>LemonSkin_MedievalArmorHeadgear</li>
+            </thingCategories>
+        </value>
+    </Operation>
+
+
+    <!-- DankPyon_Adorned_FlatTop -->
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Adorned_FlatTop"]/label</xpath>
+        <value>
+            <label>adorned warrior's helm</label>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Adorned_FlatTop"]/recipeMaker/skillRequirements/Crafting</xpath>
+        <value>
+            <Crafting>10</Crafting>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Adorned_FlatTop"]/costList</xpath>
+        <value>
+            <costList>
+                <DankPyon_Linen>25</DankPyon_Linen>
+            </costList>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Adorned_FlatTop"]/statBases</xpath>
+        <value>
+            <statBases>
+                <WorkToMake>17000</WorkToMake>
+                <MaxHitPoints>175</MaxHitPoints>
+                <Mass>3.5</Mass>
+                <StuffEffectMultiplierArmor>0.6</StuffEffectMultiplierArmor>
+                <StuffEffectMultiplierInsulation_Cold>0.15</StuffEffectMultiplierInsulation_Cold>
+                <Insulation_Cold>5</Insulation_Cold>
+                <StuffEffectMultiplierInsulation_Heat>0.0</StuffEffectMultiplierInsulation_Heat>
+                <EquipDelay>6</EquipDelay>
+            </statBases>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Adorned_FlatTop"]/equippedStatOffsets</xpath>
+        <value>
+            <equippedStatOffsets>
+                <ShootingAccuracyPawn>-3</ShootingAccuracyPawn>
+                <PainShockThreshold>0.05</PainShockThreshold>
+                <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.05</SlaveSuppressionOffset>
+            </equippedStatOffsets>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Adorned_FlatTop"]/recipeMaker/researchPrerequisites</xpath>
+        <value>
+            <researchPrerequisites>
+                <li>DankPyon_AdornedArmor</li>
+                <li>PlateArmor</li>
+            </researchPrerequisites>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="DankPyon_Adorned_FlatTop"]</xpath>
+        <value>
+            <thingCategories Inherit="False">
+                <li>LemonSkin_MedievalArmorHeadgear</li>
+            </thingCategories>
+        </value>
+    </Operation>
+
+
+    <!-- DankPyon_Adorned_GreatHelm -->
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Adorned_GreatHelm"]/label</xpath>
+        <value>
+            <label>adorned great helm</label>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Adorned_GreatHelm"]/recipeMaker/skillRequirements/Crafting</xpath>
+        <value>
+            <Crafting>12</Crafting>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Adorned_GreatHelm"]/costStuffCount</xpath>
+        <value>
+            <costStuffCount>100</costStuffCount>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Adorned_GreatHelm"]/statBases</xpath>
+        <value>
+            <statBases>
+                <WorkToMake>20000</WorkToMake>
+                <MaxHitPoints>250</MaxHitPoints>
+                <Mass>3.5</Mass>
+                <StuffEffectMultiplierArmor>0.7</StuffEffectMultiplierArmor>
+                <StuffEffectMultiplierInsulation_Cold>0.15</StuffEffectMultiplierInsulation_Cold>
+                <Insulation_Cold>5</Insulation_Cold>
+                <StuffEffectMultiplierInsulation_Heat>0.0</StuffEffectMultiplierInsulation_Heat>
+                <EquipDelay>8</EquipDelay>
+            </statBases>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Adorned_GreatHelm"]/equippedStatOffsets</xpath>
+        <value>
+            <equippedStatOffsets>
+                <ShootingAccuracyPawn>-6</ShootingAccuracyPawn>
+                <PainShockThreshold>0.075</PainShockThreshold>
+                <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.05</SlaveSuppressionOffset>
+            </equippedStatOffsets>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Adorned_GreatHelm"]/apparel/layers</xpath>
+        <value>
+            <layers>
+                <li>Overhead</li>
+            </layers>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="DankPyon_Adorned_GreatHelm"]</xpath>
+        <value>
+            <thingCategories Inherit="False">
+                <li>LemonSkin_MedievalArmorHeadgear</li>
+            </thingCategories>
+        </value>
+    </Operation>
+</Patch>

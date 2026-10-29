@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <!-- For some reason this is needed to get the material shader working properly for padded kettle helm styledef -->
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_PaddedKettleHelmet"]/graphicData</xpath>
+        <value>
+            <shaderType>CutoutComplex</shaderType>
+        </value>
+    </Operation>
+    <!-- DankPyon_Headgear_PaddedNasalHelmet -->
+    <!-- DankPyon_Headgear_PaddedFlatTopHelmet -->
+    <!-- DankPyon_Headgear_PaddedKettleHelmet -->
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_PaddedNasalHelmet"]/label</xpath>
+        <value>
+            <label>padded helmet</label>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_PaddedNasalHelmet"]/statBases</xpath>
+        <value>
+            <statBases>
+                <WorkToMake>8000</WorkToMake>
+                <MaxHitPoints>100</MaxHitPoints>
+                <Mass>2.0</Mass>
+                <StuffEffectMultiplierArmor>0.4</StuffEffectMultiplierArmor>
+                <Insulation_Cold>9</Insulation_Cold>
+                <EquipDelay>3</EquipDelay>
+            </statBases>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationRemove">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_PaddedNasalHelmet"]/equippedStatOffsets</xpath>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_PaddedNasalHelmet"]/apparel/layers</xpath>
+        <value>
+            <layers>
+                <li>Overhead</li>
+            </layers>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_PaddedNasalHelmet"]</xpath>
+        <value>
+            <randomStyleChance>0.5</randomStyleChance>
+            <randomStyle>
+                <li>
+                    <styleDef>PaddedHelmet_Kettle</styleDef>
+                </li>
+                <li>
+                    <styleDef>PaddedHelmet_FlatTop</styleDef>
+                </li>
+            </randomStyle>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ReplaceLib.ReplacerDef[defName="ProgAttire_MedievalOverhaul"]/replacers</xpath>
+        <value>
+            <li>
+                <replace>DankPyon_Headgear_PaddedKettleHelmet</replace>
+                <with>DankPyon_Headgear_PaddedNasalHelmet</with>
+            </li>
+            <li>
+                <replace>DankPyon_Headgear_PaddedFlatTopHelmet</replace>
+                <with>DankPyon_Headgear_PaddedNasalHelmet</with>
+            </li>
+        </value>
+    </Operation>
+
+</Patch>

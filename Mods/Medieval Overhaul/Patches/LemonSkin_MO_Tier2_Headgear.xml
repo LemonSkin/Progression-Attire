@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <!-- HEADGEAR -->
+    <!-- Just-in-case avoid weird fuckery patch -->
+    <Operation Class="PatchOperationRemove">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ChainCoif" or
+            defName="ChainCoif_Closed"]/comps/li[@Class="VEF.Apparels.CompProperties_SwitchApparel"]</xpath>
+    </Operation>
+    <!-- Chain Coif -->
+    <!-- DankPyon_Headgear_ChainCoifClosed -->
+    <!-- DankPyon_Headgear_ChainCoifFull -->
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ChainCoif"]/recipeMaker/skillRequirements/Crafting</xpath>
+        <value>
+            <Crafting>6</Crafting>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ChainCoif"]/costStuffCount</xpath>
+        <value>
+            <costStuffCount>65</costStuffCount>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ChainCoif"]/statBases</xpath>
+        <value>
+            <statBases>
+                <WorkToMake>10000</WorkToMake>
+                <MaxHitPoints>150</MaxHitPoints>
+                <Mass>1.5</Mass>
+                <StuffEffectMultiplierArmor>0.4</StuffEffectMultiplierArmor>
+                <StuffEffectMultiplierInsulation_Cold>0.15</StuffEffectMultiplierInsulation_Cold>
+                <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
+                <EquipDelay>3</EquipDelay>
+            </statBases>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ChainCoif"]</xpath>
+        <value>
+            <equippedStatOffsets>
+                <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.05</SlaveSuppressionOffset>
+            </equippedStatOffsets>
+        </value>
+    </Operation>
+    <!-- <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ChainCoif"]/apparel/bodyPartGroups</xpath>
+        <value>
+            <bodyPartGroups>
+                <li>FullHead</li>
+            </bodyPartGroups>
+        </value>
+    </Operation> -->
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ChainCoif"]</xpath>
+        <value>
+            <randomStyleChance>0.5</randomStyleChance>
+            <randomStyle>
+                <li>
+                    <styleDef>ChainCoif_Closed</styleDef>
+                </li>
+                <li>
+                    <styleDef>ChainCoif_Full</styleDef>
+                </li>
+            </randomStyle>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ReplaceLib.ReplacerDef[defName="ProgAttire_MedievalOverhaul"]/replacers</xpath>
+        <value>
+            <li>
+                <replace>DankPyon_Headgear_ChainCoifClosed</replace>
+                <with>DankPyon_Headgear_ChainCoif</with>
+            </li>
+            <li>
+                <replace>DankPyon_Headgear_ChainCoifFull</replace>
+                <with>DankPyon_Headgear_ChainCoif</with>
+            </li>
+        </value>
+    </Operation>
+
+    <!-- DankPyon_Headgear_ChainNasalHelmet -->
+    <!-- DankPyon_Headgear_ChainNasalRedHelmet -->
+    <!-- DankPyon_Headgear_ChainKettleHelmet -->
+    <!-- DankPyon_Headgear_Chain_FlatTopHelmet -->
+    <!-- DankPyon_Headgear_ClosedChain_FlatTopHelmet -->
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ChainNasalHelmet"]/label</xpath>
+        <value>
+            <label>chain helmet</label>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ChainNasalHelmet"]/statBases</xpath>
+        <value>
+            <statBases>
+                <WorkToMake>12000</WorkToMake>
+                <MaxHitPoints>150</MaxHitPoints>
+                <Mass>2.5</Mass>
+                <StuffEffectMultiplierArmor>0.50</StuffEffectMultiplierArmor>
+                <StuffEffectMultiplierInsulation_Cold>0.15</StuffEffectMultiplierInsulation_Cold>
+                <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
+                <EquipDelay>6</EquipDelay>
+            </statBases>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ChainNasalHelmet"]/equippedStatOffsets</xpath>
+        <value>
+            <equippedStatOffsets>
+                <ShootingAccuracyPawn>-3.0</ShootingAccuracyPawn>
+                <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.05</SlaveSuppressionOffset>
+            </equippedStatOffsets>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ChainNasalHelmet"]/costStuffCount</xpath>
+        <value>
+            <costStuffCount>75</costStuffCount>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ChainNasalHelmet"]</xpath>
+        <value>
+            <randomStyleChance>0.5</randomStyleChance>
+            <randomStyle>
+                <li>
+                    <styleDef>ChainHelmet_NasalBandana</styleDef>
+                </li>
+                <li>
+                    <styleDef>ChainHelmet_Kettle</styleDef>
+                </li>
+                <li>
+                    <styleDef>ChainHelmet_FlatTop</styleDef>
+                </li>
+                <li>
+                    <styleDef>ChainHelmet_FlatTop_Closed</styleDef>
+                </li>
+                <li>
+                    <styleDef>ChainHelmet_Chainveil</styleDef>
+                </li>
+            </randomStyle>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ReplaceLib.ReplacerDef[defName="ProgAttire_MedievalOverhaul"]/replacers</xpath>
+        <value>
+            <li>
+                <replace>DankPyon_Headgear_ChainNasalRedHelmet</replace>
+                <with>DankPyon_Headgear_ChainNasalHelmet</with>
+            </li>
+            <li>
+                <replace>DankPyon_Headgear_ChainKettleHelmet</replace>
+                <with>DankPyon_Headgear_ChainNasalHelmet</with>
+            </li>
+            <li>
+                <replace>DankPyon_Headgear_Chain_FlatTopHelmet</replace>
+                <with>DankPyon_Headgear_ChainNasalHelmet</with>
+            </li>
+            <li>
+                <replace>DankPyon_Headgear_ClosedChain_FlatTopHelmet</replace>
+                <with>DankPyon_Headgear_ChainNasalHelmet</with>
+            </li>
+            <li>
+                <replace>DankPyon_Headgear_ChainClosedFlatTopHelmet</replace>
+                <with>DankPyon_Headgear_ChainNasalHelmet</with>
+            </li>
+        </value>
+    </Operation>
+</Patch>

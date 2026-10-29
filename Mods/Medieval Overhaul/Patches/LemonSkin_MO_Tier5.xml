@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <!-- DankPyon_Apparel_Lindwurm -->
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Lindwurm"]/apparel/layers</xpath>
+        <value>
+            <layers>
+                <li>Middle</li>
+                <li>Shell</li>
+            </layers>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Lindwurm"]/thingCategories</xpath>
+        <value>
+            <thingCategories>
+                <li>LemonSkin_MedievalArmor</li>
+            </thingCategories>
+        </value>
+    </Operation>
+
+
+    <!-- DankPyon_Apparel_FullPlateNamed -->
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Apparel_FullPlateNamed"]/apparel/layers</xpath>
+        <value>
+            <layers>
+                <li>Middle</li>
+                <li>Shell</li>
+            </layers>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Apparel_FullPlateNamed"]/thingCategories</xpath>
+        <value>
+            <thingCategories>
+                <li>LemonSkin_MedievalArmor</li>
+            </thingCategories>
+        </value>
+    </Operation>
+
+
+</Patch>

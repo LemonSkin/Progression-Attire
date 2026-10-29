@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <!-- HEADGEAR -->
+    <!-- DankPyon_Headgear_ClosedBascinetHelmet -->
+    <!-- PlateHelmet_KlappvisierHelmetClosed -->
+    <!-- PlateHelmet_KlappvisorBascinet -->
+    <!-- PlateHelmet_HounskullHelmet -->
+    <!-- PlateHelmet_SalletHelmet -->
+    <!-- PlateHelmet_SalletBellowFace -->
+    <!-- PlateHelmet_SalletGryphon -->
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ClosedBascinetHelmet"]/label</xpath>
+        <value>
+            <label>closed plate helm</label>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ClosedBascinetHelmet"]/recipeMaker/skillRequirements/Crafting</xpath>
+        <value>
+            <Crafting>9</Crafting>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ClosedBascinetHelmet"]/statBases</xpath>
+        <value>
+            <statBases>
+                <WorkToMake>16000</WorkToMake>
+                <MaxHitPoints>200</MaxHitPoints>
+                <Mass>3.5</Mass>
+                <StuffEffectMultiplierArmor>0.65</StuffEffectMultiplierArmor>
+                <StuffEffectMultiplierInsulation_Cold>0.15</StuffEffectMultiplierInsulation_Cold>
+                <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
+                <EquipDelay>6</EquipDelay>
+            </statBases>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ClosedBascinetHelmet"]/equippedStatOffsets</xpath>
+        <value>
+            <equippedStatOffsets>
+                <ShootingAccuracyPawn>-6.0</ShootingAccuracyPawn>
+                <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.05</SlaveSuppressionOffset>
+                <PainShockThreshold>0.025</PainShockThreshold>
+            </equippedStatOffsets>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ClosedBascinetHelmet"]/costStuffCount</xpath>
+        <value>
+            <costStuffCount>90</costStuffCount>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ClosedBascinetHelmet"]</xpath>
+        <value>
+            <randomStyleChance>0.5</randomStyleChance>
+            <randomStyle>
+                <li>
+                    <styleDef>PlateHelmet_KlappvisierHelmetClosed</styleDef>
+                </li>
+                <li>
+                    <styleDef>PlateHelmet_KlappvisorBascinet</styleDef>
+                </li>
+                <li>
+                    <styleDef>PlateHelmet_HounskullHelmet</styleDef>
+                </li>
+                <li>
+                    <styleDef>PlateHelmet_SalletHelmet</styleDef>
+                </li>
+                <li>
+                    <styleDef>PlateHelmet_SalletBellowFace</styleDef>
+                </li>
+                <li>
+                    <styleDef>PlateHelmet_SalletGryphon</styleDef>
+                </li>
+            </randomStyle>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ReplaceLib.ReplacerDef[defName="ProgAttire_MedievalOverhaul"]/replacers</xpath>
+        <value>
+            <li>
+                <replace>DankPyon_Headgear_Bascinet_KlappvisierHelmetClosed</replace>
+                <with>DankPyon_Headgear_ClosedBascinetHelmet</with>
+            </li>
+            <li>
+                <replace>DankPyon_Headgear_KlappvisorBascinet</replace>
+                <with>DankPyon_Headgear_ClosedBascinetHelmet</with>
+            </li>
+            <li>
+                <replace>DankPyon_Headgear_HounskullHelmet</replace>
+                <with>DankPyon_Headgear_ClosedBascinetHelmet</with>
+            </li>
+            <li>
+                <replace>DankPyon_Headgear_SalletHelmet</replace>
+                <with>DankPyon_Headgear_ClosedBascinetHelmet</with>
+            </li>
+            <li>
+                <replace>DankPyon_Headgear_SalletBellowFace</replace>
+                <with>DankPyon_Headgear_ClosedBascinetHelmet</with>
+            </li>
+            <li>
+                <replace>DankPyon_Headgear_SalletGryphon</replace>
+                <with>DankPyon_Headgear_ClosedBascinetHelmet</with>
+            </li>
+        </value>
+    </Operation>
+
+
+    <!-- DankPyon_Headgear_GreatHelm -->
+    <!-- DankPyon_HeraldicGreatHelm -->
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_GreatHelm"]/recipeMaker/skillRequirements/Crafting</xpath>
+        <value>
+            <Crafting>10</Crafting>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_GreatHelm" or
+            @Name="DankPyon_HeraldicGreatHelm"]/costStuffCount</xpath>
+        <value>
+            <costStuffCount>100</costStuffCount>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_GreatHelm" or
+            @Name="DankPyon_HeraldicGreatHelm"]/statBases</xpath>
+        <value>
+            <statBases>
+                <WorkToMake>18000</WorkToMake>
+                <MaxHitPoints>250</MaxHitPoints>
+                <Mass>3.5</Mass>
+                <StuffEffectMultiplierArmor>0.7</StuffEffectMultiplierArmor>
+                <StuffEffectMultiplierInsulation_Cold>0.15</StuffEffectMultiplierInsulation_Cold>
+                <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
+                <EquipDelay>8</EquipDelay>
+            </statBases>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_GreatHelm" or
+            @Name="DankPyon_HeraldicGreatHelm"]/equippedStatOffsets</xpath>
+        <value>
+            <equippedStatOffsets>
+                <ShootingAccuracyPawn>-6.0</ShootingAccuracyPawn>
+                <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.05</SlaveSuppressionOffset>
+                <PainShockThreshold>0.05</PainShockThreshold>
+            </equippedStatOffsets>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_GreatHelm" or
+            @Name="DankPyon_HeraldicGreatHelm"]/apparel/layers</xpath>
+        <value>
+            <layers>
+                <li>Overhead</li>
+            </layers>
+        </value>
+    </Operation>
+
+    <!-- DankPyon_Headgear_Armet -->
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_Armet"]/recipeMaker/skillRequirements/Crafting</xpath>
+        <value>
+            <Crafting>10</Crafting>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_Armet"]/costStuffCount</xpath>
+        <value>
+            <costStuffCount>100</costStuffCount>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_Armet"]/statBases</xpath>
+        <value>
+            <statBases>
+                <WorkToMake>18000</WorkToMake>
+                <MaxHitPoints>250</MaxHitPoints>
+                <Mass>3.5</Mass>
+                <StuffEffectMultiplierArmor>0.7</StuffEffectMultiplierArmor>
+                <StuffEffectMultiplierInsulation_Cold>0.15</StuffEffectMultiplierInsulation_Cold>
+                <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
+                <EquipDelay>8</EquipDelay>
+            </statBases>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_Armet"]/equippedStatOffsets</xpath>
+        <value>
+            <equippedStatOffsets>
+                <ShootingAccuracyPawn>-6.0</ShootingAccuracyPawn>
+                <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.05</SlaveSuppressionOffset>
+                <PainShockThreshold>0.05</PainShockThreshold>
+            </equippedStatOffsets>
+        </value>
+    </Operation>
+
+
+    <!-- DankPyon_Headgear_ArmetGilded -->
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ArmetGilded"]/recipeMaker/skillRequirements/Crafting</xpath>
+        <value>
+            <Crafting>14</Crafting>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ArmetGilded"]/costStuffCount</xpath>
+        <value>
+            <costStuffCount>100</costStuffCount>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ArmetGilded"]/costList</xpath>
+        <value>
+            <costList>
+                <Gold>5</Gold>
+            </costList>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ArmetGilded"]/statBases</xpath>
+        <value>
+            <statBases>
+                <WorkToMake>22000</WorkToMake>
+                <MaxHitPoints>250</MaxHitPoints>
+                <Mass>3.5</Mass>
+                <StuffEffectMultiplierArmor>0.7</StuffEffectMultiplierArmor>
+                <StuffEffectMultiplierInsulation_Cold>0.15</StuffEffectMultiplierInsulation_Cold>
+                <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
+                <EquipDelay>8</EquipDelay>
+            </statBases>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ArmetGilded"]/equippedStatOffsets</xpath>
+        <value>
+            <equippedStatOffsets>
+                <ShootingAccuracyPawn>-6.0</ShootingAccuracyPawn>
+                <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.05</SlaveSuppressionOffset>
+                <PainShockThreshold>0.05</PainShockThreshold>
+                <SocialImpact>0.15</SocialImpact>
+            </equippedStatOffsets>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ArmetGilded"]/recipeMaker/researchPrerequisite</xpath>
+        <value>
+            <researchPrerequisites>
+                <li>PlateArmor</li>
+                <li MayRequire="Ludeon.RimWorld.Royalty">RoyalApparel</li>
+            </researchPrerequisites>
+        </value>
+    </Operation>
+</Patch>

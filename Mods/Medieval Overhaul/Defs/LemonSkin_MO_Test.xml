@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <!-- <PawnKindDef>
+        <defName>LemonSkin_Amboisse_Peasant</defName>
+        <race>Human</race>
+        <defaultFactionType>DankPyon_NobleHouseCivil</defaultFactionType>
+
+        <maxGenerationAge>60</maxGenerationAge>
+        <chemicalAddictionChance>0.05</chemicalAddictionChance>
+        <invNutrition>2.55</invNutrition>
+        <invFoodDef>Pemmican</invFoodDef>
+        <apparelTags>
+            <li>MedievalPeasant</li>
+            <li>DankPyon_PeasantHelmet</li>
+        </apparelTags>
+
+        <label>peasant</label>
+        <combatPower>35</combatPower>
+        <backstoryFilters>
+            <li>
+                <categories>
+                    <li>ImperialCommon</li>
+                </categories>
+            </li>
+        </backstoryFilters>
+        <itemQuality>Poor</itemQuality>
+        <isFighter>false</isFighter>
+        <gearHealthRange>0.5~1.8</gearHealthRange>
+        <apparelMoney>180~350</apparelMoney>
+        <weaponMoney>80~80</weaponMoney>
+        <weaponTags>
+            <li>NeolithicMeleeBasic</li>
+            <li>NeolithicRangedBasic</li>
+        </weaponTags>
+        <techHediffsMoney>50~50</techHediffsMoney>
+        <techHediffsTags>
+            <li>Poor</li>
+        </techHediffsTags>
+        <techHediffsChance>0.03</techHediffsChance>
+        <initialWillRange>1~2</initialWillRange>
+        <initialResistanceRange>17~27</initialResistanceRange>
+    </PawnKindDef> -->
+</Defs>

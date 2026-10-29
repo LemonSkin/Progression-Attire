@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- META PATCHES -->
+  <!-- DankPyon_Base_ArmoredPants  -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[@Name="DankPyon_Base_ArmoredPants"]/thingCategories</xpath>
+    <value>
+      <thingCategories>
+        <li>LemonSkin_MedievalArmor</li>
+      </thingCategories>
+    </value>
+  </Operation>
+  <!-- DankPyon_ArmorHelmetMakeableBase -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[@Name="DankPyon_ArmorHelmetMakeableBase"]</xpath>
+    <value>
+      <thingCategories Inherit="False">
+        <li>LemonSkin_MedievalArmorHeadgear</li>
+      </thingCategories>
+    </value>
+  </Operation>
+  <!-- DankPyon_ArmorAttachmentBase -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[@Name="DankPyon_ArmorAttachmentBase"]/thingCategories</xpath>
+    <value>
+      <thingCategories Inherit="False">
+        <li>LemonSkin_MedievalArmorAttachment</li>
+      </thingCategories>
+    </value>
+  </Operation>
+</Patch>

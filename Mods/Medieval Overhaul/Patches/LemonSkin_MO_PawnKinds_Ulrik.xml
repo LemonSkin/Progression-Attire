@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/PawnKindDef[defName="DankPyon_Ulrik_Initiate"]/apparelRequired</xpath>
+        <value>
+            <apparelRequired>
+                <li>DankPyon_Apparel_AdornedMailShirt</li>
+                <li>DankPyon_Footwear_BootsSplinted</li>
+                <li>DankPyon_Handwear_GlovesSplinted</li>
+                <li>DankPyon_Adorned_HeavyMailCoif</li>
+            </apparelRequired>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/PawnKindDef[defName="DankPyon_Ulrik_Lord"]/apparelRequired</xpath>
+        <value>
+            <apparelRequired>
+                <li>DankPyon_Apparel_AdornedHeavyPlate</li>
+                <li>DankPyon_Footwear_BootsPlate</li>
+                <li>DankPyon_Handwear_GlovesPlate</li>
+            </apparelRequired>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/PawnKindDef[defName="DankPyon_Ulrik_Lord"]/weaponTags</xpath>
+        <value>
+            <weaponTags>
+                <li>DankPyon_NamedGreatsword</li>
+            </weaponTags>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationRemove">
+        <xpath>Defs/PawnKindDef[defName="DankPyon_Ulrik_Lord"]/weaponMoney</xpath>
+    </Operation>
+
+
+</Patch>
