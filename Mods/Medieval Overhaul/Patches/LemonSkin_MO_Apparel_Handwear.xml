@@ -32,7 +32,7 @@
     </value>
   </Operation>
   <!-- Splinted gloves -->
-  <Operation Class="PatchOperationReplace">
+  <!-- <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="DankPyon_Handwear_GlovesSplinted"]/recipeMaker/skillRequirements/Crafting</xpath>
     <value>
       <Crafting>5</Crafting>
@@ -67,9 +67,9 @@
         <li>LemonSkin_MedievalArmor</li>
       </thingCategories>
     </value>
-  </Operation>
+  </Operation> -->
   <!-- Plate gloves -->
-  <Operation Class="PatchOperationReplace">
+  <!-- <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="DankPyon_Handwear_GlovesPlate"]/statBases</xpath>
     <value>
       <statBases>
@@ -98,5 +98,5 @@
         <li>LemonSkin_MedievalArmor</li>
       </thingCategories>
     </value>
-  </Operation>
+  </Operation> -->
 </Patch>

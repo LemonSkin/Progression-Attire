@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
   <!-- DankPyon_Apparel_Sackcloth -->
-  <Operation Class="PatchOperationReplace">
+  <!-- <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Sackcloth"]/label</xpath>
     <value>
       <label>sackcloth</label>
@@ -43,9 +43,9 @@
     <value>
       <researchPrerequisite>LemonSkin_RusticClothing</researchPrerequisite>
     </value>
-  </Operation>
+  </Operation> -->
   <!-- DankPyon_Apparel_Padded_Surcoat -->
-  <Operation Class="PatchOperationReplace">
+  <!-- <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Padded_Surcoat"]/costStuffCount</xpath>
     <value>
       <costStuffCount>50</costStuffCount>
@@ -78,9 +78,9 @@
     <value>
       <researchPrerequisite>LemonSkin_RusticClothing</researchPrerequisite>
     </value>
-  </Operation>
+  </Operation> -->
   <!-- Dankpyon_Apparel_Gambeson -->
-  <Operation Class="PatchOperationReplace">
+  <!-- <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="Dankpyon_Apparel_Gambeson"]/stuffCategories</xpath>
     <value>
       <stuffCategories>
@@ -124,5 +124,5 @@
         <li>DankPyon_LeatherTanning</li>
       </researchPrerequisites>
     </value>
-  </Operation>
+  </Operation> -->
 </Patch>

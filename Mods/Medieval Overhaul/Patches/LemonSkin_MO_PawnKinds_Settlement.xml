@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
+
+
     <!-- Remove broken PawnKindDef fields -->
     <!-- <Operation Class="PatchOperationRemove">
         <xpath>Defs/PawnKindDef[@Name="DankPyon_SettlementPeasant" or
@@ -23,13 +25,270 @@
     </Operation> -->
 
 
-    <Operation Class="PatchOperationRemove">
+    <!-- <Operation Class="PatchOperationRemove">
         <xpath>Defs/PawnKindDef[@Name="DankPyon_SettlementGuard"]/apparelRequired/li[text()="DankPyon_Apparel_Leather_Tunic"]</xpath>
+    </Operation>
+    <Operation Class="PatchOperationRemove">
+        <xpath>Defs/PawnKindDef[@Name="DankPyon_SettlementGuard"]/apparelRequired/li[text()="DankPyon_Apparel_ChaussesPadded"]</xpath>
+    </Operation> -->
+
+    <!-- <Operation Class="PatchOperationReplace">
+        <xpath>Defs/PawnKindDef[@Name="DankPyon_SettlementPeasant"]/apparelRequired</xpath>
+        <value>
+            <apparelRequired>
+                <li>DankPyon_Apparel_Sackcloth</li>
+                <li>DankPyon_Footwear_BootsLeather</li>
+                <li>DankPyon_Apparel_Braies</li>
+            </apparelRequired>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationRemove">
+        <xpath>Defs/PawnKindDef[@Name="DankPyon_SettlementPeasant"]/specificApparelRequirements</xpath>
+    </Operation>
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/PawnKindDef[@Name="DankPyon_SettlementPeasant"]</xpath>
+        <value>
+            <itemQuality>Poor</itemQuality>
+        </value>
+    </Operation> -->
+
+    <Operation Class="PatchOperationRemove">
+        <xpath>Defs/PawnKindDef[@Name="DankPyon_SettlementPawnBase"]/itemQuality</xpath>
+    </Operation>
+    <Operation Class="PatchOperationRemove">
+        <xpath>Defs/PawnKindDef[@Name="DankPyon_SettlementPawnBase"]/specificApparelRequirements</xpath>
     </Operation>
 
 
     <Operation Class="PatchOperationRemove">
-        <xpath>Defs/PawnKindDef[@Name="DankPyon_SettlementGuard"]/apparelRequired/li[text()="DankPyon_Apparel_ChaussesPadded"]</xpath>
+        <xpath>Defs/PawnKindDef[@Name="DankPyon_SettlementPeasant"]/apparelRequired</xpath>
+    </Operation>
+    <Operation Class="PatchOperationRemove">
+        <xpath>Defs/PawnKindDef[@Name="DankPyon_SettlementPeasant"]/specificApparelRequirements</xpath>
+    </Operation>
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/PawnKindDef[@Name="DankPyon_SettlementPeasant"]</xpath>
+        <value>
+            <apparelTags>
+                <li>MedievalPeasant</li>
+                <!-- <li>DankPyon_Peasant</li> -->
+                <li>DankPyon_PeasantHelmet</li>
+            </apparelTags>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/PawnKindDef[@Name="DankPyon_SettlementPeasant"]/apparelMoney</xpath>
+        <value>
+            <apparelMoney>200~400</apparelMoney>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/PawnKindDef[@Name="DankPyon_SettlementPeasant"]/isFighter</xpath>
+        <value>
+            <isFighter>false</isFighter>
+        </value>
+    </Operation>
+
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/PawnKindDef[@Name="DankPyon_SettlementPeasant"]</xpath>
+        <value>
+            <apparelAllowHeadgearChance>0.2</apparelAllowHeadgearChance>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/PawnKindDef[@Name="DankPyon_SettlementPeasant"]</xpath>
+        <value>
+            <itemQuality>Normal</itemQuality>
+        </value>
+    </Operation>
+
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/PawnKindDef[@Name="DankPyon_SettlementGuard"]/apparelRequired</xpath>
+        <value>
+            <apparelRequired Inherit="False">
+                <li>DankPyon_Apparel_Trousers</li>
+                <li>DankPyon_Apparel_Padded_Surcoat</li>
+            </apparelRequired>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationRemove">
+        <xpath>Defs/PawnKindDef[@Name="DankPyon_SettlementGuard"]/specificApparelRequirements</xpath>
+    </Operation>
+
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/PawnKindDef[@Name="DankPyon_SettlementArcher"]/apparelRequired</xpath>
+        <value>
+            <apparelRequired>
+                <li>DankPyon_Apparel_Quiver</li>
+                <li>DankPyon_Headgear_ChainCoif</li>
+                <li>DankPyon_Handwear_GlovesLeather</li>
+                <li>DankPyon_Apparel_Hauberk</li>
+                <li>DankPyon_Apparel_ChaussesSplinted</li>
+                <li>DankPyon_Footwear_BootsLeather</li>
+            </apparelRequired>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/PawnKindDef[@Name="DankPyon_SettlementArcher"]/specificApparelRequirements</xpath>
+        <value>
+            <specificApparelRequirements>
+                <li>
+                    <apparelLayer>Overhead</apparelLayer>
+                    <stuff>Steel</stuff>
+                </li>
+                <li>
+                    <apparelLayer>Middle</apparelLayer>
+                    <bodyPartGroup>Torso</bodyPartGroup>
+                    <stuff>Steel</stuff>
+                </li>
+                <li>
+                    <apparelLayer>Middle</apparelLayer>
+                    <bodyPartGroup>Legs</bodyPartGroup>
+                    <stuff>Steel</stuff>
+                </li>
+            </specificApparelRequirements>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationRemove">
+        <xpath>Defs/PawnKindDef[defName="DankPyon_Amboisse_Archer" or
+            defName="DankPyon_Soren_Archer" or
+            defName="DankPyon_Oswin_Archer" or
+            defName="DankPyon_Hesse_Archer"]/apparelRequired</xpath>
+    </Operation>
+    <Operation Class="PatchOperationRemove">
+        <xpath>Defs/PawnKindDef[defName="DankPyon_Amboisse_Archer" or
+            defName="DankPyon_Soren_Archer" or
+            defName="DankPyon_Oswin_Archer" or
+            defName="DankPyon_Hesse_Archer"]/specificApparelRequirements</xpath>
+    </Operation>
+
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/PawnKindDef[@Name="DankPyon_SettlementFootman"]/apparelRequired</xpath>
+        <value>
+            <apparelRequired>
+                <li>DankPyon_Headgear_ClosedChain_FlatTopHelmet</li>
+                <li>DankPyon_Handwear_GlovesSplinted</li>
+                <li>DankPyon_Footwear_BootsSplinted</li>
+            </apparelRequired>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/PawnKindDef[@Name="DankPyon_SettlementFootman"]/specificApparelRequirements</xpath>
+        <value>
+            <specificApparelRequirements>
+                <li>
+                    <apparelLayer>Overhead</apparelLayer>
+                    <stuff>Steel</stuff>
+                </li>
+                <li>
+                    <apparelLayer>Middle</apparelLayer>
+                    <bodyPartGroup>Hands</bodyPartGroup>
+                    <stuff>Steel</stuff>
+                </li>
+                <li>
+                    <apparelLayer>Middle</apparelLayer>
+                    <bodyPartGroup>Feet</bodyPartGroup>
+                    <stuff>Steel</stuff>
+                </li>
+            </specificApparelRequirements>
+        </value>
+    </Operation>
+
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/PawnKindDef[@Name="DankPyon_SettlementKnight"]/apparelRequired</xpath>
+        <value>
+            <apparelRequired>
+                <li>DankPyon_Apparel_FullPlate</li>
+                <li>DankPyon_Handwear_GlovesPlate</li>
+                <li>DankPyon_Footwear_BootsPlate</li>
+            </apparelRequired>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/PawnKindDef[@Name="DankPyon_SettlementKnight"]/specificApparelRequirements</xpath>
+        <value>
+            <specificApparelRequirements>
+                <li>
+                    <apparelLayer>Overhead</apparelLayer>
+                    <stuff>Steel</stuff>
+                </li>
+                <li>
+                    <bodyPartGroup>Torso</bodyPartGroup>
+                    <apparelLayer>Shell</apparelLayer>
+                    <stuff>Steel</stuff>
+                </li>
+                <li>
+                    <apparelLayer>Middle</apparelLayer>
+                    <bodyPartGroup>Hands</bodyPartGroup>
+                    <stuff>Steel</stuff>
+                </li>
+                <li>
+                    <apparelLayer>Middle</apparelLayer>
+                    <bodyPartGroup>Feet</bodyPartGroup>
+                    <stuff>Steel</stuff>
+                </li>
+                <li>
+                    <apparelLayer>VFEC_OuterShell</apparelLayer>
+                    <stuff>Steel</stuff>
+                </li>
+            </specificApparelRequirements>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationRemove">
+        <xpath>Defs/PawnKindDef[defName="DankPyon_Amboisse_Knight" or
+            defName="DankPyon_Soren_Knight" or
+            defName="DankPyon_Oswin_Knight" or
+            defName="DankPyon_Hesse_Knight"]/specificApparelRequirements</xpath>
+    </Operation>
+
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/PawnKindDef[@Name="DankPyon_SettlementLord"]/apparelRequired</xpath>
+        <value>
+            <apparelRequired>
+                <li>DankPyon_Headgear_ZweihanderHelm</li>
+                <li>DankPyon_Apparel_Zweihanders_CuirassFloof</li>
+                <li>DankPyon_Handwear_GlovesPlate</li>
+                <li>DankPyon_Footwear_BootsPlate</li>
+                <li>DankPyon_Apparel_ChaussesPlate</li>
+            </apparelRequired>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/PawnKindDef[@Name="DankPyon_SettlementLord"]/specificApparelRequirements</xpath>
+        <value>
+            <specificApparelRequirements>
+                <li>
+                    <apparelLayer>Overhead</apparelLayer>
+                    <stuff>Steel</stuff>
+                </li>
+                <li>
+                    <apparelLayer>Middle</apparelLayer>
+                    <bodyPartGroup>Torso</bodyPartGroup>
+                    <stuff>Steel</stuff>
+                </li>
+                <li>
+                    <apparelLayer>Middle</apparelLayer>
+                    <bodyPartGroup>Hands</bodyPartGroup>
+                    <stuff>Steel</stuff>
+                </li>
+                <li>
+                    <apparelLayer>Middle</apparelLayer>
+                    <bodyPartGroup>Legs</bodyPartGroup>
+                    <stuff>Steel</stuff>
+                </li>
+                <li>
+                    <apparelLayer>Middle</apparelLayer>
+                    <bodyPartGroup>Feet</bodyPartGroup>
+                    <stuff>Steel</stuff>
+                </li>
+            </specificApparelRequirements>
+        </value>
     </Operation>
 
 </Patch>

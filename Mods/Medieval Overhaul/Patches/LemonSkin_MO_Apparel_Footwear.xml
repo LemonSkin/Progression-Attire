@@ -36,7 +36,7 @@
     </value>
   </Operation>
   <!-- Splinted boots -->
-  <Operation Class="PatchOperationReplace">
+  <!-- <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="DankPyon_Footwear_BootsSplinted"]/recipeMaker/skillRequirements/Crafting</xpath>
     <value>
       <Crafting>5</Crafting>
@@ -63,9 +63,9 @@
         <li>LemonSkin_MedievalArmor</li>
       </thingCategories>
     </value>
-  </Operation>
+  </Operation> -->
   <!-- Plate boots -->
-  <Operation Class="PatchOperationReplace">
+  <!-- <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="DankPyon_Footwear_BootsPlate"]/recipeMaker/skillRequirements/Crafting</xpath>
     <value>
       <Crafting>7</Crafting>
@@ -92,5 +92,5 @@
         <li>LemonSkin_MedievalArmor</li>
       </thingCategories>
     </value>
-  </Operation>
+  </Operation> -->
 </Patch>

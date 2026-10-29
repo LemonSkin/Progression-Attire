@@ -8,7 +8,7 @@
         <graphicData>
             <texPath>Things/Pawn/Humanlike/Apparel/Headgear/PaddedKettle/PaddedKettle</texPath>
             <graphicClass>Graphic_Single</graphicClass>
-            <!-- <shaderType>CutoutComplex</shaderType> -->
+            <shaderType>CutoutComplex</shaderType>
         </graphicData>
     </ThingStyleDef>
     <ThingStyleDef>
@@ -24,6 +24,28 @@
 
 
     <!-- Tier 2 -->
+    <!-- Chain Coifs -->
+    <ThingStyleDef>
+        <defName>ChainCoif_Closed</defName>
+        <!-- <overrideLabel></overrideLabel> -->
+        <wornGraphicPath>Things/Pawn/Humanlike/Apparel/Headgear/ChainCoifClosed/ChainCoifClosed</wornGraphicPath>
+        <graphicData>
+            <texPath>Things/Pawn/Humanlike/Apparel/Headgear/ChainCoifClosed/ChainCoifClosed</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+    </ThingStyleDef>
+
+    <ThingStyleDef>
+        <defName>ChainCoif_Full</defName>
+        <!-- <overrideLabel></overrideLabel> -->
+        <wornGraphicPath>Things/Pawn/Humanlike/Apparel/Headgear/ChainCoifFull/ChainCoifFull</wornGraphicPath>
+        <graphicData>
+            <texPath>Things/Pawn/Humanlike/Apparel/Headgear/ChainCoifFull/ChainCoifFull</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+    </ThingStyleDef>
+
+    <!-- Chain Helms -->
     <ThingStyleDef>
         <defName>ChainHelmet_NasalBandana</defName>
         <!-- <overrideLabel></overrideLabel> -->
@@ -64,6 +86,16 @@
             <!-- <shaderType>CutoutComplex</shaderType> -->
         </graphicData>
     </ThingStyleDef>
+    <ThingStyleDef>
+        <defName>ChainHelmet_Chainveil</defName>
+        <!-- <overrideLabel></overrideLabel> -->
+        <wornGraphicPath>Things/Pawn/Humanlike/Apparel/Headgear/ChainClosedFlatTop/ChainClosedFlatTop</wornGraphicPath>
+        <graphicData>
+            <texPath>Things/Pawn/Humanlike/Apparel/Headgear/ChainClosedFlatTop/ChainClosedFlatTop</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <!-- <shaderType>CutoutComplex</shaderType> -->
+        </graphicData>
+    </ThingStyleDef>
 
 
     <!-- Tier 3 -->
@@ -83,6 +115,16 @@
         <graphicData>
             <texPath>Things/Pawn/Humanlike/Apparel/Headgear/HeavyBarbrute/HeavyBarbrute</texPath>
             <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+    </ThingStyleDef>
+    <ThingStyleDef>
+        <defName>PlateArmor_ZweihanderCuirassPuffy</defName>
+        <!-- <overrideLabel></overrideLabel> -->
+        <wornGraphicPath>Things/Pawn/Humanlike/Apparel/HeavyArmor/ZweihanderCuirassFloof</wornGraphicPath>
+        <graphicData>
+            <texPath>Things/Pawn/Humanlike/Apparel/HeavyArmor/ZweihanderCuirassFloof</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>CutoutComplex</shaderType>
         </graphicData>
     </ThingStyleDef>
 

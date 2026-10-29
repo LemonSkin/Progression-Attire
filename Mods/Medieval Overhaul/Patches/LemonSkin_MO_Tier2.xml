@@ -1,79 +1,187 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
+    <!-- ARMOUR -->
+    <!-- DankPyon_Handwear_GlovesSplinted AKA Splinted Gloves -->
     <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ChainNasalHelmet"]/label</xpath>
+        <xpath>Defs/ThingDef[defName="DankPyon_Handwear_GlovesSplinted"]/recipeMaker/skillRequirements/Crafting</xpath>
         <value>
-            <label>chain helmet</label>
+            <Crafting>6</Crafting>
         </value>
     </Operation>
     <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ChainNasalHelmet"]/statBases</xpath>
+        <xpath>Defs/ThingDef[defName="DankPyon_Handwear_GlovesSplinted"]/statBases</xpath>
         <value>
             <statBases>
-                <WorkToMake>12000</WorkToMake>
+                <WorkToMake>4000</WorkToMake>
                 <MaxHitPoints>150</MaxHitPoints>
-                <Mass>2.5</Mass>
-                <StuffEffectMultiplierArmor>0.50</StuffEffectMultiplierArmor>
-                <StuffEffectMultiplierInsulation_Cold>0.15</StuffEffectMultiplierInsulation_Cold>
+                <Mass>1</Mass>
+                <StuffEffectMultiplierArmor>0.3</StuffEffectMultiplierArmor>
+                <StuffEffectMultiplierInsulation_Cold>0.5</StuffEffectMultiplierInsulation_Cold>
+                <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
+                <EquipDelay>2</EquipDelay>
+            </statBases>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Handwear_GlovesSplinted"]/thingCategories</xpath>
+        <value>
+            <thingCategories>
+                <li>LemonSkin_MedievalArmor</li>
+            </thingCategories>
+        </value>
+    </Operation>
+
+
+    <!-- DankPyon_Footwear_BootsSplinted AKA Splinted Boots -->
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Footwear_BootsSplinted"]/recipeMaker/skillRequirements/Crafting</xpath>
+        <value>
+            <Crafting>6</Crafting>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Footwear_BootsSplinted"]/statBases</xpath>
+        <value>
+            <statBases>
+                <WorkToMake>4000</WorkToMake>
+                <MaxHitPoints>150</MaxHitPoints>
+                <Mass>1.5</Mass>
+                <StuffEffectMultiplierArmor>0.3</StuffEffectMultiplierArmor>
+                <StuffEffectMultiplierInsulation_Cold>0.5</StuffEffectMultiplierInsulation_Cold>
+                <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
+                <EquipDelay>2</EquipDelay>
+            </statBases>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Footwear_BootsSplinted"]/thingCategories</xpath>
+        <value>
+            <thingCategories>
+                <li>LemonSkin_MedievalArmor</li>
+            </thingCategories>
+        </value>
+    </Operation>
+
+
+    <!-- DankPyon_Apparel_ChaussesSplinted AKA Splinted Chausses -->
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Apparel_ChaussesSplinted"]/costStuffCount</xpath>
+        <value>
+            <costStuffCount>40</costStuffCount>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Apparel_ChaussesSplinted"]/statBases</xpath>
+        <value>
+            <statBases>
+                <WorkToMake>6000</WorkToMake>
+                <MaxHitPoints>150</MaxHitPoints>
+                <Mass>3</Mass>
+                <StuffEffectMultiplierArmor>0.3</StuffEffectMultiplierArmor>
+                <StuffEffectMultiplierInsulation_Cold>0.5</StuffEffectMultiplierInsulation_Cold>
+                <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
+                <EquipDelay>2.5</EquipDelay>
+            </statBases>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="DankPyon_Apparel_ChaussesSplinted"]</xpath>
+        <value>
+            <equippedStatOffsets>
+                <MoveSpeed>-0.05</MoveSpeed>
+            </equippedStatOffsets>
+        </value>
+    </Operation>
+
+
+    <!-- DankPyon_Apparel_Hauberk -->
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Hauberk"]/costStuffCount</xpath>
+        <value>
+            <costStuffCount>60</costStuffCount>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Hauberk"]/statBases</xpath>
+        <value>
+            <statBases>
+                <WorkToMake>10000</WorkToMake>
+                <MaxHitPoints>150</MaxHitPoints>
+                <Mass>4</Mass>
+                <StuffEffectMultiplierArmor>0.5</StuffEffectMultiplierArmor>
+                <StuffEffectMultiplierInsulation_Cold>0.5</StuffEffectMultiplierInsulation_Cold>
+                <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
+                <EquipDelay>2.5</EquipDelay>
+            </statBases>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Hauberk"]/equippedStatOffsets</xpath>
+        <value>
+            <equippedStatOffsets>
+                <MoveSpeed>-0.05</MoveSpeed>
+                <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.1</SlaveSuppressionOffset>
+            </equippedStatOffsets>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Hauberk"]/thingCategories</xpath>
+        <value>
+            <thingCategories>
+                <li>LemonSkin_MedievalArmor</li>
+            </thingCategories>
+        </value>
+    </Operation>
+
+
+    <!-- DankPyon_Apparel_Heavy_Hauberk -->
+    <!-- DankPyon_HeraldicHauberkBase -->
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Heavy_Hauberk"]/recipeMaker/skillRequirements/Crafting</xpath>
+        <value>
+            <Crafting>7</Crafting>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Heavy_Hauberk" or @Name="DankPyon_HeraldicHauberkBase"]/statBases</xpath>
+        <value>
+            <statBases>
+                <WorkToMake>15000</WorkToMake>
+                <MaxHitPoints>150</MaxHitPoints>
+                <Mass>7</Mass>
+                <StuffEffectMultiplierArmor>0.55</StuffEffectMultiplierArmor>
+                <StuffEffectMultiplierInsulation_Cold>1.0</StuffEffectMultiplierInsulation_Cold>
                 <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
                 <EquipDelay>6</EquipDelay>
             </statBases>
         </value>
     </Operation>
     <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ChainNasalHelmet"]/equippedStatOffsets</xpath>
+        <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Heavy_Hauberk" or @Name="DankPyon_HeraldicHauberkBase"]/equippedStatOffsets</xpath>
         <value>
             <equippedStatOffsets>
-                <ShootingAccuracyPawn>-3.0</ShootingAccuracyPawn>
-                <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.05</SlaveSuppressionOffset>
+                <MoveSpeed>-0.2</MoveSpeed>
+                <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.1</SlaveSuppressionOffset>
             </equippedStatOffsets>
         </value>
     </Operation>
     <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ChainNasalHelmet"]/costStuffCount</xpath>
+        <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Heavy_Hauberk" or @Name="DankPyon_HeraldicHauberkBase"]/apparel/layers</xpath>
         <value>
-            <costStuffCount>75</costStuffCount>
+            <layers>
+                <li>Middle</li>
+                <li>Shell</li>
+            </layers>
         </value>
     </Operation>
-    <Operation Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ChainNasalHelmet"]</xpath>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Heavy_Hauberk" or @Name="DankPyon_HeraldicHauberkBase"]/thingCategories</xpath>
         <value>
-            <randomStyleChance>0.5</randomStyleChance>
-            <randomStyle>
-                <li>
-                    <styleDef>ChainHelmet_NasalBandana</styleDef>
-                </li>
-                <li>
-                    <styleDef>ChainHelmet_Kettle</styleDef>
-                </li>
-                <li>
-                    <styleDef>ChainHelmet_FlatTop</styleDef>
-                </li>
-                <li>
-                    <styleDef>ChainHelmet_FlatTop_Closed</styleDef>
-                </li>
-            </randomStyle>
+            <thingCategories>
+                <li>LemonSkin_MedievalArmor</li>
+            </thingCategories>
         </value>
     </Operation>
-    <Operation Class="PatchOperationAdd">
-        <xpath>Defs/ReplaceLib.ReplacerDef[defName="ProgAttire_MedievalOverhaul"]/replacers</xpath>
-        <value>
-            <li>
-                <replace>DankPyon_Headgear_ChainNasalRedHelmet</replace>
-                <with>DankPyon_Headgear_ChainNasalHelmet</with>
-            </li>
-            <li>
-                <replace>DankPyon_Headgear_ChainKettleHelmet</replace>
-                <with>DankPyon_Headgear_ChainNasalHelmet</with>
-            </li>
-            <li>
-                <replace>DankPyon_Headgear_Chain_FlatTopHelmet</replace>
-                <with>DankPyon_Headgear_ChainNasalHelmet</with>
-            </li>
-            <li>
-                <replace>DankPyon_Headgear_ClosedChain_FlatTopHelmet</replace>
-                <with>DankPyon_Headgear_ChainNasalHelmet</with>
-            </li>
-        </value>
-    </Operation>
+
+
 </Patch>

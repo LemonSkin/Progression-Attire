@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
   <!-- DankPyon_HatMakeableBase -->
-  <Operation Class="PatchOperationAdd">
+  <!-- <Operation Class="PatchOperationAdd">
     <xpath>Defs/ThingDef[@Name="DankPyon_HatMakeableBase"]</xpath>
     <value>
       <thingCategories Inherit="False">
         <li>LemonSkin_MedievalHeadgear</li>
       </thingCategories>
     </value>
-  </Operation>
+  </Operation> -->
   <!-- DankPyon_ArmorHelmetMakeableBase -->
-  <Operation Class="PatchOperationAdd">
+  <!-- <Operation Class="PatchOperationAdd">
     <xpath>Defs/ThingDef[@Name="DankPyon_ArmorHelmetMakeableBase"]</xpath>
     <value>
       <thingCategories Inherit="False">
         <li>LemonSkin_MedievalArmorHeadgear</li>
       </thingCategories>
     </value>
-  </Operation>
+  </Operation> -->
   <!-- DankPyon_Headgear_RedBandana -->
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="DankPyon_Headgear_RedBandana"]/label</xpath>
@@ -214,7 +214,7 @@
       Defs/ThingDef[defName="DankPyon_Headgear_ZweihandersHat"]/recipeMaker/researchPrerequisite</xpath>
     <value>
       <researchPrerequisites>
-        <li>DankPyon_ProtectiveClothing</li>
+        <!-- <li>DankPyon_ProtectiveClothing</li> -->
         <li MayRequire="Ludeon.RimWorld.Royalty">NobleApparel</li>
       </researchPrerequisites>
     </value>
@@ -251,7 +251,7 @@
     </value>
   </Operation>
   <!-- Chain coif -->
-  <Operation Class="PatchOperationReplace">
+  <!-- <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ChainCoif"]/statBases</xpath>
     <value>
       <statBases>
@@ -264,9 +264,9 @@
         <EquipDelay>2.5</EquipDelay>
       </statBases>
     </value>
-  </Operation>
+  </Operation> -->
   <!-- DankPyon_Headgear_ChainCoifClosed - chain coif (closed) -->
-  <Operation Class="PatchOperationReplace">
+  <!-- <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ChainCoifClosed"]/label</xpath>
     <value>
       <label>chain coif (closed)</label>
@@ -285,9 +285,9 @@
         <EquipDelay>2.5</EquipDelay>
       </statBases>
     </value>
-  </Operation>
+  </Operation> -->
   <!-- Full chain coif -->
-  <Operation Class="PatchOperationReplace">
+  <!-- <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ChainCoifFull"]/statBases</xpath>
     <value>
       <statBases>
@@ -308,9 +308,9 @@
         <ShootingAccuracyPawn>-1</ShootingAccuracyPawn>
       </equippedStatOffsets>
     </value>
-  </Operation>
+  </Operation> -->
   <!-- DankPyon_Headgear_ChainClosedFlatTopHelmet - Chainveil helm -->
-  <Operation Class="PatchOperationReplace">
+  <!-- <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ChainClosedFlatTopHelmet"]/label</xpath>
     <value>
       <label>chainveil helm</label>
@@ -343,9 +343,9 @@
         <ShootingAccuracyPawn>-5</ShootingAccuracyPawn>
       </equippedStatOffsets>
     </value>
-  </Operation>
+  </Operation> -->
   <!-- DankPyon_Headgear_ZweihanderHelm -->
-  <Operation Class="PatchOperationReplace">
+  <!-- <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ZweihanderHelm"]/label</xpath>
     <value>
       <label>zweihander helm</label>
@@ -398,10 +398,10 @@
         <li MayRequire="Ludeon.RimWorld.Royalty">NobleApparel</li>
       </researchPrerequisites>
     </value>
-  </Operation>
+  </Operation> -->
   <!-- ==================== Plate Helmets ==================== -->
   <!-- Great helm -->
-  <Operation Class="PatchOperationReplace">
+  <!-- <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="DankPyon_Headgear_GreatHelm"]/statBases</xpath>
     <value>
       <statBases>
@@ -423,9 +423,9 @@
         <MeleeHitChance>-0.5</MeleeHitChance>
       </equippedStatOffsets>
     </value>
-  </Operation>
+  </Operation> -->
   <!-- Great helm (Heraldic) -->
-  <Operation Class="PatchOperationReplace">
+  <!-- <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[@Name="DankPyon_HeraldicGreatHelm"]/statBases</xpath>
     <value>
       <statBases>
@@ -447,9 +447,9 @@
         <MeleeHitChance>-0.5</MeleeHitChance>
       </equippedStatOffsets>
     </value>
-  </Operation>
+  </Operation> -->
   <!-- Armet -->
-  <Operation Class="PatchOperationReplace">
+  <!-- <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="DankPyon_Headgear_Armet"]/recipeMaker/skillRequirements/Crafting</xpath>
     <value>
       <Crafting>10</Crafting>
@@ -477,9 +477,9 @@
         <MeleeHitChance>-1</MeleeHitChance>
       </equippedStatOffsets>
     </value>
-  </Operation>
+  </Operation> -->
   <!-- Gilded armet -->
-  <Operation Class="PatchOperationReplace">
+  <!-- <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="DankPyon_Headgear_Armet"]/statBases</xpath>
     <value>
       <statBases>
@@ -512,9 +512,9 @@
         <li MayRequire="Ludeon.RimWorld.Royalty">RoyalApparel</li>
       </researchPrerequisites>
     </value>
-  </Operation>
+  </Operation> -->
   <!-- Named armet -->
-  <Operation Class="PatchOperationReplace">
+  <!-- <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ArmetNamed"]/equippedStatOffsets</xpath>
     <value>
       <equippedStatOffsets>
@@ -525,5 +525,5 @@
         <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.2</SlaveSuppressionOffset>
       </equippedStatOffsets>
     </value>
-  </Operation>
+  </Operation> -->
 </Patch>

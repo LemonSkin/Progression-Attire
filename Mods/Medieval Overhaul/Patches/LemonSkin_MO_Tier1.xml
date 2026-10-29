@@ -1,68 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
-    <!-- HEADGEAR -->
-    <!-- DankPyon_Headgear_PaddedNasalHelmet -->
-    <!-- DankPyon_Headgear_PaddedKettleHelmet -->
-    <!-- DankPyon_Headgear_PaddedFlatTopHelmet -->
-    <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_PaddedNasalHelmet"]/label</xpath>
-        <value>
-            <label>padded helmet</label>
-        </value>
-    </Operation>
-    <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_PaddedNasalHelmet"]/statBases</xpath>
-        <value>
-            <statBases>
-                <WorkToMake>8000</WorkToMake>
-                <MaxHitPoints>100</MaxHitPoints>
-                <Mass>2.0</Mass>
-                <StuffEffectMultiplierArmor>0.4</StuffEffectMultiplierArmor>
-                <Insulation_Cold>9</Insulation_Cold>
-                <EquipDelay>3</EquipDelay>
-            </statBases>
-        </value>
-    </Operation>
-    <Operation Class="PatchOperationRemove">
-        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_PaddedNasalHelmet"]/equippedStatOffsets</xpath>
-    </Operation>
-    <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_PaddedNasalHelmet"]/apparel/layers</xpath>
-        <value>
-            <layers>
-                <li>Overhead</li>
-            </layers>
-        </value>
-    </Operation>
-    <Operation Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_PaddedNasalHelmet"]</xpath>
-        <value>
-            <randomStyleChance>0.5</randomStyleChance>
-            <randomStyle>
-                <li>
-                    <styleDef>PaddedHelmet_Kettle</styleDef>
-                </li>
-                <li>
-                    <styleDef>PaddedHelmet_FlatTop</styleDef>
-                </li>
-            </randomStyle>
-        </value>
-    </Operation>
-    <Operation Class="PatchOperationAdd">
-        <xpath>Defs/ReplaceLib.ReplacerDef[defName="ProgAttire_MedievalOverhaul"]/replacers</xpath>
-        <value>
-            <li>
-                <replace>DankPyon_Headgear_PaddedKettleHelmet</replace>
-                <with>DankPyon_Headgear_PaddedNasalHelmet</with>
-            </li>
-            <li>
-                <replace>DankPyon_Headgear_PaddedFlatTopHelmet</replace>
-                <with>DankPyon_Headgear_PaddedNasalHelmet</with>
-            </li>
-        </value>
-    </Operation>
-
-
     <!-- ARMOUR -->
     <!-- DankPyon_Apparel_ChaussesPadded -->
     <Operation Class="PatchOperationReplace">
@@ -83,6 +20,21 @@
                 <StuffEffectMultiplierInsulation_Heat>0.08</StuffEffectMultiplierInsulation_Heat>
                 <EquipDelay>1.5</EquipDelay>
             </statBases>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Apparel_ChaussesPadded"]/apparel/tags</xpath>
+        <value>
+            <tags>
+                <li>DankPyon_BrigandThug</li>
+                <li>DankPyon_BrigandRaider</li>
+                <li>DankPyon_Mercenary</li>
+                <li>DankPyon_MercenaryHeavy</li>
+                <li>DankPyon_Archer</li>
+                <li>DankPyon_Footman</li>
+                <li>DankPyon_Billman</li>
+                <li>MedievalMilitaryBasic</li>
+            </tags>
         </value>
     </Operation>
 
@@ -118,6 +70,22 @@
             </thingCategories>
         </value>
     </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Leather_Tunic"]/apparel/tags</xpath>
+        <value>
+            <tags>
+                <li>DankPyon_BrigandThug</li>
+                <li>DankPyon_Mercenary</li>
+                <li>DankPyon_MercenaryHeavy</li>
+                <li>DankPyon_Archer</li>
+                <li>DankPyon_Footman</li>
+                <li>DankPyon_Billman</li>
+                <li>DankPyon_Knight</li>
+                <li>DankPyon_HedgeKnight</li>
+                <li>MedievalBasic</li>
+            </tags>
+        </value>
+    </Operation>
 
 
     <!-- DankPyon_Apparel_Light_Lamellar -->
@@ -147,6 +115,17 @@
             <thingCategories>
                 <li>LemonSkin_MedievalArmor</li>
             </thingCategories>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Light_Lamellar"]/apparel/tags</xpath>
+        <value>
+            <tags>
+                <li>DankPyon_BrigandRaider</li>
+                <li>DankPyon_Mercenary</li>
+                <li>DankPyon_Archer</li>
+                <li>MedievalMilitaryBasic</li>
+            </tags>
         </value>
     </Operation>
 
@@ -207,6 +186,17 @@
             <thingCategories>
                 <li>LemonSkin_MedievalArmor</li>
             </thingCategories>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Padded_Leather"]/apparel/tags</xpath>
+        <value>
+            <tags>
+                <li>DankPyon_BrigandRaider</li>
+                <li>DankPyon_Mercenary</li>
+                <li>DankPyon_Archer</li>
+                <li>MedievalMilitaryBasic</li>
+            </tags>
         </value>
     </Operation>
 
