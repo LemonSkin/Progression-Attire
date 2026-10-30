@@ -1,46 +1,51 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <!-- LeafSkirt -->
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="LeafSkirt"]/statBases</xpath>
-    <value>
-      <statBases>
-        <Insulation_Cold>0</Insulation_Cold>
-        <Insulation_Heat>0</Insulation_Heat>
-        <MaxHitPoints>50</MaxHitPoints>
-        <WorkToMake>750</WorkToMake>
-        <Mass>0.1</Mass>
-        <EquipDelay>0.5</EquipDelay>
-        <Flammability>1.5</Flammability>
-      </statBases>
-    </value>
-  </Operation>
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="LeafSkirt"]/thingCategories</xpath>
-    <value>
-      <thingCategories Inherit="False">
-        <li>LemonSkin_NeolithicApparel</li>
-      </thingCategories>
-    </value>
-  </Operation>
-  <Operation Class="PatchOperationFindMod">
-    <mods>
-      <li>Vanilla Factions Expanded - Tribals</li>
-    </mods>
-    <match Class="PatchOperationConditional">
-      <xpath>Defs/RecipeDef[defName="Make_Leaf_Skirt"]/researchPrerequisite</xpath>
-      <match Class="PatchOperationReplace">
-        <xpath>Defs/RecipeDef[defName="Make_Leaf_Skirt"]/researchPrerequisite</xpath>
+  <Operation Class="XmlExtensions.OptionalPatch">
+    <modId>ferny.progressionattire</modId>
+    <key>ApplyCategories</key>
+    <defaultValue>true</defaultValue>
+    <caseTrue>
+      <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="LeafSkirt"]/thingCategories</xpath>
         <value>
-          <researchPrerequisite>LemonSkin_Leafwear</researchPrerequisite>
+          <thingCategories>
+            <li>LemonSkin_NeolithicApparel</li>
+          </thingCategories>
         </value>
-      </match>
-      <nomatch Class="PatchOperationAdd">
-        <xpath>Defs/RecipeDef[defName="Make_Leaf_Skirt"]</xpath>
+      </Operation>
+    </caseTrue>
+  </Operation>
+
+  <Operation Class="XmlExtensions.OptionalPatch">
+    <modId>ferny.progressionattire</modId>
+    <key>ApplyRebalances</key>
+    <defaultValue>true</defaultValue>
+    <caseTrue>
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>Defs/ThingDef[defName="LeafSkirt"]</xpath>
         <value>
-          <researchPrerequisite>LemonSkin_Leafwear</researchPrerequisite>
+          <statBases Operation="AddOrReplace">
+            <Insulation_Cold>0</Insulation_Cold>
+            <Insulation_Heat>0</Insulation_Heat>
+            <MaxHitPoints>50</MaxHitPoints>
+            <WorkToMake>750</WorkToMake>
+            <Mass>0.1</Mass>
+            <EquipDelay>0.5</EquipDelay>
+            <Flammability>1.5</Flammability>
+          </statBases>
         </value>
-      </nomatch>
+      </Operation>
+    </caseTrue>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/VFETribals.TribalResearchProjectDef[defName="LemonSkin_Leafwear"]</xpath>
+    <match Class="XmlExtensions.HybridPatch">
+      <xpath>Defs/RecipeDef[defName="Make_Leaf_Skirt"]</xpath>
+      <value>
+        <researchPrerequisite Operation="AddOrReplace">LemonSkin_Leafwear</researchPrerequisite>
+        <researchPrerequisites Operation="SafeRemove" />
+      </value>
     </match>
   </Operation>
 </Patch>

@@ -111,4 +111,18 @@
       <li>LemonSkin_RiverTribalShoes</li>
     </prerequisites>
   </VFETribals.TribalResearchProjectDef>
+
+  <VFETribals.TribalResearchProjectDef MayRequireAnyOf="sd.leafskirt,tug.SatyrFaun.Expanded">
+    <defName>LemonSkin_Leafwear</defName>
+    <label>leafwear</label>
+    <description>Craft simple garments from leaves and plant fibers.</description>
+    <baseCost>10</baseCost>
+    <tab>VFET_Basics</tab>
+    <techLevel>Animal</techLevel>
+    <researchViewX>1.00</researchViewX>
+    <researchViewY>2.10</researchViewY>
+    <prerequisites>
+      <li>VFET_Fire</li>
+    </prerequisites>
+  </VFETribals.TribalResearchProjectDef>
 </Defs>
