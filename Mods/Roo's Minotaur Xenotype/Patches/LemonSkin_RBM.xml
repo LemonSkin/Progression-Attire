@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <Operation Class="XmlExtensions.OptionalPatch">
+    <modId>ferny.progressionattire</modId>
+    <key>ApplyCategories</key>
+    <defaultValue>true</defaultValue>
+    <caseTrue>
+      <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="RBApparel_Tailcoat"]/thingCategories</xpath>
+        <value>
+          <thingCategories Inherit="False">
+            <li>LemonSkin_IndustrialApparel</li>
+          </thingCategories>
+        </value>
+      </Operation>
+    </caseTrue>
+  </Operation>
+
+  <Operation Class="XmlExtensions.HybridPatch">
+    <xpath>Defs/ThingDef[defName="RBApparel_Tailcoat"]</xpath>
+    <value>
+      <recipeMaker Operation="Safe">
+        <researchPrerequisite Operation="SafeRemove" />
+        <researchPrerequisites Operation="AddOrReplace">
+          <li>ComplexClothing</li>
+          <li MayRequire="Ludeon.RimWorld.Royalty">NobleApparel</li>
+        </researchPrerequisites>
+      </recipeMaker>
+    </value>
+  </Operation>
+</Patch>
