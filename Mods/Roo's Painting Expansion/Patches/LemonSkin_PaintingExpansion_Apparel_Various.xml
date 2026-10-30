@@ -19,7 +19,6 @@
   </Operation>
 
   <!-- Stat Rebalances -->
-
   <Operation Class="XmlExtensions.OptionalPatch">
     <modId>ferny.progressionattire</modId>
     <key>ApplyRebalances</key>
