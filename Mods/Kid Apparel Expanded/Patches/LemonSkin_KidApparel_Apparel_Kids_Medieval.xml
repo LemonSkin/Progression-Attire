@@ -1,12 +1,58 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <!-- Apparel_KidPlateArmor -->
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="Apparel_KidPlateArmor"]/thingCategories</xpath>
-    <value>
-      <thingCategories Inherit="False">
-        <li>LemonSkin_KidArmor</li>
-      </thingCategories>
-    </value>
+  <Operation Class="XmlExtensions.OptionalPatch">
+    <modId>ferny.progressionattire</modId>
+    <key>ApplyCategories</key>
+    <defaultValue>true</defaultValue>
+    <caseTrue>
+      <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="Apparel_KidPlateArmor"]/thingCategories</xpath>
+        <value>
+          <thingCategories>
+            <li>LemonSkin_KidArmor</li>
+          </thingCategories>
+        </value>
+      </Operation>
+
+      <Operation Class="PatchOperationReplace">
+        <xpath>
+          Defs/ThingDef[@Name="ApparelKidShirtRoyalTier2Base" or
+          @Name="ApparelKidVestRoyalTier5Base" or
+          defName="Apparel_KidCape" or
+          defName="Apparel_KidPrestigeRobe"]/thingCategories
+        </xpath>
+        <value>
+          <thingCategories Inherit="False">
+            <li>LemonSkin_KidApparel</li>
+          </thingCategories>
+        </value>
+      </Operation>
+
+      <Operation Class="PatchOperationAdd">
+        <xpath>
+          Defs/ThingDef[defName="Apparel_KidBlindfold" or
+          defName="Apparel_KidScoutHat" or
+          defName="Apparel_KidSlicecap"]
+        </xpath>
+        <value>
+          <thingCategories Inherit="False">
+            <li>LemonSkin_KidHeadgear</li>
+          </thingCategories>
+        </value>
+      </Operation>
+
+      <Operation Class="PatchOperationReplace">
+        <xpath>
+          Defs/ThingDef[defName="Apparel_KidCoronet" or
+          defName="Apparel_KidCrown" or
+          defName="Apparel_KidStellicCrown"]/thingCategories
+        </xpath>
+        <value>
+          <thingCategories Inherit="False">
+            <li>LemonSkin_KidHeadgear</li>
+          </thingCategories>
+        </value>
+      </Operation>
+    </caseTrue>
   </Operation>
 </Patch>
