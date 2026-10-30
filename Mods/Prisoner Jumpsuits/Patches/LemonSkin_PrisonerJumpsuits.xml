@@ -1,51 +1,61 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <!-- OCARINA_PrisonerJumpsuitBase -->
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[@Name="OCARINA_PrisonerJumpsuitBase"]/statBases</xpath>
-    <value>
-      <statBases>
-        <MaxHitPoints>100</MaxHitPoints>
-        <WorkToMake>4300</WorkToMake>
-        <Mass>0.8</Mass>
-        <StuffEffectMultiplierArmor>0.2</StuffEffectMultiplierArmor>
-        <StuffEffectMultiplierInsulation_Cold>0.46</StuffEffectMultiplierInsulation_Cold>
-        <StuffEffectMultiplierInsulation_Heat>0.3</StuffEffectMultiplierInsulation_Heat>
-        <EquipDelay>3.5</EquipDelay>
-      </statBases>
-    </value>
+  <Operation Class="XmlExtensions.OptionalPatch">
+    <modId>ferny.progressionattire</modId>
+    <key>ApplyRebalances</key>
+    <defaultValue>true</defaultValue>
+    <caseTrue>
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>Defs/ThingDef[@Name="OCARINA_PrisonerJumpsuitBase"]</xpath>
+        <value>
+          <statBases Operation="AddOrReplace">
+            <MaxHitPoints>100</MaxHitPoints>
+            <WorkToMake>4300</WorkToMake>
+            <Mass>0.8</Mass>
+            <StuffEffectMultiplierArmor>0.2</StuffEffectMultiplierArmor>
+            <StuffEffectMultiplierInsulation_Cold>0.46</StuffEffectMultiplierInsulation_Cold>
+            <StuffEffectMultiplierInsulation_Heat>0.3</StuffEffectMultiplierInsulation_Heat>
+            <EquipDelay>3.5</EquipDelay>
+          </statBases>
+          <equippedStatOffsets Operation="AddOrReplace">
+            <GeneralLaborSpeed>0.05</GeneralLaborSpeed>
+            <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">0.1</SlaveSuppressionOffset>
+          </equippedStatOffsets>
+          <apparel Operation="Safe">
+            <layers Operation="AddOrReplace">
+              <li>OnSkin</li>
+            </layers>
+          </apparel>
+        </value>
+      </Operation>
+    </caseTrue>
   </Operation>
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[@Name="OCARINA_PrisonerJumpsuitBase"]/equippedStatOffsets</xpath>
-    <value>
-      <equippedStatOffsets>
-        <GeneralLaborSpeed>0.05</GeneralLaborSpeed>
-        <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">0.1</SlaveSuppressionOffset>
-      </equippedStatOffsets>
-    </value>
+
+  <Operation Class="XmlExtensions.OptionalPatch">
+    <modId>ferny.progressionattire</modId>
+    <key>ApplyCategories</key>
+    <defaultValue>true</defaultValue>
+    <caseTrue>
+      <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[@Name="OCARINA_PrisonerJumpsuitBase"]/thingCategories</xpath>
+        <value>
+          <thingCategories Inherit="False">
+            <li>LemonSkin_PrisonerApparel</li>
+          </thingCategories>
+        </value>
+      </Operation>
+    </caseTrue>
   </Operation>
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[@Name="OCARINA_PrisonerJumpsuitBase"]/apparel/layers</xpath>
-    <value>
-      <layers>
-        <li>OnSkin</li>
-      </layers>
-    </value>
-  </Operation>
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[@Name="OCARINA_PrisonerJumpsuitBase"]/thingCategories</xpath>
-    <value>
-      <thingCategories Inherit="False">
-        <li>LemonSkin_PrisonerApparel</li>
-      </thingCategories>
-    </value>
-  </Operation>
+
   <Operation Class="PatchOperationConditional">
     <xpath>Defs/ResearchProjectDef[defName="VAE_WorkAttire"]</xpath>
-    <match Class="PatchOperationReplace">
-      <xpath>Defs/ThingDef[@Name="OCARINA_PrisonerJumpsuitBase"]/recipeMaker/researchPrerequisite</xpath>
+    <match Class="XmlExtensions.HybridPatch">
+      <xpath>Defs/ThingDef[@Name="OCARINA_PrisonerJumpsuitBase"]</xpath>
       <value>
-        <researchPrerequisite>VAE_WorkAttire</researchPrerequisite>
+        <recipeMaker Operation="Safe">
+          <researchPrerequisite Operation="AddOrReplace">VAE_WorkAttire</researchPrerequisite>
+          <researchPrerequisites Operation="SafeRemove" />
+        </recipeMaker>
       </value>
     </match>
   </Operation>
