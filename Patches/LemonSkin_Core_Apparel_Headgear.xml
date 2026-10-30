@@ -1,168 +1,150 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <!-- HatBase -->
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[@Name="HatBase"]/thingCategories</xpath>
-    <value>
-      <thingCategories>
-        <li>LemonSkin_IndustrialHeadgear</li>
-      </thingCategories>
-    </value>
+  <Operation Class="XmlExtensions.OptionalPatch">
+    <modId>ferny.progressionattire</modId>
+    <key>ApplyCategories</key>
+    <defaultValue>true</defaultValue>
+    <caseTrue>
+      <Operation Class="PatchOperationReplace">
+        <xpath>
+          Defs/ThingDef[@Name="HatBase" or
+          @Name="HatMakeableBase"]/thingCategories
+        </xpath>
+        <value>
+          <thingCategories>
+            <li>LemonSkin_IndustrialHeadgear</li>
+          </thingCategories>
+        </value>
+      </Operation>
+
+      <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[@Name="ArmorHelmetMakeableBase"]/thingCategories</xpath>
+        <value>
+          <thingCategories>
+            <li>LemonSkin_IndustrialArmorHeadgear</li>
+          </thingCategories>
+        </value>
+      </Operation>
+
+      <Operation Class="PatchOperationAdd">
+        <xpath>
+          Defs/ThingDef[@Name="ApparelArmorHelmetPowerBase" or
+          @Name="ApparelArmorHelmetReconBase"]
+        </xpath>
+        <value>
+          <thingCategories Inherit="False">
+            <li>LemonSkin_SpacerArmorHeadgear</li>
+          </thingCategories>
+        </value>
+      </Operation>
+
+      <Operation Class="PatchOperationAdd">
+        <xpath>
+          Defs/ThingDef[defName="Apparel_TribalHeaddress" or
+          defName="Apparel_WarMask" or
+          defName="Apparel_WarVeil"]
+        </xpath>
+        <value>
+          <thingCategories Inherit="False">
+            <li>LemonSkin_NeolithicHeadgear</li>
+          </thingCategories>
+        </value>
+      </Operation>
+
+      <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="Apparel_HatHood"]</xpath>
+        <value>
+          <thingCategories Inherit="False">
+            <li>LemonSkin_MedievalHeadgear</li>
+          </thingCategories>
+        </value>
+      </Operation>
+    </caseTrue>
   </Operation>
-  <!-- HatMakeableBase -->
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[@Name="HatMakeableBase"]/thingCategories</xpath>
-    <value>
-      <thingCategories>
-        <li>LemonSkin_IndustrialHeadgear</li>
-      </thingCategories>
-    </value>
+
+  <Operation Class="XmlExtensions.OptionalPatch">
+    <modId>ferny.progressionattire</modId>
+    <key>ApplyRebalances</key>
+    <defaultValue>true</defaultValue>
+    <caseTrue>
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>Defs/ThingDef[defName="Apparel_CowboyHat"]</xpath>
+        <value>
+          <statBases Operation="AddOrReplace">
+            <MaxHitPoints>80</MaxHitPoints>
+            <WorkToMake>1800</WorkToMake>
+            <Mass>0.14</Mass>
+            <StuffEffectMultiplierArmor>0.2</StuffEffectMultiplierArmor>
+            <StuffEffectMultiplierInsulation_Cold>0.0</StuffEffectMultiplierInsulation_Cold>
+            <StuffEffectMultiplierInsulation_Heat>0.4</StuffEffectMultiplierInsulation_Heat>
+            <EquipDelay>0.8</EquipDelay>
+          </statBases>
+          <equippedStatOffsets Operation="AddOrReplace">
+            <SocialImpact>0.05</SocialImpact>
+            <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.05</SlaveSuppressionOffset>
+          </equippedStatOffsets>
+        </value>
+      </Operation>
+
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>Defs/ThingDef[defName="Apparel_BowlerHat"]</xpath>
+        <value>
+          <statBases Operation="AddOrReplace">
+            <WorkToMake>1800</WorkToMake>
+            <Mass>0.14</Mass>
+            <StuffEffectMultiplierArmor>0.2</StuffEffectMultiplierArmor>
+            <StuffEffectMultiplierInsulation_Cold>0.0</StuffEffectMultiplierInsulation_Cold>
+            <StuffEffectMultiplierInsulation_Heat>0.30</StuffEffectMultiplierInsulation_Heat>
+            <EquipDelay>0.8</EquipDelay>
+          </statBases>
+          <equippedStatOffsets Operation="AddOrReplace">
+            <SocialImpact>0.1</SocialImpact>
+            <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.05</SlaveSuppressionOffset>
+          </equippedStatOffsets>
+        </value>
+      </Operation>
+    </caseTrue>
   </Operation>
-  <!-- ArmorHelmetMakeableBase -->
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[@Name="ArmorHelmetMakeableBase"]/thingCategories</xpath>
-    <value>
-      <thingCategories>
-        <li>LemonSkin_IndustrialArmorHeadgear</li>
-      </thingCategories>
-    </value>
-  </Operation>
-  <!-- Apparel_CowboyHat -->
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="Apparel_CowboyHat"]/statBases</xpath>
-    <value>
-      <statBases>
-        <MaxHitPoints>80</MaxHitPoints>
-        <WorkToMake>1800</WorkToMake>
-        <Mass>0.14</Mass>
-        <StuffEffectMultiplierArmor>0.2</StuffEffectMultiplierArmor>
-        <StuffEffectMultiplierInsulation_Cold>0.0</StuffEffectMultiplierInsulation_Cold>
-        <StuffEffectMultiplierInsulation_Heat>0.4</StuffEffectMultiplierInsulation_Heat>
-        <EquipDelay>0.8</EquipDelay>
-      </statBases>
-    </value>
-  </Operation>
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="Apparel_CowboyHat"]/equippedStatOffsets</xpath>
-    <value>
-      <equippedStatOffsets>
-        <SocialImpact>0.05</SocialImpact>
-        <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.05</SlaveSuppressionOffset>
-      </equippedStatOffsets>
-    </value>
-  </Operation>
-  <!-- Apparel_BowlerHat -->
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="Apparel_BowlerHat"]/statBases</xpath>
-    <value>
-      <statBases>
-        <WorkToMake>1800</WorkToMake>
-        <Mass>0.14</Mass>
-        <StuffEffectMultiplierArmor>0.2</StuffEffectMultiplierArmor>
-        <StuffEffectMultiplierInsulation_Cold>0.0</StuffEffectMultiplierInsulation_Cold>
-        <StuffEffectMultiplierInsulation_Heat>0.30</StuffEffectMultiplierInsulation_Heat>
-        <EquipDelay>0.8</EquipDelay>
-      </statBases>
-    </value>
-  </Operation>
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="Apparel_BowlerHat"]/equippedStatOffsets</xpath>
-    <value>
-      <equippedStatOffsets>
-        <SocialImpact>0.1</SocialImpact>
-        <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.05</SlaveSuppressionOffset>
-      </equippedStatOffsets>
-    </value>
-  </Operation>
-  <!-- Apparel_TribalHeaddress -->
-  <Operation Class="PatchOperationAdd">
-    <xpath>Defs/ThingDef[defName="Apparel_TribalHeaddress"]</xpath>
-    <value>
-      <thingCategories Inherit="False">
-        <li>LemonSkin_NeolithicHeadgear</li>
-      </thingCategories>
-    </value>
-  </Operation>
+
   <Operation Class="PatchOperationConditional">
-    <xpath>Defs/ThingDef[defName="Apparel_TribalHeaddress"]/recipeMaker/researchPrerequisite</xpath>
-    <match Class="PatchOperationReplace">
-      <xpath>Defs/ThingDef[defName="Apparel_TribalHeaddress"]/recipeMaker/researchPrerequisite</xpath>
+    <xpath>Defs/VFETribals.TribalResearchProjectDef[defName="LemonSkin_TribalHeaddress"]</xpath>
+    <match Class="XmlExtensions.HybridPatch">
+      <xpath>Defs/ThingDef[defName="Apparel_TribalHeaddress"]</xpath>
       <value>
-        <researchPrerequisite>LemonSkin_TribalHeaddress</researchPrerequisite>
+        <recipeMaker Operation="Safe">
+          <researchPrerequisite Operation="AddOrReplace">LemonSkin_TribalHeaddress</researchPrerequisite>
+          <researchPrerequisites Operation="SafeRemove" />
+        </recipeMaker>
       </value>
     </match>
-    <nomatch Class="PatchOperationAdd">
-      <xpath>Defs/ThingDef[defName="Apparel_TribalHeaddress"]/recipeMaker</xpath>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/VFETribals.TribalResearchProjectDef[defName="LemonSkin_WarMasks"]</xpath>
+    <match Class="XmlExtensions.HybridPatch">
+      <xpath>Defs/ThingDef[defName="Apparel_WarMask"]</xpath>
       <value>
-        <researchPrerequisite>LemonSkin_TribalHeaddress</researchPrerequisite>
+        <recipeMaker Operation="Safe">
+          <researchPrerequisite Operation="AddOrReplace">LemonSkin_WarMasks</researchPrerequisite>
+          <researchPrerequisites Operation="SafeRemove" />
+        </recipeMaker>
       </value>
-    </nomatch>
-  </Operation>
-  <!-- Apparel_WarMask -->
-  <Operation Class="PatchOperationAdd">
-    <xpath>Defs/ThingDef[defName="Apparel_WarMask"]</xpath>
-    <value>
-      <thingCategories Inherit="False">
-        <li>LemonSkin_NeolithicArmorHeadgear</li>
-      </thingCategories>
-    </value>
-  </Operation>
-  <Operation Class="PatchOperationFindMod">
-    <mods>
-      <li>Vanilla Factions Expanded - Tribals</li>
-    </mods>
-    <match Class="PatchOperationConditional">
-      <xpath>Defs/ThingDef[defName="Apparel_WarMask"]/recipeMaker/researchPrerequisite</xpath>
-      <match Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[defName="Apparel_WarMask"]/recipeMaker/researchPrerequisite</xpath>
-        <value>
-          <researchPrerequisite>LemonSkin_WarMasks</researchPrerequisite>
-        </value>
-      </match>
-      <nomatch Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[defName="Apparel_WarMask"]/recipeMaker</xpath>
-        <value>
-          <researchPrerequisite>LemonSkin_WarMasks</researchPrerequisite>
-        </value>
-      </nomatch>
     </match>
   </Operation>
-  <!-- Apparel_WarVeil -->
-  <Operation Class="PatchOperationAdd">
-    <xpath>Defs/ThingDef[defName="Apparel_WarVeil"]</xpath>
+
+  <Operation Class="XmlExtensions.HybridPatch">
+    <xpath>Defs/ThingDef[defName="Apparel_SimpleHelmet"]</xpath>
     <value>
-      <thingCategories Inherit="False">
-        <li>LemonSkin_NeolithicHeadgear</li>
-      </thingCategories>
+      <recipeMaker Operation="Safe">
+        <researchPrerequisite Operation="SafeRemove" />
+        <researchPrerequisites Operation="AddOrReplace">
+          <li>ComplexClothing</li>
+          <li>Smithing</li>
+        </researchPrerequisites>
+      </recipeMaker>
     </value>
   </Operation>
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="Apparel_SimpleHelmet"]/recipeMaker/researchPrerequisite</xpath>
-    <value>
-      <researchPrerequisites>
-        <li>ComplexClothing</li>
-        <li>Smithing</li>
-      </researchPrerequisites>
-    </value>
-  </Operation>
-  <!-- ApparelArmorHelmetPowerBase -->
-  <Operation Class="PatchOperationAdd">
-    <xpath>Defs/ThingDef[@Name="ApparelArmorHelmetPowerBase"]</xpath>
-    <value>
-      <thingCategories Inherit="False">
-        <li>LemonSkin_SpacerArmorHeadgear</li>
-      </thingCategories>
-    </value>
-  </Operation>
-  <!-- ApparelArmorHelmetReconBase -->
-  <Operation Class="PatchOperationAdd">
-    <xpath>Defs/ThingDef[@Name="ApparelArmorHelmetReconBase"]</xpath>
-    <value>
-      <thingCategories Inherit="False">
-        <li>LemonSkin_SpacerArmorHeadgear</li>
-      </thingCategories>
-    </value>
-  </Operation>
+
   <!-- Apparel_HatHood -->
   <Operation Class="PatchOperationFindMod">
     <mods>
@@ -177,14 +159,7 @@
       </value>
     </match>
   </Operation>
-  <Operation Class="PatchOperationAdd">
-    <xpath>Defs/ThingDef[defName="Apparel_HatHood"]</xpath>
-    <value>
-      <thingCategories Inherit="False">
-        <li>LemonSkin_MedievalHeadgear</li>
-      </thingCategories>
-    </value>
-  </Operation>
+
   <Operation Class="PatchOperationAdd">
     <xpath>Defs/ThingDef[defName="Apparel_HatHood"]/recipeMaker</xpath>
     <value>

@@ -1,30 +1,39 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <!-- AM_AScompFD - composite assault dress-->
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="AM_AScompFD"]/thingCategories</xpath>
-    <value>
-      <thingCategories Inherit="False">
-        <li>LemonSkin_IndustrialArmor</li>
-      </thingCategories>
-    </value>
-  </Operation>
-  <!-- AM_MK4aConcealed - armored concealed rig-->
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="AM_MK4aConcealed"]/thingCategories</xpath>
-    <value>
-      <thingCategories Inherit="False">
-        <li>LemonSkin_IndustrialArmor</li>
-      </thingCategories>
-    </value>
-  </Operation>
-  <!-- AM_MK4aDefensive - armored defensive rig-->
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="AM_MK4aDefensive"]/thingCategories</xpath>
-    <value>
-      <thingCategories Inherit="False">
-        <li>LemonSkin_IndustrialArmor</li>
-      </thingCategories>
-    </value>
+  <Operation Class="XmlExtensions.OptionalPatch">
+    <modId>ferny.progressionattire</modId>
+    <key>ApplyCategories</key>
+    <defaultValue>true</defaultValue>
+    <caseTrue>
+      <!-- AM_AScompFD - composite assault dress-->
+      <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="AM_AScompFD"]/thingCategories</xpath>
+        <value>
+          <thingCategories Inherit="False">
+            <li>LemonSkin_IndustrialArmor</li>
+          </thingCategories>
+        </value>
+      </Operation>
+
+      <!-- AM_MK4aConcealed - armored concealed rig-->
+      <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="AM_MK4aConcealed"]/thingCategories</xpath>
+        <value>
+          <thingCategories Inherit="False">
+            <li>LemonSkin_IndustrialArmor</li>
+          </thingCategories>
+        </value>
+      </Operation>
+
+      <!-- AM_MK4aDefensive - armored defensive rig-->
+      <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="AM_MK4aDefensive"]/thingCategories</xpath>
+        <value>
+          <thingCategories Inherit="False">
+            <li>LemonSkin_IndustrialArmor</li>
+          </thingCategories>
+        </value>
+      </Operation>
+    </caseTrue>
   </Operation>
 </Patch>

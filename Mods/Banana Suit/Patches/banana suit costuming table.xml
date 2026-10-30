@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Patch>
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="BananaSuit_TheSuit"]/recipeMaker</xpath>
@@ -11,14 +11,7 @@
       </recipeMaker>
     </value>
   </Operation>
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="BananaSuit_TheSuit"]/thingCategories</xpath>
-    <value>
-      <thingCategories>
-        <li>LemonSkin_IndustrialApparel</li>
-      </thingCategories>
-    </value>
-  </Operation>
+
   <Operation Class="PatchOperationFindMod">
     <mods>
       <li>Biotech</li>
@@ -34,5 +27,21 @@
         </recipeMaker>
       </value>
     </match>
+  </Operation>
+
+  <Operation Class="XmlExtensions.OptionalPatch">
+    <modId>ferny.progressionattire</modId>
+    <key>ApplyCategories</key>
+    <defaultValue>true</defaultValue>
+    <caseTrue>
+      <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="BananaSuit_TheSuit"]/thingCategories</xpath>
+        <value>
+          <thingCategories>
+            <li>LemonSkin_IndustrialApparel</li>
+          </thingCategories>
+        </value>
+      </Operation>
+    </caseTrue>
   </Operation>
 </Patch>

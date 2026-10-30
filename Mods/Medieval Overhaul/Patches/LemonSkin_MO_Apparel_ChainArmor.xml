@@ -1,108 +1,118 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <!-- Hauberk -->
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Hauberk"]/costStuffCount</xpath>
-    <value>
-      <costStuffCount>60</costStuffCount>
-    </value>
-  </Operation>
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Hauberk"]/statBases</xpath>
-    <value>
-      <statBases>
-        <WorkToMake>10000</WorkToMake>
-        <MaxHitPoints>150</MaxHitPoints>
-        <Mass>2</Mass>
-        <StuffEffectMultiplierArmor>0.56</StuffEffectMultiplierArmor>
-        <StuffEffectMultiplierInsulation_Cold>0.15</StuffEffectMultiplierInsulation_Cold>
-        <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
-        <EquipDelay>4</EquipDelay>
-      </statBases>
-    </value>
-  </Operation>
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Hauberk"]/equippedStatOffsets</xpath>
-    <value>
-      <equippedStatOffsets>
-        <MoveSpeed>-0.1</MoveSpeed>
-      </equippedStatOffsets>
-    </value>
-  </Operation>
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Hauberk"]/thingCategories</xpath>
-    <value>
-      <thingCategories>
-        <li>LemonSkin_MedievalArmor</li>
-      </thingCategories>
-    </value>
-  </Operation>
-  <!-- Heavy hauberk -->
-  <!-- <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Heavy_Hauberk"]/recipeMaker/skillRequirements/Crafting</xpath>
-    <value>
-      <Crafting>7</Crafting>
-    </value>
-  </Operation> -->
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Heavy_Hauberk"]/statBases</xpath>
-    <value>
-      <statBases>
-        <WorkToMake>15600</WorkToMake>
-        <MaxHitPoints>200</MaxHitPoints>
-        <Mass>8</Mass>
-        <StuffEffectMultiplierArmor>0.56</StuffEffectMultiplierArmor>
-        <StuffEffectMultiplierInsulation_Cold>0.15</StuffEffectMultiplierInsulation_Cold>
-        <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
-        <EquipDelay>6</EquipDelay>
-      </statBases>
-    </value>
-  </Operation>
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Heavy_Hauberk"]/equippedStatOffsets</xpath>
-    <value>
-      <equippedStatOffsets>
-        <MoveSpeed>-0.2</MoveSpeed>
-      </equippedStatOffsets>
-    </value>
-  </Operation>
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Heavy_Hauberk"]/thingCategories</xpath>
-    <value>
-      <thingCategories>
-        <li>LemonSkin_MedievalArmor</li>
-      </thingCategories>
-    </value>
-  </Operation>
-  <!-- Heraldic heavy hauberk -->
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[@Name="DankPyon_HeraldicHauberkBase"]/statBases</xpath>
-    <value>
-      <statBases>
-        <WorkToMake>15600</WorkToMake>
-        <MaxHitPoints>200</MaxHitPoints>
-        <Mass>8</Mass>
-        <StuffEffectMultiplierArmor>0.56</StuffEffectMultiplierArmor>
-        <StuffEffectMultiplierInsulation_Cold>0.15</StuffEffectMultiplierInsulation_Cold>
-        <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
-        <EquipDelay>6</EquipDelay>
-      </statBases>
-    </value>
-  </Operation>
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[@Name="DankPyon_HeraldicHauberkBase"]/equippedStatOffsets</xpath>
-    <value>
-      <equippedStatOffsets>
-        <MoveSpeed>-0.2</MoveSpeed>
-      </equippedStatOffsets>
-    </value>
-  </Operation>
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[@Name="DankPyon_HeraldicHauberkBase"]/thingCategories</xpath>
-    <value>
-      <thingCategories>
-        <li>LemonSkin_MedievalArmor</li>
-      </thingCategories>
-    </value>
+  <Operation Class="XmlExtensions.OptionalPatch">
+    <modId>ferny.progressionattire</modId>
+    <key>ApplyRebalances</key>
+    <defaultValue>true</defaultValue>
+    <caseTrue>
+      <!-- Hauberk -->
+      <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Hauberk"]/costStuffCount</xpath>
+        <value>
+          <costStuffCount>60</costStuffCount>
+        </value>
+      </Operation>
+
+      <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Hauberk"]/statBases</xpath>
+        <value>
+          <statBases>
+            <WorkToMake>10000</WorkToMake>
+            <MaxHitPoints>150</MaxHitPoints>
+            <Mass>2</Mass>
+            <StuffEffectMultiplierArmor>0.56</StuffEffectMultiplierArmor>
+            <StuffEffectMultiplierInsulation_Cold>0.15</StuffEffectMultiplierInsulation_Cold>
+            <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
+            <EquipDelay>4</EquipDelay>
+          </statBases>
+        </value>
+      </Operation>
+
+      <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Hauberk"]/equippedStatOffsets</xpath>
+        <value>
+          <equippedStatOffsets>
+            <MoveSpeed>-0.1</MoveSpeed>
+          </equippedStatOffsets>
+        </value>
+      </Operation>
+
+      <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Hauberk"]/thingCategories</xpath>
+        <value>
+          <thingCategories>
+            <li>LemonSkin_MedievalArmor</li>
+          </thingCategories>
+        </value>
+      </Operation>
+      <!-- Heavy hauberk -->
+      <!-- <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Heavy_Hauberk"]/recipeMaker/skillRequirements/Crafting</xpath>
+        <value>
+          <Crafting>7</Crafting>
+        </value>
+      </Operation> -->
+      <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Heavy_Hauberk"]/statBases</xpath>
+        <value>
+          <statBases>
+            <WorkToMake>15600</WorkToMake>
+            <MaxHitPoints>200</MaxHitPoints>
+            <Mass>8</Mass>
+            <StuffEffectMultiplierArmor>0.56</StuffEffectMultiplierArmor>
+            <StuffEffectMultiplierInsulation_Cold>0.15</StuffEffectMultiplierInsulation_Cold>
+            <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
+            <EquipDelay>6</EquipDelay>
+          </statBases>
+        </value>
+      </Operation>
+      <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Heavy_Hauberk"]/equippedStatOffsets</xpath>
+        <value>
+          <equippedStatOffsets>
+            <MoveSpeed>-0.2</MoveSpeed>
+          </equippedStatOffsets>
+        </value>
+      </Operation>
+      <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Heavy_Hauberk"]/thingCategories</xpath>
+        <value>
+          <thingCategories>
+            <li>LemonSkin_MedievalArmor</li>
+          </thingCategories>
+        </value>
+      </Operation>
+      <!-- Heraldic heavy hauberk -->
+      <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[@Name="DankPyon_HeraldicHauberkBase"]/statBases</xpath>
+        <value>
+          <statBases>
+            <WorkToMake>15600</WorkToMake>
+            <MaxHitPoints>200</MaxHitPoints>
+            <Mass>8</Mass>
+            <StuffEffectMultiplierArmor>0.56</StuffEffectMultiplierArmor>
+            <StuffEffectMultiplierInsulation_Cold>0.15</StuffEffectMultiplierInsulation_Cold>
+            <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
+            <EquipDelay>6</EquipDelay>
+          </statBases>
+        </value>
+      </Operation>
+      <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[@Name="DankPyon_HeraldicHauberkBase"]/equippedStatOffsets</xpath>
+        <value>
+          <equippedStatOffsets>
+            <MoveSpeed>-0.2</MoveSpeed>
+          </equippedStatOffsets>
+        </value>
+      </Operation>
+      <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[@Name="DankPyon_HeraldicHauberkBase"]/thingCategories</xpath>
+        <value>
+          <thingCategories>
+            <li>LemonSkin_MedievalArmor</li>
+          </thingCategories>
+        </value>
+      </Operation>
+    </caseTrue>
   </Operation>
 </Patch>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
   <ResearchProjectDef>
     <defName>LemonSkin_RusticClothing</defName>
@@ -8,10 +8,11 @@
     <techLevel>Medieval</techLevel>
     <researchViewX>0.00</researchViewX>
     <researchViewY>4.90</researchViewY>
-		<prerequisites>
-			<li MayRequire="ferny.progressionfurniture">Ferny_Tables</li>
-		</prerequisites>
+    <prerequisites>
+      <li MayRequire="ferny.progressionfurniture">Ferny_Tables</li>
+    </prerequisites>
   </ResearchProjectDef>
+
   <ResearchProjectDef>
     <defName>LemonSkin_ElectricTailoringBench</defName>
     <label>electric tailor bench</label>
@@ -20,11 +21,12 @@
     <techLevel>Industrial</techLevel>
     <researchViewX>1.00</researchViewX>
     <researchViewY>4.90</researchViewY>
-		<prerequisites>
-			<li>LemonSkin_RusticClothing</li>
-			<li>Electricity</li>
-		</prerequisites>
+    <prerequisites>
+      <li>LemonSkin_RusticClothing</li>
+      <li>Electricity</li>
+    </prerequisites>
   </ResearchProjectDef>
+
   <ResearchProjectDef>
     <defName>Ferny_VanityTable</defName>
     <label>vanity table</label>
@@ -33,10 +35,11 @@
     <techLevel>Medieval</techLevel>
     <researchViewX>0.00</researchViewX>
     <researchViewY>4.90</researchViewY>
-		<prerequisites>
-			<li>LemonSkin_RusticClothing</li>
-		</prerequisites>
+    <prerequisites>
+      <li>LemonSkin_RusticClothing</li>
+    </prerequisites>
   </ResearchProjectDef>
+
   <ResearchProjectDef>
     <defName>Ferny_CostumingTable</defName>
     <label>costuming table</label>
@@ -45,11 +48,12 @@
     <techLevel>Medieval</techLevel>
     <researchViewX>0.00</researchViewX>
     <researchViewY>4.90</researchViewY>
-		<prerequisites>
-			<li>LemonSkin_RusticClothing</li>
-		</prerequisites>
+    <prerequisites>
+      <li>LemonSkin_RusticClothing</li>
+    </prerequisites>
   </ResearchProjectDef>
-  <ResearchProjectDef>
+
+  <!-- <ResearchProjectDef>
     <defName>LemonSkin_TribalHeaddress</defName>
     <label>headdress</label>
     <description>Craft decorative tribal headdresses.</description>
@@ -57,8 +61,8 @@
     <techLevel>Neolithic</techLevel>
     <researchViewX>1.00</researchViewX>
     <researchViewY>5.90</researchViewY>
-		<prerequisites>
-			<li MayRequire="OskarPotocki.VFE.Tribals">VFET_Tribalwear</li>
-		</prerequisites>
-  </ResearchProjectDef>
+    <prerequisites>
+      <li MayRequire="OskarPotocki.VFE.Tribals">VFET_Tribalwear</li>
+    </prerequisites>
+  </ResearchProjectDef> -->
 </Defs>

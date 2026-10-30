@@ -1,14 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Patch>
   <!-- Rustic Clothing -->
   <Operation Class="PatchOperationSequence">
     <operations>
-      <li Class="PatchOperationReplace">
+      <!-- <li Class="PatchOperationReplace">
         <xpath>Defs/ResearchProjectDef[defName="LemonSkin_RusticClothing"]/tab</xpath>
         <value>
           <tab>DankPyon_MedievalResearchTab</tab>
         </value>
-      </li>
+      </li> -->
       <li Class="PatchOperationReplace">
         <xpath>Defs/ResearchProjectDef[defName="LemonSkin_RusticClothing"]/researchViewX</xpath>
         <value>

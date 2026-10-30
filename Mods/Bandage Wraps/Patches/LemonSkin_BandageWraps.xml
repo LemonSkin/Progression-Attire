@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ResearchProjectDef[defName="VAE_SterileAttire"]</xpath>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/ResearchProjectDef[defName="VAE_SterileAttire"]</xpath>
+      <value>
+        <prerequisites>
+          <li>Ferny_Bandages</li>
+        </prerequisites>
+      </value>
+    </match>
+  </Operation>
+
+  <Operation Class="XmlExtensions.HybridPatch">
+    <xpath>Defs/ThingDef[defName="Bandagewraps_Bodywrap"]</xpath>
+    <value>
+      <label Operation="AddOrReplace">body bandage</label>
+      <recipeMaker Operation="Safe">
+        <researchPrerequisite Operation="AddOrReplace">Ferny_Bandages</researchPrerequisite>
+      </recipeMaker>
+    </value>
+  </Operation>
+
+  <Operation Class="XmlExtensions.HybridPatch">
+    <xpath>Defs/ThingDef[defName="Bandagewraps_BodywrapA"]</xpath>
+    <value>
+      <label Operation="AddOrReplace">sterile body bandage</label>
+      <recipeMaker Operation="Safe">
+        <researchPrerequisite Operation="AddOrReplace">Ferny_Bandages</researchPrerequisite>
+      </recipeMaker>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ResearchProjectDef[defName="VAE_SterileAttire"]</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Bandagewraps_BodywrapA"]/recipeMaker/researchPrerequisite</xpath>
+      <value>
+        <researchPrerequisite>VAE_SterileAttire</researchPrerequisite>
+      </value>
+    </match>
+  </Operation>
+
+  <Operation Class="XmlExtensions.HybridPatch">
+    <xpath>Defs/ThingDef[defName="Bandagewraps_HeadBandage"]</xpath>
+    <value>
+      <label Operation="AddOrReplace">head bandage</label>
+      <recipeMaker Operation="Safe">
+        <researchPrerequisite Operation="AddOrReplace">Ferny_Bandages</researchPrerequisite>
+      </recipeMaker>
+    </value>
+  </Operation>
+
+  <Operation Class="XmlExtensions.HybridPatch">
+    <xpath>Defs/ThingDef[defName="Bandagewraps_HeadBandageA"]</xpath>
+    <value>
+      <label Operation="AddOrReplace">sterile head bandage</label>
+      <recipeMaker Operation="Safe">
+        <researchPrerequisite Operation="AddOrReplace">Ferny_Bandages</researchPrerequisite>
+      </recipeMaker>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ResearchProjectDef[defName="VAE_SterileAttire"]</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="Bandagewraps_HeadBandageA"]/recipeMaker/researchPrerequisite</xpath>
+      <value>
+        <researchPrerequisite>VAE_SterileAttire</researchPrerequisite>
+      </value>
+    </match>
+  </Operation>
+
+  <Operation Class="XmlExtensions.OptionalPatch">
+    <modId>ferny.progressionattire</modId>
+    <key>ApplyRebalances</key>
+    <defaultValue>true</defaultValue>
+    <caseTrue>
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>Defs/ThingDef[defName="Bandagewraps_Bodywrap"]</xpath>
+        <value>
+          <statBases Operation="AddOrReplace">
+            <MaxHitPoints>50</MaxHitPoints>
+            <WorkToMake>1600</WorkToMake>
+            <Mass>0.2</Mass>
+            <StuffEffectMultiplierArmor>0.0</StuffEffectMultiplierArmor>
+            <StuffEffectMultiplierInsulation_Cold>0.0</StuffEffectMultiplierInsulation_Cold>
+            <StuffEffectMultiplierInsulation_Heat>0.0</StuffEffectMultiplierInsulation_Heat>
+            <EquipDelay>3</EquipDelay>
+          </statBases>
+          <equippedStatOffsets Operation="AddOrReplace">
+            <InjuryHealingFactor>0.07</InjuryHealingFactor>
+          </equippedStatOffsets>
+        </value>
+      </Operation>
+
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>Defs/ThingDef[defName="Bandagewraps_BodywrapA"]</xpath>
+        <value>
+          <statBases Operation="AddOrReplace">
+            <MaxHitPoints>50</MaxHitPoints>
+            <WorkToMake>1600</WorkToMake>
+            <Mass>0.2</Mass>
+            <StuffEffectMultiplierArmor>0.0</StuffEffectMultiplierArmor>
+            <StuffEffectMultiplierInsulation_Cold>0.0</StuffEffectMultiplierInsulation_Cold>
+            <StuffEffectMultiplierInsulation_Heat>0.0</StuffEffectMultiplierInsulation_Heat>
+            <EquipDelay>3</EquipDelay>
+          </statBases>
+          <equippedStatOffsets Operation="AddOrReplace">
+            <ImmunityGainSpeed>0.07</ImmunityGainSpeed>
+            <InjuryHealingFactor>0.07</InjuryHealingFactor>
+          </equippedStatOffsets>
+        </value>
+      </Operation>
+
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>Defs/ThingDef[defName="Bandagewraps_HeadBandage"]</xpath>
+        <value>
+          <statBases Operation="AddOrReplace">
+            <MaxHitPoints>30</MaxHitPoints>
+            <WorkToMake>1300</WorkToMake>
+            <Mass>0.05</Mass>
+            <StuffEffectMultiplierArmor>0.0</StuffEffectMultiplierArmor>
+            <StuffEffectMultiplierInsulation_Cold>0.0</StuffEffectMultiplierInsulation_Cold>
+            <StuffEffectMultiplierInsulation_Heat>0.0</StuffEffectMultiplierInsulation_Heat>
+            <EquipDelay>3</EquipDelay>
+          </statBases>
+          <equippedStatOffsets Operation="AddOrReplace">
+            <InjuryHealingFactor>0.03</InjuryHealingFactor>
+            <ShootingAccuracyPawn>-8</ShootingAccuracyPawn>
+          </equippedStatOffsets>
+        </value>
+      </Operation>
+
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>Defs/ThingDef[defName="Bandagewraps_HeadBandageA"]</xpath>
+        <value>
+          <statBases Operation="AddOrReplace">
+            <MaxHitPoints>30</MaxHitPoints>
+            <WorkToMake>1300</WorkToMake>
+            <Mass>0.05</Mass>
+            <StuffEffectMultiplierArmor>0.0</StuffEffectMultiplierArmor>
+            <StuffEffectMultiplierInsulation_Cold>0.0</StuffEffectMultiplierInsulation_Cold>
+            <StuffEffectMultiplierInsulation_Heat>0.0</StuffEffectMultiplierInsulation_Heat>
+            <EquipDelay>3</EquipDelay>
+          </statBases>
+          <equippedStatOffsets Operation="AddOrReplace">
+            <InjuryHealingFactor>0.03</InjuryHealingFactor>
+            <ImmunityGainSpeed>.03</ImmunityGainSpeed>
+            <ShootingAccuracyPawn>-8</ShootingAccuracyPawn>
+          </equippedStatOffsets>
+        </value>
+      </Operation>
+    </caseTrue>
+  </Operation>
+
+  <Operation Class="XmlExtensions.OptionalPatch">
+    <modId>ferny.progressionattire</modId>
+    <key>ApplyCategories</key>
+    <defaultValue>true</defaultValue>
+    <caseTrue>
+      <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="Bandagewraps_Bodywrap"]/thingCategories</xpath>
+        <value>
+          <thingCategories Inherit="False">
+            <li>LemonSkin_NeolithicApparel</li>
+          </thingCategories>
+        </value>
+      </Operation>
+      <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="Bandagewraps_BodywrapA"]/thingCategories</xpath>
+        <value>
+          <thingCategories Inherit="False">
+            <li>LemonSkin_IndustrialApparel</li>
+          </thingCategories>
+        </value>
+      </Operation>
+
+      <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="Bandagewraps_HeadBandage"]/thingCategories</xpath>
+        <value>
+          <thingCategories Inherit="False">
+            <li>LemonSkin_NeolithicHeadgear</li>
+          </thingCategories>
+        </value>
+      </Operation>
+
+      <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="Bandagewraps_HeadBandageA"]/thingCategories</xpath>
+        <value>
+          <thingCategories Inherit="False">
+            <li>LemonSkin_IndustrialHeadgear</li>
+          </thingCategories>
+        </value>
+      </Operation>
+    </caseTrue>
+  </Operation>
+</Patch>
