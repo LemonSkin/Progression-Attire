@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Patch>
   <!-- Apparel_PreschoolerHat -->
   <Operation Class="PatchOperationReplace">
@@ -7,14 +7,7 @@
       <label>kid school hat</label>
     </value>
   </Operation>
-  <Operation Class="PatchOperationAdd">
-    <xpath>Defs/ThingDef[defName="Apparel_PreschoolerHat"]</xpath>
-    <value>
-      <thingCategories Inherit="False">
-        <li>LemonSkin_KidHeadgear</li>
-      </thingCategories>
-    </value>
-  </Operation>
+
   <!-- Apparel_PreschoolerBeret -->
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="Apparel_PreschoolerBeret"]/label</xpath>
@@ -22,15 +15,31 @@
       <label>kid beret</label>
     </value>
   </Operation>
-  <Operation Class="PatchOperationAdd">
-    <xpath>Defs/ThingDef[defName="Apparel_PreschoolerBeret"]</xpath>
-    <value>
-      <thingCategories Inherit="False">
-        <li>LemonSkin_KidHeadgear</li>
-      </thingCategories>
-    </value>
-  </Operation>
+
   <!-- Apparel_PreschoolerF -->
   <!-- Apparel_PreschoolerM -->
+  <Operation Class="XmlExtensions.OptionalPatch">
+    <modId>ferny.progressionattire</modId>
+    <key>ApplyCategories</key>
+    <defaultValue>true</defaultValue>
+    <caseTrue>
+      <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="Apparel_PreschoolerBeret"]</xpath>
+        <value>
+          <thingCategories Inherit="False">
+            <li>LemonSkin_KidHeadgear</li>
+          </thingCategories>
+        </value>
+      </Operation>
 
+      <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="Apparel_PreschoolerHat"]</xpath>
+        <value>
+          <thingCategories Inherit="False">
+            <li>LemonSkin_KidHeadgear</li>
+          </thingCategories>
+        </value>
+      </Operation>
+    </caseTrue>
+  </Operation>
 </Patch>
