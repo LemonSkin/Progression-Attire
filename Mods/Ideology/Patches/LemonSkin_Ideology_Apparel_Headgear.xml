@@ -30,15 +30,6 @@
       </Operation>
 
       <Operation Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[defName="Apparel_AuthorityCap"]</xpath>
-        <value>
-          <thingCategories Inherit="False">
-            <li>LemonSkin_IndustrialHeadgear</li>
-          </thingCategories>
-        </value>
-      </Operation>
-
-      <Operation Class="PatchOperationAdd">
         <xpath>Defs/ThingDef[defName="Apparel_Shadecone"]</xpath>
         <value>
           <thingCategories Inherit="False">
