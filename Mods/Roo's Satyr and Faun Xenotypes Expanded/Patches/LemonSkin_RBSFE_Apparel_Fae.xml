@@ -63,11 +63,11 @@
       </xpath>
       <value>
         <recipeMaker Operation="Safe">
-          <researchPrerequisite Operation="SafeRemove">RBSFE_FaeCraftables</researchPrerequisite>
-          <researchPrerequisites Operation="SafeAdd">
+          <researchPrerequisites Operation="AddOrReplace">
             <li>LemonSkin_Leafwear</li>
             <li>Smithing</li>
           </researchPrerequisites>
+          <researchPrerequisite Operation="SafeRemove" />
         </recipeMaker>
       </value>
     </match>
