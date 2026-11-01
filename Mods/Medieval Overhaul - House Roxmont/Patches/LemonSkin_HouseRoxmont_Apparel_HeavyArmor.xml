@@ -102,8 +102,8 @@
     <caseTrue>
       <Operation Class="XmlExtensions.HybridPatch">
         <xpath>
-          Defs/ThingDef[defName="DankPyon_Apparel_Zweihanders_Cuirass_Roxmont"
-          or defName="DankPyon_Apparel_FullPlate_Roxmont"]
+          Defs/ThingDef[defName="DankPyon_Apparel_Zweihanders_Cuirass_Roxmont" or
+          defName="DankPyon_Apparel_FullPlate_Roxmont"]
         </xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">

@@ -5,10 +5,10 @@
     <key>ApplyCategories</key>
     <defaultValue>true</defaultValue>
     <caseTrue>
-      <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[defName="Apparel_Vacsuit"]/thingCategories</xpath>
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>Defs/ThingDef[defName="Apparel_Vacsuit"]</xpath>
         <value>
-          <thingCategories>
+          <thingCategories Operation="AddOrReplace" Inherit="False">
             <li>LemonSkin_SpacerArmor</li>
           </thingCategories>
         </value>
@@ -16,10 +16,10 @@
 
       <Operation Class="PatchOperationConditional">
         <xpath>Defs/ThingDef[defName="Apparel_VacsuitChildren"]</xpath>
-        <match Class="PatchOperationReplace">
-          <xpath>Defs/ThingDef[defName="Apparel_VacsuitChildren"]/thingCategories</xpath>
+        <match Class="XmlExtensions.HybridPatch">
+          <xpath>Defs/ThingDef[defName="Apparel_VacsuitChildren"]</xpath>
           <value>
-            <thingCategories>
+            <thingCategories Operation="AddOrReplace" Inherit="False">
               <li>LemonSkin_KidArmor</li>
             </thingCategories>
           </value>

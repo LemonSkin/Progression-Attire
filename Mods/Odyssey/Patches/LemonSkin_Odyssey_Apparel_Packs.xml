@@ -5,13 +5,13 @@
     <key>ApplyCategories</key>
     <defaultValue>true</defaultValue>
     <caseTrue>
-      <Operation Class="PatchOperationReplace">
+      <Operation Class="XmlExtensions.HybridPatch">
         <xpath>
           Defs/ThingDef[defName="Apparel_PackHunter" or
-          defName="Apparel_CerebrexNode"]/thingCategories
+        defName="Apparel_CerebrexNode"]
         </xpath>
         <value>
-          <thingCategories>
+          <thingCategories Operation="AddOrReplace" Inherit="False">
             <li>LemonSkin_SpacerUtility</li>
           </thingCategories>
         </value>

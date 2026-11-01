@@ -5,10 +5,10 @@
     <key>ApplyCategories</key>
     <defaultValue>true</defaultValue>
     <caseTrue>
-      <Operation Class="PatchOperationAdd">
+      <Operation Class="XmlExtensions.HybridPatch">
         <xpath>Defs/ThingDef[defName="Apparel_VacsuitHelmet"]</xpath>
         <value>
-          <thingCategories Inherit="False">
+          <thingCategories Operation="AddOrReplace" Inherit="False">
             <li>LemonSkin_SpacerArmorHeadgear</li>
           </thingCategories>
         </value>
