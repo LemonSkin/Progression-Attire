@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <!-- ######################################### LABELS ######################################### -->
+  <Operation Class="XmlExtensions.Conditional">
+    <xpath>Defs/ThingDef[defName="Apparel_LabCoat"]</xpath>
+    <caseTrue>
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>Defs/ThingDef[defName="Apparel_LabCoat"]</xpath>
+        <value>
+          <label Operation="AddOrReplace">researcher's lab coat</label>
+        </value>
+      </Operation>
+
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>Defs/ThingDef[defName="VAE_Apparel_LabCoat"]</xpath>
+        <value>
+          <label Operation="AddOrReplace">chemist's lab coat</label>
+        </value>
+      </Operation>
+    </caseTrue>
+  </Operation>
+
+  <!-- ######################################### RESEARCH ######################################### -->
+  <Operation Class="XmlExtensions.Conditional">
+    <xpath>Defs/ThingDef[defName="Apparel_LabCoat"]/label</xpath>
+    <caseTrue>
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>Defs/ThingDef[defName="Apparel_LabCoat"]</xpath>
+        <value>
+          <recipeMaker Operation="Safe">
+            <researchPrerequisite Operation="AddOrReplace">VAE_SterileAttire</researchPrerequisite>
+            <researchPrerequisites Operation="SafeRemove" />
+          </recipeMaker>
+        </value>
+      </Operation>
+    </caseTrue>
+  </Operation>
+  <!-- ######################################### REBALANCES ######################################### -->
+
+  <!-- ######################################### CATEGORIES ######################################### -->
+</Patch>

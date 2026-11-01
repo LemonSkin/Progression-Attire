@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <!-- ######################################### LABELS ######################################### -->
+
+  <!-- ######################################### RESEARCH ######################################### -->
+  <Operation Class="XmlExtensions.HybridPatch">
+    <xpath>Defs/ThingDef[defName="VAE_Headgear_Scarf]</xpath>
+    <value>
+      <techLevel Operation="AddOrReplace">Medieval</techLevel>
+      <recipeMaker Operation="Safe">
+        <researchPrerequisite Operation="AddOrReplace">LemonSkin_RusticClothing</researchPrerequisite>
+        <researchPrerequisites Operation="SafeRemove" />
+      </recipeMaker>
+    </value>
+  </Operation>
+
+  <!-- ######################################### REBALANCES ######################################### -->
+  <Operation Class="XmlExtensions.OptionalPatch">
+    <modId>ferny.progressionattire</modId>
+    <key>ApplyRebalances</key>
+    <defaultValue>true</defaultValue>
+    <caseTrue>
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>Defs/ThingDef[defName="VAE_Headgear_Scarf"]</xpath>
+        <value>
+          <statBases Operation="AddOrReplace">
+            <MaxHitPoints>80</MaxHitPoints>
+            <WorkToMake>1200</WorkToMake>
+            <Mass>0.09</Mass>
+            <StuffEffectMultiplierArmor>0</StuffEffectMultiplierArmor>
+            <StuffEffectMultiplierInsulation_Cold>0.6</StuffEffectMultiplierInsulation_Cold>
+            <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
+            <EquipDelay>0.8</EquipDelay>
+          </statBases>
+          <apparel Operation="Safe">
+            <bodyPartGroups Operation="AddOrReplace">
+              <li>Neck</li>
+            </bodyPartGroups>
+          </apparel>
+        </value>
+      </Operation>
+
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>Defs/ThingDef[defName="VAE_Headgear_Beret"]</xpath>
+        <value>
+          <costStuffCount Operation="AddOrReplace">35</costStuffCount>
+          <statBases Operation="AddOrReplace">
+            <MaxHitPoints>80</MaxHitPoints>
+            <WorkToMake>4000</WorkToMake>
+            <Mass>0.08</Mass>
+            <StuffEffectMultiplierArmor>0.1</StuffEffectMultiplierArmor>
+            <StuffEffectMultiplierInsulation_Cold>0.07</StuffEffectMultiplierInsulation_Cold>
+            <StuffEffectMultiplierInsulation_Heat>0.15</StuffEffectMultiplierInsulation_Heat>
+            <EquipDelay>0.8</EquipDelay>
+          </statBases>
+          <equippedStatOffsets Operation="AddOrReplace">
+            <MentalBreakThreshold>-0.05</MentalBreakThreshold>
+            <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.05</SlaveSuppressionOffset>
+          </equippedStatOffsets>
+        </value>
+      </Operation>
+
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>Defs/ThingDef[defName="VAE_Headgear_Hardhat"]</xpath>
+        <value>
+          <statBases Operation="AddOrReplace">
+            <MaxHitPoints>100</MaxHitPoints>
+            <WorkToMake>3500</WorkToMake>
+            <Mass>2</Mass>
+            <ArmorRating_Sharp>0.175</ArmorRating_Sharp>
+            <ArmorRating_Blunt>0.4</ArmorRating_Blunt>
+            <ArmorRating_Heat>0.25</ArmorRating_Heat>
+            <Insulation_Cold>0</Insulation_Cold>
+            <Insulation_Heat>0</Insulation_Heat>
+            <EquipDelay>0.8</EquipDelay>
+          </statBases>
+          <equippedStatOffsets Operation="AddOrReplace">
+            <ConstructionSpeed>0.05</ConstructionSpeed>
+            <ConstructSuccessChance>0.05</ConstructSuccessChance>
+          </equippedStatOffsets>
+        </value>
+      </Operation>
+
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>Defs/ThingDef[defName="VAE_Headgear_SurgicalMask"]</xpath>
+        <value>
+          <statBases Operation="AddOrReplace">
+            <MaxHitPoints>80</MaxHitPoints>
+            <WorkToMake>3500</WorkToMake>
+            <Mass>0.07</Mass>
+            <ArmorRating_Sharp>0</ArmorRating_Sharp>
+            <ArmorRating_Blunt>0</ArmorRating_Blunt>
+            <ArmorRating_Heat>0</ArmorRating_Heat>
+            <Insulation_Cold>4</Insulation_Cold>
+            <Insulation_Heat>2</Insulation_Heat>
+            <EquipDelay>0.8</EquipDelay>
+          </statBases>
+          <equippedStatOffsets Operation="AddOrReplace">
+            <ConstructionSpeed>0.05</ConstructionSpeed>
+            <ConstructSuccessChance>0.05</ConstructSuccessChance>
+          </equippedStatOffsets>
+        </value>
+      </Operation>
+
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>Defs/ThingDef[defName="VAE_Headgear_BaseballCap"]</xpath>
+        <value>
+          <statBases Operation="AddOrReplace">
+            <MaxHitPoints>80</MaxHitPoints>
+            <WorkToMake>1200</WorkToMake>
+            <Mass>0.07</Mass>
+            <StuffEffectMultiplierArmor>0.2</StuffEffectMultiplierArmor>
+            <StuffEffectMultiplierInsulation_Cold>0</StuffEffectMultiplierInsulation_Cold>
+            <StuffEffectMultiplierInsulation_Heat>0.5</StuffEffectMultiplierInsulation_Heat>
+            <EquipDelay>0.8</EquipDelay>
+          </statBases>
+          <equippedStatOffsets Operation="SafeRemove" />
+        </value>
+      </Operation>
+
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>Defs/ThingDef[defName="VAE_Headgear_Sunglasses"]</xpath>
+        <value>
+          <costList Operation="AddOrReplace">
+            <Steel>10</Steel>
+          </costList>
+        </value>
+      </Operation>
+
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>Defs/ThingDef[defName="VAE_Headgear_ChefsToque"]</xpath>
+        <value>
+          <statBases Operation="AddOrReplace">
+            <MaxHitPoints>80</MaxHitPoints>
+            <WorkToMake>3500</WorkToMake>
+            <Mass>0.1</Mass>
+            <StuffEffectMultiplierArmor>0</StuffEffectMultiplierArmor>
+            <StuffEffectMultiplierInsulation_Cold>0</StuffEffectMultiplierInsulation_Cold>
+            <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
+            <EquipDelay>0.8</EquipDelay>
+          </statBases>
+          <equippedStatOffsets Operation="AddOrReplace">
+            <CookSpeed>0.5</CookSpeed>
+            <FoodPoisonChance>-0.025</FoodPoisonChance>
+          </equippedStatOffsets>
+        </value>
+      </Operation>
+    </caseTrue>
+  </Operation>
+
+  <!-- ######################################### CATEGORIES ######################################### -->
+  <Operation Class="XmlExtensions.HybridPatch">
+    <xpath>Defs/ThingDef[defName="VAE_Headgear_Scarf"]</xpath>
+    <value>
+      <thingCategories Operation="AddOrReplace" Inherit="False">
+        <li>LemonSkin_MedievalHeadgear</li>
+      </thingCategories>
+    </value>
+  </Operation>
+
+  <Operation Class="XmlExtensions.HybridPatch">
+    <xpath>
+      Defs/ThingDef[defName="VAE_Headgear_Beret" or
+      defName="VAE_Headgear_Hardhat" or
+      defName="VAE_Headgear_SurgicalMask" or
+      defName="VAE_Headgear_BaseballCap" or
+      defName="VAE_Headgear_Sunglasses" or
+      defName="VAE_Headgear_Glasses" or
+      defName="VAE_Headgear_ChefsToque"]
+    </xpath>
+    <value>
+      <thingCategories Operation="AddOrReplace" Inherit="False">
+        <li>LemonSkin_IndustrialHeadgear</li>
+      </thingCategories>
+    </value>
+  </Operation>
+</Patch>

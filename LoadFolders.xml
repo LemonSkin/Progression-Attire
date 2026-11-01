@@ -123,9 +123,10 @@
     <li IfModActive="OskarPotocki.VFE.Pirates">Mods/Vanilla Factions Expanded - Pirates</li>
     <li IfModActive="OskarPotocki.VanillaFactionsExpanded.SettlersModule">Mods/Vanilla Factions Expanded - Settlers</li>
 
-    <li IfModActive="VanillaExpanded.VAPPE">Mods/Vanilla Apparel Expanded/Core</li>
-    <li IfModActiveAll="VanillaExpanded.VAPPE,ludeon.rimworld.royalty">Mods/Vanilla Apparel Expanded/Royalty</li>
-    <li IfModActiveAll="VanillaExpanded.VAPPE,ludeon.rimworld.anomaly">Mods/Vanilla Apparel Expanded/Anomaly</li>
+    <!-- <li IfModActive="VanillaExpanded.VAPPE">Mods/Vanilla Apparel Expanded/Core</li> -->
+    <!-- <li IfModActiveAll="VanillaExpanded.VAPPE,ludeon.rimworld.royalty">Mods/Vanilla Apparel Expanded/Royalty</li> -->
+    <!-- <li IfModActiveAll="VanillaExpanded.VAPPE,ludeon.rimworld.anomaly">Mods/Vanilla Apparel Expanded/Anomaly</li> -->
+    <li IfModActiveAll="VanillaExpanded.VAPPE">Mods/Vanilla Apparel Expanded</li>
 
     <li IfModActiveAll="VanillaExpanded.VARME">Mods/Vanilla Armor Expanded/Core</li>
     <li IfModActiveAll="VanillaExpanded.VARME,DankPyon.Medieval.Overhaul">Mods/Vanilla Armor Expanded/Medieval Overhaul</li>
