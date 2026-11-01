@@ -1,29 +1,39 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Patch>
+  <!-- ######################################### LABELS ######################################### -->
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ZweihanderHelmRoxmont"]/label</xpath>
     <value>
       <label>zweihander helm (Roxmont)</label>
     </value>
   </Operation>
+
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="DankPyon_Headgear_HeraldicGreatHelmRoxmont"]/label</xpath>
     <value>
       <label>heraldic great helm (Roxmont)</label>
     </value>
   </Operation>
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="DankPyon_Headgear_HeraldicGreatHelmRoxmont"]/recipeMaker/skillRequirements/Crafting</xpath>
-    <value>
-      <Crafting>9</Crafting>
-    </value>
-  </Operation>
-  <Operation Class="PatchOperationAdd">
-    <xpath>Defs/ThingDef[defName="DankPyon_Headgear_HeraldicGreatHelmRoxmont"]</xpath>
-    <value>
-      <statBases>
-        <Insulation_Cold>10</Insulation_Cold>
-      </statBases>
-    </value>
+
+  <!-- ######################################### REBALANCES ######################################### -->
+  <Operation Class="XmlExtensions.OptionalPatch">
+    <modId>ferny.progressionattire</modId>
+    <key>ApplyRebalances</key>
+    <defaultValue>true</defaultValue>
+    <caseTrue>
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_HeraldicGreatHelmRoxmont"]</xpath>
+        <value>
+          <statBases Operation="AddOrReplace">
+            <Insulation_Cold>10</Insulation_Cold>
+          </statBases>
+          <recipeMaker Operation="Safe">
+            <skillRequirements Operation="Safe">
+              <Crafting Operation="AddOrReplace">9</Crafting>
+            </skillRequirements>
+          </recipeMaker>
+        </value>
+      </Operation>
+    </caseTrue>
   </Operation>
 </Patch>
