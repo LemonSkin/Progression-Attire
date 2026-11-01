@@ -1,11 +1,25 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <Operation Class="PatchOperationAdd">
-    <xpath>Defs/ThingDef[defName="Apparel_GMBridle"]</xpath>
-    <value>
-      <thingCategories Inherit="False">
-        <li>LemonSkin_PrisonerHeadgear</li>
-      </thingCategories>
-    </value>
+  <!-- ######################################### LABELS ######################################### -->
+
+  <!-- ######################################### RESEARCH ######################################### -->
+
+  <!-- ######################################### REBALANCES ######################################### -->
+
+  <!-- ######################################### CATEGORIES ######################################### -->
+  <Operation Class="XmlExtensions.OptionalPatch">
+    <modId>ferny.progressionattire</modId>
+    <key>ApplyCategories</key>
+    <defaultValue>true</defaultValue>
+    <caseTrue>
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>Defs/ThingDef[defName="Apparel_GMBridle"]</xpath>
+        <value>
+          <thingCategories Operation="AddOrReplace" Inherit="False">
+            <li>LemonSkin_PrisonerHeadgear</li>
+          </thingCategories>
+        </value>
+      </Operation>
+    </caseTrue>
   </Operation>
 </Patch>
