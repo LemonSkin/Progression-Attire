@@ -1,73 +1,81 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <!-- UNAGIapaka - winter coat -->
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="UNAGIapaka"]/costStuffCount</xpath>
+  <!-- ######################################### LABELS ######################################### -->
+
+  <!-- ######################################### RESEARCH ######################################### -->
+  <Operation Class="XmlExtensions.HybridPatch">
+    <xpath>
+      Defs/ThingDef[defName="UNAGImohukepu" or
+      defName="UNAGIapaka" or
+      defName="UNAGIfazukin" or
+      defName="UNAGIsantabo"]
+    </xpath>
     <value>
-      <costStuffCount>70</costStuffCount>
+      <techLevel Operation="AddOrReplace">Industrial</techLevel>
+      <recipeMaker Operation="Safe">
+        <researchPrerequisite Operation="AddOrReplace">ComplexClothing</researchPrerequisite>
+        <researchPrerequisites Operation="SafeRemove" />
+      </recipeMaker>
     </value>
   </Operation>
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="UNAGIapaka"]/statBases</xpath>
-    <value>
-      <statBases>
-        <MaxHitPoints>160</MaxHitPoints>
-        <WorkToMake>7000</WorkToMake>
-        <Mass>1.7</Mass>
-        <StuffEffectMultiplierArmor>0.3</StuffEffectMultiplierArmor>
-        <StuffEffectMultiplierInsulation_Cold>0.8</StuffEffectMultiplierInsulation_Cold>
-        <StuffEffectMultiplierInsulation_Heat>0.3</StuffEffectMultiplierInsulation_Heat>
-        <EquipDelay>1.5</EquipDelay>
-      </statBases>
-    </value>
+
+  <!-- ######################################### REBALANCES ######################################### -->
+  <Operation Class="XmlExtensions.OptionalPatch">
+    <modId>ferny.progressionattire</modId>
+    <key>ApplyRebalances</key>
+    <defaultValue>true</defaultValue>
+    <caseTrue>
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>Defs/ThingDef[defName="UNAGIapaka"]</xpath>
+        <value>
+          <costStuffCount Operation="AddOrReplace">70</costStuffCount>
+          <statBases Operation="AddOrReplace">
+            <MaxHitPoints>160</MaxHitPoints>
+            <WorkToMake>7000</WorkToMake>
+            <Mass>1.7</Mass>
+            <StuffEffectMultiplierArmor>0.3</StuffEffectMultiplierArmor>
+            <StuffEffectMultiplierInsulation_Cold>0.8</StuffEffectMultiplierInsulation_Cold>
+            <StuffEffectMultiplierInsulation_Heat>0.3</StuffEffectMultiplierInsulation_Heat>
+            <EquipDelay>1.5</EquipDelay>
+          </statBases>
+        </value>
+      </Operation>
+
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>Defs/ThingDef[defName="UNAGImohukepu"]</xpath>
+        <value>
+          <costStuffCount Operation="AddOrReplace">70</costStuffCount>
+          <statBases Operation="AddOrReplace">
+            <MaxHitPoints>160</MaxHitPoints>
+            <WorkToMake>7000</WorkToMake>
+            <Mass>1.7</Mass>
+            <StuffEffectMultiplierArmor>0.3</StuffEffectMultiplierArmor>
+            <StuffEffectMultiplierInsulation_Cold>0.8</StuffEffectMultiplierInsulation_Cold>
+            <StuffEffectMultiplierInsulation_Heat>0.3</StuffEffectMultiplierInsulation_Heat>
+            <EquipDelay>1.5</EquipDelay>
+          </statBases>
+        </value>
+      </Operation>
+    </caseTrue>
   </Operation>
-  <Operation Class="PatchOperationAdd">
-    <xpath>Defs/ThingDef[defName="UNAGIapaka"]/recipeMaker</xpath>
-    <value>
-      <researchPrerequisite>ComplexClothing</researchPrerequisite>
-    </value>
-  </Operation>
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="UNAGIapaka"]/thingCategories</xpath>
-    <value>
-      <thingCategories Inherit="False">
-        <li>LemonSkin_IndustrialApparel</li>
-      </thingCategories>
-    </value>
-  </Operation>
-  <!-- UNAGImohukepu - winter cape -->
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="UNAGImohukepu"]/costStuffCount</xpath>
-    <value>
-      <costStuffCount>70</costStuffCount>
-    </value>
-  </Operation>
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="UNAGImohukepu"]/statBases</xpath>
-    <value>
-      <statBases>
-        <MaxHitPoints>160</MaxHitPoints>
-        <WorkToMake>7000</WorkToMake>
-        <Mass>1.7</Mass>
-        <StuffEffectMultiplierArmor>0.3</StuffEffectMultiplierArmor>
-        <StuffEffectMultiplierInsulation_Cold>0.8</StuffEffectMultiplierInsulation_Cold>
-        <StuffEffectMultiplierInsulation_Heat>0.3</StuffEffectMultiplierInsulation_Heat>
-        <EquipDelay>1.5</EquipDelay>
-      </statBases>
-    </value>
-  </Operation>
-  <Operation Class="PatchOperationAdd">
-    <xpath>Defs/ThingDef[defName="UNAGImohukepu"]/recipeMaker</xpath>
-    <value>
-      <researchPrerequisite>ComplexClothing</researchPrerequisite>
-    </value>
-  </Operation>
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="UNAGImohukepu"]/thingCategories</xpath>
-    <value>
-      <thingCategories Inherit="False">
-        <li>LemonSkin_IndustrialApparel</li>
-      </thingCategories>
-    </value>
+
+  <!-- ######################################### CATEGORIES ######################################### -->
+  <Operation Class="XmlExtensions.OptionalPatch">
+    <modId>ferny.progressionattire</modId>
+    <key>ApplyCategories</key>
+    <defaultValue>true</defaultValue>
+    <caseTrue>
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>
+          Defs/ThingDef[defName="UNAGIapaka" or
+          defName="UNAGImohukepu"]
+        </xpath>
+        <value>
+          <thingCategories Operation="AddOrReplace" Inherit="False">
+            <li>LemonSkin_IndustrialApparel</li>
+          </thingCategories>
+        </value>
+      </Operation>
+    </caseTrue>
   </Operation>
 </Patch>
