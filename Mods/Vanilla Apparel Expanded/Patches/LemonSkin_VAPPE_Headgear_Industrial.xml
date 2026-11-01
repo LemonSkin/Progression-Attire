@@ -149,29 +149,36 @@
   </Operation>
 
   <!-- ######################################### CATEGORIES ######################################### -->
-  <Operation Class="XmlExtensions.HybridPatch">
-    <xpath>Defs/ThingDef[defName="VAE_Headgear_Scarf"]</xpath>
-    <value>
-      <thingCategories Operation="AddOrReplace" Inherit="False">
-        <li>LemonSkin_MedievalHeadgear</li>
-      </thingCategories>
-    </value>
-  </Operation>
+  <Operation Class="XmlExtensions.OptionalPatch">
+    <modId>ferny.progressionattire</modId>
+    <key>ApplyCategories</key>
+    <defaultValue>true</defaultValue>
+    <caseTrue>
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>Defs/ThingDef[defName="VAE_Headgear_Scarf"]</xpath>
+        <value>
+          <thingCategories Operation="AddOrReplace" Inherit="False">
+            <li>LemonSkin_MedievalHeadgear</li>
+          </thingCategories>
+        </value>
+      </Operation>
 
-  <Operation Class="XmlExtensions.HybridPatch">
-    <xpath>
-      Defs/ThingDef[defName="VAE_Headgear_Beret" or
-      defName="VAE_Headgear_Hardhat" or
-      defName="VAE_Headgear_SurgicalMask" or
-      defName="VAE_Headgear_BaseballCap" or
-      defName="VAE_Headgear_Sunglasses" or
-      defName="VAE_Headgear_Glasses" or
-      defName="VAE_Headgear_ChefsToque"]
-    </xpath>
-    <value>
-      <thingCategories Operation="AddOrReplace" Inherit="False">
-        <li>LemonSkin_IndustrialHeadgear</li>
-      </thingCategories>
-    </value>
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>
+          Defs/ThingDef[defName="VAE_Headgear_Beret" or
+          defName="VAE_Headgear_Hardhat" or
+          defName="VAE_Headgear_SurgicalMask" or
+          defName="VAE_Headgear_BaseballCap" or
+          defName="VAE_Headgear_Sunglasses" or
+          defName="VAE_Headgear_Glasses" or
+          defName="VAE_Headgear_ChefsToque"]
+        </xpath>
+        <value>
+          <thingCategories Operation="AddOrReplace" Inherit="False">
+            <li>LemonSkin_IndustrialHeadgear</li>
+          </thingCategories>
+        </value>
+      </Operation>
+    </caseTrue>
   </Operation>
 </Patch>

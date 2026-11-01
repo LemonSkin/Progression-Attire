@@ -85,16 +85,23 @@
   </Operation>
 
   <!-- ######################################### CATEGORIES ######################################### -->
-  <Operation Class="XmlExtensions.HybridPatch">
-    <xpath>
-      Defs/ThingDef[defName="VAE_Apparel_Tunic" or
-      defName="VAE_Apparel_Blouse" or
-      defName="VAE_Apparel_Apron"]
-    </xpath>
-    <value>
-      <thingCategories Operation="AddOrReplace" Inherit="False">
-        <li>LemonSkin_MedievalApparel</li>
-      </thingCategories>
-    </value>
+  <Operation Class="XmlExtensions.OptionalPatch">
+    <modId>ferny.progressionattire</modId>
+    <key>ApplyCategories</key>
+    <defaultValue>true</defaultValue>
+    <caseTrue>
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>
+          Defs/ThingDef[defName="VAE_Apparel_Tunic" or
+          defName="VAE_Apparel_Blouse" or
+          defName="VAE_Apparel_Apron"]
+        </xpath>
+        <value>
+          <thingCategories Operation="AddOrReplace" Inherit="False">
+            <li>LemonSkin_MedievalApparel</li>
+          </thingCategories>
+        </value>
+      </Operation>
+    </caseTrue>
   </Operation>
 </Patch>
