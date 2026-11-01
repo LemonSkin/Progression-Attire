@@ -1,64 +1,73 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <!-- VAE_Handwear_PlateGloves -->
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="VAE_Handwear_PlateGloves"]/recipeMaker/skillRequirements/Crafting</xpath>
-    <value>
-      <Crafting>7</Crafting>
-    </value>
+  <!-- ######################################### LABELS ######################################### -->
+
+  <!-- ######################################### RESEARCH ######################################### -->
+
+  <!-- ######################################### REBALANCES ######################################### -->
+  <Operation Class="XmlExtensions.OptionalPatch">
+    <modId>ferny.progressionattire</modId>
+    <key>ApplyRebalances</key>
+    <defaultValue>true</defaultValue>
+    <caseTrue>
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>Defs/ThingDef[defName="VAE_Handwear_PlateGloves"]</xpath>
+        <value>
+          <costStuffCount Operation="AddOrReplace">35</costStuffCount>
+          <statBases Operation="AddOrReplace">
+            <WorkToMake>6000</WorkToMake>
+            <MaxHitPoints>140</MaxHitPoints>
+            <Mass>2</Mass>
+            <StuffEffectMultiplierArmor>0.438</StuffEffectMultiplierArmor>
+            <StuffEffectMultiplierInsulation_Cold>0.15</StuffEffectMultiplierInsulation_Cold>
+            <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
+            <EquipDelay>2.5</EquipDelay>
+          </statBases>
+          <equippedStatOffsets Operation="AddOrReplace">
+            <WorkSpeedGlobal>-0.1</WorkSpeedGlobal>
+          </equippedStatOffsets>
+          <recipeMaker Operation="Safe">
+            <skillRequirements Operation="Safe">
+              <Crafting Operation="AddOrReplace">7</Crafting>
+            </skillRequirements>
+          </recipeMaker>
+        </value>
+      </Operation>
+    </caseTrue>
   </Operation>
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="VAE_Handwear_PlateGloves"]/costStuffCount</xpath>
-    <value>
-      <costStuffCount>35</costStuffCount>
-    </value>
+
+  <!-- ######################################### CATEGORIES ######################################### -->
+  <Operation Class="XmlExtensions.OptionalPatch">
+    <modId>ferny.progressionattire</modId>
+    <key>ApplyCategories</key>
+    <defaultValue>true</defaultValue>
+    <caseTrue>
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>Defs/ThingDef[defName="VAE_Handwear_PlateGloves"]</xpath>
+        <value>
+          <thingCategories Operation="AddOrReplace" Inherit="False">
+            <li>LemonSkin_MedievalArmor</li>
+          </thingCategories>
+        </value>
+      </Operation>
+
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>Defs/ThingDef[defName="VAE_Handwear_MarineGloves"]</xpath>
+        <value>
+          <thingCategories Operation="AddOrReplace" Inherit="False">
+            <li>LemonSkin_SpacerArmor</li>
+          </thingCategories>
+        </value>
+      </Operation>
+    </caseTrue>
   </Operation>
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="VAE_Handwear_PlateGloves"]/statBases</xpath>
-    <value>
-      <statBases>
-        <WorkToMake>6000</WorkToMake>
-        <MaxHitPoints>140</MaxHitPoints>
-        <Mass>2</Mass>
-        <StuffEffectMultiplierArmor>0.438</StuffEffectMultiplierArmor>
-        <StuffEffectMultiplierInsulation_Cold>0.15</StuffEffectMultiplierInsulation_Cold>
-        <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
-        <EquipDelay>2.5</EquipDelay>
-      </statBases>
-    </value>
-  </Operation>
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="VAE_Handwear_PlateGloves"]/equippedStatOffsets</xpath>
-    <value>
-      <equippedStatOffsets>
-        <WorkSpeedGlobal>-0.1</WorkSpeedGlobal>
-      </equippedStatOffsets>
-    </value>
-  </Operation>
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="VAE_Handwear_PlateGloves"]/thingCategories</xpath>
-    <value>
-      <thingCategories Inherit="False">
-        <li>LemonSkin_MedievalArmor</li>
-      </thingCategories>
-    </value>
-  </Operation>
+
+  <!-- ######################################### MO DE-DUPE ######################################### -->
 
   <Operation Class="PatchOperationConditional">
     <xpath>Defs/ThingDef[defName="DankPyon_Handwear_GlovesPlate"]</xpath>
     <match Class="PatchOperationRemove">
       <xpath>Defs/ThingDef[defName="VAE_Handwear_PlateGloves"]</xpath>
     </match>
-  </Operation>
-
-
-  <!-- VAE_Handwear_MarineGloves -->
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="VAE_Handwear_MarineGloves"]/thingCategories</xpath>
-    <value>
-      <thingCategories Inherit="False">
-        <li>LemonSkin_SpacerArmor</li>
-      </thingCategories>
-    </value>
   </Operation>
 </Patch>

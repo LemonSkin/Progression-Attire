@@ -22,7 +22,7 @@
 
   <!-- ######################################### RESEARCH ######################################### -->
   <Operation Class="XmlExtensions.Conditional">
-    <xpath>Defs/ThingDef[defName="Apparel_LabCoat"]/label</xpath>
+    <xpath>Defs/ThingDef[defName="Apparel_LabCoat"]</xpath>
     <caseTrue>
       <Operation Class="XmlExtensions.HybridPatch">
         <xpath>Defs/ThingDef[defName="Apparel_LabCoat"]</xpath>
