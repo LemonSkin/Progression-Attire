@@ -10,6 +10,7 @@
         <value>
           <thingCategories Inherit="False">
             <li>LemonSkin_IndustrialApparel</li>
+            <li MayRequire="Ludeon.RimWorld.Royalty">ApparelNoble</li>
           </thingCategories>
         </value>
       </Operation>
@@ -20,11 +21,11 @@
     <xpath>Defs/ThingDef[defName="RBApparel_Tailcoat"]</xpath>
     <value>
       <recipeMaker Operation="Safe">
-        <researchPrerequisite Operation="SafeRemove" />
         <researchPrerequisites Operation="AddOrReplace">
           <li>ComplexClothing</li>
           <li MayRequire="Ludeon.RimWorld.Royalty">NobleApparel</li>
         </researchPrerequisites>
+        <researchPrerequisite Operation="SafeRemove" />
       </recipeMaker>
     </value>
   </Operation>

@@ -1,88 +1,66 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Quiver"]/statBases</xpath>
-    <value>
-      <statBases>
-        <WorkToMake>2500</WorkToMake>
-        <MaxHitPoints>50</MaxHitPoints>
-        <Mass>1</Mass>
-        <EquipDelay>1</EquipDelay>
-      </statBases>
-    </value>
-  </Operation>
-  <Operation Class="PatchOperationAdd">
+  <!-- ######################################### LABELS ######################################### -->
+
+  <!-- ######################################### RESEARCH ######################################### -->
+  <Operation Class="XmlExtensions.HybridPatch">
     <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Quiver"]</xpath>
     <value>
-      <equippedStatOffsets>
-        <RangedCooldownFactor>-0.05</RangedCooldownFactor>
-      </equippedStatOffsets>
-    </value>
-  </Operation>
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Quiver"]/apparel/bodyPartGroups</xpath>
-    <value>
-      <bodyPartGroups>
-        <li>Waist</li>
-      </bodyPartGroups>
-    </value>
-  </Operation>
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Quiver"]/thingCategories</xpath>
-    <value>
-      <thingCategories>
-        <li>LemonSkin_MedievalUtility</li>
-      </thingCategories>
-    </value>
-  </Operation>
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Quiver"]/recipeMaker/researchPrerequisite</xpath>
-    <value>
-      <researchPrerequisite>LemonSkin_RusticClothing</researchPrerequisite>
+      <recipeMaker Operation="Safe">
+        <researchPrerequisite Operation="AddOrReplace">LemonSkin_RusticClothing</researchPrerequisite>
+        <researchPrerequisites Operation="SafeRemove" />
+      </recipeMaker>
     </value>
   </Operation>
 
-
-  <!-- DankPyon_Apparel_FlashPotBelt -->
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="DankPyon_Apparel_FlashPotBelt"]/thingCategories</xpath>
-    <value>
-      <thingCategories Inherit="False">
-        <li>LemonSkin_MedievalUtility</li>
-      </thingCategories>
-    </value>
+  <!-- ######################################### REBALANCES ######################################### -->
+  <Operation Class="XmlExtensions.OptionalPatch">
+    <modId>ferny.progressionattire</modId>
+    <key>ApplyRebalances</key>
+    <defaultValue>true</defaultValue>
+    <caseTrue>
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Quiver"]</xpath>
+        <value>
+          <statBases Operation="AddOrReplace">
+            <WorkToMake>2500</WorkToMake>
+            <MaxHitPoints>50</MaxHitPoints>
+            <Mass>1</Mass>
+            <EquipDelay>1</EquipDelay>
+          </statBases>
+          <equippedStatOffsets Operation="AddOrReplace">
+            <RangedCooldownFactor>-0.05</RangedCooldownFactor>
+          </equippedStatOffsets>
+          <apparel Operation="Safe">
+            <bodyPartGroups Operation="AddOrReplace">
+              <li>Waist</li>
+            </bodyPartGroups>
+          </apparel>
+        </value>
+      </Operation>
+    </caseTrue>
   </Operation>
 
-
-  <!--  DankPyon_Apparel_FirePotBelt -->
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="DankPyon_Apparel_FirePotBelt"]/thingCategories</xpath>
-    <value>
-      <thingCategories Inherit="False">
-        <li>LemonSkin_MedievalUtility</li>
-      </thingCategories>
-    </value>
-  </Operation>
-
-
-  <!--  DankPyon_Apparel_SmokePotBelt -->
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="DankPyon_Apparel_SmokePotBelt"]/thingCategories</xpath>
-    <value>
-      <thingCategories Inherit="False">
-        <li>LemonSkin_MedievalUtility</li>
-      </thingCategories>
-    </value>
-  </Operation>
-
-
-  <!--  DankPyon_Apparel_AcidFlaskBelt -->
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="DankPyon_Apparel_AcidFlaskBelt"]/thingCategories</xpath>
-    <value>
-      <thingCategories Inherit="False">
-        <li>LemonSkin_MedievalUtility</li>
-      </thingCategories>
-    </value>
+  <!-- ######################################### CATEGORIES ######################################### -->
+  <Operation Class="XmlExtensions.OptionalPatch">
+    <modId>ferny.progressionattire</modId>
+    <key>ApplyCategories</key>
+    <defaultValue>true</defaultValue>
+    <caseTrue>
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>
+          Defs/ThingDef[defName="DankPyon_Apparel_Quiver" or
+          defName="DankPyon_Apparel_FlashPotBelt" or
+          defName="DankPyon_Apparel_FirePotBelt" or
+          defName="DankPyon_Apparel_SmokePotBelt" or
+          defName="DankPyon_Apparel_AcidFlaskBelt"]
+        </xpath>
+        <value>
+          <thingCategories Operation="AddOrReplace" Inherit="False">
+            <li>LemonSkin_MedievalUtility</li>
+          </thingCategories>
+        </value>
+      </Operation>
+    </caseTrue>
   </Operation>
 </Patch>

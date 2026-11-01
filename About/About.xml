@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <ModMetaData>
   <name>Progression: Attire</name>
   <author>Ferny, Lemonskin</author>
@@ -28,6 +28,7 @@
     <li>VanillaExpanded.VAPPE</li>
     <li>VanillaExpanded.VARME</li>
     <li>Gunmar.VictorianEraApparels</li>
+    <li>tug.Minotaur</li>
     <li>tug.SatyrFaun.Expanded</li>
     <li>tug.Minotaur.Expanded</li>
     <li>BiomesTeam.BiomesFossils</li>

@@ -1,120 +1,126 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <!-- Braies, hose, trouses -->
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[@Name="DankPyon_Base_Pants"]/recipeMaker/researchPrerequisite</xpath>
+  <!-- ######################################### LABELS ######################################### -->
+
+  <!-- ######################################### RESEARCH ######################################### -->
+  <Operation Class="XmlExtensions.HybridPatch">
+    <xpath>Defs/ThingDef[@Name="DankPyon_Base_Pants"]</xpath>
     <value>
-      <researchPrerequisite>LemonSkin_RusticClothing</researchPrerequisite>
+      <recipeMaker Operation="Safe">
+        <researchPrerequisite Operation="AddOrReplace">LemonSkin_RusticClothing</researchPrerequisite>
+        <researchPrerequisites Operation="SafeRemove" />
+      </recipeMaker>
     </value>
   </Operation>
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[@Name="DankPyon_Base_Pants"]/statBases</xpath>
-    <value>
-      <statBases>
-        <MaxHitPoints>100</MaxHitPoints>
-        <WorkToMake>2000</WorkToMake>
-        <Mass>0.6</Mass>
-        <StuffEffectMultiplierArmor>0.2</StuffEffectMultiplierArmor>
-        <StuffEffectMultiplierInsulation_Cold>0.15</StuffEffectMultiplierInsulation_Cold>
-        <StuffEffectMultiplierInsulation_Heat>0.15</StuffEffectMultiplierInsulation_Heat>
-        <EquipDelay>2</EquipDelay>
-      </statBases>
-    </value>
+
+  <!-- ######################################### REBALANCES ######################################### -->
+  <Operation Class="XmlExtensions.OptionalPatch">
+    <modId>ferny.progressionattire</modId>
+    <key>ApplyRebalances</key>
+    <defaultValue>true</defaultValue>
+    <caseTrue>
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>Defs/ThingDef[@Name="DankPyon_Base_Pants"]</xpath>
+        <value>
+          <statBases Operation="AddOrReplace">
+            <MaxHitPoints>100</MaxHitPoints>
+            <WorkToMake>2000</WorkToMake>
+            <Mass>0.6</Mass>
+            <StuffEffectMultiplierArmor>0.2</StuffEffectMultiplierArmor>
+            <StuffEffectMultiplierInsulation_Cold>0.15</StuffEffectMultiplierInsulation_Cold>
+            <StuffEffectMultiplierInsulation_Heat>0.15</StuffEffectMultiplierInsulation_Heat>
+            <EquipDelay>2</EquipDelay>
+          </statBases>
+        </value>
+      </Operation>
+
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>Defs/ThingDef[defName="DankPyon_Apparel_ChaussesPadded"]</xpath>
+        <value>
+          <costStuffCount Operation="Add">60</costStuffCount>
+          <statBases Operation="AddOrReplace">
+            <WorkToMake>1800</WorkToMake>
+            <MaxHitPoints>100</MaxHitPoints>
+            <Mass>1.5</Mass>
+            <StuffEffectMultiplierArmor>0.30</StuffEffectMultiplierArmor>
+            <StuffEffectMultiplierInsulation_Cold>1.2</StuffEffectMultiplierInsulation_Cold>
+            <StuffEffectMultiplierInsulation_Heat>0.2</StuffEffectMultiplierInsulation_Heat>
+            <EquipDelay>1.5</EquipDelay>
+          </statBases>
+        </value>
+      </Operation>
+
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>Defs/ThingDef[defName="DankPyon_Apparel_ChaussesSplinted"]</xpath>
+        <value>
+          <statBases Operation="AddOrReplace">
+            <WorkToMake>6000</WorkToMake>
+            <MaxHitPoints>120</MaxHitPoints>
+            <Mass>2</Mass>
+            <StuffEffectMultiplierArmor>0.378</StuffEffectMultiplierArmor>
+            <StuffEffectMultiplierInsulation_Cold>0.15</StuffEffectMultiplierInsulation_Cold>
+            <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
+            <EquipDelay>2.5</EquipDelay>
+          </statBases>
+          <equippedStatOffsets Operation="AddOrReplace">
+            <MoveSpeed>-0.05</MoveSpeed>
+          </equippedStatOffsets>
+          <recipeMaker Operation="Safe">
+            <skillRequirements Operation="Safe">
+              <Crafting Operation="AddOrReplace">5</Crafting>
+            </skillRequirements>
+          </recipeMaker>
+        </value>
+      </Operation>
+
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>Defs/ThingDef[defName="DankPyon_Apparel_ChaussesPlate"]</xpath>
+        <value>
+          <statBases Operation="AddOrReplace">
+            <WorkToMake>8000</WorkToMake>
+            <MaxHitPoints>140</MaxHitPoints>
+            <Mass>3</Mass>
+            <StuffEffectMultiplierArmor>0.458</StuffEffectMultiplierArmor>
+            <StuffEffectMultiplierInsulation_Cold>0.15</StuffEffectMultiplierInsulation_Cold>
+            <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
+            <EquipDelay>3</EquipDelay>
+          </statBases>
+          <equippedStatOffsets Operation="AddOrReplace">
+            <MoveSpeed>-0.1</MoveSpeed>
+          </equippedStatOffsets>
+          <recipeMaker Operation="Safe">
+            <skillRequirements Operation="Safe">
+              <Crafting Operation="AddOrReplace">7</Crafting>
+            </skillRequirements>
+          </recipeMaker>
+        </value>
+      </Operation>
+    </caseTrue>
   </Operation>
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[@Name="DankPyon_Base_Pants"]/thingCategories</xpath>
-    <value>
-      <thingCategories>
-        <li>LemonSkin_MedievalApparel</li>
-      </thingCategories>
-    </value>
-  </Operation>
-  <!-- DankPyon_Base_ArmoredPants  -->
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[@Name="DankPyon_Base_ArmoredPants"]/thingCategories</xpath>
-    <value>
-      <thingCategories>
-        <li>LemonSkin_MedievalArmor</li>
-      </thingCategories>
-    </value>
-  </Operation>
-  <!-- Padded Chausses -->
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="DankPyon_Apparel_ChaussesPadded"]/costStuffCount</xpath>
-    <value>
-      <costStuffCount>60</costStuffCount>
-    </value>
-  </Operation>
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="DankPyon_Apparel_ChaussesPadded"]/statBases</xpath>
-    <value>
-      <statBases>
-        <WorkToMake>1800</WorkToMake>
-        <MaxHitPoints>100</MaxHitPoints>
-        <Mass>1.5</Mass>
-        <StuffEffectMultiplierArmor>0.30</StuffEffectMultiplierArmor>
-        <StuffEffectMultiplierInsulation_Cold>1.2</StuffEffectMultiplierInsulation_Cold>
-        <StuffEffectMultiplierInsulation_Heat>0.2</StuffEffectMultiplierInsulation_Heat>
-        <EquipDelay>1.5</EquipDelay>
-      </statBases>
-    </value>
-  </Operation>
-  <!-- Splinted chausses -->
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="DankPyon_Apparel_ChaussesSplinted"]/recipeMaker/skillRequirements/Crafting</xpath>
-    <value>
-      <Crafting>5</Crafting>
-    </value>
-  </Operation>
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="DankPyon_Apparel_ChaussesSplinted"]/statBases</xpath>
-    <value>
-      <statBases>
-        <WorkToMake>6000</WorkToMake>
-        <MaxHitPoints>120</MaxHitPoints>
-        <Mass>2</Mass>
-        <StuffEffectMultiplierArmor>0.378</StuffEffectMultiplierArmor>
-        <StuffEffectMultiplierInsulation_Cold>0.15</StuffEffectMultiplierInsulation_Cold>
-        <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
-        <EquipDelay>2.5</EquipDelay>
-      </statBases>
-    </value>
-  </Operation>
-  <Operation Class="PatchOperationAdd">
-    <xpath>Defs/ThingDef[defName="DankPyon_Apparel_ChaussesSplinted"]</xpath>
-    <value>
-      <equippedStatOffsets>
-        <MoveSpeed>-0.05</MoveSpeed>
-      </equippedStatOffsets>
-    </value>
-  </Operation>
-  <!-- Plate chausses -->
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="DankPyon_Apparel_ChaussesPlate"]/recipeMaker/skillRequirements/Crafting</xpath>
-    <value>
-      <Crafting>7</Crafting>
-    </value>
-  </Operation>
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="DankPyon_Apparel_ChaussesPlate"]/statBases</xpath>
-    <value>
-      <statBases>
-        <WorkToMake>8000</WorkToMake>
-        <MaxHitPoints>140</MaxHitPoints>
-        <Mass>3</Mass>
-        <StuffEffectMultiplierArmor>0.458</StuffEffectMultiplierArmor>
-        <StuffEffectMultiplierInsulation_Cold>0.15</StuffEffectMultiplierInsulation_Cold>
-        <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
-        <EquipDelay>3</EquipDelay>
-      </statBases>
-    </value>
-  </Operation>
-  <Operation Class="PatchOperationAdd">
-    <xpath>Defs/ThingDef[defName="DankPyon_Apparel_ChaussesPlate"]</xpath>
-    <value>
-      <equippedStatOffsets>
-        <MoveSpeed>-0.1</MoveSpeed>
-      </equippedStatOffsets>
-    </value>
+
+  <!-- ######################################### CATEGORIES ######################################### -->
+  <Operation Class="XmlExtensions.OptionalPatch">
+    <modId>ferny.progressionattire</modId>
+    <key>ApplyCategories</key>
+    <defaultValue>true</defaultValue>
+    <caseTrue>
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>Defs/ThingDef[@Name="DankPyon_Base_Pants"]</xpath>
+        <value>
+          <thingCategories Operation="AddOrReplace" Inherit="False">
+            <li>LemonSkin_MedievalApparel</li>
+          </thingCategories>
+        </value>
+      </Operation>
+
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>Defs/ThingDef[@Name="DankPyon_Base_ArmoredPants"]</xpath>
+        <value>
+          <thingCategories Operation="AddOrReplace" Inherit="False">
+            <li>LemonSkin_MedievalArmor</li>
+          </thingCategories>
+        </value>
+      </Operation>
+    </caseTrue>
   </Operation>
 </Patch>

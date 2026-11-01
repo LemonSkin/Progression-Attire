@@ -89,25 +89,6 @@
     </match>
   </Operation>
 
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyRebalances</key>
-    <defaultValue>true</defaultValue>
-    <caseTrue>
-      <Operation Class="XmlExtensions.HybridPatch">
-        <xpath>Defs/ThingDef[defName="Apparel_PlateArmor"]</xpath>
-        <value>
-          <recipeMaker Operation="Safe">
-            <skillRequirements Operation="Safe">
-              <Crafting Operation="AddOrReplace">10</Crafting>
-            </skillRequirements>
-          </recipeMaker>
-          <costStuffCount Operation="AddOrReplace">200</costStuffCount>
-        </value>
-      </Operation>
-    </caseTrue>
-  </Operation>
-
   <Operation Class="PatchOperationConditional">
     <xpath>Defs/ThingDef[defName="Apparel_Cape"]</xpath>
     <match Class="PatchOperationAdd">
