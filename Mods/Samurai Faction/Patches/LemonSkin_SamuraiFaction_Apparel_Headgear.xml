@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
   <!-- ######################################### LABELS ######################################### -->
-  <!-- TSFApparel_Headband -->
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="TSFApparel_Headband"]/label</xpath>
     <value>
