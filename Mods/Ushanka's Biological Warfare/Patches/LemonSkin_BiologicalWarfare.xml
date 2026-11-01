@@ -1,11 +1,33 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="USH_RespiratorMask"]/apparel/layers</xpath>
+  <!-- ######################################### LABELS ######################################### -->
+
+  <!-- ######################################### RESEARCH ######################################### -->
+  <Operation Class="XmlExtensions.HybridPatch">
+    <xpath>Defs/ThingDef[defName="USH_RespiratorMask"]</xpath>
     <value>
-      <layers>
-        <li>Overhead</li>
-      </layers>
+      <techLevel Operation="AddOrReplace">Industrial</techLevel>
     </value>
   </Operation>
+
+  <!-- ######################################### REBALANCES ######################################### -->
+  <Operation Class="XmlExtensions.OptionalPatch">
+    <modId>ferny.progressionattire</modId>
+    <key>ApplyRebalances</key>
+    <defaultValue>true</defaultValue>
+    <caseTrue>
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>Defs/ThingDef[defName="USH_RespiratorMask"]</xpath>
+        <value>
+          <apparel Operation="Safe">
+            <layers Operation="AddOrReplace">
+              <li>Overhead</li>
+            </layers>
+          </apparel>
+        </value>
+      </Operation>
+    </caseTrue>
+  </Operation>
+
+  <!-- ######################################### CATEGORIES ######################################### -->
 </Patch>
