@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
   <!-- ######################################### LABELS ######################################### -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Hauberk"]</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/ThingDef[defName="VAE_Apparel_Chainmail"]/label</xpath>
+      <value>
+        <label>light hauberk</label>
+      </value>
+    </match>
+  </Operation>
 
   <!-- ######################################### RESEARCH ######################################### -->
 

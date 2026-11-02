@@ -4,7 +4,7 @@
 
   <!-- ######################################### RESEARCH ######################################### -->
   <Operation Class="XmlExtensions.HybridPatch">
-    <xpath>Defs/ThingDef[defName="VAE_Headgear_Scarf]</xpath>
+    <xpath>Defs/ThingDef[defName="VAE_Headgear_Scarf"]</xpath>
     <value>
       <techLevel Operation="AddOrReplace">Medieval</techLevel>
       <recipeMaker Operation="Safe">

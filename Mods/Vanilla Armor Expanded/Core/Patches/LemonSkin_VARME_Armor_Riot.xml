@@ -31,7 +31,7 @@
       </Operation>
 
       <Operation Class="XmlExtensions.HybridPatch">
-        <xpath>Defs/ThingDef[defName="VAE_Apparel_BaseShield"]</xpath>
+        <xpath>Defs/ThingDef[@Name="VAE_Apparel_BaseShield"]</xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
             <li>LemonSkin_IndustrialShields</li>

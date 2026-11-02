@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <!-- <Operation Class="XmlExtensions.StopwatchStart" /> -->
+  <!-- 440ms -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/ThingDef/recipeMaker/recipeUsers[li='FueledSmithy' and not(li='DankPyon_Anvil')]</xpath>
+    <value>
+      <li>DankPyon_Anvil</li>
+    </value>
+  </Operation>
+
+  <!-- 9859 ms -->
+  <!-- <Operation Class="PatchOperationAdd">
+    <xpath>//*/recipeMaker/recipeUsers[li[.='FueledSmithy'] and not(li[.='DankPyon_Anvil'])]</xpath>
+    <value>
+      <li>DankPyon_Anvil</li>
+    </value>
+  </Operation> -->
+
+  <!-- 550 ms -->
+  <!-- <Operation Class="XmlExtensions.CreateDocument">
+    <docName>RecipeMakerDoc</docName>
+    <xpath>Defs/ThingDef[recipeMaker]</xpath>
+  </Operation>
+
+  <Operation Class="XmlExtensions.PatchOperationAdd">
+    <xpath>RecipeMakerDoc/ThingDef/recipeMaker/recipeUsers[li='FueledSmithy' and not(li='DankPyon_Anvil')]</xpath>
+    <xmlDoc>RecipeMakerDoc</xmlDoc>
+    <value>
+      <li>DankPyon_Anvil</li>
+    </value>
+  </Operation>
+
+  <Operation Class="XmlExtensions.MergeDocument">
+    <docName>RecipeMakerDoc</docName>
+  </Operation> -->
+  <!-- <Operation Class="XmlExtensions.StopwatchStop" /> -->
+</Patch>
