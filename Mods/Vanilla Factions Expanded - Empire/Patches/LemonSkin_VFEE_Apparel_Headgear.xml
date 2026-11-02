@@ -1,39 +1,38 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <!-- VFEE_Apparel_TechfriarCrown -->
-  <Operation Class="PatchOperationAdd">
-    <xpath>Defs/ThingDef[defName="VFEE_Apparel_TechfriarCrown"]</xpath>
-    <value>
-      <thingCategories Inherit="False">
-        <li>LemonSkin_SpacerHeadgear</li>
-      </thingCategories>
-    </value>
-  </Operation>
-  <!-- VFEE_Apparel_AbsolverHelmet -->
-  <Operation Class="PatchOperationAdd">
-    <xpath>Defs/ThingDef[defName="VFEE_Apparel_AbsolverHelmet"]</xpath>
-    <value>
-      <thingCategories Inherit="False">
-        <li>LemonSkin_SpacerArmorHeadgear</li>
-      </thingCategories>
-    </value>
-  </Operation>
-  <!-- VFEE_Apparel_DeserterHelmet -->
-  <Operation Class="PatchOperationAdd">
-    <xpath>Defs/ThingDef[defName="VFEE_Apparel_DeserterHelmet"]</xpath>
-    <value>
-      <thingCategories Inherit="False">
-        <li>LemonSkin_SpacerArmorHeadgear</li>
-      </thingCategories>
-    </value>
-  </Operation>
-  <!-- VFEE_Apparel_JanissaryHelmet -->
-  <Operation Class="PatchOperationAdd">
-    <xpath>Defs/ThingDef[defName="VFEE_Apparel_JanissaryHelmet"]</xpath>
-    <value>
-      <thingCategories Inherit="False">
-        <li>LemonSkin_SpacerArmorHeadgear</li>
-      </thingCategories>
-    </value>
+  <!-- ######################################### LABELS ######################################### -->
+
+  <!-- ######################################### RESEARCH ######################################### -->
+
+  <!-- ######################################### REBALANCES ######################################### -->
+
+  <!-- ######################################### CATEGORIES ######################################### -->
+  <Operation Class="XmlExtensions.OptionalPatch">
+    <modId>ferny.progressionattire</modId>
+    <key>ApplyCategories</key>
+    <defaultValue>true</defaultValue>
+    <caseTrue>
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>Defs/ThingDef[defName="VFEE_Apparel_TechfriarCrown"]</xpath>
+        <value>
+          <thingCategories Operation="AddOrReplace" Inherit="False">
+            <li>LemonSkin_SpacerHeadgear</li>
+          </thingCategories>
+        </value>
+      </Operation>
+
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>
+          Defs/ThingDef[defName="VFEE_Apparel_AbsolverHelmet" or
+          defName="VFEE_Apparel_DeserterHelmet" or
+          defName="VFEE_Apparel_JanissaryHelmet"]
+        </xpath>
+        <value>
+          <thingCategories Operation="AddOrReplace" Inherit="False">
+            <li>LemonSkin_SpacerArmorHeadgear</li>
+          </thingCategories>
+        </value>
+      </Operation>
+    </caseTrue>
   </Operation>
 </Patch>
