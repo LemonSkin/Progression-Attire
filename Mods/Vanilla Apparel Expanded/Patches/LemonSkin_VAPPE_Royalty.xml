@@ -22,10 +22,10 @@
           </recipeMaker>
         </value>
       </Operation>
-    </caseTrue>
-  </Operation>
 
-  <Operation Class="PatchOperationRemove">
-    <xpath>Defs/ResearchProjectDef[defName="VAE_FormalWear"]</xpath>
+      <Operation Class="PatchOperationRemove">
+        <xpath>Defs/ResearchProjectDef[defName="VAE_FormalWear"]</xpath>
+      </Operation>
+    </caseTrue>
   </Operation>
 </Patch>

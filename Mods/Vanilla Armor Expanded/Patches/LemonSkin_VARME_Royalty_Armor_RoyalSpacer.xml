@@ -12,28 +12,40 @@
     <key>ApplyCategories</key>
     <defaultValue>true</defaultValue>
     <caseTrue>
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="PatchOperationConditional">
         <xpath>
           Defs/ThingDef[defName="VAE_Headgear_RoyalTrooperHelmet" or
           defName="VAE_Headgear_RoyalSiegeHelmet"]
         </xpath>
-        <value>
-          <thingCategories Operation="AddOrReplace" Inherit="False">
-            <li>LemonSkin_SpacerArmorHeadgear</li>
-          </thingCategories>
-        </value>
+        <match Class="XmlExtensions.HybridPatch">
+          <xpath>
+            Defs/ThingDef[defName="VAE_Headgear_RoyalTrooperHelmet" or
+            defName="VAE_Headgear_RoyalSiegeHelmet"]
+          </xpath>
+          <value>
+            <thingCategories Operation="AddOrReplace" Inherit="False">
+              <li>LemonSkin_SpacerArmorHeadgear</li>
+            </thingCategories>
+          </value>
+        </match>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="PatchOperationConditional">
         <xpath>
           Defs/ThingDef[defName="VAE_Apparel_RoyalTrooperArmor" or
           defName="VAE_Apparel_RoyalSiegeArmor"]
         </xpath>
-        <value>
-          <thingCategories Operation="AddOrReplace" Inherit="False">
-            <li>LemonSkin_SpacerArmor</li>
-          </thingCategories>
-        </value>
+        <match Class="XmlExtensions.HybridPatch">
+          <xpath>
+            Defs/ThingDef[defName="VAE_Apparel_RoyalTrooperArmor" or
+            defName="VAE_Apparel_RoyalSiegeArmor"]
+          </xpath>
+          <value>
+            <thingCategories Operation="AddOrReplace" Inherit="False">
+              <li>LemonSkin_SpacerArmor</li>
+            </thingCategories>
+          </value>
+        </match>
       </Operation>
     </caseTrue>
   </Operation>
