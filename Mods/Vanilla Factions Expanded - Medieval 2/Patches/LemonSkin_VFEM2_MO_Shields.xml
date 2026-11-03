@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <Operation Class="XmlExtensions.Conditional">
+    <xpath>Defs/ThingDef[defName="DankPyon_Shield"]</xpath>
+    <caseTrue>
+      <Operation Class="PatchOperationReplace">
+        <xpath>Defs/PawnKindDef/apparelRequired/li[.="VFEM2_Shield_Round"]</xpath>
+        <value>
+          <li>DankPyon_Shield</li>
+        </value>
+      </Operation>
+      <Operation Class="PatchOperationRemove">
+        <xpath>Defs/ThingDef[defName="VFEM2_Shield_Round"]</xpath>
+      </Operation>
+    </caseTrue>
+  </Operation>
+
+  <Operation Class="XmlExtensions.Conditional">
+    <xpath>Defs/ThingDef[defName="DankPyon_ShieldHeater"]</xpath>
+    <caseTrue>
+      <Operation Class="PatchOperationReplace">
+        <xpath>Defs/PawnKindDef/apparelRequired/li[.="VFEM2_Shield_Heater"]</xpath>
+        <value>
+          <li>DankPyon_ShieldHeater</li>
+        </value>
+      </Operation>
+      <Operation Class="PatchOperationRemove">
+        <xpath>Defs/ThingDef[defName="VFEM2_Shield_Heater"]</xpath>
+      </Operation>
+    </caseTrue>
+  </Operation>
+</Patch>

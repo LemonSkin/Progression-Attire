@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <!-- ######################################### LABELS ######################################### -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="VFEM2_Apparel_PaddedArmor"]/label</xpath>
+    <value>
+      <label>light padded armor</label>
+    </value>
+  </Operation>
+
+  <!-- ######################################### RESEARCH ######################################### -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ResearchProjectDef[defName="NobleApparel"]</xpath>
+    <match Class="XmlExtensions.HybridPatch">
+      <xpath>Defs/ThingDef[defName="VFEM2_Apparel_JesterOutfit"]</xpath>
+      <value>
+        <recipeMaker Operation="Safe">
+          <researchPrerequisite Operation="AddOrReplace">NobleApparel</researchPrerequisite>
+          <researchPrerequisites Operation="SafeRemove" />
+        </recipeMaker>
+      </value>
+    </match>
+    <nomatch Class="XmlExtensions.HybridPatch">
+      <xpath>Defs/ThingDef[defName="VFEM2_Apparel_JesterOutfit"]</xpath>
+      <value>
+        <recipeMaker Operation="Safe">
+          <researchPrerequisite Operation="AddOrReplace">LemonSkin_RusticClothing</researchPrerequisite>
+          <researchPrerequisites Operation="SafeRemove" />
+        </recipeMaker>
+      </value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ResearchProjectDef[defName="RoyalApparel"]</xpath>
+    <match Class="XmlExtensions.HybridPatch">
+      <xpath>
+        Defs/ThingDef[defName="VFEM2_Apparel_DameDress" or
+        defName="VFEM2_Apparel_KingsRobes"]
+      </xpath>
+      <value>
+        <recipeMaker Operation="Safe">
+          <researchPrerequisite Operation="AddOrReplace">RoyalApparel</researchPrerequisite>
+          <researchPrerequisites Operation="SafeRemove" />
+        </recipeMaker>
+      </value>
+    </match>
+    <nomatch Class="XmlExtensions.HybridPatch">
+      <xpath>
+        Defs/ThingDef[[defName="VFEM2_Apparel_DameDress" or
+        defName="VFEM2_Apparel_KingsRobes"]
+      </xpath>
+      <value>
+        <recipeMaker Operation="Safe">
+          <researchPrerequisite Operation="AddOrReplace">LemonSkin_RusticClothing</researchPrerequisite>
+          <researchPrerequisites Operation="SafeRemove" />
+        </recipeMaker>
+      </value>
+    </nomatch>
+  </Operation>
+
+  <Operation Class="XmlExtensions.HybridPatch">
+    <xpath>
+      Defs/ThingDef[defName="VFEM2_Apparel_HeavyLeatherArmor" or
+      defName="VFEM2_Apparel_LeatherArmor"]
+    </xpath>
+    <value>
+      <recipeMaker Operation="Safe">
+        <researchPrerequisite Operation="AddOrReplace">LemonSkin_LeatherArmour</researchPrerequisite>
+        <researchPrerequisites Operation="SafeRemove" />
+      </recipeMaker>
+    </value>
+  </Operation>
+
+  <Operation Class="XmlExtensions.HybridPatch">
+    <xpath>
+      Defs/ThingDef[defName="VFEM2_Apparel_PaddedArmor" or
+      defName="VFEM2_Apparel_Mantle"]
+    </xpath>
+    <value>
+      <recipeMaker Operation="Safe">
+        <researchPrerequisite Operation="AddOrReplace">LemonSkin_RusticClothing</researchPrerequisite>
+        <researchPrerequisites Operation="SafeRemove" />
+      </recipeMaker>
+    </value>
+  </Operation>
+
+  <!-- ######################################### REBALANCES ######################################### -->
+  <Operation Class="XmlExtensions.OptionalPatch">
+    <modId>ferny.progressionattire</modId>
+    <key>ApplyRebalances</key>
+    <defaultValue>true</defaultValue>
+    <caseTrue>
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>Defs/ThingDef[defName="VFEM2_Apparel_PlateArmorHeavy"]</xpath>
+        <value>
+          <statBases Operation="AddOrReplace">
+            <WorkToMake>50400</WorkToMake>
+            <MaxHitPoints>340</MaxHitPoints>
+            <Mass>20</Mass>
+            <StuffEffectMultiplierArmor>1.02</StuffEffectMultiplierArmor>
+            <StuffEffectMultiplierInsulation_Cold>1.0</StuffEffectMultiplierInsulation_Cold>
+            <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
+            <EquipDelay>20</EquipDelay>
+          </statBases>
+          <equippedStatOffsets Operation="AddOrReplace">
+            <MoveSpeed>-1.2</MoveSpeed>
+          </equippedStatOffsets>
+          <recipeMaker Operation="Safe">
+            <skillRequirements Operation="Safe">
+              <Crafting Operation="AddOrReplace">12</Crafting>
+            </skillRequirements>
+          </recipeMaker>
+        </value>
+      </Operation>
+
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>Defs/ThingDef[defName="VFEM2_Apparel_JesterOutfit"]</xpath>
+        <value>
+          <costStuffCount Operation="AddOrReplace">80</costStuffCount>
+          <statBases Operation="AddOrReplace">
+            <MaxHitPoints>100</MaxHitPoints>
+            <WorkToMake>3200</WorkToMake>
+            <Mass>0.75</Mass>
+            <StuffEffectMultiplierArmor>0.2</StuffEffectMultiplierArmor>
+            <StuffEffectMultiplierInsulation_Cold>0.42</StuffEffectMultiplierInsulation_Cold>
+            <StuffEffectMultiplierInsulation_Heat>0.3</StuffEffectMultiplierInsulation_Heat>
+            <EquipDelay>3.5</EquipDelay>
+          </statBases>
+          <equippedStatOffsets Operation="AddOrReplace">
+            <SocialImpact>0.15</SocialImpact>
+            <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.5</SlaveSuppressionOffset>
+            <GlobalLearningFactor>-1.0</GlobalLearningFactor>
+          </equippedStatOffsets>
+        </value>
+      </Operation>
+
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>Defs/ThingDef[defName="VFEM2_Apparel_DameDress"]</xpath>
+        <value>
+          <costStuffCount Operation="AddOrReplace">100</costStuffCount>
+          <statBases Operation="AddOrReplace">
+            <MaxHitPoints>100</MaxHitPoints>
+            <WorkToMake>4300</WorkToMake>
+            <Mass>0.8</Mass>
+            <StuffEffectMultiplierArmor>0.2</StuffEffectMultiplierArmor>
+            <StuffEffectMultiplierInsulation_Cold>0.46</StuffEffectMultiplierInsulation_Cold>
+            <StuffEffectMultiplierInsulation_Heat>0.3</StuffEffectMultiplierInsulation_Heat>
+            <EquipDelay>3.5</EquipDelay>
+          </statBases>
+        </value>
+      </Operation>
+
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>Defs/ThingDef[defName="VFEM2_Apparel_KingsRobes"]</xpath>
+        <value>
+          <costList Operation="AddOrReplace">
+            <Gold>6</Gold>
+          </costList>
+          <statBases Operation="AddOrReplace">
+            <WorkToMake>20000</WorkToMake>
+            <MaxHitPoints>100</MaxHitPoints>
+            <Mass>0.75</Mass>
+            <StuffEffectMultiplierArmor>0.2</StuffEffectMultiplierArmor>
+            <StuffEffectMultiplierInsulation_Cold>0.8</StuffEffectMultiplierInsulation_Cold>
+            <StuffEffectMultiplierInsulation_Heat>0.25</StuffEffectMultiplierInsulation_Heat>
+            <EquipDelay>2.0</EquipDelay>
+          </statBases>
+          <equippedStatOffsets Operation="AddOrReplace">
+            <SocialImpact>0.2</SocialImpact>
+            <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.2</SlaveSuppressionOffset>
+          </equippedStatOffsets>
+          <apparel Operation="Safe">
+            <bodyPartGroups Operation="AddOrReplace">
+              <li>Torso</li>
+              <li>Neck</li>
+              <li>Arms</li>
+              <li>Legs</li>
+              <li>Shoulders</li>
+            </bodyPartGroups>
+          </apparel>
+        </value>
+      </Operation>
+
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>Defs/ThingDef[defName="VFEM2_Apparel_HeavyLeatherArmor"]</xpath>
+        <value>
+          <costStuffCount Operation="AddOrReplace">180</costStuffCount>
+          <statBases Operation="AddOrReplace">
+            <WorkToMake>22000</WorkToMake>
+            <MaxHitPoints>230</MaxHitPoints>
+            <Mass>14</Mass>
+            <StuffEffectMultiplierArmor>0.54</StuffEffectMultiplierArmor>
+            <StuffEffectMultiplierInsulation_Cold>2.0</StuffEffectMultiplierInsulation_Cold>
+            <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
+            <EquipDelay>15</EquipDelay>
+          </statBases>
+          <equippedStatOffsets Operation="AddOrReplace">
+            <MoveSpeed>-0.2</MoveSpeed>
+            <PainShockThreshold>0.15</PainShockThreshold>
+          </equippedStatOffsets>
+          <recipeMaker Operation="Safe">
+            <skillRequirements Operation="Safe">
+              <Crafting Operation="AddOrReplace">8</Crafting>
+            </skillRequirements>
+          </recipeMaker>
+          <apparel Operation="Safe">
+            <bodyPartGroups Operation="AddOrReplace">
+              <li>Torso</li>
+              <li>Neck</li>
+              <li>Arms</li>
+              <li>Legs</li>
+              <li>Shoulders</li>
+            </bodyPartGroups>
+          </apparel>
+        </value>
+      </Operation>
+
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>Defs/ThingDef[defName="VFEM2_Apparel_LeatherArmor"]</xpath>
+        <value>
+          <costStuffCount Operation="AddOrReplace">160</costStuffCount>
+          <statBases Operation="AddOrReplace">
+            <WorkToMake>22000</WorkToMake>
+            <MaxHitPoints>200</MaxHitPoints>
+            <Mass>8</Mass>
+            <StuffEffectMultiplierArmor>0.4</StuffEffectMultiplierArmor>
+            <StuffEffectMultiplierInsulation_Cold>1.5</StuffEffectMultiplierInsulation_Cold>
+            <StuffEffectMultiplierInsulation_Heat>0.0</StuffEffectMultiplierInsulation_Heat>
+            <EquipDelay>10</EquipDelay>
+          </statBases>
+          <equippedStatOffsets Operation="AddOrReplace">
+            <PainShockThreshold>0.10</PainShockThreshold>
+            <MeleeDodgeChance>5</MeleeDodgeChance>
+          </equippedStatOffsets>
+          <recipeMaker Operation="Safe">
+            <skillRequirements Operation="Safe">
+              <Crafting Operation="AddOrReplace">6</Crafting>
+            </skillRequirements>
+          </recipeMaker>
+          <apparel Operation="Safe">
+            <bodyPartGroups Operation="AddOrReplace">
+              <li>Torso</li>
+              <li>Neck</li>
+              <li>Arms</li>
+              <li>Legs</li>
+              <li>Shoulders</li>
+            </bodyPartGroups>
+          </apparel>
+        </value>
+      </Operation>
+
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>Defs/ThingDef[defName="VFEM2_Apparel_PaddedArmor"]</xpath>
+        <value>
+          <statBases Operation="AddOrReplace">
+            <MaxHitPoints>180</MaxHitPoints>
+            <WorkToMake>3600</WorkToMake>
+            <Mass>5</Mass>
+            <StuffEffectMultiplierArmor>0.65</StuffEffectMultiplierArmor>
+            <StuffEffectMultiplierInsulation_Cold>1.2</StuffEffectMultiplierInsulation_Cold>
+            <StuffEffectMultiplierInsulation_Heat>0.2</StuffEffectMultiplierInsulation_Heat>
+            <EquipDelay>1.5</EquipDelay>
+          </statBases>
+        </value>
+      </Operation>
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>Defs/ThingDef[defName="VFEM2_Apparel_Mantle"]</xpath>
+        <value>
+          <statBases Operation="AddOrReplace">
+            <WorkToMake>1000</WorkToMake>
+            <MaxHitPoints>100</MaxHitPoints>
+            <Mass>0.3</Mass>
+            <StuffEffectMultiplierArmor>0.2</StuffEffectMultiplierArmor>
+            <StuffEffectMultiplierInsulation_Cold>0.65</StuffEffectMultiplierInsulation_Cold>
+            <StuffEffectMultiplierInsulation_Heat>0.0</StuffEffectMultiplierInsulation_Heat>
+            <EquipDelay>1.5</EquipDelay>
+          </statBases>
+        </value>
+      </Operation>
+    </caseTrue>
+  </Operation>
+
+  <!-- ######################################### CATEGORIES ######################################### -->
+  <Operation Class="XmlExtensions.OptionalPatch">
+    <modId>ferny.progressionattire</modId>
+    <key>ApplyCategories</key>
+    <defaultValue>true</defaultValue>
+    <caseTrue>
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>
+          Defs/ThingDef[defName="VFEM2_Apparel_PlateArmorHeavy" or
+          defName="VFEM2_Apparel_HeavyLeatherArmor" or
+          defName="VFEM2_Apparel_LeatherArmor" or
+          defName="VFEM2_Apparel_PaddedArmor"]
+        </xpath>
+        <value>
+          <thingCategories Operation="AddOrReplace" Inherit="False">
+            <li>LemonSkin_MedievalArmor</li>
+          </thingCategories>
+        </value>
+      </Operation>
+
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>
+          Defs/ThingDef[defName="VFEM2_Apparel_JesterOutfit" or
+          defName="VFEM2_Apparel_Tabard" or
+          defName="VFEM2_Apparel_Mantle"]
+        </xpath>
+        <value>
+          <thingCategories Operation="AddOrReplace" Inherit="False">
+            <li>LemonSkin_MedievalApparel</li>
+          </thingCategories>
+        </value>
+      </Operation>
+
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>
+          Defs/ThingDef[defName="VFEM2_Apparel_DameDress" or
+          defName="VFEM2_Apparel_KingsRobes"]
+        </xpath>
+        <value>
+          <thingCategories Operation="AddOrReplace" Inherit="False">
+            <li>ApparelNoble</li>
+          </thingCategories>
+        </value>
+      </Operation>
+    </caseTrue>
+  </Operation>
+
+  <!-- ######################################### END ######################################### -->
+</Patch>

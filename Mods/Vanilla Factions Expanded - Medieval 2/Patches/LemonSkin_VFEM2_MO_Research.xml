@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <Operation Class="XmlExtensions.Conditional">
+    <xpath>Defs/ResearchProjectDef[defName="DankPyon_ProtectiveClothing"]</xpath>
+    <caseTrue>
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>Defs/ResearchProjectDef[defName="LemonSkin_LeatherArmour"]</xpath>
+        <value>
+          <prerequisites Operation="AddOrReplace">
+            <li>DankPyon_ProtectiveClothing</li>
+          </prerequisites>
+          <hiddenPrerequisites Operation="AddOrReplace">
+            <li>DankPyon_LeatherTanning</li>
+          </hiddenPrerequisites>
+          <researchViewX Operation="AddOrReplace">9</researchViewX>
+          <researchViewY Operation="AddOrReplace">1.2</researchViewY>
+          <tab Operation="AddOrReplace">DankPyon_MedievalResearchTab</tab>
+        </value>
+      </Operation>
+
+      <Operation Class="PatchOperationConditional">
+        <xpath>/Defs/ResearchProjectDef[defName="RoyalApparel"]</xpath>
+        <match Class="PatchOperationReplace">
+          <xpath>/Defs/ResearchProjectDef[defName="RoyalApparel"]/researchViewY</xpath>
+          <value>
+            <researchViewY>0</researchViewY>
+          </value>
+        </match>
+      </Operation>
+
+      <Operation Class="PatchOperationConditional">
+        <xpath>/Defs/ResearchProjectDef[defName="DankPyon_AdornedArmor"]</xpath>
+        <match Class="PatchOperationReplace">
+          <xpath>/Defs/ResearchProjectDef[defName="DankPyon_AdornedArmor"]/researchViewY</xpath>
+          <value>
+            <researchViewY>0.70</researchViewY>
+          </value>
+        </match>
+      </Operation>
+    </caseTrue>
+  </Operation>
+
+  <!-- <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ResearchProjectDef[defName="LemonSkin_LeatherArmour"]/prerequisites</xpath>
+    <value>
+      <prerequisites>
+        <li>DankPyon_ProtectiveClothing</li>
+      </prerequisites>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ResearchProjectDef[defName="LemonSkin_LeatherArmour"]</xpath>
+    <value>
+      <hiddenPrerequisites>
+        <li>DankPyon_LeatherTanning</li>
+      </hiddenPrerequisites>
+    </value>
+  </Operation> -->
+  <!-- Move Leather armor research-->
+  <!-- <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/ResearchProjectDef[defName="LemonSkin_LeatherArmour"]/researchViewX</xpath>
+    <value>
+      <researchViewX>9</researchViewX>
+    </value>
+  </Operation> -->
+  <!-- <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/ResearchProjectDef[defName="LemonSkin_LeatherArmour"]/researchViewY</xpath>
+    <value>
+      <researchViewY>1.2</researchViewY>
+    </value>
+  </Operation> -->
+  <!-- <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/ResearchProjectDef[defName="LemonSkin_LeatherArmour"]/tab</xpath>
+    <value>
+      <tab>DankPyon_MedievalResearchTab</tab>
+    </value>
+  </Operation> -->
+  <!-- Move Royal Apparel -->
+
+  <!-- Move Adorned Armor -->
+</Patch>

@@ -13,9 +13,7 @@
     <li IfModActive="DankPyon.Medieval.Overhaul">Mods/Medieval Overhaul</li>
     <li IfModActive="DankPyon.Medieval.Overhaul.House.Roxmont">Mods/Medieval Overhaul - House Roxmont</li>
 
-    <li IfModActive="OskarPotocki.VFE.Medieval2">Mods/Vanilla Factions Expanded - Medieval 2/Core</li>
-    <li IfModActiveAll="OskarPotocki.VFE.Medieval2,DankPyon.Medieval.Overhaul">Mods/Vanilla Factions Expanded - Medieval 2/Medieval Overhaul</li>
-
+    <li IfModActive="OskarPotocki.VFE.Medieval2">Mods/Vanilla Factions Expanded - Medieval 2</li>
     <li IfModActive="OskarPotocki.VFE.Classical">Mods/Vanilla Factions Expanded - Classical</li>
     <li IfModActive="OskarPotocki.VFE.Tribals">Mods/Vanilla Factions Expanded - Tribals</li>
     <li IfModActive="OskarPotocki.VFE.Empire">Mods/Vanilla Factions Expanded - Empire</li>
@@ -109,9 +107,7 @@
     <li IfModActive="DankPyon.Medieval.Overhaul">Mods/Medieval Overhaul</li>
     <li IfModActive="DankPyon.Medieval.Overhaul.House.Roxmont">Mods/Medieval Overhaul - House Roxmont</li>
 
-    <li IfModActive="OskarPotocki.VFE.Medieval2">Mods/Vanilla Factions Expanded - Medieval 2/Core</li>
-    <li IfModActiveAll="OskarPotocki.VFE.Medieval2,DankPyon.Medieval.Overhaul">Mods/Vanilla Factions Expanded - Medieval 2/Medieval Overhaul</li>
-
+    <li IfModActive="OskarPotocki.VFE.Medieval2">Mods/Vanilla Factions Expanded - Medieval 2</li>
     <li IfModActive="OskarPotocki.VFE.Classical">Mods/Vanilla Factions Expanded - Classical</li>
     <li IfModActive="OskarPotocki.VFE.Tribals">Mods/Vanilla Factions Expanded - Tribals</li>
     <li IfModActive="OskarPotocki.VFE.Empire">Mods/Vanilla Factions Expanded - Empire</li>
