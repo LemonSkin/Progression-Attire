@@ -1,21 +1,34 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <!-- VFEP_Apparel_Privateer -->
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="VFEP_Apparel_Privateer"]/thingCategories</xpath>
-    <value>
-      <thingCategories Inherit="False">
-        <li>LemonSkin_SpacerArmor</li>
-      </thingCategories>
-    </value>
+  <!-- ######################################### LABELS ######################################### -->
+
+  <!-- ######################################### RESEARCH ######################################### -->
+
+  <!-- ######################################### CATEGORIES ######################################### -->
+  <Operation Class="XmlExtensions.OptionalPatch">
+    <modId>ferny.progressionattire</modId>
+    <key>ApplyCategories</key>
+    <defaultValue>true</defaultValue>
+    <caseTrue>
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>Defs/ThingDef[defName="VFEP_Apparel_Privateer"]</xpath>
+        <value>
+          <thingCategories Operation="AddOrReplace" Inherit="False">
+            <li>LemonSkin_SpacerArmor</li>
+          </thingCategories>
+        </value>
+      </Operation>
+
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>Defs/ThingDef[defName="VFEP_Apparel_Rumsuit"]</xpath>
+        <value>
+          <thingCategories Operation="AddOrReplace" Inherit="False">
+            <li>LemonSkin_PrisonerApparel</li>
+          </thingCategories>
+        </value>
+      </Operation>
+    </caseTrue>
   </Operation>
-  <!-- VFEP_Apparel_Rumsuit -->
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="VFEP_Apparel_Rumsuit"]/thingCategories</xpath>
-    <value>
-      <thingCategories Inherit="False">
-        <li>LemonSkin_PrisonerApparel</li>
-      </thingCategories>
-    </value>
-  </Operation>
+
+  <!-- ######################################### END ######################################### -->
 </Patch>
