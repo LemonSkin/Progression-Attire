@@ -2,26 +2,13 @@
 <Patch>
   <Operation Class="PatchOperationConditional">
     <xpath>Defs/VFETribals.TribalResearchProjectDef[defName="LemonSkin_Leafwear"]</xpath>
-    <match Class="PatchOperationReplace">
-      <xpath>Defs/VFETribals.TribalResearchProjectDef[defName="VFET_Tribalwear"]/prerequisites</xpath>
+    <match Class="XmlExtensions.HybridPatch">
+      <xpath>Defs/VFETribals.TribalResearchProjectDef[defName="VFET_Tribalwear"]</xpath>
       <value>
-        <prerequisites>
+        <prerequisites Operation="AddOrReplace">
           <li>LemonSkin_Leafwear</li>
         </prerequisites>
       </value>
     </match>
-  </Operation>
-
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="VFET_Apparel_TribalHeavy"]/recipeMaker/researchPrerequisite</xpath>
-    <value>
-      <researchPrerequisite>LemonSkin_VFET_HeavyTribalwear</researchPrerequisite>
-    </value>
-  </Operation>
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="VFET_Apparel_TribalWar"]/recipeMaker/researchPrerequisite</xpath>
-    <value>
-      <researchPrerequisite>LemonSkin_VFET_WarTribalwear</researchPrerequisite>
-    </value>
   </Operation>
 </Patch>
