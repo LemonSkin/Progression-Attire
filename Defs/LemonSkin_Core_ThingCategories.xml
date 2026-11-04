@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
   <!-- Neolithic -->
   <ThingCategoryDef>
@@ -32,7 +32,6 @@
     <parent>LemonSkin_NeolithicApparel</parent>
   </ThingCategoryDef>
 
-
   <!-- Medieval -->
   <ThingCategoryDef>
     <defName>LemonSkin_MedievalApparel</defName>
@@ -64,7 +63,6 @@
     <label>utility</label>
     <parent>LemonSkin_MedievalApparel</parent>
   </ThingCategoryDef>
-
 
   <!-- Industrial -->
   <ThingCategoryDef>
@@ -98,7 +96,6 @@
     <parent>LemonSkin_IndustrialApparel</parent>
   </ThingCategoryDef>
 
-
   <!-- Spacer -->
   <ThingCategoryDef>
     <defName>LemonSkin_SpacerApparel</defName>
@@ -130,7 +127,6 @@
     <label>utility</label>
     <parent>LemonSkin_SpacerApparel</parent>
   </ThingCategoryDef>
-
 
   <!-- Ultra-tech -->
   <ThingCategoryDef>
@@ -164,7 +160,6 @@
     <parent>LemonSkin_UltraApparel</parent>
   </ThingCategoryDef>
 
-
   <!-- Prisoner -->
   <ThingCategoryDef>
     <defName>LemonSkin_PrisonerApparel</defName>
@@ -176,7 +171,6 @@
     <label>headgear</label>
     <parent>LemonSkin_PrisonerApparel</parent>
   </ThingCategoryDef>
-
 
   <!-- Workwear -->
   <ThingCategoryDef>
@@ -190,7 +184,6 @@
     <parent>LemonSkin_Workwear</parent>
   </ThingCategoryDef>
 
-
   <!-- Costumes -->
   <ThingCategoryDef>
     <defName>LemonSkin_Costume</defName>
@@ -203,7 +196,6 @@
     <parent>LemonSkin_Costume</parent>
   </ThingCategoryDef>
 
-
   <!-- Vanity -->
   <ThingCategoryDef>
     <defName>LemonSkin_VanityApparel</defName>
@@ -215,7 +207,6 @@
     <label>headgear</label>
     <parent>LemonSkin_VanityApparel</parent>
   </ThingCategoryDef>
-
 
   <!-- Kid -->
   <ThingCategoryDef MayRequire="Ludeon.RimWorld.Biotech">

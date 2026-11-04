@@ -3,7 +3,3 @@ Textures/*.dds
 /*.sln
 .vs
 obj/*
-# /*/Assemblies
-# /*/Assemblies/*.pdb
-# /.vscode
-# /Source

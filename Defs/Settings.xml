@@ -9,15 +9,10 @@
         <label>Apply Apparel Rebalances</label>
         <defaultValue>true</defaultValue>
       </li>
+
       <li Class="XmlExtensions.Setting.Checkbox">
         <key>ApplyCategories</key>
         <label>Apply New Categories</label>
-        <defaultValue>true</defaultValue>
-      </li>
-      <li Class="XmlExtensions.Setting.Checkbox">
-        <key>ApplyApparelLayers</key>
-        <label>Apply Apparel Layer Changes</label>
-        <tooltip>Move certain apparel items to use layers introduced by other mods (mostly Medieval Overhaul)</tooltip>
         <defaultValue>true</defaultValue>
       </li>
     </settings>
