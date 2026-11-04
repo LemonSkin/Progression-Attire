@@ -13,7 +13,7 @@
     <defaultValue>true</defaultValue>
     <caseTrue>
       <Operation Class="XmlExtensions.HybridPatch">
-        <xpath>Defs/ThingDef[defName="DV_ApparelArmorEnsignBase"]</xpath>
+        <xpath>Defs/ThingDef[@Name="DV_ApparelArmorEnsignBase"]</xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
             <li>LemonSkin_SpacerArmor</li>

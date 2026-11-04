@@ -1,19 +1,27 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
+  <!-- ######################################### LABELS ######################################### -->
+
+  <!-- ######################################### RESEARCH ######################################### -->
+
+  <!-- ######################################### REBALANCES ######################################### -->
+
+  <!-- ######################################### CATEGORIES ######################################### -->
   <Operation Class="XmlExtensions.OptionalPatch">
     <modId>ferny.progressionattire</modId>
     <key>ApplyCategories</key>
     <defaultValue>true</defaultValue>
     <caseTrue>
-      <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[defName="Apparel_LabCoat"]/thingCategories</xpath>
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>Defs/ThingDef[defName="Apparel_LabCoat"]</xpath>
         <value>
-          <thingCategories>
+          <thingCategories Operation="AddOrReplace" Inherit="False">
             <li>LemonSkin_IndustrialApparel</li>
-            <li>LemonSkin_Workwear</li>
           </thingCategories>
         </value>
       </Operation>
     </caseTrue>
   </Operation>
+
+  <!-- ######################################### END ######################################### -->
 </Patch>

@@ -1,27 +1,22 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyCategories</key>
-    <defaultValue>true</defaultValue>
-    <caseTrue>
-      <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[defName="PH_Bunnysuit"]/thingCategories</xpath>
-        <value>
-          <thingCategories>
-            <li>LemonSkin_VanityApparel</li>
-          </thingCategories>
-        </value>
-      </Operation>
+  <!-- ######################################### LABELS ######################################### -->
 
-      <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[defName="PH_BunnyHeadband"]/thingCategories</xpath>
-        <value>
-          <thingCategories>
-            <li>LemonSkin_VanityHeadgear</li>
-          </thingCategories>
-        </value>
-      </Operation>
-    </caseTrue>
+  <!-- ######################################### RESEARCH ######################################### -->
+  <Operation Class="XmlExtensions.HybridPatch">
+    <xpath>
+      Defs/ThingDef[defName="PH_Bunnysuit" or
+      defName="PH_BunnyHeadband"]
+    </xpath>
+    <value>
+      <recipeMaker Operation="AddOrReplace">
+        <researchPrerequisite>Ferny_VanityTable</researchPrerequisite>
+      </recipeMaker>
+    </value>
   </Operation>
+  <!-- ######################################### REBALANCES ######################################### -->
+
+  <!-- ######################################### CATEGORIES ######################################### -->
+
+  <!-- ######################################### END ######################################### -->
 </Patch>

@@ -1,8 +1,8 @@
 Textures/*.dds
 /.vscode/obj
-/*.sln 
+/*.sln
 .vs
-
+obj/*
 # /*/Assemblies
 # /*/Assemblies/*.pdb
 # /.vscode

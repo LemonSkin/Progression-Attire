@@ -29,6 +29,7 @@
     <li IfModActive="vanillaquestsexpanded.deadlife">Mods/Vanilla Quests Expanded - Deadlife</li>
     <li IfModActive="vanillaracesexpanded.fungoid">Mods/Vanilla Races Expanded - Fungoid</li>
     <li IfModActive="vanillaexpanded.gravship">Mods/Vanilla Gravship Expanded - Chapter 1</li>
+    <li IfModActive="vanillaexpanded.gravship2">Mods/Vanilla Gravship Expanded - Chapter 2</li>
 
     <li IfModActive="VanillaExpanded.VAnomalyEInsanity">Mods/Vanilla Anomaly Expanded - Insanity</li>
     <li IfModActive="VanillaExpanded.VPsycastsE">Mods/Vanilla Psycasts Expanded</li>
@@ -81,7 +82,7 @@
     <li IfModActive="xmb.ancientthreat.mo">Mods/Ancient Amorphous Threat</li>
     <li IfModActive="loopus.primhairs">Mods/Prim's Hair</li>
     <li IfModActive="unagi.a.d.coat">Mods/UNAGI Another Duster Coat</li>
-    <li IfModActive="mo.decorationsluxury">Mods/Decorations and dishes at Gorgeous banquet</li>
+    <li IfModActive="mo.decorationsluxury">Mods/Decorations and Dishes at Gorgeous Banquet</li>
     <li IfModActive="pu.lunartikaaa">Mods/Police Uniforms</li>
     <li IfModActive="ponpeco.ponpecopajamas">Mods/Ponpeco Pajamas</li>
     <li IfModActive="resplice.xotr.charmweavers">Mods/Resplice Charmweavers</li>
@@ -123,6 +124,7 @@
     <li IfModActive="vanillaquestsexpanded.deadlife">Mods/Vanilla Quests Expanded - Deadlife</li>
     <li IfModActive="vanillaracesexpanded.fungoid">Mods/Vanilla Races Expanded - Fungoid</li>
     <li IfModActive="vanillaexpanded.gravship">Mods/Vanilla Gravship Expanded - Chapter 1</li>
+    <li IfModActive="vanillaexpanded.gravship2">Mods/Vanilla Gravship Expanded - Chapter 2</li>
 
     <li IfModActive="VanillaExpanded.VAnomalyEInsanity">Mods/Vanilla Anomaly Expanded - Insanity</li>
     <li IfModActive="VanillaExpanded.VPsycastsE">Mods/Vanilla Psycasts Expanded</li>
@@ -175,7 +177,7 @@
     <li IfModActive="xmb.ancientthreat.mo">Mods/Ancient Amorphous Threat</li>
     <li IfModActive="loopus.primhairs">Mods/Prim's Hair</li>
     <li IfModActive="unagi.a.d.coat">Mods/UNAGI Another Duster Coat</li>
-    <li IfModActive="mo.decorationsluxury">Mods/Decorations and dishes at Gorgeous banquet</li>
+    <li IfModActive="mo.decorationsluxury">Mods/Decorations and Dishes at Gorgeous Banquet</li>
     <li IfModActive="pu.lunartikaaa">Mods/Police Uniforms</li>
     <li IfModActive="ponpeco.ponpecopajamas">Mods/Ponpeco Pajamas</li>
     <li IfModActive="resplice.xotr.charmweavers">Mods/Resplice Charmweavers</li>

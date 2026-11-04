@@ -3,27 +3,21 @@
   <!-- ######################################### LABELS ######################################### -->
 
   <!-- ######################################### RESEARCH ######################################### -->
-
+  <Operation Class="XmlExtensions.HybridPatch">
+    <xpath>
+      Defs/ThingDef[defName="Apparel_UNA_weddingveil" or
+      defName="UNA_KingCrown" or
+      defName="Apparel_UNA_TogeHelm"]
+    </xpath>
+    <value>
+      <recipeMaker Operation="AddOrReplace">
+        <researchPrerequisite>Ferny_VanityTable</researchPrerequisite>
+      </recipeMaker>
+    </value>
+  </Operation>
   <!-- ######################################### REBALANCES ######################################### -->
 
   <!-- ######################################### CATEGORIES ######################################### -->
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyCategories</key>
-    <defaultValue>true</defaultValue>
-    <caseTrue>
-      <Operation Class="XmlExtensions.HybridPatch">
-        <xpath>
-          Defs/ThingDef[defName="Apparel_UNA_weddingveil" or
-          defName="UNA_KingCrown" or
-          defName="Apparel_UNA_TogeHelm"]
-        </xpath>
-        <value>
-          <thingCategories Operation="AddOrReplace" Inherit="False">
-            <li>LemonSkin_VanityHeadgear</li>
-          </thingCategories>
-        </value>
-      </Operation>
-    </caseTrue>
-  </Operation>
+
+  <!-- ######################################### END ######################################### -->
 </Patch>

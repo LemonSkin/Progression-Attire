@@ -9,54 +9,50 @@
   </Operation>
 
   <!-- ######################################### RESEARCH ######################################### -->
-  <Operation Class="PatchOperationConditional">
-    <xpath>Defs/ResearchProjectDef[defName="NobleApparel"]</xpath>
-    <match Class="XmlExtensions.HybridPatch">
-      <xpath>Defs/ThingDef[defName="VFEM2_Apparel_JesterOutfit"]</xpath>
-      <value>
-        <recipeMaker Operation="Safe">
-          <researchPrerequisite Operation="AddOrReplace">NobleApparel</researchPrerequisite>
-          <researchPrerequisites Operation="SafeRemove" />
-        </recipeMaker>
-      </value>
-    </match>
-    <nomatch Class="XmlExtensions.HybridPatch">
-      <xpath>Defs/ThingDef[defName="VFEM2_Apparel_JesterOutfit"]</xpath>
-      <value>
-        <recipeMaker Operation="Safe">
-          <researchPrerequisite Operation="AddOrReplace">LemonSkin_RusticClothing</researchPrerequisite>
-          <researchPrerequisites Operation="SafeRemove" />
-        </recipeMaker>
-      </value>
-    </nomatch>
-  </Operation>
+  <Operation Class="XmlExtensions.FindMod">
+    <mods>
+      <li>Royalty</li>
+    </mods>
+    <caseTrue>
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>Defs/ThingDef[defName="VFEM2_Apparel_JesterOutfit"]</xpath>
+        <value>
+          <recipeMaker Operation="Safe">
+            <researchPrerequisite Operation="AddOrReplace">NobleApparel</researchPrerequisite>
+            <researchPrerequisites Operation="SafeRemove" />
+          </recipeMaker>
+        </value>
+      </Operation>
 
-  <Operation Class="PatchOperationConditional">
-    <xpath>Defs/ResearchProjectDef[defName="RoyalApparel"]</xpath>
-    <match Class="XmlExtensions.HybridPatch">
-      <xpath>
-        Defs/ThingDef[defName="VFEM2_Apparel_DameDress" or
-        defName="VFEM2_Apparel_KingsRobes"]
-      </xpath>
-      <value>
-        <recipeMaker Operation="Safe">
-          <researchPrerequisite Operation="AddOrReplace">RoyalApparel</researchPrerequisite>
-          <researchPrerequisites Operation="SafeRemove" />
-        </recipeMaker>
-      </value>
-    </match>
-    <nomatch Class="XmlExtensions.HybridPatch">
-      <xpath>
-        Defs/ThingDef[[defName="VFEM2_Apparel_DameDress" or
-        defName="VFEM2_Apparel_KingsRobes"]
-      </xpath>
-      <value>
-        <recipeMaker Operation="Safe">
-          <researchPrerequisite Operation="AddOrReplace">LemonSkin_RusticClothing</researchPrerequisite>
-          <researchPrerequisites Operation="SafeRemove" />
-        </recipeMaker>
-      </value>
-    </nomatch>
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>
+          Defs/ThingDef[defName="VFEM2_Apparel_DameDress" or
+          defName="VFEM2_Apparel_KingsRobes"]
+        </xpath>
+        <value>
+          <recipeMaker Operation="Safe">
+            <researchPrerequisite Operation="AddOrReplace">RoyalApparel</researchPrerequisite>
+            <researchPrerequisites Operation="SafeRemove" />
+          </recipeMaker>
+        </value>
+      </Operation>
+    </caseTrue>
+
+    <caseFalse>
+      <Operation Class="XmlExtensions.HybridPatch">
+        <xpath>
+          Defs/ThingDef[defName="VFEM2_Apparel_JesterOutfit" or
+          defName="VFEM2_Apparel_DameDress" or
+          defName="VFEM2_Apparel_KingsRobes"]
+        </xpath>
+        <value>
+          <recipeMaker Operation="Safe">
+            <researchPrerequisite Operation="AddOrReplace">LemonSkin_RusticClothing</researchPrerequisite>
+            <researchPrerequisites Operation="SafeRemove" />
+          </recipeMaker>
+        </value>
+      </Operation>
+    </caseFalse>
   </Operation>
 
   <Operation Class="XmlExtensions.HybridPatch">
