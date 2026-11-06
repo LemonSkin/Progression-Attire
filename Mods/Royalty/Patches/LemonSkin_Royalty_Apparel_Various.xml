@@ -5,17 +5,15 @@
   <!-- ######################################### RESEARCH ######################################### -->
 
   <!-- ######################################### REBALANCES ######################################### -->
-  <!-- <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyRebalances</key>
-    <defaultValue>true</defaultValue>
+  <!-- <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyRebalances</settingName>
     <caseTrue>
       <Operation Class="PatchOperationConditional">
         <xpath>Defs/ApparelLayerDef[defName="DankPyon_InnerHelmet"]</xpath>
-        <match Class="XmlExtensions.HybridPatch">
+        <match Class="ferny.ProgressionAttire.PatchOperationMerge">
           <xpath>Defs/ThingDef[defName="Apparel_Gunlink"]</xpath>
           <value>
-            <apparel Operation="Safe">
+            <apparel>
               <layers Operation="AddOrReplace" Inherit="False">
                 <li>DankPyon_InnerHelmet</li>
               </layers>
@@ -27,12 +25,10 @@
   </Operation> -->
 
   <!-- ######################################### CATEGORIES ######################################### -->
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyCategories</key>
-    <defaultValue>true</defaultValue>
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyCategories</settingName>
     <caseTrue>
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[@Name="ApparelArmorCataphractBase"]</xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -41,7 +37,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[@Name="ApparelArmorHelmetCataphractBase"]</xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -50,7 +46,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="Apparel_Gunlink"]</xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -60,4 +56,6 @@
       </Operation>
     </caseTrue>
   </Operation>
+
+  <!-- ######################################### END ######################################### -->
 </Patch>

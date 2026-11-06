@@ -52,17 +52,4 @@
       <li>LemonSkin_RusticClothing</li>
     </prerequisites>
   </ResearchProjectDef>
-
-  <!-- <ResearchProjectDef>
-    <defName>LemonSkin_TribalHeaddress</defName>
-    <label>headdress</label>
-    <description>Craft decorative tribal headdresses.</description>
-    <baseCost>200</baseCost>
-    <techLevel>Neolithic</techLevel>
-    <researchViewX>1.00</researchViewX>
-    <researchViewY>5.90</researchViewY>
-    <prerequisites>
-      <li MayRequire="OskarPotocki.VFE.Tribals">VFET_Tribalwear</li>
-    </prerequisites>
-  </ResearchProjectDef> -->
 </Defs>

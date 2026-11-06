@@ -1,7 +1,7 @@
 using RimWorld;
 using Verse;
 using HarmonyLib;
-using XmlExtensions;
+// using XmlExtensions;
 
 namespace ferny.ProgressionAttire
 {
@@ -10,7 +10,15 @@ namespace ferny.ProgressionAttire
     {
         public static bool Prefix()
         {
-            bool applyCategories = bool.Parse(SettingsManager.GetSetting("ferny.progressionattire", "ApplyCategories"));
+            ProgressionAttireSettings settings = ProgressionAttire.Settings;
+
+            if (settings == null)
+            {
+                ProgressionAttire.Error("DefGenerator_PreResolve_Patch: Could not load settings, skipping patch.");
+                return true;
+            }
+
+            bool applyCategories = settings?.applyCategories ?? false;
             int vanityItemsPatched = 0;
             int costumeItemsPatched = 0;
             foreach (ThingDef thingDef in DefDatabase<ThingDef>.AllDefs)

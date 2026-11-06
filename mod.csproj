@@ -27,7 +27,7 @@
 	</PropertyGroup>
 
  	<ItemGroup>
-	 	<Compile Include="./Source/*" />
+	 	<Compile Include="./Source/**" />
 		<!-- Krafs.Rimworld.Ref is not updated -->
 		<!-- <PackageReference Include="Krafs.Rimworld.Ref" Version="*" /> -->
 		<Reference Include="Assembly-CSharp">
@@ -44,12 +44,6 @@
 		</Reference>
 
 		<PackageReference Include="Lib.Harmony" Version="*" />
-
-		<!-- XML Extensions -->
-		<Reference Include="XmlExtensions">
-    		<HintPath>$(SteamWorkshop)/2574315206/1.6/Assemblies/XmlExtensions.dll</HintPath>
-    		<Private>False</Private>
-		</Reference>
 	</ItemGroup>
 
 	<Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk" />

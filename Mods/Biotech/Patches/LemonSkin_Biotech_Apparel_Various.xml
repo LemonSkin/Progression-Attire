@@ -1,41 +1,60 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyCategories</key>
-    <defaultValue>true</defaultValue>
+  <!-- ######################################### LABELS ######################################### -->
+
+  <!-- ######################################### RESEARCH ######################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+    <xpath>
+      Defs/ThingDef[
+      defName="Apparel_Sash" or
+      defName="Apparel_KidRomper"
+      ]
+    </xpath>
+    <value>
+      <recipeMaker>
+        <researchPrerequisite Operation="AddOrReplace">LemonSkin_RusticClothing</researchPrerequisite>
+        <researchPrerequisites Operation="SafeRemove" />
+      </recipeMaker>
+    </value>
+  </Operation>
+
+  <!-- ######################################### REBALANCES ######################################### -->
+
+  <!-- ######################################### CATEGORIES ######################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyCategories</settingName>
     <caseTrue>
-      <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[defName="Apparel_Bandolier"]/thingCategories</xpath>
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/ThingDef[defName="Apparel_Bandolier"]</xpath>
         <value>
-          <thingCategories>
+          <thingCategories Operation="AddOrReplace" Inherit="False">
             <li>LemonSkin_IndustrialApparel</li>
           </thingCategories>
         </value>
       </Operation>
 
-      <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[defName="Apparel_Sash"]/thingCategories</xpath>
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/ThingDef[defName="Apparel_Sash"]</xpath>
         <value>
-          <thingCategories>
+          <thingCategories Operation="AddOrReplace" Inherit="False">
             <li>LemonSkin_MedievalApparel</li>
           </thingCategories>
         </value>
       </Operation>
 
-      <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[@Name="ChildApparelMakeableBase"]/thingCategories</xpath>
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/ThingDef[@Name="ChildApparelMakeableBase"]</xpath>
         <value>
-          <thingCategories>
+          <thingCategories Operation="AddOrReplace" Inherit="False">
             <li>LemonSkin_KidApparel</li>
           </thingCategories>
         </value>
       </Operation>
 
-      <Operation Class="PatchOperationAdd">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="Apparel_KidHelmet"]</xpath>
         <value>
-          <thingCategories Inherit="False">
+          <thingCategories Operation="AddOrReplace" Inherit="False">
             <li>LemonSkin_KidArmorHeadgear</li>
           </thingCategories>
         </value>
@@ -43,17 +62,5 @@
     </caseTrue>
   </Operation>
 
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="Apparel_Sash"]/recipeMaker/researchPrerequisite</xpath>
-    <value>
-      <researchPrerequisite>LemonSkin_RusticClothing</researchPrerequisite>
-    </value>
-  </Operation>
-
-  <Operation Class="PatchOperationAdd">
-    <xpath>Defs/ThingDef[defName="Apparel_KidRomper"]/recipeMaker</xpath>
-    <value>
-      <researchPrerequisite>LemonSkin_RusticClothing</researchPrerequisite>
-    </value>
-  </Operation>
+  <!-- ######################################### END ######################################### -->
 </Patch>

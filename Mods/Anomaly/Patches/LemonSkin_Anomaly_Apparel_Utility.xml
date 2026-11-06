@@ -1,39 +1,31 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyCategories</key>
-    <defaultValue>true</defaultValue>
+  <!-- ######################################### LABELS ######################################### -->
+
+  <!-- ######################################### RESEARCH ######################################### -->
+
+  <!-- ######################################### REBALANCES ######################################### -->
+
+  <!-- ######################################### CATEGORIES ######################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyCategories</settingName>
     <caseTrue>
-      <!-- Apparel_ShardPsychicShockLance -->
-      <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[defName="Apparel_ShardPsychicShockLance"]/thingCategories</xpath>
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <xpath>
+          Defs/ThingDef[
+          defName="Apparel_ShardPsychicShockLance" or
+          defName="Apparel_ShardPsychicInsanityLance" or
+          defName="Apparel_BiomutationLance"
+          ]
+        </xpath>
         <value>
-          <thingCategories Inherit="False">
-            <li>LemonSkin_UltraUtility</li>
-          </thingCategories>
-        </value>
-      </Operation>
-
-      <!-- Apparel_ShardPsychicInsanityLance -->
-      <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[defName="Apparel_ShardPsychicInsanityLance"]/thingCategories</xpath>
-        <value>
-          <thingCategories Inherit="False">
-            <li>LemonSkin_UltraUtility</li>
-          </thingCategories>
-        </value>
-      </Operation>
-
-      <!-- Apparel_BiomutationLance -->
-      <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[defName="Apparel_BiomutationLance"]/thingCategories</xpath>
-        <value>
-          <thingCategories Inherit="False">
+          <thingCategories Operation="AddOrReplace" Inherit="False">
             <li>LemonSkin_UltraUtility</li>
           </thingCategories>
         </value>
       </Operation>
     </caseTrue>
   </Operation>
+
+  <!-- ######################################### END ######################################### -->
 </Patch>

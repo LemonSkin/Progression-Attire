@@ -1,38 +1,84 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyCategories</key>
-    <defaultValue>true</defaultValue>
+  <!-- ######################################### LABELS ######################################### -->
+
+  <!-- ######################################### RESEARCH ######################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+    <xpath>
+      Defs/ThingDef[
+      defName="Apparel_Headwrap" or
+      defName="Apparel_Broadwrap" or
+      defName="Apparel_VisageMask" or
+      defName="Apparel_Tailcap" or
+      defName="Apparel_Flophat"
+      ]
+    </xpath>
+    <value>
+      <recipeMaker>
+        <researchPrerequisite Operation="AddOrReplace">LemonSkin_RusticClothing</researchPrerequisite>
+        <researchPrerequisites Operation="SafeRemove" />
+      </recipeMaker>
+    </value>
+  </Operation>
+
+  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+    <xpath>Defs/ThingDef[defName="Apparel_AuthorityCap"]</xpath>
+    <value>
+      <recipeMaker>
+        <researchPrerequisite Operation="AddOrReplace">ComplexClothing</researchPrerequisite>
+        <researchPrerequisites Operation="SafeRemove" />
+      </recipeMaker>
+    </value>
+  </Operation>
+
+  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+    <xpath>Defs/ThingDef[defName="Apparel_Shadecone"]</xpath>
+    <value>
+      <recipeMaker>
+        <researchPrerequisite Operation="AddOrReplace">LemonSkin_Shadecone</researchPrerequisite>
+        <researchPrerequisites Operation="SafeRemove" />
+        <recipeUsers>
+          <li Operation="SafeAdd">CraftingSpot</li>
+        </recipeUsers>
+      </recipeMaker>
+    </value>
+  </Operation>
+  <!-- ######################################### REBALANCES ######################################### -->
+
+  <!-- ######################################### CATEGORIES ######################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyCategories</settingName>
     <caseTrue>
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>
-          Defs/ThingDef[defName="Apparel_Headwrap" or
+          Defs/ThingDef[
+          defName="Apparel_Headwrap" or
           defName="Apparel_Broadwrap" or
           defName="Apparel_VisageMask" or
           defName="Apparel_Tailcap" or
-          defName="Apparel_Flophat"]
+          defName="Apparel_Flophat"
+          ]
         </xpath>
         <value>
-          <thingCategories Operation="AddOrReplace">
+          <thingCategories Operation="AddOrReplace" Inherit="False">
             <li>LemonSkin_MedievalHeadgear</li>
           </thingCategories>
         </value>
       </Operation>
 
-      <Operation Class="PatchOperationAdd">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="Apparel_Collar"]</xpath>
         <value>
-          <thingCategories Inherit="False">
+          <thingCategories Operation="AddOrReplace" Inherit="False">
             <li>LemonSkin_PrisonerHeadgear</li>
           </thingCategories>
         </value>
       </Operation>
 
-      <Operation Class="PatchOperationAdd">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="Apparel_Shadecone"]</xpath>
         <value>
-          <thingCategories Inherit="False">
+          <thingCategories Operation="AddOrReplace" Inherit="False">
             <li>LemonSkin_NeolithicHeadgear</li>
           </thingCategories>
         </value>
@@ -40,42 +86,5 @@
     </caseTrue>
   </Operation>
 
-  <Operation Class="XmlExtensions.HybridPatch">
-    <xpath>
-      Defs/ThingDef[defName="Apparel_Headwrap" or
-      defName="Apparel_Broadwrap" or
-      defName="Apparel_VisageMask" or
-      defName="Apparel_Tailcap" or
-      defName="Apparel_Flophat"]
-    </xpath>
-    <value>
-      <recipeMaker Operation="Safe">
-        <researchPrerequisite Operation="AddOrReplace">LemonSkin_RusticClothing</researchPrerequisite>
-        <researchPrerequisites Operation="SafeRemove" />
-      </recipeMaker>
-    </value>
-  </Operation>
-
-  <Operation Class="XmlExtensions.HybridPatch">
-    <xpath>Defs/ThingDef[defName="Apparel_AuthorityCap"]</xpath>
-    <value>
-      <recipeMaker Operation="Safe">
-        <researchPrerequisite Operation="AddOrReplace">ComplexClothing</researchPrerequisite>
-        <researchPrerequisites Operation="SafeRemove" />
-      </recipeMaker>
-    </value>
-  </Operation>
-
-  <Operation Class="XmlExtensions.HybridPatch">
-    <xpath>Defs/ThingDef[defName="Apparel_Shadecone"]</xpath>
-    <value>
-      <recipeMaker Operation="Safe">
-        <researchPrerequisite Operation="AddOrReplace">LemonSkin_Shadecone</researchPrerequisite>
-        <researchPrerequisites Operation="SafeRemove" />
-        <recipeUsers Operation="Safe">
-          <li Operation="SafeAdd">CraftingSpot</li>
-        </recipeUsers>
-      </recipeMaker>
-    </value>
-  </Operation>
+  <!-- ######################################### END ######################################### -->
 </Patch>

@@ -1,27 +1,30 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyCategories</key>
-    <defaultValue>true</defaultValue>
-    <caseTrue>
-      <Operation Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[defName="Apparel_CultistMask"]</xpath>
-        <value>
-          <thingCategories Inherit="False">
-            <li>LemonSkin_MedievalHeadgear</li>
-          </thingCategories>
-        </value>
-      </Operation>
+  <!-- ######################################### LABELS ######################################### -->
 
-      <Operation Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[defName="Apparel_CeremonialCultistMask"]</xpath>
+  <!-- ######################################### RESEARCH ######################################### -->
+
+  <!-- ######################################### REBALANCES ######################################### -->
+
+  <!-- ######################################### CATEGORIES ######################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyCategories</settingName>
+    <caseTrue>
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <xpath>
+          Defs/ThingDef[
+          defName="Apparel_CultistMask" or
+          defName="Apparel_CeremonialCultistMask"
+          ]
+        </xpath>
         <value>
-          <thingCategories Inherit="False">
+          <thingCategories Operation="AddOrReplace" Inherit="False">
             <li>LemonSkin_MedievalHeadgear</li>
           </thingCategories>
         </value>
       </Operation>
     </caseTrue>
   </Operation>
+
+  <!-- ######################################### END ######################################### -->
 </Patch>

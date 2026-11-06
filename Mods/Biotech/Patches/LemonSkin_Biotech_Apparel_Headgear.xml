@@ -1,79 +1,64 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyCategories</key>
-    <defaultValue>true</defaultValue>
+  <!-- ######################################### LABELS ######################################### -->
+
+  <!-- ######################################### RESEARCH ######################################### -->
+
+  <!-- ######################################### REBALANCES ######################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyRebalances</settingName>
     <caseTrue>
-      <Operation Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[defName="Apparel_AirwireHeadset"]</xpath>
+      <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ApparelLayerDef[defName="DankPyon_InnerHelmet"]</xpath>
+        <match Class="ferny.ProgressionAttire.PatchOperationMerge">
+          <xpath>
+            Defs/ThingDef[
+            defName="Apparel_AirwireHeadset" or
+            defName="Apparel_ArrayHeadset" or
+            defName="Apparel_IntegratorHeadset"
+            ]
+          </xpath>
+          <value>
+            <apparel>
+              <layers Operation="AddOrReplace">
+                <li>DankPyon_InnerHelmet</li>
+              </layers>
+            </apparel>
+          </value>
+        </match>
+      </Operation>
+    </caseTrue>
+  </Operation>
+
+  <!-- ######################################### CATEGORIES ######################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyCategories</settingName>
+    <caseTrue>
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <xpath>
+          Defs/ThingDef[
+          defName="Apparel_AirwireHeadset" or
+          defName="Apparel_ArrayHeadset" or
+          defName="Apparel_IntegratorHeadset"
+          ]
+        </xpath>
         <value>
-          <thingCategories Inherit="False">
+          <thingCategories Operation="AddOrReplace" Inherit="False">
             <li>LemonSkin_SpacerHeadgear</li>
           </thingCategories>
         </value>
       </Operation>
 
-      <Operation Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[defName="Apparel_ArrayHeadset"]</xpath>
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/ThingDef[defName="Apparel_PackBroadshield"]</xpath>
         <value>
-          <thingCategories Inherit="False">
-            <li>LemonSkin_SpacerHeadgear</li>
-          </thingCategories>
-        </value>
-      </Operation>
-
-      <Operation Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[defName="Apparel_IntegratorHeadset"]</xpath>
-        <value>
-          <thingCategories Inherit="False">
-            <li>LemonSkin_SpacerHeadgear</li>
+          <thingCategories Operation="AddOrReplace" Inherit="False">
+            <li>LemonSkin_SpacerUtility</li>
           </thingCategories>
         </value>
       </Operation>
     </caseTrue>
   </Operation>
 
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyApparelLayers</key>
-    <defaultValue>true</defaultValue>
-    <caseTrue>
-      <Operation Class="PatchOperationConditional">
-        <xpath>Defs/ApparelLayerDef[defName="DankPyon_InnerHelmet"]</xpath>
-        <match Class="PatchOperationReplace">
-          <xpath>Defs/ThingDef[defName="Apparel_AirwireHeadset"]/apparel/layers</xpath>
-          <value>
-            <layers>
-              <li>DankPyon_InnerHelmet</li>
-            </layers>
-          </value>
-        </match>
-      </Operation>
-
-      <Operation Class="PatchOperationConditional">
-        <xpath>Defs/ApparelLayerDef[defName="DankPyon_InnerHelmet"]</xpath>
-        <match Class="PatchOperationReplace">
-          <xpath>Defs/ThingDef[defName="Apparel_ArrayHeadset"]/apparel/layers</xpath>
-          <value>
-            <layers>
-              <li>DankPyon_InnerHelmet</li>
-            </layers>
-          </value>
-        </match>
-      </Operation>
-
-      <Operation Class="PatchOperationConditional">
-        <xpath>Defs/ApparelLayerDef[defName="DankPyon_InnerHelmet"]</xpath>
-        <match Class="PatchOperationAdd">
-          <xpath>Defs/ThingDef[defName="Apparel_IntegratorHeadset"]/apparel</xpath>
-          <value>
-            <layers Inherit="False">
-              <li>DankPyon_InnerHelmet</li>
-            </layers>
-          </value>
-        </match>
-      </Operation>
-    </caseTrue>
-  </Operation>
+  <!-- ######################################### END ######################################### -->
 </Patch>
