@@ -1,29 +1,30 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyCategories</key>
-    <defaultValue>true</defaultValue>
-    <caseTrue>
-      <!-- AC_ApparelArmorChrysalisMakeableBase -->
-      <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[@Name="AC_ApparelArmorChrysalisMakeableBase"]/thingCategories</xpath>
-        <value>
-          <thingCategories Inherit="False">
-            <li>LemonSkin_UltraArmor</li>
-          </thingCategories>
-        </value>
-      </Operation>
+  <!-- ######################################### LABELS ######################################### -->
 
-      <!-- AC_EnviroSuit -->
-      <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[defName="AC_EnviroSuit"]/thingCategories</xpath>
+  <!-- ######################################### RESEARCH ######################################### -->
+
+  <!-- ######################################### REBALANCES ######################################### -->
+
+  <!-- ######################################### CATEGORIES ######################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyCategories</settingName>
+    <caseTrue>
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <xpath>
+          Defs/ThingDef[
+          @Name="AC_ApparelArmorChrysalisMakeableBase" or
+          defName="AC_EnviroSuit"
+          ]
+        </xpath>
         <value>
-          <thingCategories Inherit="False">
+          <thingCategories Operation="AddOrReplace" Inherit="False">
             <li>LemonSkin_UltraArmor</li>
           </thingCategories>
         </value>
       </Operation>
     </caseTrue>
   </Operation>
+
+  <!-- ######################################### END ######################################### -->
 </Patch>

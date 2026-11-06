@@ -114,8 +114,10 @@
   <!-- ######################################### RESEARCH ######################################### -->
   <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
     <xpath>
-      Defs/ThingDef[@Name="H_Hat" or
-      @Name="SmallBread_ApparelCustomBase"]
+      Defs/ThingDef[
+      @Name="H_Hat" or
+      @Name="SmallBread_ApparelCustomBase"
+      ]
     </xpath>
     <value>
       <recipeMaker>

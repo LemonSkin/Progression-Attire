@@ -3,14 +3,29 @@
   <!-- ######################################### LABELS ######################################### -->
 
   <!-- ######################################### RESEARCH ######################################### -->
-  <Operation Class="XmlExtensions.HybridPatch">
+  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
     <xpath>
-      Defs/ThingDef[@Name="BMT_Apparel_DinoHatCarni_Base" or
-      defName="BMT_Apparel_MascotOutfit"]
+      Defs/ThingDef[
+      @Name="BMT_Apparel_DinoHatCarni_Base" or
+      defName="BMT_Apparel_MascotOutfit"
+      ]
     </xpath>
     <value>
-      <recipeMaker Operation="AddOrReplace">
-        <researchPrerequisite>Ferny_CostumingTable</researchPrerequisite>
+      <recipeMaker>
+        <researchPrerequisite Operation="AddOrReplace">Ferny_CostumingTable</researchPrerequisite>
+        <researchPrerequisites Operation="SafeRemove" />
+      </recipeMaker>
+    </value>
+  </Operation>
+
+  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+    <xpath>Defs/ThingDef[@Name="BMT_PlushiesSculptureBase"]</xpath>
+    <value>
+      <recipeMaker>
+        <researchPrerequisite Operation="SafeRemove" />
+        <researchPrerequisites>
+          <li Operation="SafeAdd">BMT_Paleontology</li>
+        </researchPrerequisites>
       </recipeMaker>
     </value>
   </Operation>
@@ -20,12 +35,4 @@
   <!-- ######################################### CATEGORIES ######################################### -->
 
   <!-- ######################################### END ######################################### -->
-  <Operation Class="PatchOperationAdd">
-    <xpath>Defs/ThingDef[@Name="BMT_PlushiesSculptureBase"]/recipeMaker</xpath>
-    <value>
-      <researchPrerequisites>
-        <li>BMT_Paleontology</li>
-      </researchPrerequisites>
-    </value>
-  </Operation>
 </Patch>

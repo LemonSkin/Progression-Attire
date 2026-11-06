@@ -1,79 +1,63 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyCategories</key>
-    <defaultValue>true</defaultValue>
+  <!-- ######################################### LABELS ######################################### -->
+
+  <!-- ######################################### RESEARCH ######################################### -->
+
+  <!-- ######################################### REBALANCES ######################################### -->
+
+  <!-- ######################################### CATEGORIES ######################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyCategories</settingName>
     <caseTrue>
-      <!-- AG_Forsaken_Hood -->
-      <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[defName="AG_Forsaken_Hood"]/thingCategories</xpath>
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <xpath>
+          Defs/ThingDef[
+          defName="AG_Forsaken_Hood" or
+          defName="AG_ForsakenMarineHelmet" or
+          defName="AG_ForsakenMarineHelmetPsy"
+          ]
+        </xpath>
         <value>
-          <thingCategories Inherit="False">
+          <thingCategories Operation="AddOrReplace" Inherit="False">
             <li>LemonSkin_SpacerArmorHeadgear</li>
           </thingCategories>
         </value>
       </Operation>
 
-      <!-- AG_Forsaken_Hood_Child -->
-      <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[defName="AG_Forsaken_Hood_Child"]/thingCategories</xpath>
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/ThingDef[defName="AG_Forsaken_Hood_Child"]</xpath>
         <value>
-          <thingCategories Inherit="False">
+          <thingCategories Operation="AddOrReplace" Inherit="False">
             <li>LemonSkin_KidArmorHeadgear</li>
           </thingCategories>
         </value>
       </Operation>
 
-      <!-- AG_ForsakenCloak -->
-      <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[defName="AG_ForsakenCloak"]/thingCategories</xpath>
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <xpath>
+          Defs/ThingDef[
+          defName="AG_ForsakenCloak" or
+          defName="AG_ForsakenMarineArmor"
+          ]
+        </xpath>
         <value>
-          <thingCategories Inherit="False">
+          <thingCategories Operation="AddOrReplace" Inherit="False">
             <li>LemonSkin_SpacerArmor</li>
           </thingCategories>
         </value>
       </Operation>
 
-      <!-- AG_ForsakenCloak_Child -->
-      <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[defName="AG_ForsakenCloak_Child"]/thingCategories</xpath>
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/ThingDef[defName="AG_ForsakenCloak_Child"]</xpath>
         <value>
-          <thingCategories Inherit="False">
+          <thingCategories Operation="AddOrReplace" Inherit="False">
             <li>LemonSkin_KidArmor</li>
-          </thingCategories>
-        </value>
-      </Operation>
-
-      <!-- AG_ForsakenMarineHelmet -->
-      <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[defName="AG_ForsakenMarineHelmet"]/thingCategories</xpath>
-        <value>
-          <thingCategories Inherit="False">
-            <li>LemonSkin_SpacerArmorHeadgear</li>
-          </thingCategories>
-        </value>
-      </Operation>
-
-      <!-- AG_ForsakenMarineHelmetPsy -->
-      <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[defName="AG_ForsakenMarineHelmetPsy"]/thingCategories</xpath>
-        <value>
-          <thingCategories Inherit="False">
-            <li>LemonSkin_SpacerArmorHeadgear</li>
-          </thingCategories>
-        </value>
-      </Operation>
-
-      <!-- AG_ForsakenMarineArmor -->
-      <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[defName="AG_ForsakenMarineArmor"]/thingCategories</xpath>
-        <value>
-          <thingCategories Inherit="False">
-            <li>LemonSkin_SpacerArmor</li>
           </thingCategories>
         </value>
       </Operation>
     </caseTrue>
   </Operation>
+
+  <!-- ######################################### END ######################################### -->
 </Patch>

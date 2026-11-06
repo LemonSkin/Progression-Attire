@@ -1,59 +1,56 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyCategories</key>
-    <defaultValue>true</defaultValue>
+  <!-- ######################################### LABELS ######################################### -->
+
+  <!-- ######################################### RESEARCH ######################################### -->
+
+  <!-- ######################################### REBALANCES ######################################### -->
+
+  <!-- ######################################### CATEGORIES ######################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyCategories</settingName>
     <caseTrue>
-      <!-- AM_CompFlakSuit - composite flak suit-->
-      <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[defName="AM_CompFlakSuit"]/thingCategories</xpath>
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/ThingDef[defName="AM_CompFlakSuit"]</xpath>
         <value>
-          <thingCategories Inherit="False">
+          <thingCategories Operation="AddOrReplace" Inherit="False">
             <li>LemonSkin_IndustrialArmor</li>
           </thingCategories>
         </value>
       </Operation>
 
-      <!-- AM_FullyEnclosedHelmet - fully enclosed helmet-->
-      <Operation Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[defName="AM_FullyEnclosedHelmet"]</xpath>
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <xpath>
+          Defs/ThingDef[
+          defName="AM_FullyEnclosedHelmet" or
+          defName="AM_NightVisionHelmet"
+          ]
+        </xpath>
         <value>
-          <thingCategories Inherit="False">
+          <thingCategories Operation="AddOrReplace" Inherit="False">
             <li>LemonSkin_IndustrialArmorHeadgear</li>
           </thingCategories>
         </value>
       </Operation>
 
-      <!-- AM_NightVisionHelmet - night vision helmet-->
-      <Operation Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[defName="AM_NightVisionHelmet"]</xpath>
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/ThingDef[@Name="AM_CataphractHelmet"]</xpath>
         <value>
-          <thingCategories Inherit="False">
-            <li>LemonSkin_IndustrialArmorHeadgear</li>
-          </thingCategories>
-        </value>
-      </Operation>
-
-      <!-- AM_CataphractHelmetFashion - cataphract helmet "Fashion"-->
-      <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[@Name="AM_CataphractHelmet"]/thingCategories</xpath>
-        <value>
-          <thingCategories Inherit="False">
+          <thingCategories Operation="AddOrReplace" Inherit="False">
             <li>LemonSkin_SpacerArmorHeadgear</li>
           </thingCategories>
         </value>
       </Operation>
 
-      <!-- AM_ClosedOxygenCylinder - closed oxygen cylinder -->
-      <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[defName="AM_ClosedOxygenCylinder"]/thingCategories</xpath>
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/ThingDef[defName="AM_ClosedOxygenCylinder"]</xpath>
         <value>
-          <thingCategories Inherit="False">
+          <thingCategories Operation="AddOrReplace" Inherit="False">
             <li>LemonSkin_IndustrialUtility</li>
           </thingCategories>
         </value>
       </Operation>
     </caseTrue>
   </Operation>
+  <!-- ######################################### END ######################################### -->
 </Patch>

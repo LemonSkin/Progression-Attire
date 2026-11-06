@@ -1,39 +1,30 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyCategories</key>
-    <defaultValue>true</defaultValue>
+  <!-- ######################################### LABELS ######################################### -->
+
+  <!-- ######################################### RESEARCH ######################################### -->
+
+  <!-- ######################################### REBALANCES ######################################### -->
+
+  <!-- ######################################### CATEGORIES ######################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyCategories</settingName>
     <caseTrue>
-      <!-- AM_AScompFD - composite assault dress-->
-      <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[defName="AM_AScompFD"]/thingCategories</xpath>
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <xpath>
+          Defs/ThingDef[
+          defName="AM_AScompFD" or
+          defName="AM_MK4aConcealed" or
+          defName="AM_MK4aDefensive"
+          ]
+        </xpath>
         <value>
-          <thingCategories Inherit="False">
-            <li>LemonSkin_IndustrialArmor</li>
-          </thingCategories>
-        </value>
-      </Operation>
-
-      <!-- AM_MK4aConcealed - armored concealed rig-->
-      <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[defName="AM_MK4aConcealed"]/thingCategories</xpath>
-        <value>
-          <thingCategories Inherit="False">
-            <li>LemonSkin_IndustrialArmor</li>
-          </thingCategories>
-        </value>
-      </Operation>
-
-      <!-- AM_MK4aDefensive - armored defensive rig-->
-      <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[defName="AM_MK4aDefensive"]/thingCategories</xpath>
-        <value>
-          <thingCategories Inherit="False">
+          <thingCategories Operation="AddOrReplace" Inherit="False">
             <li>LemonSkin_IndustrialArmor</li>
           </thingCategories>
         </value>
       </Operation>
     </caseTrue>
   </Operation>
+  <!-- ######################################### END ######################################### -->
 </Patch>

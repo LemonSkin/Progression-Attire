@@ -14,6 +14,9 @@ namespace ferny.ProgressionAttire
         public bool selectSingleNode = false;
         protected XmlContainer value;
 
+        private XmlNode currentTarget;
+        private XmlNode currentChild;
+
         private static readonly string[] ControlAttrs =
             { "Operation", "Compare", "CheckAttributes", "XPathLocal", "Condition" };
 
@@ -55,13 +58,26 @@ namespace ferny.ProgressionAttire
             }
             catch (Exception e)
             {
-                ProgressionAttire.Error($"PatchOperationMerge failed: {e}");
+                string child = currentChild == null ? "(none)" : currentChild.Name;
+                string op = currentChild?.Attributes?["Operation"]?.Value ?? "(default)";
+                ProgressionAttire.Error(
+                    $"PatchOperationMerge failed: {e}\n" +
+                    $"  xpath: {xpath.Trim()}\n" +
+                    $"  Patch file: {(string.IsNullOrEmpty(sourceFile) ? "(unknown)" : sourceFile)}\n" +
+                    $"  Target node: {NodePath(currentTarget)}\n" +
+                    $"  Node being merged: <{child}> Operation={op}\n");
+                // ProgressionAttire.Error(
+                //     $"PatchOperationMerge failed: {e}\n" +
+                //     $"  xpath: {xpath.Trim()}"
+                // );
                 return false;
             }
         }
 
         private bool Merge(XmlNode parent, XmlNode child)
         {
+            currentTarget = parent;
+            currentChild = child;
             if (child.NodeType != XmlNodeType.Element) return true; // skip comments/text
 
             string cond = child.Attributes["Condition"]?.Value;
@@ -227,5 +243,15 @@ namespace ferny.ProgressionAttire
             }
             return value.Value.ToString();
         }
+
+        private static string NodePath(XmlNode n)
+        {
+            var parts = new List<string>();
+            for (; n != null && n.NodeType == XmlNodeType.Element; n = n.ParentNode)
+                parts.Add(n.Name);
+            parts.Reverse();
+            return string.Join("/", parts);
+        }
+
     }
 }

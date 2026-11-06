@@ -1,32 +1,33 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyCategories</key>
-    <defaultValue>true</defaultValue>
+  <!-- ######################################### LABELS ######################################### -->
+
+  <!-- ######################################### RESEARCH ######################################### -->
+
+  <!-- ######################################### REBALANCES ######################################### -->
+
+  <!-- ######################################### CATEGORIES ######################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyCategories</settingName>
     <caseTrue>
-      <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[defName="CAT_Footwear_EltexBoots"]/thingCategories</xpath>
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/ThingDef[defName="CAT_Footwear_EltexBoots"]</xpath>
         <value>
-          <thingCategories Inherit="False">
+          <thingCategories Operation="AddOrReplace" Inherit="False">
             <li>LemonSkin_UltraApparel</li>
           </thingCategories>
         </value>
       </Operation>
 
-      <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[defName="CAT_Footwear_ReconBoots"]/thingCategories</xpath>
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <xpath>
+          Defs/ThingDef[
+          defName="CAT_Footwear_ReconBoots" or
+          defName="CAT_Footwear_HeavyMarineBoots"
+          ]
+        </xpath>
         <value>
-          <thingCategories Inherit="False">
-            <li>LemonSkin_SpacerArmor</li>
-          </thingCategories>
-        </value>
-      </Operation>
-
-      <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[defName="CAT_Footwear_HeavyMarineBoots"]/thingCategories</xpath>
-        <value>
-          <thingCategories Inherit="False">
+          <thingCategories Operation="AddOrReplace" Inherit="False">
             <li>LemonSkin_SpacerArmor</li>
           </thingCategories>
         </value>
@@ -34,10 +35,10 @@
 
       <Operation Class="PatchOperationConditional">
         <xpath>Defs/ThingDef[defName="CAT_Footwear_EnsignBoots"]</xpath>
-        <match Class="PatchOperationReplace">
-          <xpath>Defs/ThingDef[defName="CAT_Footwear_EnsignBoots"]/thingCategories</xpath>
+        <match Class="ferny.ProgressionAttire.PatchOperationMerge">
+          <xpath>Defs/ThingDef[defName="CAT_Footwear_EnsignBoots"]</xpath>
           <value>
-            <thingCategories Inherit="False">
+            <thingCategories Operation="AddOrReplace" Inherit="False">
               <li>LemonSkin_SpacerArmor</li>
             </thingCategories>
           </value>
@@ -46,29 +47,25 @@
 
       <Operation Class="PatchOperationConditional">
         <xpath>Defs/ThingDef[defName="CAT_Footwear_CrusaderBoots"]</xpath>
-        <match Class="PatchOperationReplace">
-          <xpath>Defs/ThingDef[defName="CAT_Footwear_CrusaderBoots"]/thingCategories</xpath>
+        <match Class="ferny.ProgressionAttire.PatchOperationMerge">
+          <xpath>Defs/ThingDef[defName="CAT_Footwear_CrusaderBoots"]</xpath>
           <value>
-            <thingCategories Inherit="False">
+            <thingCategories Operation="AddOrReplace" Inherit="False">
               <li>LemonSkin_SpacerArmor</li>
             </thingCategories>
           </value>
         </match>
       </Operation>
 
-      <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[defName="CAT_Footwear_FlakBoots"]/thingCategories</xpath>
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <xpath>
+          Defs/ThingDef[
+          defName="CAT_Footwear_FlakBoots" or
+          defName="CAT_Footwear_RiotBoots"
+          ]
+        </xpath>
         <value>
-          <thingCategories Inherit="False">
-            <li>LemonSkin_IndustrialArmor</li>
-          </thingCategories>
-        </value>
-      </Operation>
-
-      <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[defName="CAT_Footwear_RiotBoots"]/thingCategories</xpath>
-        <value>
-          <thingCategories Inherit="False">
+          <thingCategories Operation="AddOrReplace" Inherit="False">
             <li>LemonSkin_IndustrialArmor</li>
           </thingCategories>
         </value>
@@ -76,10 +73,10 @@
 
       <Operation Class="PatchOperationConditional">
         <xpath>Defs/ThingDef[defName="CAT_Footwear_VacsuitBoots"]</xpath>
-        <match Class="PatchOperationReplace">
-          <xpath>Defs/ThingDef[defName="CAT_Footwear_VacsuitBoots"]/thingCategories</xpath>
+        <match Class="ferny.ProgressionAttire.PatchOperationMerge">
+          <xpath>Defs/ThingDef[defName="CAT_Footwear_VacsuitBoots"]</xpath>
           <value>
-            <thingCategories Inherit="False">
+            <thingCategories Operation="AddOrReplace" Inherit="False">
               <li>LemonSkin_SpacerArmor</li>
             </thingCategories>
           </value>
@@ -87,4 +84,6 @@
       </Operation>
     </caseTrue>
   </Operation>
+
+  <!-- ######################################### END ######################################### -->
 </Patch>
