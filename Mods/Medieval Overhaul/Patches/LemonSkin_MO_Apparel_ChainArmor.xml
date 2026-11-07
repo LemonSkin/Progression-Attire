@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyRebalances</key>
-    <defaultValue>true</defaultValue>
+  <!-- ######################################### LABELS ######################################### -->
+
+  <!-- ######################################### RESEARCH ######################################### -->
+
+  <!-- ######################################### REBALANCES ######################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyRebalances</settingName>
     <caseTrue>
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Hauberk"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">60</costStuffCount>
@@ -24,7 +27,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Heavy_Hauberk"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -42,7 +45,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[@Name="DankPyon_HeraldicHauberkBase"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -62,16 +65,17 @@
     </caseTrue>
   </Operation>
 
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyCategories</key>
-    <defaultValue>true</defaultValue>
+  <!-- ######################################### CATEGORIES ######################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyCategories</settingName>
     <caseTrue>
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>
-          Defs/ThingDef[defName="DankPyon_Apparel_Hauberk" or
+          Defs/ThingDef[
+          defName="DankPyon_Apparel_Hauberk" or
           defName="DankPyon_Apparel_Heavy_Hauberk" or
-          @Name="DankPyon_HeraldicHauberkBase"]
+          @Name="DankPyon_HeraldicHauberkBase"
+          ]
         </xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -81,4 +85,6 @@
       </Operation>
     </caseTrue>
   </Operation>
+
+  <!-- ######################################### END ######################################### -->
 </Patch>

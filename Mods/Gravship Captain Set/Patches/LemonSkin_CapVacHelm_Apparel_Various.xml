@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyCategories</key>
-    <defaultValue>true</defaultValue>
+  <!-- ######################################### LABELS ######################################### -->
+
+  <!-- ######################################### RESEARCH ######################################### -->
+
+  <!-- ######################################### REBALANCES ######################################### -->
+
+  <!-- ######################################### CATEGORIES ######################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyCategories</settingName>
     <caseTrue>
-      <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[defName="GravshipCaptainVacsuit"]/thingCategories</xpath>
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/ThingDef[defName="GravshipCaptainVacsuit"]</xpath>
         <value>
-          <thingCategories Inherit="False">
+          <thingCategories Operation="AddOrReplace" Inherit="False">
             <li>LemonSkin_SpacerArmor</li>
           </thingCategories>
         </value>
@@ -16,10 +21,10 @@
 
       <Operation Class="PatchOperationConditional">
         <xpath>Defs/ThingDef[defName="PrestigeGravshipCaptainVacsuit"]</xpath>
-        <match Class="PatchOperationReplace">
-          <xpath>Defs/ThingDef[defName="PrestigeGravshipCaptainVacsuit"]/thingCategories</xpath>
+        <match Class="ferny.ProgressionAttire.PatchOperationMerge">
+          <xpath>Defs/ThingDef[defName="PrestigeGravshipCaptainVacsuit"]</xpath>
           <value>
-            <thingCategories Inherit="False">
+            <thingCategories Operation="AddOrReplace" Inherit="False">
               <li>LemonSkin_SpacerArmor</li>
             </thingCategories>
           </value>
@@ -27,4 +32,6 @@
       </Operation>
     </caseTrue>
   </Operation>
+
+  <!-- ######################################### END ######################################### -->
 </Patch>

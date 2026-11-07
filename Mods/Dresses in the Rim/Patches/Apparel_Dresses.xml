@@ -3,16 +3,19 @@
   <!-- ######################################### LABELS ######################################### -->
 
   <!-- ######################################### RESEARCH ######################################### -->
-  <Operation Class="XmlExtensions.HybridPatch">
+  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
     <xpath>
-      Defs/ThingDef[@Name="Hart_Dress_Base" or
+      Defs/ThingDef[
+      @Name="Hart_Dress_Base" or
       defName="Vneck_dress" or
       defName="BellyDance_dress" or
-      defName="CountessCorset_dress"]
+      defName="CountessCorset_dress"
+      ]
     </xpath>
     <value>
-      <recipeMaker Operation="AddOrReplace">
-        <researchPrerequisite>Ferny_VanityTable</researchPrerequisite>
+      <recipeMaker>
+        <researchPrerequisite Operation="AddOrReplace">Ferny_VanityTable</researchPrerequisite>
+        <researchPrerequisites Operation="SafeRemove" />
       </recipeMaker>
     </value>
   </Operation>

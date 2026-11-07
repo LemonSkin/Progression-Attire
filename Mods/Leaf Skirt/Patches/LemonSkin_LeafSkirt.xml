@@ -1,27 +1,24 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyCategories</key>
-    <defaultValue>true</defaultValue>
-    <caseTrue>
-      <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[defName="LeafSkirt"]/thingCategories</xpath>
-        <value>
-          <thingCategories>
-            <li>LemonSkin_NeolithicApparel</li>
-          </thingCategories>
-        </value>
-      </Operation>
-    </caseTrue>
+  <!-- ######################################### LABELS ######################################### -->
+
+  <!-- ######################################### RESEARCH ######################################### -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/VFETribals.TribalResearchProjectDef[defName="LemonSkin_Leafwear"]</xpath>
+    <match Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <xpath>Defs/RecipeDef[defName="Make_Leaf_Skirt"]</xpath>
+      <value>
+        <researchPrerequisite Operation="AddOrReplace">LemonSkin_Leafwear</researchPrerequisite>
+        <researchPrerequisites Operation="SafeRemove" />
+      </value>
+    </match>
   </Operation>
 
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyRebalances</key>
-    <defaultValue>true</defaultValue>
+  <!-- ######################################### REBALANCES ######################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyRebalances</settingName>
     <caseTrue>
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="LeafSkirt"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -38,14 +35,20 @@
     </caseTrue>
   </Operation>
 
-  <Operation Class="PatchOperationConditional">
-    <xpath>Defs/VFETribals.TribalResearchProjectDef[defName="LemonSkin_Leafwear"]</xpath>
-    <match Class="XmlExtensions.HybridPatch">
-      <xpath>Defs/RecipeDef[defName="Make_Leaf_Skirt"]</xpath>
-      <value>
-        <researchPrerequisite Operation="AddOrReplace">LemonSkin_Leafwear</researchPrerequisite>
-        <researchPrerequisites Operation="SafeRemove" />
-      </value>
-    </match>
+  <!-- ######################################### CATEGORIES ######################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyCategories</settingName>
+    <caseTrue>
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/ThingDef[defName="LeafSkirt"]</xpath>
+        <value>
+          <thingCategories Operation="AddOrReplace" Inherit="False">
+            <li>LemonSkin_NeolithicApparel</li>
+          </thingCategories>
+        </value>
+      </Operation>
+    </caseTrue>
   </Operation>
+
+  <!-- ######################################### END ######################################### -->
 </Patch>

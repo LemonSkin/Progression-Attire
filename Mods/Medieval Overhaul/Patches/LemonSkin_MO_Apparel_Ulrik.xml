@@ -16,10 +16,10 @@
   </Operation>
 
   <!-- ######################################### RESEARCH ######################################### -->
-  <Operation Class="XmlExtensions.HybridPatch">
+  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
     <xpath>Defs/ThingDef[@Name="DankPyon_Base_Pants"]</xpath>
     <value>
-      <recipeMaker Operation="Safe">
+      <recipeMaker>
         <researchPrerequisite Operation="AddOrReplace">LemonSkin_RusticClothing</researchPrerequisite>
         <researchPrerequisites Operation="SafeRemove" />
       </recipeMaker>
@@ -27,12 +27,10 @@
   </Operation>
 
   <!-- ######################################### REBALANCES ######################################### -->
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyRebalances</key>
-    <defaultValue>true</defaultValue>
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyRebalances</settingName>
     <caseTrue>
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="DankPyon_Apparel_AdornedMailShirt"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -53,7 +51,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="DankPyon_Apparel_AdornedWarriorArmor"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -71,7 +69,7 @@
             <PainShockThreshold>0.05</PainShockThreshold>
             <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.05</SlaveSuppressionOffset>
           </equippedStatOffsets>
-          <apparel Operation="Safe">
+          <apparel>
             <bodyPartGroups Operation="AddOrReplace">
               <li>Torso</li>
               <li>Neck</li>
@@ -82,7 +80,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="DankPyon_Apparel_AdornedHeavyPlate"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">150</costStuffCount>
@@ -104,7 +102,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="DankPyon_Adorned_HeavyMailCoif"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">50</costStuffCount>
@@ -120,15 +118,15 @@
           <equippedStatOffsets Operation="AddOrReplace">
             <SocialImpact>0.05</SocialImpact>
           </equippedStatOffsets>
-          <recipeMaker Operation="Safe">
-            <skillRequirements Operation="Safe">
-              <Crafting Operation="AddOrReplace">7</Crafting>
+          <recipeMaker>
+            <skillRequirements Operation="AddOrReplace">
+              <Crafting>7</Crafting>
             </skillRequirements>
           </recipeMaker>
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="DankPyon_Adorned_FlatTop"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">70</costStuffCount>
@@ -145,15 +143,15 @@
             <ShootingAccuracyPawn>-5</ShootingAccuracyPawn>
             <SocialImpact>0.05</SocialImpact>
           </equippedStatOffsets>
-          <recipeMaker Operation="Safe">
-            <skillRequirements Operation="Safe">
-              <Crafting Operation="AddOrReplace">9</Crafting>
+          <recipeMaker>
+            <skillRequirements Operation="AddOrReplace">
+              <Crafting>9</Crafting>
             </skillRequirements>
           </recipeMaker>
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="DankPyon_Adorned_GreatHelm"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -170,9 +168,9 @@
             <MeleeHitChance>-0.5</MeleeHitChance>
             <SocialImpact>0.1</SocialImpact>
           </equippedStatOffsets>
-          <recipeMaker Operation="Safe">
-            <skillRequirements Operation="Safe">
-              <Crafting Operation="AddOrReplace">11</Crafting>
+          <recipeMaker>
+            <skillRequirements Operation="AddOrReplace">
+              <Crafting>11</Crafting>
             </skillRequirements>
           </recipeMaker>
         </value>
@@ -181,12 +179,10 @@
   </Operation>
 
   <!-- ######################################### CATEGORIES ######################################### -->
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyCategories</key>
-    <defaultValue>true</defaultValue>
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyCategories</settingName>
     <caseTrue>
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[@Name="DankPyon_AdornedArmorBase"]</xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -195,11 +191,13 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>
-          Defs/ThingDef[defName="DankPyon_Adorned_HeavyMailCoif" or
+          Defs/ThingDef[
+          defName="DankPyon_Adorned_HeavyMailCoif" or
           defName="DankPyon_Adorned_FlatTop" or
-          defName="DankPyon_Adorned_GreatHelm"]
+          defName="DankPyon_Adorned_GreatHelm"
+          ]
         </xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -209,4 +207,5 @@
       </Operation>
     </caseTrue>
   </Operation>
+  <!-- ######################################### END ######################################### -->
 </Patch>

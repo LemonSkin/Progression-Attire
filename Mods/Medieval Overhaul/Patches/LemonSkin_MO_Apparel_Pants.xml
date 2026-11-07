@@ -3,10 +3,10 @@
   <!-- ######################################### LABELS ######################################### -->
 
   <!-- ######################################### RESEARCH ######################################### -->
-  <Operation Class="XmlExtensions.HybridPatch">
+  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
     <xpath>Defs/ThingDef[@Name="DankPyon_Base_Pants"]</xpath>
     <value>
-      <recipeMaker Operation="Safe">
+      <recipeMaker>
         <researchPrerequisite Operation="AddOrReplace">LemonSkin_RusticClothing</researchPrerequisite>
         <researchPrerequisites Operation="SafeRemove" />
       </recipeMaker>
@@ -14,12 +14,10 @@
   </Operation>
 
   <!-- ######################################### REBALANCES ######################################### -->
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyRebalances</key>
-    <defaultValue>true</defaultValue>
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyRebalances</settingName>
     <caseTrue>
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[@Name="DankPyon_Base_Pants"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -34,7 +32,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="DankPyon_Apparel_ChaussesPadded"]</xpath>
         <value>
           <costStuffCount Operation="Add">60</costStuffCount>
@@ -50,7 +48,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="DankPyon_Apparel_ChaussesSplinted"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -65,15 +63,15 @@
           <equippedStatOffsets Operation="AddOrReplace">
             <MoveSpeed>-0.05</MoveSpeed>
           </equippedStatOffsets>
-          <recipeMaker Operation="Safe">
-            <skillRequirements Operation="Safe">
-              <Crafting Operation="AddOrReplace">5</Crafting>
+          <recipeMaker>
+            <skillRequirements Operation="AddOrReplace">
+              <Crafting>5</Crafting>
             </skillRequirements>
           </recipeMaker>
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="DankPyon_Apparel_ChaussesPlate"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -88,9 +86,9 @@
           <equippedStatOffsets Operation="AddOrReplace">
             <MoveSpeed>-0.1</MoveSpeed>
           </equippedStatOffsets>
-          <recipeMaker Operation="Safe">
-            <skillRequirements Operation="Safe">
-              <Crafting Operation="AddOrReplace">7</Crafting>
+          <recipeMaker>
+            <skillRequirements Operation="AddOrReplace">
+              <Crafting>7</Crafting>
             </skillRequirements>
           </recipeMaker>
         </value>
@@ -99,12 +97,10 @@
   </Operation>
 
   <!-- ######################################### CATEGORIES ######################################### -->
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyCategories</key>
-    <defaultValue>true</defaultValue>
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyCategories</settingName>
     <caseTrue>
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[@Name="DankPyon_Base_Pants"]</xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -113,7 +109,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[@Name="DankPyon_Base_ArmoredPants"]</xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -123,4 +119,5 @@
       </Operation>
     </caseTrue>
   </Operation>
+  <!-- ######################################### END ######################################### -->
 </Patch>

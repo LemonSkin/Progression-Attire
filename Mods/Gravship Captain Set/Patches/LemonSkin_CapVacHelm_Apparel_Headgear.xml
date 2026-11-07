@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyCategories</key>
-    <defaultValue>true</defaultValue>
+  <!-- ######################################### LABELS ######################################### -->
+
+  <!-- ######################################### RESEARCH ######################################### -->
+
+  <!-- ######################################### REBALANCES ######################################### -->
+
+  <!-- ######################################### CATEGORIES ######################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyCategories</settingName>
     <caseTrue>
-      <Operation Class="PatchOperationAdd">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="GravshipCaptainVacsuitHelmet"]</xpath>
         <value>
-          <thingCategories Inherit="False">
+          <thingCategories Operation="AddOrReplace" Inherit="False">
             <li>LemonSkin_SpacerArmorHeadgear</li>
           </thingCategories>
         </value>
@@ -16,10 +21,10 @@
 
       <Operation Class="PatchOperationConditional">
         <xpath>Defs/ThingDef[defName="PrestigeGravshipCaptainVacsuitHelmet"]</xpath>
-        <match Class="PatchOperationAdd">
+        <match Class="ferny.ProgressionAttire.PatchOperationMerge">
           <xpath>Defs/ThingDef[defName="PrestigeGravshipCaptainVacsuitHelmet"]</xpath>
           <value>
-            <thingCategories Inherit="False">
+            <thingCategories Operation="AddOrReplace" Inherit="False">
               <li>LemonSkin_SpacerArmorHeadgear</li>
             </thingCategories>
           </value>
@@ -27,4 +32,6 @@
       </Operation>
     </caseTrue>
   </Operation>
+
+  <!-- ######################################### END ######################################### -->
 </Patch>

@@ -93,7 +93,6 @@
   </Operation>
 
   <!-- ######################################### REBALANCES ######################################### -->
-
   <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
     <settingName>applyRebalances</settingName>
     <caseTrue>

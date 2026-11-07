@@ -1,28 +1,22 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Patch>
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="DankPyon_MendingBench"]/comps/li[@Class="CompProperties_Refuelable"]/fuelConsumptionRate</xpath>
     <value>
       <!-- 30 ticks per HP restored, therefore 3000 ticks to restore 100 HP
        1 day = 60000 ticks
-       100 HP costs 1 fuel, so it should last 3000/60000 = 0.05 days 
+       100 HP costs 1 fuel, so it should last 3000/60000 = 0.05 days
        Therefore fuelConsumptionRate = 1/0.05 = 20.0 -->
       <fuelConsumptionRate>20.0</fuelConsumptionRate>
     </value>
   </Operation>
 
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/RecipeDef[defName="DankPyon_MendApparel"]/researchPrerequisites</xpath>
+  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+    <xpath>Defs/RecipeDef[defName="DankPyon_MendApparel"]</xpath>
     <value>
-      <researchPrerequisites>
-        <li>LemonSkin_RusticClothing</li>
-      </researchPrerequisites>
-    </value>
-  </Operation>
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/RecipeDef[defName="DankPyon_MendApparel"]/ingredients</xpath>
-    <value>
-      <ingredients>
+      <researchPrerequisite Operation="AddOrReplace">LemonSkin_RusticClothing</researchPrerequisite>
+      <researchPrerequisites Operation="SafeRemove" />
+      <ingredients Operation="AddOrReplace">
         <li>
           <filter>
             <categories>
@@ -45,12 +39,7 @@
           <count>1</count>
         </li>
       </ingredients>
-    </value>
-  </Operation>
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/RecipeDef[defName="DankPyon_MendApparel"]/fixedIngredientFilter</xpath>
-    <value>
-      <fixedIngredientFilter>
+      <fixedIngredientFilter Operation="AddOrReplace">
         <categories>
           <li>Apparel</li>
         </categories>
@@ -68,12 +57,7 @@
           <li>LemonSkin_UltraShields</li>
         </disallowedCategories>
       </fixedIngredientFilter>
-    </value>
-  </Operation>
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/RecipeDef[defName="DankPyon_MendApparel"]/defaultIngredientFilter</xpath>
-    <value>
-      <defaultIngredientFilter>
+      <defaultIngredientFilter Operation="AddOrReplace">
         <categories>
           <li>Apparel</li>
         </categories>
@@ -94,64 +78,44 @@
     </value>
   </Operation>
 
-
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/RecipeDef[defName="DankPyon_MendArmor"]/ingredients</xpath>
+  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+    <xpath>Defs/RecipeDef[defName="DankPyon_MendArmor"]</xpath>
     <value>
-      <ingredients>
+      <ingredients Operation="AddOrReplace">
         <li>
           <filter>
             <categories>
               <li>ApparelArmor</li>
               <li>LemonSkin_NeolithicArmor</li>
-              <!-- <li>LemonSkin_NeolithicArmorHeadgear</li> -->
               <li>LemonSkin_NeolithicShields</li>
               <li>LemonSkin_MedievalArmor</li>
-              <!-- <li>LemonSkin_MedievalArmorHeadgear</li> -->
               <li>LemonSkin_MedievalShields</li>
               <li>LemonSkin_IndustrialArmor</li>
-              <!-- <li>LemonSkin_IndustrialArmorHeadgear</li> -->
               <li>LemonSkin_IndustrialShields</li>
             </categories>
           </filter>
           <count>1</count>
         </li>
       </ingredients>
-    </value>
-  </Operation>
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/RecipeDef[defName="DankPyon_MendArmor"]/fixedIngredientFilter</xpath>
-    <value>
-      <fixedIngredientFilter>
+      <fixedIngredientFilter Operation="AddOrReplace">
         <categories>
           <li>ApparelArmor</li>
           <li>LemonSkin_NeolithicArmor</li>
-          <!-- <li>LemonSkin_NeolithicArmorHeadgear</li> -->
           <li>LemonSkin_NeolithicShields</li>
           <li>LemonSkin_MedievalArmor</li>
-          <!-- <li>LemonSkin_MedievalArmorHeadgear</li> -->
           <li>LemonSkin_MedievalShields</li>
           <li>LemonSkin_IndustrialArmor</li>
-          <!-- <li>LemonSkin_IndustrialArmorHeadgear</li> -->
           <li>LemonSkin_IndustrialShields</li>
         </categories>
       </fixedIngredientFilter>
-    </value>
-  </Operation>
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/RecipeDef[defName="DankPyon_MendArmor"]/defaultIngredientFilter</xpath>
-    <value>
-      <defaultIngredientFilter>
+      <defaultIngredientFilter Operation="AddOrReplace">
         <categories>
           <li>ApparelArmor</li>
           <li>LemonSkin_NeolithicArmor</li>
-          <!-- <li>LemonSkin_NeolithicArmorHeadgear</li> -->
           <li>LemonSkin_NeolithicShields</li>
           <li>LemonSkin_MedievalArmor</li>
-          <!-- <li>LemonSkin_MedievalArmorHeadgear</li> -->
           <li>LemonSkin_MedievalShields</li>
           <li>LemonSkin_IndustrialArmor</li>
-          <!-- <li>LemonSkin_IndustrialArmorHeadgear</li> -->
           <li>LemonSkin_IndustrialShields</li>
         </categories>
       </defaultIngredientFilter>

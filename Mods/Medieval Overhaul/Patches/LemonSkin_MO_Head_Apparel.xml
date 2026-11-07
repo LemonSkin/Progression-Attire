@@ -107,82 +107,84 @@
   </Operation>
 
   <!-- ######################################### RESEARCH ######################################### -->
-  <Operation Class="XmlExtensions.HybridPatch">
+  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
     <xpath>
-      Defs/ThingDef[defName="DankPyon_Headgear_RedBandana" or
+      Defs/ThingDef[
+      defName="DankPyon_Headgear_RedBandana" or
       defName="DankPyon_Headgear_Hood" or
       defName="DankPyon_Headgear_coif" or
       defName="DankPyon_Headgear_ArmingCap" or
       defName="DankPyon_Headgear_FullArmingCap" or
-      defName="DankPyon_Headgear_CultistHood"]
+      defName="DankPyon_Headgear_CultistHood"
+      ]
     </xpath>
     <value>
-      <recipeMaker Operation="Safe">
+      <recipeMaker>
         <researchPrerequisite Operation="AddOrReplace">LemonSkin_RusticClothing</researchPrerequisite>
         <researchPrerequisites Operation="SafeRemove" />
       </recipeMaker>
     </value>
   </Operation>
 
-  <Operation Class="XmlExtensions.HybridPatch">
+  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
     <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ZweihandersHat"]</xpath>
     <value>
-      <recipeMaker Operation="Safe">
+      <recipeMaker>
+        <researchPrerequisite Operation="SafeRemove" />
         <researchPrerequisites Operation="AddOrReplace">
           <li>DankPyon_ProtectiveClothing</li>
           <li MayRequire="Ludeon.RimWorld.Royalty">NobleApparel</li>
         </researchPrerequisites>
-        <researchPrerequisite Operation="SafeRemove" />
       </recipeMaker>
     </value>
   </Operation>
 
-  <Operation Class="XmlExtensions.HybridPatch">
+  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
     <xpath>
-      Defs/ThingDef[defName="DankPyon_Headgear_HeavyBarbrute" or
-      defName="DankPyon_Headgear_OpenBascinet"]
+      Defs/ThingDef[
+      defName="DankPyon_Headgear_HeavyBarbrute" or
+      defName="DankPyon_Headgear_OpenBascinet"
+      ]
     </xpath>
     <value>
-      <recipeMaker Operation="Safe">
+      <recipeMaker>
         <researchPrerequisite Operation="AddOrReplace">PlateArmor</researchPrerequisite>
         <researchPrerequisites Operation="SafeRemove" />
       </recipeMaker>
     </value>
   </Operation>
 
-  <Operation Class="XmlExtensions.HybridPatch">
+  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
     <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ZweihanderHelm"]</xpath>
     <value>
-      <recipeMaker Operation="Safe">
+      <recipeMaker>
+        <researchPrerequisite Operation="SafeRemove" />
         <researchPrerequisites Operation="AddOrReplace">
           <li>DankPyon_ChainArmor</li>
           <li MayRequire="Ludeon.RimWorld.Royalty">NobleApparel</li>
         </researchPrerequisites>
-        <researchPrerequisite Operation="SafeRemove" />
       </recipeMaker>
     </value>
   </Operation>
 
-  <Operation Class="XmlExtensions.HybridPatch">
+  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
     <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ArmetGilded"]</xpath>
     <value>
-      <recipeMaker Operation="Safe">
+      <recipeMaker>
+        <researchPrerequisite Operation="SafeRemove" />
         <researchPrerequisites Operation="AddOrReplace">
           <li>PlateArmor</li>
           <li MayRequire="Ludeon.RimWorld.Royalty">RoyalApparel</li>
         </researchPrerequisites>
-        <researchPrerequisite Operation="SafeRemove" />
       </recipeMaker>
     </value>
   </Operation>
 
   <!-- ######################################### REBALANCES ######################################### -->
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyRebalances</key>
-    <defaultValue>true</defaultValue>
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyRebalances</settingName>
     <caseTrue>
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="DankPyon_Headgear_RedBandana"]</xpath>
         <value>
           <costList Operation="SafeRemove" />
@@ -203,7 +205,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="DankPyon_Headgear_Hood"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -218,7 +220,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="DankPyon_Headgear_coif"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">20</costStuffCount>
@@ -234,7 +236,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ArmingCap"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -249,7 +251,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="DankPyon_Headgear_FullArmingCap"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -264,7 +266,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="DankPyon_Headgear_CultistHood"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -279,7 +281,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ZweihandersHat"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -295,19 +297,21 @@
             <PainShockThreshold>0.10</PainShockThreshold>
             <SocialImpact>0.10</SocialImpact>
           </equippedStatOffsets>
-          <recipeMaker Operation="Safe">
-            <skillRequirements Operation="Safe">
-              <Crafting Operation="AddOrReplace">6</Crafting>
+          <recipeMaker>
+            <skillRequirements Operation="AddOrReplace">
+              <Crafting>6</Crafting>
             </skillRequirements>
           </recipeMaker>
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>
-          Defs/ThingDef[defName="DankPyon_Headgear_PaddedNasalHelmet" or
+          Defs/ThingDef[
+          defName="DankPyon_Headgear_PaddedNasalHelmet" or
           defName="DankPyon_Headgear_PaddedKettleHelmet" or
-          defName="DankPyon_Headgear_PaddedFlatTopHelmet"]
+          defName="DankPyon_Headgear_PaddedFlatTopHelmet"
+          ]
         </xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">40</costStuffCount>
@@ -325,10 +329,12 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>
-          Defs/ThingDef[defName="DankPyon_Headgear_ChainCoif" or
-          defName="DankPyon_Headgear_ChainCoifClosed"]
+          Defs/ThingDef[
+          defName="DankPyon_Headgear_ChainCoif" or
+          defName="DankPyon_Headgear_ChainCoifClosed"
+          ]
         </xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">40</costStuffCount>
@@ -344,7 +350,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ChainCoifFull"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -362,13 +368,15 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>
-          Defs/ThingDef[defName="DankPyon_Headgear_ChainKettleHelmet" or
+          Defs/ThingDef[
+          defName="DankPyon_Headgear_ChainKettleHelmet" or
           defName="DankPyon_Headgear_ChainNasalHelmet" or
           defName="DankPyon_Headgear_ChainNasalRedHelmet" or
           defName="DankPyon_Headgear_Chain_FlatTopHelmet" or
-          defName="DankPyon_Headgear_ClosedChain_FlatTopHelmet"]
+          defName="DankPyon_Headgear_ClosedChain_FlatTopHelmet"
+          ]
         </xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -386,7 +394,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ChainNasalRedHelmet"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">55</costStuffCount>
@@ -396,7 +404,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ChainClosedFlatTopHelmet"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">70</costStuffCount>
@@ -415,10 +423,12 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>
-          Defs/ThingDef[defName="DankPyon_Headgear_HeavyBarbrute" or
-          defName="DankPyon_Headgear_OpenBascinet"]
+          Defs/ThingDef[
+          defName="DankPyon_Headgear_HeavyBarbrute" or
+          defName="DankPyon_Headgear_OpenBascinet"
+          ]
         </xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -436,7 +446,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[@Name="DankPyon_ZweihanderHelmBase"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -453,12 +463,12 @@
             <PainShockThreshold>0.10</PainShockThreshold>
             <SocialImpact>0.1</SocialImpact>
           </equippedStatOffsets>
-          <recipeMaker Operation="Safe">
-            <skillRequirements Operation="Safe">
-              <Crafting Operation="AddOrReplace">7</Crafting>
+          <recipeMaker>
+            <skillRequirements Operation="AddOrReplace">
+              <Crafting>7</Crafting>
             </skillRequirements>
           </recipeMaker>
-          <apparel Operation="Safe">
+          <apparel>
             <bodyPartGroups Operation="AddOrReplace">
               <li>UpperHead</li>
             </bodyPartGroups>
@@ -466,7 +476,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ClosedBascinetHelmet"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -482,15 +492,15 @@
             <ShootingAccuracyPawn>-7.0</ShootingAccuracyPawn>
             <MeleeHitChance>-0.5</MeleeHitChance>
           </equippedStatOffsets>
-          <recipeMaker Operation="Safe">
-            <skillRequirements Operation="Safe">
-              <Crafting Operation="AddOrReplace">9</Crafting>
+          <recipeMaker>
+            <skillRequirements Operation="AddOrReplace">
+              <Crafting>9</Crafting>
             </skillRequirements>
           </recipeMaker>
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="DankPyon_Headgear_WolfBascinet"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">70</costStuffCount>
@@ -506,20 +516,22 @@
           <equippedStatOffsets Operation="AddOrReplace">
             <ShootingAccuracyPawn>-6.0</ShootingAccuracyPawn>
           </equippedStatOffsets>
-          <recipeMaker Operation="Safe">
-            <skillRequirements Operation="Safe">
-              <Crafting Operation="AddOrReplace">7</Crafting>
+          <recipeMaker>
+            <skillRequirements Operation="AddOrReplace">
+              <Crafting>7</Crafting>
             </skillRequirements>
           </recipeMaker>
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>
-          Defs/ThingDef[defName="DankPyon_Headgear_Bascinet_KlappvisierHelmetClosed" or
+          Defs/ThingDef[
+          defName="DankPyon_Headgear_Bascinet_KlappvisierHelmetClosed" or
           defName="DankPyon_Headgear_KlappvisorBascinet" or
           defName="DankPyon_Headgear_HounskullHelmet" or
-          @Name="DankPyon_SalletBase"]
+          @Name="DankPyon_SalletBase"
+          ]
         </xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -535,18 +547,20 @@
             <ShootingAccuracyPawn>-7.0</ShootingAccuracyPawn>
             <MeleeHitChance>-0.5</MeleeHitChance>
           </equippedStatOffsets>
-          <recipeMaker Operation="Safe">
-            <skillRequirements Operation="Safe">
-              <Crafting Operation="AddOrReplace">9</Crafting>
+          <recipeMaker>
+            <skillRequirements Operation="AddOrReplace">
+              <Crafting>9</Crafting>
             </skillRequirements>
           </recipeMaker>
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>
-          Defs/ThingDef[defName="DankPyon_Headgear_GreatHelm" or
-          @Name="DankPyon_HeraldicGreatHelm"]
+          Defs/ThingDef[
+          defName="DankPyon_Headgear_GreatHelm" or
+          @Name="DankPyon_HeraldicGreatHelm"
+          ]
         </xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -565,7 +579,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="DankPyon_Headgear_Armet"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -581,15 +595,15 @@
             <ShootingAccuracyPawn>-8.0</ShootingAccuracyPawn>
             <MeleeHitChance>-1</MeleeHitChance>
           </equippedStatOffsets>
-          <recipeMaker Operation="Safe">
-            <skillRequirements Operation="Safe">
-              <Crafting Operation="AddOrReplace">10</Crafting>
+          <recipeMaker>
+            <skillRequirements Operation="AddOrReplace">
+              <Crafting>10</Crafting>
             </skillRequirements>
           </recipeMaker>
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ArmetGilded"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -610,7 +624,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ArmetNamed"]</xpath>
         <value>
           <equippedStatOffsets Operation="AddOrReplace">
@@ -626,12 +640,10 @@
   </Operation>
 
   <!-- ######################################### CATEGORIES ######################################### -->
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyCategories</key>
-    <defaultValue>true</defaultValue>
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyCategories</settingName>
     <caseTrue>
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[@Name="DankPyon_HatMakeableBase"]</xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -640,7 +652,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[@Name="DankPyon_ArmorHelmetMakeableBase"]</xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -650,4 +662,5 @@
       </Operation>
     </caseTrue>
   </Operation>
+  <!-- ######################################### END ######################################### -->
 </Patch>

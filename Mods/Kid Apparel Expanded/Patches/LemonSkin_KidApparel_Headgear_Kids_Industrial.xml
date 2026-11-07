@@ -1,23 +1,28 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyCategories</key>
-    <defaultValue>true</defaultValue>
+  <!-- ######################################### LABELS ######################################### -->
+
+  <!-- ######################################### RESEARCH ######################################### -->
+
+  <!-- ######################################### REBALANCES ######################################### -->
+
+  <!-- ######################################### CATEGORIES ######################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyCategories</settingName>
     <caseTrue>
-      <Operation Class="PatchOperationAdd">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="Apparel_AdvancedKidHelmet"]</xpath>
         <value>
-          <thingCategories Inherit="False">
+          <thingCategories Operation="AddOrReplace" Inherit="False">
             <li>LemonSkin_KidArmorHeadgear</li>
           </thingCategories>
         </value>
       </Operation>
 
-      <Operation Class="PatchOperationAdd">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="Apparel_KidPsychicFoil"]</xpath>
         <value>
-          <thingCategories Inherit="False">
+          <thingCategories Operation="AddOrReplace" Inherit="False">
             <li>LemonSkin_KidHeadgear</li>
           </thingCategories>
         </value>
@@ -25,10 +30,10 @@
 
       <Operation Class="PatchOperationConditional">
         <xpath>Defs/ThingDef[defName="Apparel_KidEltexHelmet"]</xpath>
-        <match Class="PatchOperationReplace">
-          <xpath>Defs/ThingDef[defName="Apparel_KidEltexHelmet"]/thingCategories</xpath>
+        <match Class="ferny.ProgressionAttire.PatchOperationMerge">
+          <xpath>Defs/ThingDef[defName="Apparel_KidEltexHelmet"]</xpath>
           <value>
-            <thingCategories Inherit="False">
+            <thingCategories Operation="AddOrReplace" Inherit="False">
               <li>LemonSkin_KidArmorHeadgear</li>
             </thingCategories>
           </value>
@@ -37,10 +42,10 @@
 
       <Operation Class="PatchOperationConditional">
         <xpath>Defs/ThingDef[defName="Apparel_KidEltexSkullcap"]</xpath>
-        <match Class="PatchOperationReplace">
-          <xpath>Defs/ThingDef[defName="Apparel_KidEltexSkullcap"]/thingCategories</xpath>
+        <match Class="ferny.ProgressionAttire.PatchOperationMerge">
+          <xpath>Defs/ThingDef[defName="Apparel_KidEltexSkullcap"]</xpath>
           <value>
-            <thingCategories Inherit="False">
+            <thingCategories Operation="AddOrReplace" Inherit="False">
               <li>LemonSkin_KidHeadgear</li>
             </thingCategories>
           </value>
@@ -48,4 +53,6 @@
       </Operation>
     </caseTrue>
   </Operation>
+
+  <!-- ######################################### END ######################################### -->
 </Patch>

@@ -1,75 +1,76 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
   <!-- ######################################### LABELS ######################################### -->
-  <Operation Class="XmlExtensions.HybridPatch">
+  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
     <xpath>Defs/ThingDef[defName="Apparel_mini"]</xpath>
     <value>
-      <label Operation="AddOrReplace">miniature hat</label>
-      <description Operation="AddOrReplace">A cute and stylish miniature headpiece.</description>
+      <label>miniature hat</label>
+      <description>A cute and stylish miniature headpiece.</description>
     </value>
   </Operation>
 
-  <Operation Class="XmlExtensions.HybridPatch">
+  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
     <xpath>Defs/ThingDef[defName="Apparel_ribondress"]</xpath>
     <value>
-      <label Operation="AddOrReplace">ribbon dress</label>
-      <description Operation="AddOrReplace">A cute dress adorned with a silk ribbon.</description>
+      <label>ribbon dress</label>
+      <description>A cute dress adorned with a silk ribbon.</description>
     </value>
   </Operation>
 
-  <Operation Class="XmlExtensions.HybridPatch">
+  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
     <xpath>Defs/ThingDef[defName="Apparel_ribonhat"]</xpath>
     <value>
-      <label Operation="AddOrReplace">ribbon hat</label>
-      <description Operation="AddOrReplace">A stylish headpiece adorned with a silk ribbon.</description>
+      <label>ribbon hat</label>
+      <description>A stylish headpiece adorned with a silk ribbon.</description>
     </value>
   </Operation>
 
-  <Operation Class="XmlExtensions.HybridPatch">
+  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
     <xpath>Defs/ThingDef[defName="Apparel_maid"]</xpath>
     <value>
-      <label Operation="AddOrReplace">cutesy maid dress</label>
+      <label>cutesy maid dress</label>
     </value>
   </Operation>
 
-  <Operation Class="XmlExtensions.HybridPatch">
+  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
     <xpath>Defs/ThingDef[defName="Apparel_hairband"]</xpath>
     <value>
-      <label Operation="AddOrReplace">cutesy maid head band</label>
-      <description Operation="AddOrReplace">A cute head band to keep hair out of the eyes while working.</description>
+      <label>cutesy maid head band</label>
+      <description>A cute head band to keep hair out of the eyes while working.</description>
     </value>
   </Operation>
 
-  <Operation Class="XmlExtensions.HybridPatch">
+  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
     <xpath>Defs/ThingDef[defName="Apparel_neat"]</xpath>
     <value>
-      <label Operation="AddOrReplace">off-shoulder turtleneck sweater</label>
-      <description Operation="AddOrReplace">A comfortable and cute sweater.</description>
+      <label>off-shoulder turtleneck sweater</label>
+      <description>A comfortable and cute sweater.</description>
     </value>
   </Operation>
 
-  <Operation Class="XmlExtensions.HybridPatch">
+  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
     <xpath>Defs/ThingDef[defName="Apparel_nuns"]</xpath>
     <value>
-      <label Operation="AddOrReplace">nun dress</label>
-      <description Operation="AddOrReplace">A beautiful nun's dress.</description>
+      <label>nun dress</label>
+      <description>A beautiful nun's dress.</description>
     </value>
   </Operation>
 
-  <Operation Class="XmlExtensions.HybridPatch">
+  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
     <xpath>Defs/ThingDef[defName="Apparel_nunsveil"]</xpath>
     <value>
-      <label Operation="AddOrReplace">nun veil</label>
-      <description Operation="AddOrReplace">A beautiful nun's veil.</description>
+      <label>nun veil</label>
+      <description>A beautiful nun's veil.</description>
     </value>
   </Operation>
 
   <!-- ######################################### RESEARCH ######################################### -->
-  <Operation Class="XmlExtensions.HybridPatch">
+  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
     <xpath>Defs/ThingDef[@Name="GD_ApparelBase"]</xpath>
     <value>
-      <recipeMaker Operation="AddOrReplace">
-        <researchPrerequisite>Ferny_VanityTable</researchPrerequisite>
+      <recipeMaker>
+        <researchPrerequisite Operation="AddOrReplace">Ferny_VanityTable</researchPrerequisite>
+        <researchPrerequisites Operation="SafeRemove" />
       </recipeMaker>
     </value>
   </Operation>

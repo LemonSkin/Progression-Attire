@@ -9,42 +9,44 @@
   </Operation>
 
   <!-- ######################################### RESEARCH ######################################### -->
-  <Operation Class="XmlExtensions.HybridPatch">
+  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
     <xpath>
-      Defs/ThingDef[defName="DankPyon_Apparel_Sackcloth" or
-      defName="DankPyon_Apparel_Padded_Surcoat"]
+      Defs/ThingDef[
+      defName="DankPyon_Apparel_Sackcloth" or
+      defName="DankPyon_Apparel_Padded_Surcoat"
+      ]
     </xpath>
     <value>
-      <recipeMaker Operation="Safe">
+      <recipeMaker>
         <researchPrerequisite Operation="AddOrReplace">LemonSkin_RusticClothing</researchPrerequisite>
         <researchPrerequisites Operation="SafeRemove" />
       </recipeMaker>
     </value>
   </Operation>
 
-  <Operation Class="XmlExtensions.HybridPatch">
+  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
     <xpath>
-      Defs/ThingDef[defName="DankPyon_Apparel_Leather_Tunic" or
-      defName="Dankpyon_Apparel_Gambeson"]
+      Defs/ThingDef[
+      defName="DankPyon_Apparel_Leather_Tunic" or
+      defName="Dankpyon_Apparel_Gambeson"
+      ]
     </xpath>
     <value>
-      <recipeMaker Operation="Safe">
+      <recipeMaker>
+        <researchPrerequisite Operation="SafeRemove" />
         <researchPrerequisites Operation="AddOrReplace">
           <li>LemonSkin_RusticClothing</li>
           <li>DankPyon_LeatherTanning</li>
         </researchPrerequisites>
-        <researchPrerequisite Operation="SafeRemove" />
       </recipeMaker>
     </value>
   </Operation>
 
   <!-- ######################################### REBALANCES ######################################### -->
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyRebalances</key>
-    <defaultValue>true</defaultValue>
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyRebalances</settingName>
     <caseTrue>
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Sackcloth"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -56,7 +58,7 @@
             <StuffEffectMultiplierInsulation_Heat>0.10</StuffEffectMultiplierInsulation_Heat>
             <EquipDelay>1.5</EquipDelay>
           </statBases>
-          <apparel Operation="Safe">
+          <apparel>
             <bodyPartGroups Operation="AddOrReplace">
               <li>Torso</li>
               <li>Shoulders</li>
@@ -65,7 +67,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Leather_Tunic"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">55</costStuffCount>
@@ -78,7 +80,7 @@
             <StuffEffectMultiplierInsulation_Heat>0.11</StuffEffectMultiplierInsulation_Heat>
             <EquipDelay>1.5</EquipDelay>
           </statBases>
-          <apparel Operation="Safe">
+          <apparel>
             <bodyPartGroups Operation="AddOrReplace">
               <li>Torso</li>
             </bodyPartGroups>
@@ -86,7 +88,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Padded_Surcoat"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">50</costStuffCount>
@@ -99,7 +101,7 @@
             <StuffEffectMultiplierInsulation_Heat>0.1</StuffEffectMultiplierInsulation_Heat>
             <EquipDelay>1.5</EquipDelay>
           </statBases>
-          <apparel Operation="Safe">
+          <apparel>
             <bodyPartGroups Operation="AddOrReplace">
               <li>Torso</li>
             </bodyPartGroups>
@@ -107,7 +109,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="Dankpyon_Apparel_Gambeson"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">50</costStuffCount>
@@ -126,7 +128,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Padded_Leather"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -141,7 +143,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Light_Lamellar"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">70</costStuffCount>
@@ -154,7 +156,7 @@
             <StuffEffectMultiplierInsulation_Heat>0.2</StuffEffectMultiplierInsulation_Heat>
             <EquipDelay>2.5</EquipDelay>
           </statBases>
-          <apparel Operation="Safe">
+          <apparel>
             <bodyPartGroups Operation="AddOrReplace">
               <li>Neck</li>
               <li>Torso</li>
@@ -166,16 +168,16 @@
   </Operation>
 
   <!-- ######################################### CATEGORIES ######################################### -->
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyCategories</key>
-    <defaultValue>true</defaultValue>
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyCategories</settingName>
     <caseTrue>
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>
-          Defs/ThingDef[defName="DankPyon_Apparel_Sackcloth" or
+          Defs/ThingDef[
+          defName="DankPyon_Apparel_Sackcloth" or
           defName="DankPyon_Apparel_Padded_Surcoat" or
-          defName="Dankpyon_Apparel_Gambeson"]
+          defName="Dankpyon_Apparel_Gambeson"
+          ]
         </xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -184,11 +186,13 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>
-          Defs/ThingDef[defName="DankPyon_Apparel_Leather_Tunic" or
+          Defs/ThingDef[
+          defName="DankPyon_Apparel_Leather_Tunic" or
           defName="DankPyon_Apparel_Padded_Leather" or
-          defName="DankPyon_Apparel_Light_Lamellar"]
+          defName="DankPyon_Apparel_Light_Lamellar"
+          ]
         </xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -198,4 +202,5 @@
       </Operation>
     </caseTrue>
   </Operation>
+  <!-- ######################################### END ######################################### -->
 </Patch>
