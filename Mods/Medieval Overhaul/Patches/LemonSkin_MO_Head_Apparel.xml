@@ -662,5 +662,225 @@
       </Operation>
     </caseTrue>
   </Operation>
-  <!-- ######################################### END ########################################### -->
+
+  <!-- ######################################### BUG FIX ####################################### -->
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="DankPyon_Headgear_PaddedKettleHelmet"]/graphicData</xpath>
+    <value>
+      <shaderType>CutoutComplex</shaderType>
+    </value>
+  </Operation>
+
+  <!-- ######################################### STYLES ######################################## -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>createStyles</settingName>
+    <caseTrue>
+      <!-- ######################################### PADDED #################################### -->
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_PaddedNasalHelmet"]</xpath>
+        <value>
+          <label Operation="AddOrReplace">padded helmet</label>
+          <randomStyleChance Operation="AddOrReplace">0.5</randomStyleChance>
+          <randomStyle Operation="AddOrReplace">
+            <li>
+              <styleDef>PaddedHelmet_Kettle</styleDef>
+            </li>
+            <li>
+              <styleDef>PaddedHelmet_FlatTop</styleDef>
+            </li>
+          </randomStyle>
+        </value>
+      </Operation>
+
+      <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ReplaceLib.ReplacerDef[defName="ProgressionAttire"]/replacers</xpath>
+        <value>
+          <li>
+            <replace>DankPyon_Headgear_PaddedKettleHelmet</replace>
+            <with>DankPyon_Headgear_PaddedNasalHelmet</with>
+          </li>
+          <li>
+            <replace>DankPyon_Headgear_PaddedFlatTopHelmet</replace>
+            <with>DankPyon_Headgear_PaddedNasalHelmet</with>
+          </li>
+        </value>
+      </Operation>
+
+      <!-- ######################################### CHAIN COIF ################################ -->
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ChainCoif"]</xpath>
+        <value>
+          <randomStyleChance Operation="AddOrReplace">0.5</randomStyleChance>
+          <randomStyle Operation="AddOrReplace">
+            <li>
+              <styleDef>ChainCoif_Closed</styleDef>
+            </li>
+            <li>
+              <styleDef>ChainCoif_Full</styleDef>
+            </li>
+          </randomStyle>
+          <comps>
+            <li Operation="SafeRemove" XPathLocal="SwitchTo" Compare="Both">
+              <SwitchTo>DankPyon_Headgear_ChainCoifClosed</SwitchTo>
+            </li>
+          </comps>
+        </value>
+      </Operation>
+
+      <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ReplaceLib.ReplacerDef[defName="ProgressionAttire"]/replacers</xpath>
+        <value>
+          <li>
+            <replace>DankPyon_Headgear_ChainCoifClosed</replace>
+            <with>DankPyon_Headgear_ChainCoif</with>
+          </li>
+          <li>
+            <replace>DankPyon_Headgear_ChainCoifFull</replace>
+            <with>DankPyon_Headgear_ChainCoif</with>
+          </li>
+        </value>
+      </Operation>
+
+      <!-- ######################################### CHAIN HELM ################################ -->
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ChainNasalHelmet"]</xpath>
+        <value>
+          <label Operation="AddOrReplace">chain helmet</label>
+          <randomStyleChance Operation="AddOrReplace">0.5</randomStyleChance>
+          <randomStyle Operation="AddOrReplace">
+            <li>
+              <styleDef>ChainHelmet_NasalBandana</styleDef>
+            </li>
+            <li>
+              <styleDef>ChainHelmet_Kettle</styleDef>
+            </li>
+            <li>
+              <styleDef>ChainHelmet_FlatTop</styleDef>
+            </li>
+            <li>
+              <styleDef>ChainHelmet_FlatTop_Closed</styleDef>
+            </li>
+            <li>
+              <styleDef>ChainHelmet_Chainveil</styleDef>
+            </li>
+          </randomStyle>
+        </value>
+      </Operation>
+
+      <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ReplaceLib.ReplacerDef[defName="ProgressionAttire"]/replacers</xpath>
+        <value>
+          <li>
+            <replace>DankPyon_Headgear_ChainNasalRedHelmet</replace>
+            <with>DankPyon_Headgear_ChainNasalHelmet</with>
+          </li>
+          <li>
+            <replace>DankPyon_Headgear_ChainKettleHelmet</replace>
+            <with>DankPyon_Headgear_ChainNasalHelmet</with>
+          </li>
+          <li>
+            <replace>DankPyon_Headgear_Chain_FlatTopHelmet</replace>
+            <with>DankPyon_Headgear_ChainNasalHelmet</with>
+          </li>
+          <li>
+            <replace>DankPyon_Headgear_ClosedChain_FlatTopHelmet</replace>
+            <with>DankPyon_Headgear_ChainNasalHelmet</with>
+          </li>
+          <li>
+            <replace>DankPyon_Headgear_ChainClosedFlatTopHelmet</replace>
+            <with>DankPyon_Headgear_ChainNasalHelmet</with>
+          </li>
+        </value>
+      </Operation>
+
+      <!-- ######################################### OPEN PLATE HELM ########################### -->
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_OpenBascinet"]</xpath>
+        <value>
+          <label Operation="AddOrReplace">open plate helm</label>
+          <randomStyleChance Operation="AddOrReplace">0.5</randomStyleChance>
+          <randomStyle Operation="AddOrReplace">
+            <li>
+              <styleDef>PlateHelmet_WolfribsBascinet</styleDef>
+            </li>
+            <li>
+              <styleDef>PlateHelmet_HeavyBarbrute</styleDef>
+            </li>
+          </randomStyle>
+        </value>
+      </Operation>
+      <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ReplaceLib.ReplacerDef[defName="ProgressionAttire"]/replacers</xpath>
+        <value>
+          <li>
+            <replace>DankPyon_Headgear_WolfBascinet</replace>
+            <with>DankPyon_Headgear_OpenBascinet</with>
+          </li>
+          <li>
+            <replace>DankPyon_Headgear_HeavyBarbrute</replace>
+            <with>DankPyon_Headgear_OpenBascinet</with>
+          </li>
+        </value>
+      </Operation>
+
+      <!-- ######################################### CLOSED PLATE HELM ######################### -->
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ClosedBascinetHelmet"]</xpath>
+        <value>
+          <label Operation="AddOrReplace">closed plate helm</label>
+          <randomStyleChance Operation="AddOrReplace">0.5</randomStyleChance>
+          <randomStyle Operation="AddOrReplace">
+            <li>
+              <styleDef>PlateHelmet_KlappvisierHelmetClosed</styleDef>
+            </li>
+            <li>
+              <styleDef>PlateHelmet_KlappvisorBascinet</styleDef>
+            </li>
+            <li>
+              <styleDef>PlateHelmet_HounskullHelmet</styleDef>
+            </li>
+            <li>
+              <styleDef>PlateHelmet_SalletHelmet</styleDef>
+            </li>
+            <li>
+              <styleDef>PlateHelmet_SalletBellowFace</styleDef>
+            </li>
+            <li>
+              <styleDef>PlateHelmet_SalletGryphon</styleDef>
+            </li>
+          </randomStyle>
+        </value>
+      </Operation>
+      <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ReplaceLib.ReplacerDef[defName="ProgressionAttire"]/replacers</xpath>
+        <value>
+          <li>
+            <replace>DankPyon_Headgear_Bascinet_KlappvisierHelmetClosed</replace>
+            <with>DankPyon_Headgear_ClosedBascinetHelmet</with>
+          </li>
+          <li>
+            <replace>DankPyon_Headgear_KlappvisorBascinet</replace>
+            <with>DankPyon_Headgear_ClosedBascinetHelmet</with>
+          </li>
+          <li>
+            <replace>DankPyon_Headgear_HounskullHelmet</replace>
+            <with>DankPyon_Headgear_ClosedBascinetHelmet</with>
+          </li>
+          <li>
+            <replace>DankPyon_Headgear_SalletHelmet</replace>
+            <with>DankPyon_Headgear_ClosedBascinetHelmet</with>
+          </li>
+          <li>
+            <replace>DankPyon_Headgear_SalletBellowFace</replace>
+            <with>DankPyon_Headgear_ClosedBascinetHelmet</with>
+          </li>
+          <li>
+            <replace>DankPyon_Headgear_SalletGryphon</replace>
+            <with>DankPyon_Headgear_ClosedBascinetHelmet</with>
+          </li>
+        </value>
+      </Operation>
+    </caseTrue>
+  </Operation>
 </Patch>

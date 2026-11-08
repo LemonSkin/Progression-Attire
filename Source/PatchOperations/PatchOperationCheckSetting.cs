@@ -26,6 +26,7 @@ namespace ferny.ProgressionAttire
             {
                 case "applyRebalances": settingValue = settings.applyRebalances; break;
                 case "applyCategories": settingValue = settings.applyCategories; break;
+                case "createStyles": settingValue = settings.createStyles; break;
                 default:
                     ProgressionAttire.Error($"PatchOperationCheckSetting: Unknown settingName '{settingName}'.");
                     return false;

@@ -228,5 +228,32 @@
       </Operation>
     </caseTrue>
   </Operation>
-  <!-- ######################################### END ########################################### -->
+
+  <!-- ######################################### STYLES ######################################## -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>createStyles</settingName>
+    <caseTrue>
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Zweihanders_Cuirass"]</xpath>
+        <value>
+          <randomStyleChance Operation="AddOrReplace">0.5</randomStyleChance>
+          <randomStyle Operation="AddOrReplace">
+            <li>
+              <styleDef>PlateArmor_ZweihanderCuirassPuffy</styleDef>
+            </li>
+          </randomStyle>
+        </value>
+      </Operation>
+
+      <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ReplaceLib.ReplacerDef[defName="ProgressionAttire"]/replacers</xpath>
+        <value>
+          <li>
+            <replace>DankPyon_Apparel_Zweihanders_CuirassFloof</replace>
+            <with>DankPyon_Apparel_Zweihanders_Cuirass</with>
+          </li>
+        </value>
+      </Operation>
+    </caseTrue>
+  </Operation>
 </Patch>

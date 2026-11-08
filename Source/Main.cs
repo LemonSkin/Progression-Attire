@@ -24,6 +24,7 @@ namespace ferny.ProgressionAttire
             listing.Begin(inRect);
             listing.CheckboxLabeled("Apply Categories", ref Settings.applyCategories);
             listing.CheckboxLabeled("Apply Rebalances", ref Settings.applyRebalances);
+            listing.CheckboxLabeled("Create Styles", ref Settings.createStyles, "When enabled, deduplicates items by converting them to styles of other items");
             listing.End();
         }
 

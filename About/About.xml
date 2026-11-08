@@ -13,6 +13,11 @@
       <displayName>Harmony</displayName>
       <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
     </li>
+    <li>
+      <packageId>ferny.ReplaceLib</packageId>
+      <displayName>ReplaceLib</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/3417393194</steamWorkshopUrl>
+    </li>
   </modDependencies>
   <description>Tweaks research requirements and de-duplicates attire from various mods.</description>
   <loadAfter>
