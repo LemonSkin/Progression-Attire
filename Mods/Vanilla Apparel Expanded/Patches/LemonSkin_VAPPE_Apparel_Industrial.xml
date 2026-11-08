@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <!-- ######################################### LABELS ######################################### -->
+  <!-- ######################################### LABELS ######################################## -->
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="VAE_Apparel_Trousers"]/label</xpath>
     <value>
@@ -8,15 +8,13 @@
     </value>
   </Operation>
 
-  <!-- ######################################### RESEARCH ######################################### -->
+  <!-- ######################################### RESEARCH ###################################### -->
 
-  <!-- ######################################### REBALANCES ######################################### -->
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyRebalances</key>
-    <defaultValue>true</defaultValue>
+  <!-- ######################################### REBALANCES #################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyRebalances</settingName>
     <caseTrue>
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VAE_Apparel_Hoodie"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -28,7 +26,7 @@
             <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
             <EquipDelay>1.5</EquipDelay>
           </statBases>
-          <apparel Operation="Safe">
+          <apparel>
             <layers Operation="AddOrReplace">
               <li>Shell</li>
             </layers>
@@ -36,7 +34,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VAE_Apparel_Shorts"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">35</costStuffCount>
@@ -53,7 +51,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VAE_Apparel_Skirt"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">45</costStuffCount>
@@ -72,7 +70,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VAE_Apparel_ShirtandTie"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">60</costStuffCount>
@@ -88,7 +86,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VAE_Apparel_SuitJacket"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -103,7 +101,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VAE_Headgear_Fedora"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">20</costStuffCount>
@@ -123,7 +121,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VAE_Apparel_Overalls"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -141,7 +139,7 @@
             <AnimalGatherSpeed>0.05</AnimalGatherSpeed>
             <AnimalGatherYield>0.05</AnimalGatherYield>
           </equippedStatOffsets>
-          <recipeMaker Operation="Safe">
+          <recipeMaker>
             <skillRequirements Operation="AddOrReplace">
               <Crafting>5</Crafting>
             </skillRequirements>
@@ -149,7 +147,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VAE_Apparel_FleeceShirt"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">60</costStuffCount>
@@ -165,7 +163,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VAE_Apparel_Jeans"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">50</costStuffCount>
@@ -181,7 +179,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VAE_Apparel_ChefsUniform"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">80</costStuffCount>
@@ -203,7 +201,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VAE_Apparel_MilitaryJacket"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -222,7 +220,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VAE_Apparel_MilitaryUniform"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">80</costStuffCount>
@@ -238,10 +236,9 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VAE_Apparel_BuildersJacket"]</xpath>
         <value>
-          <costStuffCount Operation="AddOrReplace">80</costStuffCount>
           <statBases Operation="AddOrReplace">
             <MaxHitPoints>100</MaxHitPoints>
             <WorkToMake>7000</WorkToMake>
@@ -256,7 +253,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VAE_Apparel_DoctorScrubs"]</xpath>
         <value>
           <costList Operation="AddOrReplace">
@@ -277,7 +274,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VAE_Apparel_LabCoat"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">70</costStuffCount>
@@ -299,7 +296,7 @@
             <DrugCookingSpeed>0.10</DrugCookingSpeed>
             <DrugSynthesisSpeed>0.10</DrugSynthesisSpeed>
           </equippedStatOffsets>
-          <apparel Operation="Safe">
+          <apparel>
             <bodyPartGroups Operation="AddOrReplace">
               <li>Neck</li>
               <li>Torso</li>
@@ -310,7 +307,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VAE_Apparel_TankTop"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -326,7 +323,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VAE_Apparel_SheriffShirt"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -345,7 +342,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VAE_Apparel_Jumpsuit"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -362,15 +359,14 @@
     </caseTrue>
   </Operation>
 
-  <!-- ######################################### CATEGORIES ######################################### -->
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyCategories</key>
-    <defaultValue>true</defaultValue>
+  <!-- ######################################### CATEGORIES #################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyCategories</settingName>
     <caseTrue>
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>
-          Defs/ThingDef[defName="VAE_Apparel_CasualTShirt" or
+          Defs/ThingDef[
+          defName="VAE_Apparel_CasualTShirt" or
           defName="VAE_Apparel_Hoodie" or
           defName="VAE_Apparel_Shorts" or
           defName="VAE_Apparel_Overalls" or
@@ -384,7 +380,8 @@
           defName="VAE_Apparel_LabCoat" or
           defName="VAE_Apparel_TankTop" or
           defName="VAE_Apparel_SheriffShirt" or
-          defName="VAE_Apparel_Jumpsuit"]
+          defName="VAE_Apparel_Jumpsuit"
+          ]
         </xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -393,12 +390,14 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>
-          Defs/ThingDef[defName="VAE_Apparel_Skirt" or
+          Defs/ThingDef[
+          defName="VAE_Apparel_Skirt" or
           defName="VAE_Apparel_ShirtandTie" or
           defName="VAE_Apparel_SuitJacket" or
-          defName="VAE_Apparel_Trousers"]
+          defName="VAE_Apparel_Trousers"
+          ]
         </xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -407,7 +406,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VAE_Headgear_Fedora"]</xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -417,4 +416,6 @@
       </Operation>
     </caseTrue>
   </Operation>
+
+  <!-- ######################################### END ########################################### -->
 </Patch>

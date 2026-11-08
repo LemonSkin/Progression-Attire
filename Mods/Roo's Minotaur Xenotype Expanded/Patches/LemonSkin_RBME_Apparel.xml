@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <!-- RBME_Chiton -->
-  <Operation Class="XmlExtensions.HybridPatch">
+  <!-- ######################################### LABELS ######################################## -->
+
+  <!-- ######################################### RESEARCH ###################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
     <xpath>Defs/ThingDef[defName="RBME_Chiton"]</xpath>
     <value>
       <techLevel Operation="AddOrReplace">Neolithic</techLevel>
-      <recipeMaker Operation="Safe">
-        <recipeUsers Operation="Safe">
+      <recipeMaker>
+        <recipeUsers>
           <li Operation="AddOrReplace">CraftingSpot</li>
         </recipeUsers>
       </recipeMaker>
@@ -15,10 +17,10 @@
 
   <Operation Class="PatchOperationConditional">
     <xpath>Defs/ResearchProjectDef[defName="VFEC_Togas"]</xpath>
-    <match Class="XmlExtensions.HybridPatch">
+    <match Class="ferny.ProgressionAttire.PatchOperationMerge">
       <xpath>Defs/ThingDef[defName="RBME_Chiton"]</xpath>
       <value>
-        <recipeMaker Operation="Safe">
+        <recipeMaker>
           <researchPrerequisite Operation="AddOrReplace">VFEC_Togas</researchPrerequisite>
           <researchPrerequisites Operation="SafeRemove" />
         </recipeMaker>
@@ -26,11 +28,10 @@
     </match>
   </Operation>
 
-  <!-- RBME_RoyalHellenicHelmet -->
-  <Operation Class="XmlExtensions.HybridPatch">
+  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
     <xpath>Defs/ThingDef[defName="RBME_RoyalHellenicHelmet"]</xpath>
     <value>
-      <recipeMaker Operation="Safe">
+      <recipeMaker>
         <researchPrerequisite Operation="SafeRemove" />
         <researchPrerequisites Operation="AddOrReplace">
           <li>PlateArmor</li>
@@ -40,28 +41,25 @@
     </value>
   </Operation>
 
-  <!-- RBME_Cowbell -->
-  <Operation Class="XmlExtensions.HybridPatch">
+  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
     <xpath>Defs/ThingDef[defName="RBME_Cowbell"]</xpath>
     <value>
       <techLevel Operation="AddOrReplace">Neolithic</techLevel>
-      <recipeMaker Operation="Safe">
+      <recipeMaker>
         <researchPrerequisite Operation="AddOrReplace">LemonSkin_RBME_Cowbell</researchPrerequisite>
         <researchPrerequisites Operation="SafeRemove" />
-        <recipeUsers Operation="Safe">
+        <recipeUsers>
           <li Operation="AddOrReplace">CraftingSpot</li>
         </recipeUsers>
       </recipeMaker>
     </value>
   </Operation>
 
-  <!-- Stat Rebalances -->
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyRebalances</key>
-    <defaultValue>true</defaultValue>
+  <!-- ######################################### REBALANCES #################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyRebalances</settingName>
     <caseTrue>
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="RBME_Chiton"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">50</costStuffCount>
@@ -77,7 +75,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="RBME_HellenicHelmet"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">70</costStuffCount>
@@ -96,7 +94,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="RBME_RoyalHellenicHelmet"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">70</costStuffCount>
@@ -117,7 +115,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="RBME_Cowbell"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">15</costStuffCount>
@@ -132,50 +130,52 @@
     </caseTrue>
   </Operation>
 
-  <!-- Categories -->
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyCategories</key>
-    <defaultValue>true</defaultValue>
+  <!-- ######################################### CATEGORIES #################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyCategories</settingName>
     <caseTrue>
-      <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[defName="RBME_Chiton"]/thingCategories</xpath>
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/ThingDef[defName="RBME_Chiton"]</xpath>
         <value>
-          <thingCategories>
+          <thingCategories Operation="AddOrReplace" Inherit="False">
             <li>LemonSkin_NeolithicApparel</li>
           </thingCategories>
         </value>
       </Operation>
 
-      <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[defName="RBME_Panoply"]/thingCategories</xpath>
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/ThingDef[defName="RBME_Panoply"]</xpath>
         <value>
-          <thingCategories>
+          <thingCategories Operation="AddOrReplace" Inherit="False">
             <li>LemonSkin_UltraArmor</li>
           </thingCategories>
         </value>
       </Operation>
 
-      <Operation Class="PatchOperationAdd">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>
-          Defs/ThingDef[defName="RBME_HellenicHelmet" or
-          defName="RBME_RoyalHellenicHelmet"]
+          Defs/ThingDef[
+          defName="RBME_HellenicHelmet" or
+          defName="RBME_RoyalHellenicHelmet"
+          ]
         </xpath>
         <value>
-          <thingCategories Inherit="False">
+          <thingCategories Operation="AddOrReplace" Inherit="False">
             <li>LemonSkin_NeolithicArmorHeadgear</li>
           </thingCategories>
         </value>
       </Operation>
 
-      <Operation Class="PatchOperationAdd">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="RBME_Cowbell"]</xpath>
         <value>
-          <thingCategories Inherit="False">
+          <thingCategories Operation="AddOrReplace" Inherit="False">
             <li>LemonSkin_NeolithicHeadgear</li>
           </thingCategories>
         </value>
       </Operation>
     </caseTrue>
   </Operation>
+
+  <!-- ######################################### END ########################################### -->
 </Patch>

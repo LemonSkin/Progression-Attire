@@ -1,11 +1,26 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyRebalances</key>
-    <defaultValue>true</defaultValue>
+  <!-- ######################################### LABELS ######################################## -->
+
+  <!-- ######################################### RESEARCH ###################################### -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ResearchProjectDef[defName="VAE_WorkAttire"]</xpath>
+    <match Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <xpath>Defs/ThingDef[@Name="OCARINA_PrisonerJumpsuitBase"]</xpath>
+      <value>
+        <recipeMaker>
+          <researchPrerequisite Operation="AddOrReplace">VAE_WorkAttire</researchPrerequisite>
+          <researchPrerequisites Operation="SafeRemove" />
+        </recipeMaker>
+      </value>
+    </match>
+  </Operation>
+
+  <!-- ######################################### REBALANCES #################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyRebalances</settingName>
     <caseTrue>
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[@Name="OCARINA_PrisonerJumpsuitBase"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -21,7 +36,7 @@
             <GeneralLaborSpeed>0.05</GeneralLaborSpeed>
             <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">0.1</SlaveSuppressionOffset>
           </equippedStatOffsets>
-          <apparel Operation="Safe">
+          <apparel>
             <layers Operation="AddOrReplace">
               <li>OnSkin</li>
             </layers>
@@ -31,15 +46,14 @@
     </caseTrue>
   </Operation>
 
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyCategories</key>
-    <defaultValue>true</defaultValue>
+  <!-- ######################################### CATEGORIES #################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyCategories</settingName>
     <caseTrue>
-      <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[@Name="OCARINA_PrisonerJumpsuitBase"]/thingCategories</xpath>
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/ThingDef[@Name="OCARINA_PrisonerJumpsuitBase"]</xpath>
         <value>
-          <thingCategories Inherit="False">
+          <thingCategories Operation="AddOrReplace" Inherit="False">
             <li>LemonSkin_PrisonerApparel</li>
           </thingCategories>
         </value>
@@ -47,16 +61,5 @@
     </caseTrue>
   </Operation>
 
-  <Operation Class="PatchOperationConditional">
-    <xpath>Defs/ResearchProjectDef[defName="VAE_WorkAttire"]</xpath>
-    <match Class="XmlExtensions.HybridPatch">
-      <xpath>Defs/ThingDef[@Name="OCARINA_PrisonerJumpsuitBase"]</xpath>
-      <value>
-        <recipeMaker Operation="Safe">
-          <researchPrerequisite Operation="AddOrReplace">VAE_WorkAttire</researchPrerequisite>
-          <researchPrerequisites Operation="SafeRemove" />
-        </recipeMaker>
-      </value>
-    </match>
-  </Operation>
+  <!-- ######################################### END ########################################### -->
 </Patch>

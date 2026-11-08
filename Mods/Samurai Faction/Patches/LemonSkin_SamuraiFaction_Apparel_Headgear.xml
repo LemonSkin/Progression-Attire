@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <!-- ######################################### LABELS ######################################### -->
+  <!-- ######################################### LABELS ######################################## -->
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="TSFApparel_Headband"]/label</xpath>
     <value>
@@ -8,37 +8,35 @@
     </value>
   </Operation>
 
-  <!-- ######################################### RESEARCH ######################################### -->
-  <Operation Class="XmlExtensions.HybridPatch">
+  <!-- ######################################### RESEARCH ###################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
     <xpath>Defs/ThingDef[defName="TSFApparel_Headband"]</xpath>
     <value>
-      <recipeMaker Operation="Safe">
+      <recipeMaker>
         <researchPrerequisite Operation="AddOrReplace">TSF_Bushido_Code</researchPrerequisite>
         <researchPrerequisites Operation="SafeRemove" />
       </recipeMaker>
     </value>
   </Operation>
 
-  <Operation Class="XmlExtensions.HybridPatch">
+  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
     <xpath>Defs/ThingDef[defName="TSFApparel_DaimyoHelmet"]</xpath>
     <value>
-      <recipeMaker Operation="Safe">
+      <recipeMaker>
+        <researchPrerequisite Operation="SafeRemove" />
         <researchPrerequisites Operation="AddOrReplace">
           <li>TSF_SamuraiArmor</li>
           <li MayRequire="Ludeon.Rimworld.Royalty">NobleApparel</li>
         </researchPrerequisites>
-        <researchPrerequisite Operation="SafeRemove" />
       </recipeMaker>
     </value>
   </Operation>
 
-  <!-- ######################################### REBALANCES ######################################### -->
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyRebalances</key>
-    <defaultValue>true</defaultValue>
+  <!-- ######################################### REBALANCES #################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyRebalances</settingName>
     <caseTrue>
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="TSFApparel_Headband"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">15</costStuffCount>
@@ -57,7 +55,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="TSFApparel_AshigaruHelmet"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">60</costStuffCount>
@@ -74,15 +72,15 @@
             <ShootingAccuracyPawn>-2</ShootingAccuracyPawn>
             <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.05</SlaveSuppressionOffset>
           </equippedStatOffsets>
-          <recipeMaker Operation="Safe">
-            <skillRequirements Operation="Safe">
-              <Crafting Operation="AddOrReplace">6</Crafting>
+          <recipeMaker>
+            <skillRequirements Operation="AddOrReplace">
+              <Crafting>6</Crafting>
             </skillRequirements>
           </recipeMaker>
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="TSFApparel_SamuraiHelmet"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">70</costStuffCount>
@@ -100,12 +98,12 @@
             <PainShockThreshold>0.10</PainShockThreshold>
             <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.1</SlaveSuppressionOffset>
           </equippedStatOffsets>
-          <recipeMaker Operation="Safe">
-            <skillRequirements Operation="Safe">
-              <Crafting Operation="AddOrReplace">7</Crafting>
+          <recipeMaker>
+            <skillRequirements Operation="AddOrReplace">
+              <Crafting>7</Crafting>
             </skillRequirements>
           </recipeMaker>
-          <apparel Operation="Safe">
+          <apparel>
             <bodyPartGroups Operation="AddOrReplace">
               <li>FullHead</li>
             </bodyPartGroups>
@@ -113,7 +111,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="TSFApparel_DaimyoHelmet"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">70</costStuffCount>
@@ -132,12 +130,12 @@
             <SocialImpact>0.3</SocialImpact>
             <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.1</SlaveSuppressionOffset>
           </equippedStatOffsets>
-          <recipeMaker Operation="Safe">
-            <skillRequirements Operation="Safe">
-              <Crafting Operation="AddOrReplace">9</Crafting>
+          <recipeMaker>
+            <skillRequirements Operation="AddOrReplace">
+              <Crafting>9</Crafting>
             </skillRequirements>
           </recipeMaker>
-          <apparel Operation="Safe">
+          <apparel>
             <bodyPartGroups Operation="AddOrReplace">
               <li>FullHead</li>
             </bodyPartGroups>
@@ -147,16 +145,16 @@
     </caseTrue>
   </Operation>
 
-  <!-- ######################################### CATEGORIES ######################################### -->
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyCategories</key>
-    <defaultValue>true</defaultValue>
+  <!-- ######################################### CATEGORIES #################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyCategories</settingName>
     <caseTrue>
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>
-          Defs/ThingDef[defName="TSFApparel_Headband" or
-          defName="TSFApparel_NinjaMask"]
+          Defs/ThingDef[
+          defName="TSFApparel_Headband" or
+          defName="TSFApparel_NinjaMask"
+          ]
         </xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -165,11 +163,13 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>
-          Defs/ThingDef[defName="TSFApparel_AshigaruHelmet" or
+          Defs/ThingDef[
+          defName="TSFApparel_AshigaruHelmet" or
           defName="TSFApparel_SamuraiHelmet" or
-          defName="TSFApparel_DaimyoHelmet"]
+          defName="TSFApparel_DaimyoHelmet"
+          ]
         </xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -178,7 +178,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="TSFApparel_OniHelmet"]</xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -188,4 +188,5 @@
       </Operation>
     </caseTrue>
   </Operation>
+  <!-- ######################################### END ########################################### -->
 </Patch>

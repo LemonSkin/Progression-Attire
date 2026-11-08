@@ -1,23 +1,28 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <!-- ######################################### LABELS ######################################### -->
+  <!-- ######################################### LABELS ######################################## -->
 
-  <!-- ######################################### RESEARCH ######################################### -->
-  <Operation Class="XmlExtensions.HybridPatch">
+  <!-- ######################################### RESEARCH ###################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
     <xpath>
-      Defs/ThingDef[defName="Apparel_UNA_weddingveil" or
+      Defs/ThingDef[
+      defName="Apparel_UNA_weddingveil" or
       defName="UNA_KingCrown" or
-      defName="Apparel_UNA_TogeHelm"]
+      defName="Apparel_UNA_TogeHelm"
+      ]
     </xpath>
     <value>
-      <recipeMaker Operation="AddOrReplace">
-        <researchPrerequisite>Ferny_VanityTable</researchPrerequisite>
+      <recipeMaker>
+        <researchPrerequisite Operation="AddOrReplace">Ferny_VanityTable</researchPrerequisite>
+        <researchPrerequisites Operation="SafeRemove" />
+        <recipeUsers Operation="AddOrReplace" />
       </recipeMaker>
     </value>
   </Operation>
-  <!-- ######################################### REBALANCES ######################################### -->
 
-  <!-- ######################################### CATEGORIES ######################################### -->
+  <!-- ######################################### REBALANCES #################################### -->
 
-  <!-- ######################################### END ######################################### -->
+  <!-- ######################################### CATEGORIES #################################### -->
+
+  <!-- ######################################### END ########################################### -->
 </Patch>

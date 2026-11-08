@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <!-- ######################################### LABELS ######################################### -->
+  <!-- ######################################### LABELS ######################################## -->
 
-  <!-- ######################################### RESEARCH ######################################### -->
+  <!-- ######################################### RESEARCH ###################################### -->
 
-  <!-- ######################################### REBALANCES ######################################### -->
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyRebalances</key>
-    <defaultValue>true</defaultValue>
+  <!-- ######################################### REBALANCES #################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyRebalances</settingName>
     <caseTrue>
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VFEC_Apparel_LegionnaireHelmet"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">60</costStuffCount>
@@ -30,7 +28,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VFEC_Apparel_CenturionHelmet"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">70</costStuffCount>
@@ -47,22 +45,21 @@
             <ShootingAccuracyPawn>-6.0</ShootingAccuracyPawn>
             <MentalBreakThreshold>-0.04</MentalBreakThreshold>
           </equippedStatOffsets>
-          <recipeMaker Operation="Safe">
-            <skillRequirements Operation="Safe">
-              <Crafting Operation="AddOrReplace">7</Crafting>
+          <recipeMaker>
+            <skillRequirements Operation="AddOrReplace">
+              <Crafting>7</Crafting>
             </skillRequirements>
           </recipeMaker>
         </value>
       </Operation>
     </caseTrue>
   </Operation>
-  <!-- ######################################### CATEGORIES ######################################### -->
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyCategories</key>
-    <defaultValue>true</defaultValue>
+
+  <!-- ######################################### CATEGORIES #################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyCategories</settingName>
     <caseTrue>
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VFEC_Wreath"]</xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -72,10 +69,12 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>
-          Defs/ThingDef[defName="VFEC_Apparel_LegionnaireHelmet" or
-          defName="VFEC_Apparel_CenturionHelmet"]
+          Defs/ThingDef[
+          defName="VFEC_Apparel_LegionnaireHelmet" or
+          defName="VFEC_Apparel_CenturionHelmet"
+          ]
         </xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -85,4 +84,6 @@
       </Operation>
     </caseTrue>
   </Operation>
+
+  <!-- ######################################### END ########################################### -->
 </Patch>

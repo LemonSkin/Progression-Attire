@@ -3,10 +3,8 @@
 ## Rebalance Toggle
 
 ```xml
-<Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyRebalances</key>
-    <defaultValue>true</defaultValue>
+<Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyRebalances</settingName>
     <caseTrue>
         <Operation Class="SomePatchOperation">
         </Operation>
@@ -17,10 +15,8 @@
 ## Category Toggle
 
 ```xml
-<Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyCategories</key>
-    <defaultValue>true</defaultValue>
+<Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyCategories</settingName>
     <caseTrue>
         <Operation Class="SomePatchOperation">
         </Operation>
@@ -31,28 +27,26 @@
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <!-- ######################################### LABELS ######################################### -->
+  <!-- ######################################### LABELS ######################################## -->
 
-  <!-- ######################################### RESEARCH ######################################### -->
-  <Operation Class="XmlExtensions.HybridPatch">
+
+  <!-- ######################################### RESEARCH ###################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
     <xpath>
       Defs/ThingDef[defName="REPLACE_ME"]
     </xpath>
     <value>
-      <recipeMaker Operation="Safe">
+      <recipeMaker>
         <researchPrerequisite Operation="AddOrReplace"></researchPrerequisite>
         <researchPrerequisites Operation="SafeRemove" />
       </recipeMaker>
     </value>
   </Operation>
-
-  <!-- ######################################### REBALANCES ######################################### -->
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyRebalances</key>
-    <defaultValue>true</defaultValue>
+  <!-- ######################################### REBALANCES #################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyRebalances</settingName>
     <caseTrue>
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="REPLACE_ME"]</xpath>
         <value>
           <!-- <costStuffCount Operation="AddOrReplace"></costStuffCount> -->
@@ -61,12 +55,12 @@
           </statBases>
           <!-- <equippedStatOffsets Operation="AddOrReplace">
           </equippedStatOffsets> -->
-          <!-- <recipeMaker Operation="Safe">
-            <skillRequirements Operation="Safe">
-              <Crafting Operation="AddOrReplace"></Crafting>
+          <!-- <recipeMaker>
+            <skillRequirements Operation="AddOrReplace">
+              <Crafting></Crafting>
             </skillRequirements>
           </recipeMaker> -->
-          <!-- <apparel Operation="Safe">
+          <!-- <apparel>
             <bodyPartGroups Operation="AddOrReplace">
 
             </bodyPartGroups>
@@ -75,14 +69,12 @@
       </Operation>
     </caseTrue>
   </Operation>
-
-  <!-- ######################################### CATEGORIES ######################################### -->
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyCategories</key>
-    <defaultValue>true</defaultValue>
+  
+  <!-- ######################################### CATEGORIES #################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyCategories</settingName>
     <caseTrue>
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="REPLACE_ME"]</xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -92,8 +84,8 @@
       </Operation>
     </caseTrue>
   </Operation>
-
-    <!-- ######################################### END ######################################### -->
+  
+  <!-- ######################################### END ########################################### -->
 </Patch>
 ```
 

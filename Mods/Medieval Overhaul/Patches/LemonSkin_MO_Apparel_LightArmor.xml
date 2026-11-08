@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <!-- ######################################### LABELS ######################################### -->
+  <!-- ######################################### LABELS ######################################## -->
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Sackcloth"]/label</xpath>
     <value>
@@ -8,7 +8,7 @@
     </value>
   </Operation>
 
-  <!-- ######################################### RESEARCH ######################################### -->
+  <!-- ######################################### RESEARCH ###################################### -->
   <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
     <xpath>
       Defs/ThingDef[
@@ -42,7 +42,7 @@
     </value>
   </Operation>
 
-  <!-- ######################################### REBALANCES ######################################### -->
+  <!-- ######################################### REBALANCES #################################### -->
   <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
     <settingName>applyRebalances</settingName>
     <caseTrue>
@@ -167,7 +167,7 @@
     </caseTrue>
   </Operation>
 
-  <!-- ######################################### CATEGORIES ######################################### -->
+  <!-- ######################################### CATEGORIES #################################### -->
   <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
     <settingName>applyCategories</settingName>
     <caseTrue>
@@ -202,5 +202,5 @@
       </Operation>
     </caseTrue>
   </Operation>
-  <!-- ######################################### END ######################################### -->
+  <!-- ######################################### END ########################################### -->
 </Patch>

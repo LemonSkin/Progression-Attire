@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <!-- ######################################### LABELS ######################################### -->
+  <!-- ######################################### LABELS ######################################## -->
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="Gunmar_Apparel_MaidHead"]/label</xpath>
     <value>
@@ -57,65 +57,65 @@
     </value>
   </Operation>
 
-  <!-- ######################################### RESEARCH ######################################### -->
-  <Operation Class="XmlExtensions.HybridPatch">
+  <!-- ######################################### RESEARCH ###################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
     <xpath>Defs/ThingDef[starts-with(defName, "Gunmar_Apparel")]</xpath>
     <value>
-      <recipeMaker Operation="Safe">
+      <recipeMaker>
         <researchPrerequisite Operation="AddOrReplace">ComplexClothing</researchPrerequisite>
         <researchPrerequisites Operation="SafeRemove" />
       </recipeMaker>
     </value>
   </Operation>
 
-  <Operation Class="XmlExtensions.HybridPatch">
+  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
     <xpath>
-      Defs/ThingDef[defName="Gunmar_Apparel_Smoking_Jacket" or
+      Defs/ThingDef[
+      defName="Gunmar_Apparel_Smoking_Jacket" or
       defName="Gunmar_Apparel_Waistcoat" or
       defName="Gunmar_Apparel_FeatheredHat" or
-      defName="Gunmar_Apparel_TopHat"]
+      defName="Gunmar_Apparel_TopHat"
+      ]
     </xpath>
     <value>
-      <recipeMaker Operation="Safe">
+      <recipeMaker>
+        <researchPrerequisite Operation="SafeRemove" />
         <researchPrerequisites Operation="AddOrReplace">
           <li>ComplexClothing</li>
           <li MayRequire="Ludeon.RimWorld.Royalty">NobleApparel</li>
         </researchPrerequisites>
-        <researchPrerequisite Operation="SafeRemove" />
       </recipeMaker>
     </value>
   </Operation>
 
-  <Operation Class="XmlExtensions.HybridPatch">
+  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
     <xpath>Defs/ThingDef[defName="Gunmar_Apparel_BpWaistcoat"]</xpath>
     <value>
-      <recipeMaker Operation="Safe">
+      <recipeMaker>
         <researchPrerequisite Operation="AddOrReplace">FlakArmor</researchPrerequisite>
         <researchPrerequisites Operation="SafeRemove" />
       </recipeMaker>
     </value>
   </Operation>
 
-  <Operation Class="XmlExtensions.HybridPatch">
+  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
     <xpath>Defs/ThingDef[defName="Gunmar_Apparel_Metal_Helmet"]</xpath>
     <value>
-      <recipeMaker Operation="Safe">
+      <recipeMaker>
+        <researchPrerequisite Operation="SafeRemove" />
         <researchPrerequisites Operation="AddOrReplace">
           <li>ComplexClothing</li>
           <li>Smithing</li>
         </researchPrerequisites>
-        <researchPrerequisite Operation="SafeRemove" />
       </recipeMaker>
     </value>
   </Operation>
 
-  <!-- ######################################### REBALANCES ######################################### -->
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyRebalances</key>
-    <defaultValue>true</defaultValue>
+  <!-- ######################################### REBALANCES #################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyRebalances</settingName>
     <caseTrue>
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="Gunmar_Apparel_DressCoat"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">80</costStuffCount>
@@ -132,7 +132,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="Gunmar_Apparel_Frock_Coat"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">80</costStuffCount>
@@ -149,7 +149,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="Gunmar_Apparel_Smoking_Jacket"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">80</costStuffCount>
@@ -166,15 +166,15 @@
             <SocialImpact>0.1</SocialImpact>
             <TradePriceImprovement>0.15</TradePriceImprovement>
           </equippedStatOffsets>
-          <recipeMaker Operation="Safe">
-            <skillRequirements Operation="Safe">
-              <Crafting Operation="AddOrReplace">5</Crafting>
+          <recipeMaker>
+            <skillRequirements Operation="AddOrReplace">
+              <Crafting>5</Crafting>
             </skillRequirements>
           </recipeMaker>
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="Gunmar_Apparel_Waistcoat"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">45</costStuffCount>
@@ -190,15 +190,13 @@
           <equippedStatOffsets Operation="AddOrReplace">
             <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.1</SlaveSuppressionOffset>
           </equippedStatOffsets>
-          <recipeMaker Operation="Safe">
-            <skillRequirements Operation="Safe">
-              <Crafting Operation="SafeRemove" />
-            </skillRequirements>
+          <recipeMaker>
+            <skillRequirements Operation="SafeRemove" />
           </recipeMaker>
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="Gunmar_Apparel_BpWaistcoat"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">30</costStuffCount>
@@ -226,13 +224,13 @@
           <equippedStatOffsets Operation="AddOrReplace">
             <MoveSpeed>-0.12</MoveSpeed>
           </equippedStatOffsets>
-          <recipeMaker Operation="Safe">
-            <skillRequirements Operation="Safe">
-              <Crafting Operation="AddOrReplace">4</Crafting>
+          <recipeMaker>
+            <skillRequirements Operation="AddOrReplace">
+              <Crafting>4</Crafting>
             </skillRequirements>
             <recipeUsers Operation="SafeRemove" />
           </recipeMaker>
-          <apparel Operation="Safe">
+          <apparel>
             <bodyPartGroups Operation="AddOrReplace">
               <li>Torso</li>
               <li>Neck</li>
@@ -256,7 +254,7 @@
         <value>ArmorMachineableBase</value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="Gunmar_Apparel_Soldier_Coat"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">80</costStuffCount>
@@ -276,15 +274,15 @@
             <MentalBreakThreshold>-0.1</MentalBreakThreshold>
             <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.15</SlaveSuppressionOffset>
           </equippedStatOffsets>
-          <recipeMaker Operation="Safe">
-            <skillRequirements Operation="Safe">
-              <Crafting Operation="AddOrReplace">5</Crafting>
+          <recipeMaker>
+            <skillRequirements Operation="AddOrReplace">
+              <Crafting>5</Crafting>
             </skillRequirements>
           </recipeMaker>
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="Gunmar_Apparel_Hussar_Jacket"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">80</costStuffCount>
@@ -304,15 +302,15 @@
             <MentalBreakThreshold>-0.1</MentalBreakThreshold>
             <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.15</SlaveSuppressionOffset>
           </equippedStatOffsets>
-          <recipeMaker Operation="Safe">
-            <skillRequirements Operation="Safe">
-              <Crafting Operation="AddOrReplace">5</Crafting>
+          <recipeMaker>
+            <skillRequirements Operation="AddOrReplace">
+              <Crafting>5</Crafting>
             </skillRequirements>
           </recipeMaker>
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="Gunmar_Apparel_FeatheredHat"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">50</costStuffCount>
@@ -325,15 +323,13 @@
             <StuffEffectMultiplierInsulation_Heat>0.1</StuffEffectMultiplierInsulation_Heat>
             <EquipDelay>0.8</EquipDelay>
           </statBases>
-          <recipeMaker Operation="Safe">
-            <skillRequirements Operation="Safe">
-              <Crafting Operation="SafeRemove" />
-            </skillRequirements>
+          <recipeMaker>
+            <skillRequirements Operation="SafeRemove" />
           </recipeMaker>
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="Gunmar_Apparel_BoaterHat"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">20</costStuffCount>
@@ -350,15 +346,13 @@
             <SocialImpact>0.1</SocialImpact>
             <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.05</SlaveSuppressionOffset>
           </equippedStatOffsets>
-          <recipeMaker Operation="Safe">
-            <skillRequirements Operation="Safe">
-              <Crafting Operation="SafeRemove" />
-            </skillRequirements>
+          <recipeMaker>
+            <skillRequirements Operation="SafeRemove" />
           </recipeMaker>
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="Gunmar_Apparel_TopHat"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">40</costStuffCount>
@@ -375,15 +369,13 @@
             <SocialImpact>0.1</SocialImpact>
             <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.05</SlaveSuppressionOffset>
           </equippedStatOffsets>
-          <recipeMaker Operation="Safe">
-            <skillRequirements Operation="Safe">
-              <Crafting Operation="SafeRemove" />
-            </skillRequirements>
+          <recipeMaker>
+            <skillRequirements Operation="SafeRemove" />
           </recipeMaker>
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="Gunmar_Apparel_Soldier_Helmet"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">25</costStuffCount>
@@ -399,15 +391,13 @@
           <equippedStatOffsets Operation="AddOrReplace">
             <SuppressionPower MayRequire="Ludeon.RimWorld.Ideology">0.1</SuppressionPower>
           </equippedStatOffsets>
-          <recipeMaker Operation="Safe">
-            <skillRequirements Operation="Safe">
-              <Crafting Operation="SafeRemove" />
-            </skillRequirements>
+          <recipeMaker>
+            <skillRequirements Operation="SafeRemove" />
           </recipeMaker>
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="Gunmar_Apparel_Slouch_Hat"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">25</costStuffCount>
@@ -424,15 +414,13 @@
             <SocialImpact>0.05</SocialImpact>
             <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.05</SlaveSuppressionOffset>
           </equippedStatOffsets>
-          <recipeMaker Operation="Safe">
-            <skillRequirements Operation="Safe">
-              <Crafting Operation="SafeRemove" />
-            </skillRequirements>
+          <recipeMaker>
+            <skillRequirements Operation="SafeRemove" />
           </recipeMaker>
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="Gunmar_Apparel_Shako_Hat"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">15</costStuffCount>
@@ -448,15 +436,13 @@
           <equippedStatOffsets Operation="AddOrReplace">
             <SuppressionPower MayRequire="Ludeon.RimWorld.Ideology">0.1</SuppressionPower>
           </equippedStatOffsets>
-          <recipeMaker Operation="Safe">
-            <skillRequirements Operation="Safe">
-              <Crafting Operation="SafeRemove" />
-            </skillRequirements>
+          <recipeMaker>
+            <skillRequirements Operation="SafeRemove" />
           </recipeMaker>
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="Gunmar_Apparel_Metal_Helmet"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">30</costStuffCount>
@@ -470,12 +456,10 @@
             <EquipDelay>1.5</EquipDelay>
           </statBases>
           <equippedStatOffsets Operation="SafeRemove" />
-          <recipeMaker Operation="Safe">
-            <skillRequirements Operation="Safe">
-              <Crafting Operation="SafeRemove" />
-            </skillRequirements>
+          <recipeMaker>
+            <skillRequirements Operation="SafeRemove" />
           </recipeMaker>
-          <apparel Operation="Safe">
+          <apparel>
             <tags Operation="AddOrReplace">
               <li>IndustrialMilitaryBasic</li>
             </tags>
@@ -487,7 +471,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="Gunmar_Apparel_Glasses"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -504,15 +488,15 @@
           <equippedStatOffsets Operation="AddOrReplace">
             <SocialImpact>0.1</SocialImpact>
           </equippedStatOffsets>
-          <recipeMaker Operation="Safe">
-            <skillRequirements Operation="Safe">
-              <Crafting Operation="AddOrReplace">5</Crafting>
+          <recipeMaker>
+            <skillRequirements Operation="AddOrReplace">
+              <Crafting>5</Crafting>
             </skillRequirements>
           </recipeMaker>
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="Gunmar_Apparel_Monocle"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -529,9 +513,9 @@
           <equippedStatOffsets Operation="AddOrReplace">
             <SocialImpact>0.1</SocialImpact>
           </equippedStatOffsets>
-          <recipeMaker Operation="Safe">
-            <skillRequirements Operation="Safe">
-              <Crafting Operation="AddOrReplace">5</Crafting>
+          <recipeMaker>
+            <skillRequirements Operation="AddOrReplace">
+              <Crafting>5</Crafting>
             </skillRequirements>
           </recipeMaker>
         </value>
@@ -539,25 +523,25 @@
     </caseTrue>
   </Operation>
 
-  <!-- ######################################### CATEGORIES ######################################### -->
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyCategories</key>
-    <defaultValue>true</defaultValue>
+  <!-- ######################################### CATEGORIES #################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyCategories</settingName>
     <caseTrue>
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>
-          Defs/ThingDef[defName="Gunmar_Apparel_DressA" or
-        defName="Gunmar_Apparel_DressB" or
-        defName="Gunmar_Apparel_Maid" or
-        defName="Gunmar_Apparel_Maidb" or
-        defName="Gunmar_Apparel_WalkingDress" or
-        defName="Gunmar_Apparel_RidingHabit" or
-        defName="Gunmar_Apparel_SimpleDress" or
-        defName="Gunmar_Apparel_DressCoat" or
-        defName="Gunmar_Apparel_Frock_Coat" or
-        defName="Gunmar_Apparel_Soldier_Coat" or
-        defName="Gunmar_Apparel_Hussar_Jacket"]
+          Defs/ThingDef[
+          defName="Gunmar_Apparel_DressA" or
+          defName="Gunmar_Apparel_DressB" or
+          defName="Gunmar_Apparel_Maid" or
+          defName="Gunmar_Apparel_Maidb" or
+          defName="Gunmar_Apparel_WalkingDress" or
+          defName="Gunmar_Apparel_RidingHabit" or
+          defName="Gunmar_Apparel_SimpleDress" or
+          defName="Gunmar_Apparel_DressCoat" or
+          defName="Gunmar_Apparel_Frock_Coat" or
+          defName="Gunmar_Apparel_Soldier_Coat" or
+          defName="Gunmar_Apparel_Hussar_Jacket"
+          ]
         </xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -566,9 +550,10 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>
-          Defs/ThingDef[defName="Gunmar_Apparel_MaidHead" or
+          Defs/ThingDef[
+          defName="Gunmar_Apparel_MaidHead" or
           defName="Gunmar_Apparel_MaidHeadb" or
           defName="Gunmar_Apparel_BoaterHat" or
           defName="Gunmar_Apparel_TopHat" or
@@ -576,7 +561,8 @@
           defName="Gunmar_Apparel_Slouch_Hat" or
           defName="Gunmar_Apparel_Shako_Hat" or
           defName="Gunmar_Apparel_Glasses" or
-          defName="Gunmar_Apparel_Monocle"]
+          defName="Gunmar_Apparel_Monocle"
+          ]
         </xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -585,7 +571,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="Gunmar_Apparel_BpWaistcoat"]</xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -594,7 +580,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="Gunmar_Apparel_Metal_Helmet"]</xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -603,27 +589,31 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>
-          Defs/ThingDef[defName="Gunmar_Apparel_FeatheredHat" or
-          defName="Gunmar_Apparel_TopHat"]
+          Defs/ThingDef[
+          defName="Gunmar_Apparel_FeatheredHat" or
+          defName="Gunmar_Apparel_TopHat"
+          ]
         </xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
-            <li>LemonSkin_IndustrialHeadgear</li>
+            <!-- <li>LemonSkin_IndustrialHeadgear</li> -->
             <li>HeadgearNoble</li>
           </thingCategories>
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>
-          Defs/ThingDef[defName="Gunmar_Apparel_Smoking_Jacket" or
-          defName="Gunmar_Apparel_Waistcoat"]
+          Defs/ThingDef[
+          defName="Gunmar_Apparel_Smoking_Jacket" or
+          defName="Gunmar_Apparel_Waistcoat"
+          ]
         </xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
-            <li>LemonSkin_IndustrialApparel</li>
+            <!-- <li>LemonSkin_IndustrialApparel</li> -->
             <li>ApparelNoble</li>
           </thingCategories>
         </value>
@@ -631,5 +621,5 @@
     </caseTrue>
   </Operation>
 
-  <!-- ######################################### END ######################################### -->
+  <!-- ######################################### END ########################################### -->
 </Patch>

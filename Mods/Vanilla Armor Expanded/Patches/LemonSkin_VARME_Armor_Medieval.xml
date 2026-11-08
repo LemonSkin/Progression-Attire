@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <!-- ######################################### LABELS ######################################### -->
+  <!-- ######################################### LABELS ######################################## -->
   <Operation Class="PatchOperationConditional">
     <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Hauberk"]</xpath>
     <match Class="PatchOperationReplace">
@@ -11,15 +11,13 @@
     </match>
   </Operation>
 
-  <!-- ######################################### RESEARCH ######################################### -->
+  <!-- ######################################### RESEARCH ###################################### -->
 
-  <!-- ######################################### REBALANCES ######################################### -->
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyRebalances</key>
-    <defaultValue>true</defaultValue>
+  <!-- ######################################### REBALANCES #################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyRebalances</settingName>
     <caseTrue>
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VAE_Apparel_LightPlateArmor"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">150</costStuffCount>
@@ -38,7 +36,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VAE_Apparel_PlateShoulderpads"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -50,15 +48,15 @@
             <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
             <EquipDelay>2</EquipDelay>
           </statBases>
-          <recipeMaker Operation="Safe">
-            <skillRequirements Operation="Safe">
-              <Crafting Operation="AddOrReplace">9</Crafting>
+          <recipeMaker>
+            <skillRequirements Operation="AddOrReplace">
+              <Crafting>9</Crafting>
             </skillRequirements>
           </recipeMaker>
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VAE_Apparel_Chainmail"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">50</costStuffCount>
@@ -71,12 +69,12 @@
             <StuffEffectMultiplierInsulation_Heat>0.05</StuffEffectMultiplierInsulation_Heat>
             <EquipDelay>4</EquipDelay>
           </statBases>
-          <recipeMaker Operation="Safe">
-            <skillRequirements Operation="Safe">
-              <Crafting Operation="AddOrReplace">6</Crafting>
+          <recipeMaker>
+            <skillRequirements Operation="AddOrReplace">
+              <Crafting>6</Crafting>
             </skillRequirements>
           </recipeMaker>
-          <apparel Operation="Safe">
+          <apparel>
             <bodyPartGroups Operation="AddOrReplace">
               <li>Torso</li>
               <li>Shoulders</li>
@@ -85,7 +83,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VAE_Apparel_PlateHelmet"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">70</costStuffCount>
@@ -101,9 +99,9 @@
           <equippedStatOffsets Operation="AddOrReplace">
             <ShootingAccuracyPawn>-6</ShootingAccuracyPawn>
           </equippedStatOffsets>
-          <recipeMaker Operation="Safe">
-            <skillRequirements Operation="Safe">
-              <Crafting Operation="AddOrReplace">7</Crafting>
+          <recipeMaker>
+            <skillRequirements Operation="AddOrReplace">
+              <Crafting>7</Crafting>
             </skillRequirements>
           </recipeMaker>
         </value>
@@ -111,16 +109,16 @@
     </caseTrue>
   </Operation>
 
-  <!-- ######################################### CATEGORIES ######################################### -->
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyCategories</key>
-    <defaultValue>true</defaultValue>
+  <!-- ######################################### CATEGORIES #################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyCategories</settingName>
     <caseTrue>
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>
-          Defs/ThingDef[defName="VAE_Apparel_Gambeson" or
-          defName="VAE_Apparel_QuiltedVest"]
+          Defs/ThingDef[
+          defName="VAE_Apparel_Gambeson" or
+          defName="VAE_Apparel_QuiltedVest"
+          ]
         </xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -129,12 +127,14 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>
-          Defs/ThingDef[defName="VAE_Apparel_LightPlateArmor" or
+          Defs/ThingDef[
+          defName="VAE_Apparel_LightPlateArmor" or
         defName="VAE_Apparel_PlateShoulderpads" or
         defName="VAE_Apparel_Chestplate" or
-        defName="VAE_Apparel_Chainmail"]
+        defName="VAE_Apparel_Chainmail"
+        ]
         </xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -143,7 +143,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VAE_Apparel_PlateHelmet"]</xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -175,4 +175,6 @@
       <xpath>Defs/ThingDef[defName="VAE_Apparel_Chestplate"]</xpath>
     </match>
   </Operation>
+
+  <!-- ######################################### END ########################################### -->
 </Patch>

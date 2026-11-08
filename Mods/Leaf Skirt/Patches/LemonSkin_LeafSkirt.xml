@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <!-- ######################################### LABELS ######################################### -->
+  <!-- ######################################### LABELS ######################################## -->
 
-  <!-- ######################################### RESEARCH ######################################### -->
+  <!-- ######################################### RESEARCH ###################################### -->
   <Operation Class="PatchOperationConditional">
     <xpath>Defs/VFETribals.TribalResearchProjectDef[defName="LemonSkin_Leafwear"]</xpath>
     <match Class="ferny.ProgressionAttire.PatchOperationMerge">
@@ -14,7 +14,7 @@
     </match>
   </Operation>
 
-  <!-- ######################################### REBALANCES ######################################### -->
+  <!-- ######################################### REBALANCES #################################### -->
   <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
     <settingName>applyRebalances</settingName>
     <caseTrue>
@@ -35,7 +35,7 @@
     </caseTrue>
   </Operation>
 
-  <!-- ######################################### CATEGORIES ######################################### -->
+  <!-- ######################################### CATEGORIES #################################### -->
   <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
     <settingName>applyCategories</settingName>
     <caseTrue>
@@ -50,5 +50,5 @@
     </caseTrue>
   </Operation>
 
-  <!-- ######################################### END ######################################### -->
+  <!-- ######################################### END ########################################### -->
 </Patch>

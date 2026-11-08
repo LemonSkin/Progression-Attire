@@ -1,23 +1,39 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyCategories</key>
-    <defaultValue>true</defaultValue>
+  <!-- ######################################### LABELS ######################################## -->
+
+  <!-- ######################################### RESEARCH ###################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+    <xpath>
+      Defs/ThingDef[
+      defName="TWRL_Apparel_RainbowCatcherArmor" or
+      defName="TWRL_Apparel_RainbowCatcherHelmet"
+      ]
+    </xpath>
+    <value>
+      <techLevel Operation="AddOrReplace">Spacer</techLevel>
+    </value>
+  </Operation>
+
+  <!-- ######################################### REBALANCES #################################### -->
+
+  <!-- ######################################### CATEGORIES #################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyCategories</settingName>
     <caseTrue>
-      <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[defName="TWRL_Apparel_RainbowCatcherArmor"]/thingCategories</xpath>
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/ThingDef[defName="TWRL_Apparel_RainbowCatcherArmor"]</xpath>
         <value>
-          <thingCategories Inherit="False">
+          <thingCategories Operation="AddOrReplace" Inherit="False">
             <li>LemonSkin_SpacerArmor</li>
           </thingCategories>
         </value>
       </Operation>
 
-      <Operation Class="PatchOperationAdd">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="TWRL_Apparel_RainbowCatcherHelmet"]</xpath>
         <value>
-          <thingCategories Inherit="False">
+          <thingCategories Operation="AddOrReplace" Inherit="False">
             <li>LemonSkin_SpacerArmorHeadgear</li>
           </thingCategories>
         </value>
@@ -25,17 +41,5 @@
     </caseTrue>
   </Operation>
 
-  <Operation Class="PatchOperationAdd">
-    <xpath>Defs/ThingDef[defName="TWRL_Apparel_RainbowCatcherArmor"]</xpath>
-    <value>
-      <techLevel>Spacer</techLevel>
-    </value>
-  </Operation>
-
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="TWRL_Apparel_RainbowCatcherHelmet"]/techLevel</xpath>
-    <value>
-      <techLevel>Spacer</techLevel>
-    </value>
-  </Operation>
+  <!-- ######################################### END ########################################### -->
 </Patch>

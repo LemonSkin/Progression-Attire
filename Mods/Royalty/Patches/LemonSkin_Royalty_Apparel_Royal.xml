@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <!-- ######################################### LABELS ######################################### -->
+  <!-- ######################################### LABELS ######################################## -->
   <Operation Class="PatchOperationConditional">
     <xpath>Defs/ThingDef[defName="VAE_Headgear_Beret"]</xpath>
     <match Class="ferny.ProgressionAttire.PatchOperationMerge">
@@ -10,7 +10,7 @@
       </value>
     </match>
   </Operation>
-  <!-- ######################################### RESEARCH ######################################### -->
+  <!-- ######################################### RESEARCH ###################################### -->
   <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
     <xpath>
       Defs/ThingDef[
@@ -49,7 +49,7 @@
     </value>
   </Operation>
 
-  <!-- ######################################### REBALANCES ######################################### -->
+  <!-- ######################################### REBALANCES #################################### -->
   <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
     <settingName>applyRebalances</settingName>
     <caseTrue>
@@ -80,7 +80,7 @@
     </caseTrue>
   </Operation>
 
-  <!-- ######################################### CATEGORIES ######################################### -->
+  <!-- ######################################### CATEGORIES #################################### -->
 
-  <!-- ######################################### END ######################################### -->
+  <!-- ######################################### END ########################################### -->
 </Patch>

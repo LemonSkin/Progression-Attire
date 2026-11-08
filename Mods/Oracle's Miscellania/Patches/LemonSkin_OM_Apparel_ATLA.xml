@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <!-- ######################################### LABELS ######################################### -->
+  <!-- ######################################### LABELS ######################################## -->
 
-  <!-- ######################################### RESEARCH ######################################### -->
-  <Operation Class="XmlExtensions.HybridPatch">
+  <!-- ######################################### RESEARCH ###################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
     <xpath>
-      Defs/ThingDef[defName="oracle_FireNationArmor" or
+      Defs/ThingDef[
+      defName="oracle_FireNationArmor" or
       defName="oracle_FireNationHelmet" or
       defName="oracle_EarthEmpireUniform" or
       defName="oracle_EarthEmpireHelmet" or
@@ -18,18 +19,20 @@
       defName="oracle_EqualistAmonMask" or
       defName="oracle_KorraOutfit" or
       defName="oracle_AsamiRacing" or
-      defName="oracle_AsamiDress"]
+      defName="oracle_AsamiDress"
+      ]
     </xpath>
     <value>
-      <recipeMaker Operation="AddOrReplace">
-        <researchPrerequisite>Ferny_CostumingTable</researchPrerequisite>
+      <recipeMaker>
+        <researchPrerequisite Operation="AddOrReplace">Ferny_CostumingTable</researchPrerequisite>
+        <researchPrerequisites Operation="SafeRemove" />
       </recipeMaker>
     </value>
   </Operation>
 
-  <!-- ######################################### REBALANCES ######################################### -->
+  <!-- ######################################### REBALANCES #################################### -->
 
-  <!-- ######################################### CATEGORIES ######################################### -->
+  <!-- ######################################### CATEGORIES #################################### -->
 
-  <!-- ######################################### END ######################################### -->
+  <!-- ######################################### END ########################################### -->
 </Patch>

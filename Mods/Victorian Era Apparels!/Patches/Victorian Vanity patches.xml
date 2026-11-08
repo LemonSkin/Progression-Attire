@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <Operation Class="XmlExtensions.HybridPatch">
+  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
     <xpath>
-      Defs/ThingDef[defName="Gunmar_Apparel_DressA" or
+      Defs/ThingDef[
+      defName="Gunmar_Apparel_DressA" or
       defName="Gunmar_Apparel_DressB" or
       defName="Gunmar_Apparel_Maid" or
       defName="Gunmar_Apparel_Maidb" or
@@ -10,11 +11,13 @@
       defName="Gunmar_Apparel_RidingHabit" or
       defName="Gunmar_Apparel_SimpleDress" or
       defName="Gunmar_Apparel_MaidHead" or
-      defName="Gunmar_Apparel_MaidHeadb"]
+      defName="Gunmar_Apparel_MaidHeadb"
+      ]
     </xpath>
     <value>
-      <recipeMaker Operation="AddOrReplace">
-        <researchPrerequisite>Ferny_VanityTable</researchPrerequisite>
+      <recipeMaker>
+        <researchPrerequisite Operation="AddOrReplace">Ferny_VanityTable</researchPrerequisite>
+        <researchPrerequisites Operation="SafeRemove" />
       </recipeMaker>
     </value>
   </Operation>

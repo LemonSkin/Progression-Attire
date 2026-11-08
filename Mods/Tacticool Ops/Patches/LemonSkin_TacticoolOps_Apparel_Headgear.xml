@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <!-- ######################################### LABELS ######################################### -->
+  <!-- ######################################### LABELS ######################################## -->
 
-  <!-- ######################################### RESEARCH ######################################### -->
-  <Operation Class="XmlExtensions.HybridPatch">
+  <!-- ######################################### RESEARCH ###################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
     <xpath>
-      Defs/ThingDef[@Name="TACTICOOL_GlassesBase" or
+      Defs/ThingDef[
+      @Name="TACTICOOL_GlassesBase" or
       @Name="TACTICOOL_FaceBandanaBase" or
       @Name="TACTICOOL_BalaclavaBase" or
-      defName="TACTICOOL_MeshCap"]
+      defName="TACTICOOL_MeshCap"
+      ]
     </xpath>
     <value>
-      <recipeMaker Operation="Safe">
+      <recipeMaker>
         <researchPrerequisite Operation="AddOrReplace">ComplexClothing</researchPrerequisite>
         <researchPrerequisites Operation="SafeRemove" />
       </recipeMaker>
@@ -25,13 +27,11 @@
     </value>
   </Operation>
 
-  <!-- ######################################### REBALANCES ######################################### -->
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyRebalances</key>
-    <defaultValue>true</defaultValue>
+  <!-- ######################################### REBALANCES #################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyRebalances</settingName>
     <caseTrue>
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[@Name="TACTICOOL_GlassesBase"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">10</costStuffCount>
@@ -49,7 +49,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="TACTICOOL_Aviators"]</xpath>
         <value>
           <equippedStatOffsets Operation="AddOrReplace">
@@ -59,10 +59,12 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>
-          Defs/ThingDef[defName="TACTICOOL_BallisticGlasses" or
-          defName="TACTICOOL_BallisticGlassesNeon"]
+          Defs/ThingDef[
+          defName="TACTICOOL_BallisticGlasses" or
+          defName="TACTICOOL_BallisticGlassesNeon"
+          ]
         </xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -79,7 +81,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[@Name="TACTICOOL_FaceBandanaBase"]</xpath>
         <value>
           <stuffCategories Operation="AddOrReplace">
@@ -102,7 +104,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[@Name="TACTICOOL_BalaclavaBase"]</xpath>
         <value>
           <stuffCategories Operation="AddOrReplace">
@@ -121,7 +123,7 @@
             <ToxicEnvironmentResistance>0.45</ToxicEnvironmentResistance>
             <MentalBreakThreshold>-0.05</MentalBreakThreshold>
           </equippedStatOffsets>
-          <apparel Operation="Safe">
+          <apparel>
             <bodyPartGroups Operation="AddOrReplace">
               <li>FullHead</li>
             </bodyPartGroups>
@@ -129,7 +131,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="TACTICOOL_MeshCap"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">20</costStuffCount>
@@ -147,18 +149,18 @@
     </caseTrue>
   </Operation>
 
-  <!-- ######################################### CATEGORIES ######################################### -->
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyCategories</key>
-    <defaultValue>true</defaultValue>
+  <!-- ######################################### CATEGORIES #################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyCategories</settingName>
     <caseTrue>
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>
-          Defs/ThingDef[@Name="TACTICOOL_GlassesBase" or
+          Defs/ThingDef[
+          @Name="TACTICOOL_GlassesBase" or
           @Name="TACTICOOL_FaceBandanaBase" or
           @Name="TACTICOOL_BalaclavaBase" or
-          defName="TACTICOOL_MeshCap"]
+          defName="TACTICOOL_MeshCap"
+          ]
         </xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -168,4 +170,6 @@
       </Operation>
     </caseTrue>
   </Operation>
+
+  <!-- ######################################### END ########################################### -->
 </Patch>

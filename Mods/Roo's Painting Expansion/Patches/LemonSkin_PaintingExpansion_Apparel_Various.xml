@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <!-- RBPApparel_Smock -->
-  <Operation Class="XmlExtensions.HybridPatch">
+  <!-- ######################################### LABELS ######################################## -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
     <xpath>Defs/ThingDef[defName="RBPApparel_Smock"]</xpath>
     <value>
       <label Operation="AddOrReplace">artist's smock</label>
@@ -9,8 +9,7 @@
     </value>
   </Operation>
 
-  <!-- RBPApparel_CreativeBeret -->
-  <Operation Class="XmlExtensions.HybridPatch">
+  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
     <xpath>Defs/ThingDef[defName="RBPApparel_CreativeBeret"]</xpath>
     <value>
       <label Operation="AddOrReplace">artist's beret</label>
@@ -18,13 +17,13 @@
     </value>
   </Operation>
 
-  <!-- Stat Rebalances -->
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyRebalances</key>
-    <defaultValue>true</defaultValue>
+  <!-- ######################################### RESEARCH ###################################### -->
+
+  <!-- ######################################### REBALANCES #################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyRebalances</settingName>
     <caseTrue>
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="RBPApparel_Smock"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">120</costStuffCount>
@@ -40,10 +39,16 @@
           <equippedStatOffsets Operation="AddOrReplace">
             <GeneralLaborSpeed>0.05</GeneralLaborSpeed>
           </equippedStatOffsets>
+          <apparel>
+            <layers Operation="AddOrReplace">
+              <li>OnSkin</li>
+              <li>Middle</li>
+            </layers>
+          </apparel>
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="RBPApparel_CreativeBeret"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">35</costStuffCount>
@@ -62,31 +67,35 @@
     </caseTrue>
   </Operation>
 
-  <!-- Categories -->
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyCategories</key>
-    <defaultValue>true</defaultValue>
+  <!-- ######################################### CATEGORIES #################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyCategories</settingName>
     <caseTrue>
-      <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[defName="RBPApparel_Smock"]/thingCategories</xpath>
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/ThingDef[defName="RBPApparel_Smock"]</xpath>
         <value>
-          <thingCategories>
+          <thingCategories Operation="AddOrReplace" Inherit="False">
             <li>LemonSkin_MedievalApparel</li>
             <!-- <li>LemonSkin_Workwear</li> -->
           </thingCategories>
         </value>
       </Operation>
 
-      <Operation Class="PatchOperationAdd">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="RBPApparel_CreativeBeret"]</xpath>
         <value>
-          <thingCategories Inherit="False">
+          <thingCategories Operation="AddOrReplace" Inherit="False">
             <li>LemonSkin_MedievalHeadgear</li>
             <!-- <li>LemonSkin_WorkwearHeadgear</li> -->
           </thingCategories>
         </value>
       </Operation>
     </caseTrue>
+  </Operation>
+
+  <!-- ######################################### END ########################################### -->
+  <!-- Bugfix for config error on these buildings -->
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/ThingDef[defName="RBPGalleryBarrier" or defName="RBPArtCabinet"]/passability</xpath>
   </Operation>
 </Patch>

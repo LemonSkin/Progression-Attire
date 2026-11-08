@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
+  <!-- ######################################### LABELS ######################################## -->
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="PU_ClassA"]/label</xpath>
     <value>
@@ -21,29 +22,36 @@
     </value>
   </Operation>
 
+  <!-- ######################################### RESEARCH ###################################### -->
   <Operation Class="PatchOperationConditional">
     <xpath>Defs/ResearchProjectDef[defName="VAE_WorkAttire"]</xpath>
-    <match Class="PatchOperationReplace">
+    <match Class="ferny.ProgressionAttire.PatchOperationMerge">
       <xpath>
-        Defs/ThingDef[defName="PU_ClassA" or
+        Defs/ThingDef[
+        defName="PU_ClassA" or
         defName="PU_ClassB" or
-        defName="PU_CapA"]/recipeMaker/researchPrerequisite
+        defName="PU_CapA"
+        ]
       </xpath>
       <value>
-        <researchPrerequisite>VAE_WorkAttire</researchPrerequisite>
+        <recipeMaker>
+          <researchPrerequisite Operation="AddOrReplace">VAE_WorkAttire</researchPrerequisite>
+          <researchPrerequisites Operation="SafeRemove" />
+        </recipeMaker>
       </value>
     </match>
   </Operation>
 
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyRebalances</key>
-    <defaultValue>true</defaultValue>
+  <!-- ######################################### REBALANCES #################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyRebalances</settingName>
     <caseTrue>
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>
-          Defs/ThingDef[defName="PU_ClassA" or
-          defName="PU_ClassB"]
+          Defs/ThingDef[
+          defName="PU_ClassA" or
+          defName="PU_ClassB"
+          ]
         </xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -62,7 +70,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="PU_CapA"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -83,32 +91,36 @@
     </caseTrue>
   </Operation>
 
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyCategories</key>
-    <defaultValue>true</defaultValue>
+  <!-- ######################################### CATEGORIES #################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyCategories</settingName>
     <caseTrue>
-      <Operation Class="PatchOperationReplace">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>
-          Defs/ThingDef[defName="PU_ClassA" or
-          defName="PU_ClassB"]/thingCategories
+          Defs/ThingDef[
+          defName="PU_ClassA" or
+          defName="PU_ClassB"
+          ]
         </xpath>
         <value>
-          <thingCategories>
+          <thingCategories Operation="AddOrReplace" Inherit="False">
             <li>LemonSkin_IndustrialApparel</li>
             <!-- <li>LemonSkin_Workwear</li> -->
           </thingCategories>
         </value>
       </Operation>
-      <Operation Class="PatchOperationAdd">
+
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="PU_CapA"]</xpath>
         <value>
-          <thingCategories Inherit="False">
+          <thingCategories Operation="AddOrReplace" Inherit="False">
             <li>LemonSkin_IndustrialHeadgear</li>
-            <!-- <li>LemonSkin_WorkwearHeadgear</li> -->
+            <!-- <li>LemonSkin_Workwear</li> -->
           </thingCategories>
         </value>
       </Operation>
     </caseTrue>
   </Operation>
+
+  <!-- ######################################### END ########################################### -->
 </Patch>

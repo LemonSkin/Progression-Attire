@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <!-- ######################################### LABELS ######################################### -->
+  <!-- ######################################### LABELS ######################################## -->
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingCategoryDef[defName="ApparelBaby"]/label</xpath>
     <value>
@@ -8,11 +8,11 @@
     </value>
   </Operation>
 
-  <!-- ######################################### RESEARCH ######################################### -->
+  <!-- ######################################### RESEARCH ###################################### -->
   <!-- I can't get this shit to work, I think something in the C# is overriding it -->
   <!-- <Operation Class="PatchOperationConditional">
     <xpath>Defs/VFETribals.TribalResearchProjectDef[defName="VFET_Tribalwear"]</xpath>
-    <match Class="XmlExtensions.HybridPatch">
+    <match Class="ferny.ProgressionAttire.PatchOperationMerge">
       <xpath>Defs/ThingDef[defName="Apparel_BabyTribal"]</xpath>
       <value>
         <recipeMaker Operation="Safe">
@@ -25,7 +25,7 @@
 
   <Operation Class="PatchOperationConditional">
     <xpath>Defs/ResearchProjectDef[defName="LemonSkin_Shadecone"]</xpath>
-    <match Class="XmlExtensions.HybridPatch">
+    <match Class="ferny.ProgressionAttire.PatchOperationMerge">
       <xpath>Defs/ThingDef[defName="Apparel_BabyShadecone"]</xpath>
       <value>
         <recipeMaker Operation="Safe">
@@ -44,15 +44,13 @@
     </value>
   </Operation> -->
 
-  <!-- ######################################### REBALANCES ######################################### -->
+  <!-- ######################################### REBALANCES #################################### -->
 
-  <!-- ######################################### CATEGORIES ######################################### -->
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyCategories</key>
-    <defaultValue>true</defaultValue>
+  <!-- ######################################### CATEGORIES #################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyCategories</settingName>
     <caseTrue>
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[@Name="BabyApparelMakeableBase"]</xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -61,10 +59,12 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>
-          Defs/ThingDef[defName="Apparel_BabyTuque" or
-          defName="Apparel_BabyShadecone"]
+          Defs/ThingDef[
+          defName="Apparel_BabyTuque" or
+          defName="Apparel_BabyShadecone"
+          ]
         </xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -74,4 +74,6 @@
       </Operation>
     </caseTrue>
   </Operation>
+
+  <!-- ######################################### END ########################################### -->
 </Patch>

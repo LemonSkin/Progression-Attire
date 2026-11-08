@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <!-- ######################################### LABELS ######################################### -->
+  <!-- ######################################### LABELS ######################################## -->
 
-  <!-- ######################################### RESEARCH ######################################### -->
-  <Operation Class="XmlExtensions.HybridPatch">
+  <!-- ######################################### RESEARCH ###################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
     <xpath>
-      Defs/ThingDef[defName="TACTICOOL_HawaiianShirt" or
-      defName="TACTICOOL_MuscleShirt"]
+      Defs/ThingDef[
+      defName="TACTICOOL_HawaiianShirt" or
+      defName="TACTICOOL_MuscleShirt"
+      ]
     </xpath>
     <value>
-      <recipeMaker Operation="Safe">
+      <recipeMaker>
         <researchPrerequisite Operation="AddOrReplace">ComplexClothing</researchPrerequisite>
         <researchPrerequisites Operation="SafeRemove" />
       </recipeMaker>
     </value>
   </Operation>
 
-  <!-- ######################################### REBALANCES ######################################### -->
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyRebalances</key>
-    <defaultValue>true</defaultValue>
+  <!-- ######################################### REBALANCES #################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyRebalances</settingName>
     <caseTrue>
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="TACTICOOL_HawaiianShirt"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -37,13 +37,13 @@
           <equippedStatOffsets Operation="AddOrReplace">
             <MentalBreakThreshold>-0.1</MentalBreakThreshold>
           </equippedStatOffsets>
-          <recipeMaker Operation="Safe">
+          <recipeMaker>
             <skillRequirements Operation="SafeRemove" />
           </recipeMaker>
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="TACTICOOL_MuscleShirt"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -56,7 +56,7 @@
             <EquipDelay>1</EquipDelay>
           </statBases>
           <equippedStatOffsets Operation="SafeRemove" />
-          <recipeMaker Operation="Safe">
+          <recipeMaker>
             <skillRequirements Operation="SafeRemove" />
           </recipeMaker>
         </value>
@@ -64,16 +64,16 @@
     </caseTrue>
   </Operation>
 
-  <!-- ######################################### CATEGORIES ######################################### -->
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyCategories</key>
-    <defaultValue>true</defaultValue>
+  <!-- ######################################### CATEGORIES #################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyCategories</settingName>
     <caseTrue>
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>
-          Defs/ThingDef[defName="TACTICOOL_HawaiianShirt" or
-          defName="TACTICOOL_MuscleShirt"]
+          Defs/ThingDef[
+          defName="TACTICOOL_HawaiianShirt" or
+          defName="TACTICOOL_MuscleShirt"
+          ]
         </xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -83,4 +83,6 @@
       </Operation>
     </caseTrue>
   </Operation>
+
+  <!-- ######################################### END ########################################### -->
 </Patch>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <!-- ######################################### LABELS ######################################### -->
+  <!-- ######################################### LABELS ######################################## -->
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="VIEHAR_Apparel_BishopHat"]/label</xpath>
     <value>
@@ -15,7 +15,7 @@
     </value>
   </Operation>
 
-  <!-- ######################################### RESEARCH ######################################### -->
+  <!-- ######################################### RESEARCH ###################################### -->
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="VIEHAR_Apparel_BishopHat"]/techLevel</xpath>
     <value>
@@ -23,46 +23,48 @@
     </value>
   </Operation>
 
-  <Operation Class="XmlExtensions.HybridPatch">
+  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
     <xpath>
-      Defs/ThingDef[defName="VIEHAR_Apparel_BishopHat" or
+      Defs/ThingDef[
+      defName="VIEHAR_Apparel_BishopHat" or
       defName="VIEHAR_Apparel_BrimlessHat" or
       defName="VIEHAR_Apparel_Fez" or
       defName="VIEHAR_Apparel_Headbag" or
       defName="VIEHAR_Apparel_Headscarf" or
       defName="VIEHAR_Apparel_Skullcap" or
       defName="VIEHAR_Apparel_SpikedSkullcap" or
-      defName="VIEHAR_Apparel_WideHat"]
+      defName="VIEHAR_Apparel_WideHat"
+      ]
     </xpath>
     <value>
-      <recipeMaker Operation="Safe">
+      <recipeMaker>
         <researchPrerequisite Operation="AddOrReplace">LemonSkin_RusticClothing</researchPrerequisite>
         <researchPrerequisites Operation="SafeRemove" />
       </recipeMaker>
     </value>
   </Operation>
 
-  <Operation Class="XmlExtensions.HybridPatch">
+  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
     <xpath>
-      Defs/ThingDef[defName="VIEHAR_Apparel_CommisarHat" or
+      Defs/ThingDef[
+      defName="VIEHAR_Apparel_CommisarHat" or
       defName="VIEHAR_Apparel_HorseMask" or
-      defName="VIEHAR_Apparel_MilitaryCap"]
+      defName="VIEHAR_Apparel_MilitaryCap"
+      ]
     </xpath>
     <value>
-      <recipeMaker Operation="Safe">
+      <recipeMaker>
         <researchPrerequisite Operation="AddOrReplace">ComplexClothing</researchPrerequisite>
         <researchPrerequisites Operation="SafeRemove" />
       </recipeMaker>
     </value>
   </Operation>
 
-  <!-- ######################################### REBALANCES ######################################### -->
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyRebalances</key>
-    <defaultValue>true</defaultValue>
+  <!-- ######################################### REBALANCES #################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyRebalances</settingName>
     <caseTrue>
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VIEHAR_Apparel_Beads"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -80,7 +82,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VIEHAR_Apparel_BishopHat"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -98,7 +100,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VIEHAR_Apparel_BrimlessHat"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">25</costStuffCount>
@@ -118,7 +120,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VIEHAR_Apparel_CommisarHat"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">25</costStuffCount>
@@ -134,7 +136,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VIEHAR_Apparel_DeerSkull"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">50</costStuffCount>
@@ -153,7 +155,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VIEHAR_Apparel_Fez"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">20</costStuffCount>
@@ -173,7 +175,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VIEHAR_Apparel_Headbag"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -191,7 +193,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VIEHAR_Apparel_Headscarf"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">20</costStuffCount>
@@ -213,7 +215,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VIEHAR_Apparel_HorseMask"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -231,7 +233,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VIEHAR_Apparel_MilitaryCap"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">25</costStuffCount>
@@ -250,7 +252,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VIEHAR_Apparel_Skullcap"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -268,7 +270,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VIEHAR_Apparel_SpikedSkullcap"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -286,7 +288,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VIEHAR_Apparel_WideHat"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">20</costStuffCount>
@@ -304,16 +306,16 @@
     </caseTrue>
   </Operation>
 
-  <!-- ######################################### CATEGORIES ######################################### -->
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyCategories</key>
-    <defaultValue>true</defaultValue>
+  <!-- ######################################### CATEGORIES #################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyCategories</settingName>
     <caseTrue>
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>
-          Defs/ThingDef[defName="VIEHAR_Apparel_Beads" or
-          defName="VIEHAR_Apparel_DeerSkull"]
+          Defs/ThingDef[
+          defName="VIEHAR_Apparel_Beads" or
+          defName="VIEHAR_Apparel_DeerSkull"
+          ]
         </xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -322,16 +324,18 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>
-          Defs/ThingDef[defName="VIEHAR_Apparel_BishopHat" or
+          Defs/ThingDef[
+          defName="VIEHAR_Apparel_BishopHat" or
           defName="VIEHAR_Apparel_BrimlessHat" or
           defName="VIEHAR_Apparel_Fez" or
           defName="VIEHAR_Apparel_Headbag" or
           defName="VIEHAR_Apparel_Headscarf" or
           defName="VIEHAR_Apparel_Skullcap" or
           defName="VIEHAR_Apparel_SpikedSkullcap" or
-          defName="VIEHAR_Apparel_WideHat"]
+          defName="VIEHAR_Apparel_WideHat"
+          ]
         </xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -340,7 +344,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VIEHAR_Apparel_HorseMask"]</xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -351,5 +355,5 @@
     </caseTrue>
   </Operation>
 
-  <!-- ######################################### END ######################################### -->
+  <!-- ######################################### END ########################################### -->
 </Patch>

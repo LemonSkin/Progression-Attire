@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <!-- ######################################### LABELS ######################################### -->
+  <!-- ######################################### LABELS ######################################## -->
 
-  <!-- ######################################### RESEARCH ######################################### -->
-  <Operation Class="XmlExtensions.HybridPatch">
+  <!-- ######################################### RESEARCH ###################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
     <xpath>
-      Defs/ThingDef[defName="Apparel_UNARoyalDress" or
+      Defs/ThingDef[
+      defName="Apparel_UNARoyalDress" or
       defName="Apparel_UNA_Dress_sitagi" or
       defName="Apparel_UNA_dressR" or
       defName="Apparel_UNA_RibbonDress" or
@@ -13,17 +14,21 @@
       defName="UNA_RoyalRobe" or
       defName="Apparel_UNA_gothicdress" or
       defName="UNA_MstyleShirtpants" or
-      defName="UNA_Ohanabousi"]
+      defName="UNA_Ohanabousi"
+      ]
     </xpath>
     <value>
-      <recipeMaker Operation="AddOrReplace">
-        <researchPrerequisite>Ferny_VanityTable</researchPrerequisite>
+      <recipeMaker>
+        <researchPrerequisite Operation="AddOrReplace">Ferny_VanityTable</researchPrerequisite>
+        <researchPrerequisites Operation="SafeRemove" />
+        <recipeUsers Operation="AddOrReplace" />
       </recipeMaker>
     </value>
   </Operation>
-  <!-- ######################################### REBALANCES ######################################### -->
 
-  <!-- ######################################### CATEGORIES ######################################### -->
+  <!-- ######################################### REBALANCES #################################### -->
 
-  <!-- ######################################### END ######################################### -->
+  <!-- ######################################### CATEGORIES #################################### -->
+
+  <!-- ######################################### END ########################################### -->
 </Patch>

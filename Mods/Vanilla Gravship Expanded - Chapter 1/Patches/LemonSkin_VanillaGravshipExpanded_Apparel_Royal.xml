@@ -1,65 +1,40 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <!-- ######################################### LABELS ######################################### -->
+  <!-- ######################################### LABELS ######################################## -->
 
-  <!-- ######################################### RESEARCH ######################################### -->
+  <!-- ######################################### RESEARCH ###################################### -->
 
-  <!-- ######################################### REBALANCES ######################################### -->
+  <!-- ######################################### REBALANCES #################################### -->
 
-  <!-- ######################################### CATEGORIES ######################################### -->
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyCategories</key>
-    <defaultValue>true</defaultValue>
+  <!-- ######################################### CATEGORIES #################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyCategories</settingName>
     <caseTrue>
-      <Operation Class="XmlExtensions.FindMod">
-        <mods>
-          <li>Royalty</li>
-        </mods>
-        <caseTrue>
-          <Operation Class="XmlExtensions.HybridPatch">
-            <xpath>Defs/ThingDef[defName="VGE_Apparel_Vacsuit_Prestige"]</xpath>
-            <value>
-              <thingCategories Operation="AddOrReplace" Inherit="False">
-                <li>LemonSkin_SpacerArmor</li>
-              </thingCategories>
-            </value>
-          </Operation>
+      <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="VGE_Apparel_Vacsuit_Prestige"]</xpath>
+        <match Class="ferny.ProgressionAttire.PatchOperationMerge">
+          <xpath>Defs/ThingDef[defName="VGE_Apparel_Vacsuit_Prestige"]</xpath>
+          <value>
+            <thingCategories Operation="AddOrReplace" Inherit="False">
+              <li>LemonSkin_SpacerArmor</li>
+            </thingCategories>
+          </value>
+        </match>
+      </Operation>
 
-          <Operation Class="XmlExtensions.HybridPatch">
-            <xpath>Defs/ThingDef[defName="VGE_Apparel_VacsuitHelmet_Prestige"]</xpath>
-            <value>
-              <thingCategories Operation="AddOrReplace" Inherit="False">
-                <li>LemonSkin_SpacerArmorHeadgear</li>
-              </thingCategories>
-            </value>
-          </Operation>
-        </caseTrue>
+      <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="VGE_Apparel_VacsuitHelmet_Prestige"]</xpath>
+        <match Class="ferny.ProgressionAttire.PatchOperationMerge">
+          <xpath>Defs/ThingDef[defName="VGE_Apparel_VacsuitHelmet_Prestige"]</xpath>
+          <value>
+            <thingCategories Operation="AddOrReplace" Inherit="False">
+              <li>LemonSkin_SpacerArmorHeadgear</li>
+            </thingCategories>
+          </value>
+        </match>
       </Operation>
     </caseTrue>
   </Operation>
 
-  <!-- ######################################### END ######################################### -->
-  <!-- VGE_Apparel_Vacsuit_Prestige -->
-  <!-- <Operation Class="PatchOperationConditional">
-    <xpath>Defs/ThingDef[defName="VGE_Apparel_Vacsuit_Prestige"]</xpath>
-    <match Class="PatchOperationReplace">
-      <xpath>Defs/ThingDef[defName="VGE_Apparel_Vacsuit_Prestige"]/thingCategories</xpath>
-      <value>
-        <thingCategories Inherit="False" />
-      </value>
-    </match>
-  </Operation> -->
-  <!-- VGE_Apparel_VacsuitHelmet_Prestige -->
-  <!-- <Operation Class="PatchOperationConditional">
-    <xpath>Defs/ThingDef[defName="VGE_Apparel_VacsuitHelmet_Prestige"]</xpath>
-    <match Class="PatchOperationAdd">
-      <xpath>Defs/ThingDef[defName="VGE_Apparel_VacsuitHelmet_Prestige"]</xpath>
-      <value>
-        <thingCategories Inherit="False">
-          <li>LemonSkin_SpacerArmorHeadgear</li>
-        </thingCategories>
-      </value>
-    </match>
-  </Operation> -->
+  <!-- ######################################### END ########################################### -->
 </Patch>

@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <!-- ######################################### LABELS ######################################### -->
+  <!-- ######################################### LABELS ######################################## -->
 
-  <!-- ######################################### RESEARCH ######################################### -->
+  <!-- ######################################### RESEARCH ###################################### -->
 
-  <!-- ######################################### REBALANCES ######################################### -->
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyRebalances</key>
-    <defaultValue>true</defaultValue>
+  <!-- ######################################### REBALANCES #################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyRebalances</settingName>
     <caseTrue>
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VAE_Handwear_PlateGloves"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">35</costStuffCount>
@@ -26,9 +24,9 @@
           <equippedStatOffsets Operation="AddOrReplace">
             <WorkSpeedGlobal>-0.1</WorkSpeedGlobal>
           </equippedStatOffsets>
-          <recipeMaker Operation="Safe">
-            <skillRequirements Operation="Safe">
-              <Crafting Operation="AddOrReplace">7</Crafting>
+          <recipeMaker>
+            <skillRequirements Operation="AddOrReplace">
+              <Crafting>7</Crafting>
             </skillRequirements>
           </recipeMaker>
         </value>
@@ -36,13 +34,11 @@
     </caseTrue>
   </Operation>
 
-  <!-- ######################################### CATEGORIES ######################################### -->
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyCategories</key>
-    <defaultValue>true</defaultValue>
+  <!-- ######################################### CATEGORIES #################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyCategories</settingName>
     <caseTrue>
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VAE_Handwear_PlateGloves"]</xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -51,7 +47,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VAE_Handwear_MarineGloves"]</xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -62,7 +58,7 @@
     </caseTrue>
   </Operation>
 
-  <!-- ######################################### MO DE-DUPE ######################################### -->
+  <!-- ######################################### MO DE-DUPE #################################### -->
 
   <Operation Class="PatchOperationConditional">
     <xpath>Defs/ThingDef[defName="DankPyon_Handwear_GlovesPlate"]</xpath>
@@ -70,4 +66,6 @@
       <xpath>Defs/ThingDef[defName="VAE_Handwear_PlateGloves"]</xpath>
     </match>
   </Operation>
+
+  <!-- ######################################### END ########################################### -->
 </Patch>

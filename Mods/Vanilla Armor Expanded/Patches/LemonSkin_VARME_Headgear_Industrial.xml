@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <!-- ######################################### LABELS ######################################### -->
+  <!-- ######################################### LABELS ######################################## -->
 
-  <!-- ######################################### RESEARCH ######################################### -->
+  <!-- ######################################### RESEARCH ###################################### -->
 
-  <!-- ######################################### REBALANCES ######################################### -->
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyRebalances</key>
-    <defaultValue>true</defaultValue>
+  <!-- ######################################### REBALANCES #################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyRebalances</settingName>
     <caseTrue>
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VAE_Headgear_Balaclava"]</xpath>
         <value>
           <stuffCategories Operation="AddOrReplace">
@@ -32,17 +30,17 @@
       </Operation>
     </caseTrue>
   </Operation>
-  <!-- ######################################### CATEGORIES ######################################### -->
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyCategories</key>
-    <defaultValue>true</defaultValue>
+  <!-- ######################################### CATEGORIES #################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyCategories</settingName>
     <caseTrue>
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>
-          Defs/ThingDef[defName="VAE_Headgear_Balaclava" or
+          Defs/ThingDef[
+          defName="VAE_Headgear_Balaclava" or
           defName="VAE_Headgear_GhillieHood" or
-          defName="VAE_Headgear_HAZMATMask"]
+          defName="VAE_Headgear_HAZMATMask"
+          ]
         </xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -53,11 +51,13 @@
     </caseTrue>
   </Operation>
 
-  <!-- ######################################### TACTICOOL DE-DUPE ######################################### -->
+  <!-- ######################################### TACTICOOL DE-DUPE ############################# -->
   <Operation Class="PatchOperationConditional">
     <xpath>Defs/ThingDef[@Name="TACTICOOL_BalaclavaBase"]</xpath>
     <match Class="PatchOperationRemove">
       <xpath>Defs/ThingDef[defName="VAE_Headgear_Balaclava"]</xpath>
     </match>
   </Operation>
+
+  <!-- ######################################### END ########################################### -->
 </Patch>

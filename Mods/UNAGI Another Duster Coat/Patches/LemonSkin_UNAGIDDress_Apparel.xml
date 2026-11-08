@@ -1,24 +1,28 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <!-- ######################################### LABELS ######################################### -->
+  <!-- ######################################### LABELS ######################################## -->
 
-  <!-- ######################################### RESEARCH ######################################### -->
-  <Operation Class="PatchOperationReplace">
+  <!-- ######################################### RESEARCH ###################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
     <xpath>
-      Defs/ThingDef[defName="UNAGIDDress" or
+      Defs/ThingDef[
+      defName="UNAGIDDress" or
       defName="UNAGIDcoat" or
       defName="UNAGIDsailor" or
-      defName="UNAGIribbonshirt"]/recipeMaker
+      defName="UNAGIribbonshirt"
+      ]
     </xpath>
     <value>
       <recipeMaker>
-        <researchPrerequisite Inherit="False">Ferny_VanityTable</researchPrerequisite>
+        <researchPrerequisite Operation="AddOrReplace">Ferny_VanityTable</researchPrerequisite>
+        <researchPrerequisites Operation="SafeRemove" />
       </recipeMaker>
     </value>
   </Operation>
-  <!-- ######################################### REBALANCES ######################################### -->
 
-  <!-- ######################################### CATEGORIES ######################################### -->
+  <!-- ######################################### REBALANCES #################################### -->
 
-  <!-- ######################################### END ######################################### -->
+  <!-- ######################################### CATEGORIES #################################### -->
+
+  <!-- ######################################### END ########################################### -->
 </Patch>

@@ -1,29 +1,27 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <!-- ######################################### LABELS ######################################### -->
+  <!-- ######################################### LABELS ######################################## -->
 
-  <!-- ######################################### RESEARCH ######################################### -->
+  <!-- ######################################### RESEARCH ###################################### -->
   <Operation Class="PatchOperationConditional">
     <xpath>Defs/VFETribals.TribalResearchProjectDef[defName="LemonSkin_VARME_WoodenArmor"]</xpath>
-    <match Class="XmlExtensions.HybridPatch">
+    <match Class="ferny.ProgressionAttire.PatchOperationMerge">
       <xpath>Defs/ThingDef[defName="VAE_Apparel_WoodenArmor"]</xpath>
       <value>
-        <recipeMaker Operation="Safe">
+        <recipeMaker>
           <researchPrerequisite Operation="AddOrReplace">LemonSkin_VARME_WoodenArmor</researchPrerequisite>
           <researchPrerequisites Operation="SafeRemove" />
         </recipeMaker>
       </value>
     </match>
   </Operation>
-  <!-- ######################################### REBALANCES ######################################### -->
+  <!-- ######################################### REBALANCES #################################### -->
 
-  <!-- ######################################### CATEGORIES ######################################### -->
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyCategories</key>
-    <defaultValue>true</defaultValue>
+  <!-- ######################################### CATEGORIES #################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyCategories</settingName>
     <caseTrue>
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VAE_Apparel_WoodenArmor"]</xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -32,7 +30,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VAE_Headgear_StoneWarMask"]</xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -42,4 +40,6 @@
       </Operation>
     </caseTrue>
   </Operation>
+
+  <!-- ######################################### END ########################################### -->
 </Patch>

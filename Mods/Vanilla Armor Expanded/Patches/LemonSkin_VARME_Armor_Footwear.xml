@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <!-- ######################################### LABELS ######################################### -->
+  <!-- ######################################### LABELS ######################################## -->
 
-  <!-- ######################################### RESEARCH ######################################### -->
+  <!-- ######################################### RESEARCH ###################################### -->
 
-  <!-- ######################################### REBALANCES ######################################### -->
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyRebalances</key>
-    <defaultValue>true</defaultValue>
+  <!-- ######################################### REBALANCES #################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyRebalances</settingName>
     <caseTrue>
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VAE_Footwear_PlateBoots"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">45</costStuffCount>
@@ -23,9 +21,9 @@
             <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
             <EquipDelay>2.5</EquipDelay>
           </statBases>
-          <recipeMaker Operation="Safe">
-            <skillRequirements Operation="Safe">
-              <Crafting Operation="AddOrReplace">7</Crafting>
+          <recipeMaker>
+            <skillRequirements Operation="AddOrReplace">
+              <Crafting>7</Crafting>
             </skillRequirements>
           </recipeMaker>
         </value>
@@ -33,13 +31,11 @@
     </caseTrue>
   </Operation>
 
-  <!-- ######################################### CATEGORIES ######################################### -->
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyCategories</key>
-    <defaultValue>true</defaultValue>
+  <!-- ######################################### CATEGORIES #################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyCategories</settingName>
     <caseTrue>
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VAE_Footwear_PlateBoots"]</xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -48,7 +44,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VAE_Footwear_MarineBoots"]</xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -59,13 +55,13 @@
     </caseTrue>
   </Operation>
 
-  <!-- ######################################### MO DE-DUPE ######################################### -->
+  <!-- ######################################### MO DE-DUPE #################################### -->
   <Operation Class="PatchOperationConditional">
     <xpath>Defs/ThingDef[defName="DankPyon_Footwear_BootsPlate"]</xpath>
     <match Class="PatchOperationConditional">
-      <xpath>/Defs/*[*]/apparelRequired/li[.="VAE_Footwear_PlateBoots"]</xpath>
+      <xpath>/Defs/PawnKindDef/apparelRequired/li[.="VAE_Footwear_PlateBoots"]</xpath>
       <match Class="PatchOperationReplace">
-        <xpath>/Defs/*[*]/apparelRequired/li[.="VAE_Footwear_PlateBoots"]</xpath>
+        <xpath>/Defs/PawnKindDef/apparelRequired/li[.="VAE_Footwear_PlateBoots"]</xpath>
         <value>
           <li>DankPyon_Footwear_BootsPlate</li>
         </value>
@@ -79,4 +75,6 @@
       <xpath>Defs/ThingDef[defName="VAE_Footwear_PlateBoots"]</xpath>
     </match>
   </Operation>
+
+  <!-- ######################################### END ########################################### -->
 </Patch>

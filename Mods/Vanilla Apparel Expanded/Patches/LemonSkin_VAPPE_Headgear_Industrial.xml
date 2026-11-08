@@ -1,26 +1,24 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <!-- ######################################### LABELS ######################################### -->
+  <!-- ######################################### LABELS ######################################## -->
 
-  <!-- ######################################### RESEARCH ######################################### -->
-  <Operation Class="XmlExtensions.HybridPatch">
+  <!-- ######################################### RESEARCH ###################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
     <xpath>Defs/ThingDef[defName="VAE_Headgear_Scarf"]</xpath>
     <value>
       <techLevel Operation="AddOrReplace">Medieval</techLevel>
-      <recipeMaker Operation="Safe">
+      <recipeMaker>
         <researchPrerequisite Operation="AddOrReplace">LemonSkin_RusticClothing</researchPrerequisite>
         <researchPrerequisites Operation="SafeRemove" />
       </recipeMaker>
     </value>
   </Operation>
 
-  <!-- ######################################### REBALANCES ######################################### -->
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyRebalances</key>
-    <defaultValue>true</defaultValue>
+  <!-- ######################################### REBALANCES #################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyRebalances</settingName>
     <caseTrue>
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VAE_Headgear_Scarf"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -32,7 +30,7 @@
             <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
             <EquipDelay>0.8</EquipDelay>
           </statBases>
-          <apparel Operation="Safe">
+          <apparel>
             <bodyPartGroups Operation="AddOrReplace">
               <li>Neck</li>
             </bodyPartGroups>
@@ -40,7 +38,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VAE_Headgear_Beret"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">35</costStuffCount>
@@ -60,7 +58,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VAE_Headgear_Hardhat"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -81,7 +79,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VAE_Headgear_SurgicalMask"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -95,14 +93,10 @@
             <Insulation_Heat>2</Insulation_Heat>
             <EquipDelay>0.8</EquipDelay>
           </statBases>
-          <equippedStatOffsets Operation="AddOrReplace">
-            <ConstructionSpeed>0.05</ConstructionSpeed>
-            <ConstructSuccessChance>0.05</ConstructSuccessChance>
-          </equippedStatOffsets>
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VAE_Headgear_BaseballCap"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -118,7 +112,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VAE_Headgear_Sunglasses"]</xpath>
         <value>
           <costList Operation="AddOrReplace">
@@ -127,7 +121,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VAE_Headgear_ChefsToque"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -148,13 +142,11 @@
     </caseTrue>
   </Operation>
 
-  <!-- ######################################### CATEGORIES ######################################### -->
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyCategories</key>
-    <defaultValue>true</defaultValue>
+  <!-- ######################################### CATEGORIES #################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyCategories</settingName>
     <caseTrue>
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VAE_Headgear_Scarf"]</xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -163,15 +155,17 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>
-          Defs/ThingDef[defName="VAE_Headgear_Beret" or
+          Defs/ThingDef[
+          defName="VAE_Headgear_Beret" or
           defName="VAE_Headgear_Hardhat" or
           defName="VAE_Headgear_SurgicalMask" or
           defName="VAE_Headgear_BaseballCap" or
           defName="VAE_Headgear_Sunglasses" or
           defName="VAE_Headgear_Glasses" or
-          defName="VAE_Headgear_ChefsToque"]
+          defName="VAE_Headgear_ChefsToque"
+          ]
         </xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -181,4 +175,6 @@
       </Operation>
     </caseTrue>
   </Operation>
+
+  <!-- ######################################### END ########################################### -->
 </Patch>

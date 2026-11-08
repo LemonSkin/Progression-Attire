@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
+  <!-- ######################################### LABELS ######################################## -->
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="RBSFE_Faecrown"]/label</xpath>
     <value>
@@ -7,16 +8,11 @@
     </value>
   </Operation>
 
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="RBSFE_Faerose"]/label</xpath>
+  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+    <xpath>Defs/ThingDef[defName="RBSFE_Faerose"]</xpath>
     <value>
-      <label>rose</label>
-    </value>
-  </Operation>
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="RBSFE_Faerose"]/description</xpath>
-    <value>
-      <description>A romantic rose held between the teeth. It strengthens the wearer's social impact and connection with nature, but offers little else.</description>
+      <label Operation="AddOrReplace">rose</label>
+      <description Operation="AddOrReplace">A romantic rose held between the teeth. It strengthens the wearer's social impact and connection with nature, but offers little else.</description>
     </value>
   </Operation>
 
@@ -34,19 +30,22 @@
     </value>
   </Operation>
 
+  <!-- ######################################### RESEARCH ###################################### -->
   <!-- Research Changes -->
   <Operation Class="PatchOperationConditional">
     <xpath>Defs/VFETribals.TribalResearchProjectDef[defName="LemonSkin_Leafwear"]</xpath>
-    <match Class="XmlExtensions.HybridPatch">
+    <match Class="ferny.ProgressionAttire.PatchOperationMerge">
       <xpath>
-        Defs/ThingDef[@Name="FaeApparelBase" or
+        Defs/ThingDef[
+        @Name="FaeApparelBase" or
         defName="RBSFE_Faecrown" or
         defName="RBSFE_Faerose" or
         defName="RBSFE_Faecap" or
-        defName="RBSFE_Faescarf"]
+        defName="RBSFE_Faescarf"
+        ]
       </xpath>
       <value>
-        <recipeMaker Operation="Safe">
+        <recipeMaker>
           <researchPrerequisite Operation="AddOrReplace">LemonSkin_Leafwear</researchPrerequisite>
           <researchPrerequisites Operation="SafeRemove" />
         </recipeMaker>
@@ -56,30 +55,30 @@
 
   <Operation Class="PatchOperationConditional">
     <xpath>Defs/VFETribals.TribalResearchProjectDef[defName="LemonSkin_Leafwear"]</xpath>
-    <match Class="XmlExtensions.HybridPatch">
+    <match Class="ferny.ProgressionAttire.PatchOperationMerge">
       <xpath>
-        Defs/ThingDef[defName="RBSFE_Faemail" or
-        defName="RBSF_Faehelm"]
+        Defs/ThingDef[
+        defName="RBSFE_Faemail" or
+        defName="RBSF_Faehelm"
+        ]
       </xpath>
       <value>
-        <recipeMaker Operation="Safe">
+        <recipeMaker>
+          <researchPrerequisite Operation="SafeRemove" />
           <researchPrerequisites Operation="AddOrReplace">
             <li>LemonSkin_Leafwear</li>
             <li>Smithing</li>
           </researchPrerequisites>
-          <researchPrerequisite Operation="SafeRemove" />
         </recipeMaker>
       </value>
     </match>
   </Operation>
 
-  <!-- Stat Rebalances -->
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyRebalances</key>
-    <defaultValue>true</defaultValue>
+  <!-- ######################################### REBALANCES #################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyRebalances</settingName>
     <caseTrue>
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="RBSFE_Faegarms"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -96,7 +95,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="RBSFE_KidFaegarms"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -113,7 +112,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="RBSFE_Faepron"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -131,7 +130,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="RBSFE_Faecloak"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -151,7 +150,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="RBSFE_Faeleaf"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -168,7 +167,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="RBSFE_Faemail"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">140</costStuffCount>
@@ -186,15 +185,15 @@
             <MoveSpeed>-0.20</MoveSpeed>
             <Beauty>5</Beauty>
           </equippedStatOffsets>
-          <recipeMaker Operation="Safe">
-            <skillRequirements Operation="Safe">
-              <Crafting Operation="AddOrReplace">6</Crafting>
+          <recipeMaker>
+            <skillRequirements Operation="AddOrReplace">
+              <Crafting>6</Crafting>
             </skillRequirements>
           </recipeMaker>
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="RBSFE_Faecrown"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -212,7 +211,7 @@
           </equippedStatOffsets>
         </value>
       </Operation>
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="RBSFE_Faerose"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -231,7 +230,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="RBSFE_Faecap"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -250,7 +249,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="RBSFE_Faescarf"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -266,7 +265,7 @@
             <ToxicEnvironmentResistance>0.1</ToxicEnvironmentResistance>
             <RBSF_NatureConnectionOffset>0.05</RBSF_NatureConnectionOffset>
           </equippedStatOffsets>
-          <apparel Operation="Safe">
+          <apparel>
             <bodyPartGroups Operation="AddOrReplace">
               <li>Neck</li>
             </bodyPartGroups>
@@ -274,7 +273,7 @@
         </value>
       </Operation>
 
-      <Operation Class="XmlExtensions.HybridPatch">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="RBSF_Faehelm"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -292,11 +291,10 @@
             <Beauty>5</Beauty>
             <ShootingAccuracyPawn>-2</ShootingAccuracyPawn>
           </equippedStatOffsets>
-          <recipeMaker Operation="Safe">
-            <recipeUsers Operation="SafeAdd" Inherit="False">
+          <recipeMaker>
+            <recipeUsers Operation="AddOrReplace" Inherit="False">
               <li>ElectricSmithy</li>
               <li>FueledSmithy</li>
-              <li MayRequire="DankPyon.Medieval.Overhaul">DankPyon_Anvil</li>
             </recipeUsers>
           </recipeMaker>
         </value>
@@ -304,61 +302,63 @@
     </caseTrue>
   </Operation>
 
-  <!-- Categories -->
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyCategories</key>
-    <defaultValue>true</defaultValue>
+  <!-- ######################################### CATEGORIES #################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyCategories</settingName>
     <caseTrue>
-      <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ThingDef[@Name="FaeApparelBase"]/thingCategories</xpath>
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/ThingDef[@Name="FaeApparelBase"]</xpath>
         <value>
-          <thingCategories Inherit="False">
+          <thingCategories Operation="AddOrReplace" Inherit="False">
             <li>LemonSkin_NeolithicApparel</li>
           </thingCategories>
         </value>
       </Operation>
 
-      <Operation Class="PatchOperationAdd">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="RBSFE_KidFaegarms"]</xpath>
         <value>
-          <thingCategories Inherit="False">
+          <thingCategories Operation="AddOrReplace" Inherit="False">
             <li>LemonSkin_KidApparel</li>
           </thingCategories>
         </value>
       </Operation>
 
-      <Operation Class="PatchOperationAdd">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="RBSFE_Faemail"]</xpath>
         <value>
-          <thingCategories Inherit="False">
+          <thingCategories Operation="AddOrReplace" Inherit="False">
             <li>LemonSkin_NeolithicArmor</li>
           </thingCategories>
         </value>
       </Operation>
 
-      <Operation Class="PatchOperationReplace">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>
-          Defs/ThingDef[defName="RBSFE_Faecrown" or
+          Defs/ThingDef[
+          defName="RBSFE_Faecrown" or
           defName="RBSFE_Faerose" or
           defName="RBSFE_Faecap" or
-          defName="RBSFE_Faescarf"]/thingCategories
+          defName="RBSFE_Faescarf"
+          ]
         </xpath>
         <value>
-          <thingCategories Inherit="False">
+          <thingCategories Operation="AddOrReplace" Inherit="False">
             <li>LemonSkin_NeolithicHeadgear</li>
           </thingCategories>
         </value>
       </Operation>
 
-      <Operation Class="PatchOperationAdd">
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="RBSF_Faehelm"]</xpath>
         <value>
-          <thingCategories Inherit="False">
+          <thingCategories Operation="AddOrReplace" Inherit="False">
             <li>LemonSkin_NeolithicArmorHeadgear</li>
           </thingCategories>
         </value>
       </Operation>
     </caseTrue>
   </Operation>
+
+  <!-- ######################################### END ########################################### -->
 </Patch>

@@ -1,39 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyCategories</key>
-    <defaultValue>true</defaultValue>
-    <caseTrue>
-      <Operation Class="PatchOperationConditional">
-        <xpath>Defs/ThingDef[defName="Apparel_PackHunter_Toxic"]</xpath>
-        <match Class="PatchOperationReplace">
-          <xpath>Defs/ThingDef[defName="Apparel_PackHunter_Toxic"]/thingCategories</xpath>
-          <value>
-            <thingCategories>
-              <li>LemonSkin_SpacerUtility</li>
-            </thingCategories>
-          </value>
-        </match>
-      </Operation>
-
-      <Operation Class="PatchOperationReplace">
-        <xpath>
-          Defs/ThingDef[defName="Apparel_PackHunter_AntigrainWarhead" or
-          defName="Apparel_PackHunter_Incendiary" or
-          defName="Apparel_PackHunter_EMP" or
-          defName="Apparel_PackHunter_Smoke"]/thingCategories
-        </xpath>
-        <value>
-          <thingCategories>
-            <li>LemonSkin_SpacerUtility</li>
-          </thingCategories>
-        </value>
-      </Operation>
-    </caseTrue>
-  </Operation>
-
-  <Operation Class="PatchOperationConditional">
+  <!-- ######################################### LABELS ######################################## -->
+  <!-- <Operation Class="PatchOperationConditional">
     <xpath>Defs/ThingDef[defName="Apparel_PackHunter_Toxic"]</xpath>
     <match Class="PatchOperationReplace">
       <xpath>Defs/ThingDef[defName="Apparel_PackHunter_Toxic"]/label</xpath>
@@ -69,10 +37,10 @@
     <value>
       <label>hunter pack (smoke)</label>
     </value>
-  </Operation>
+  </Operation> -->
 
   <!-- Relabel the traps themselves for consistency -->
-  <Operation Class="PatchOperationConditional">
+  <!-- <Operation Class="PatchOperationConditional">
     <xpath>Defs/ThingDef[defName="Drone_HunterToxic_Trap"]</xpath>
     <match Class="PatchOperationReplace">
       <xpath>Defs/ThingDef[defName="Drone_HunterToxic_Trap"]/label</xpath>
@@ -104,5 +72,43 @@
     <value>
       <label>hunter pack (smoke)</label>
     </value>
+  </Operation> -->
+
+  <!-- ######################################### REBALANCES #################################### -->
+
+  <!-- ######################################### CATEGORIES #################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyCategories</settingName>
+    <caseTrue>
+      <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Apparel_PackHunter_Toxic"]</xpath>
+        <match Class="ferny.ProgressionAttire.PatchOperationMerge">
+          <xpath>Defs/ThingDef[defName="Apparel_PackHunter_Toxic"]</xpath>
+          <value>
+            <thingCategories Operation="AddOrReplace" Inherit="False">
+              <li>LemonSkin_SpacerUtility</li>
+            </thingCategories>
+          </value>
+        </match>
+      </Operation>
+
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <xpath>
+          Defs/ThingDef[
+          defName="Apparel_PackHunter_AntigrainWarhead" or
+          defName="Apparel_PackHunter_Incendiary" or
+          defName="Apparel_PackHunter_EMP" or
+          defName="Apparel_PackHunter_Smoke"
+          ]
+        </xpath>
+        <value>
+          <thingCategories Operation="AddOrReplace" Inherit="False">
+            <li>LemonSkin_SpacerUtility</li>
+          </thingCategories>
+        </value>
+      </Operation>
+    </caseTrue>
   </Operation>
+
+  <!-- ######################################### END ########################################### -->
 </Patch>

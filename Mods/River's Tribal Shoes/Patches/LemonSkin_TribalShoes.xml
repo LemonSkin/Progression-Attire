@@ -1,31 +1,19 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <Operation Class="XmlExtensions.OptionalPatch">
-    <modId>ferny.progressionattire</modId>
-    <key>ApplyCategories</key>
-    <defaultValue>true</defaultValue>
-    <caseTrue>
-      <Operation Class="PatchOperationReplace">
-        <xpath>
-          Defs/ThingDef[defName="River_Tribal_sandals" or
-          defName="River_Tribal_moccasins" or
-          defName="River_Tribal_mukluks"]/thingCategories
-        </xpath>
-        <value>
-          <thingCategories>
-            <li>LemonSkin_NeolithicApparel</li>
-          </thingCategories>
-        </value>
-      </Operation>
-    </caseTrue>
-  </Operation>
+  <!-- ######################################### LABELS ######################################## -->
 
+  <!-- ######################################### RESEARCH ###################################### -->
   <Operation Class="PatchOperationConditional">
     <xpath>Defs/VFETribals.TribalResearchProjectDef[defName="LemonSkin_RiverTribalShoes"]</xpath>
-    <match Class="XmlExtensions.HybridPatch">
-      <xpath>Defs/ThingDef[defName="River_Tribal_sandals" or defName="River_Tribal_moccasins"]</xpath>
+    <match Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <xpath>
+        Defs/ThingDef[
+        defName="River_Tribal_sandals" or
+        defName="River_Tribal_moccasins"
+        ]
+      </xpath>
       <value>
-        <recipeMaker Operation="Safe">
+        <recipeMaker>
           <researchPrerequisite Operation="AddOrReplace">LemonSkin_RiverTribalShoes</researchPrerequisite>
           <researchPrerequisites Operation="SafeRemove" />
         </recipeMaker>
@@ -35,14 +23,59 @@
 
   <Operation Class="PatchOperationConditional">
     <xpath>Defs/VFETribals.TribalResearchProjectDef[defName="LemonSkin_RiverTribalMukluks"]</xpath>
-    <match Class="XmlExtensions.HybridPatch">
+    <match Class="ferny.ProgressionAttire.PatchOperationMerge">
       <xpath>Defs/ThingDef[defName="River_Tribal_mukluks"]</xpath>
       <value>
-        <recipeMaker Operation="Safe">
+        <recipeMaker>
           <researchPrerequisite Operation="AddOrReplace">LemonSkin_RiverTribalMukluks</researchPrerequisite>
           <researchPrerequisites Operation="SafeRemove" />
         </recipeMaker>
       </value>
     </match>
+  </Operation>
+
+  <!-- ######################################### REBALANCES #################################### -->
+
+  <!-- ######################################### CATEGORIES #################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyCategories</settingName>
+    <caseTrue>
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <xpath>
+          Defs/ThingDef[
+          defName="River_Tribal_sandals" or
+          defName="River_Tribal_moccasins" or
+          defName="River_Tribal_mukluks"
+          ]
+        </xpath>
+        <value>
+          <thingCategories Operation="AddOrReplace" Inherit="False">
+            <li>LemonSkin_NeolithicApparel</li>
+          </thingCategories>
+        </value>
+      </Operation>
+    </caseTrue>
+  </Operation>
+
+  <!-- ######################################### END ########################################### -->
+
+  <!-- Bugfix for MO's removed tailor bench-->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+    <xpath>
+      Defs/ThingDef[
+      defName="River_Tribal_sandals" or
+      defName="River_Tribal_moccasins" or
+      defName="River_Tribal_mukluks"
+      ]
+    </xpath>
+    <value>
+      <recipeMaker>
+        <recipeUsers Operation="AddOrReplace">
+          <li>ElectricTailoringBench</li>
+          <li>HandTailoringBench</li>
+          <li>CraftingSpot</li>
+        </recipeUsers>
+      </recipeMaker>
+    </value>
   </Operation>
 </Patch>
