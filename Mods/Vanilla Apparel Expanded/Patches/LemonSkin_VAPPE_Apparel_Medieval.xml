@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <!-- ######################################### LABELS ######################################## -->
+
+  <!-- ######################################### RESEARCH ###################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+    <xpath>
+      Defs/ThingDef[
+      defName="VAE_Apparel_Tunic" or
+      defName="VAE_Apparel_Blouse" or
+      defName="VAE_Apparel_Apron"
+      ]
+    </xpath>
+    <value>
+      <recipeMaker>
+        <researchPrerequisite Operation="AddOrReplace">LemonSkin_RusticClothing</researchPrerequisite>
+        <researchPrerequisites Operation="SafeRemove" />
+      </recipeMaker>
+    </value>
+  </Operation>
+
+  <!-- ######################################### REBALANCES #################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyRebalances</settingName>
+    <caseTrue>
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/ThingDef[defName="VAE_Apparel_Tunic"]</xpath>
+        <value>
+          <costStuffCount Operation="AddOrReplace">45</costStuffCount>
+          <statBases Operation="AddOrReplace">
+            <MaxHitPoints>100</MaxHitPoints>
+            <WorkToMake>2000</WorkToMake>
+            <Mass>0.3</Mass>
+            <StuffEffectMultiplierArmor>0.2</StuffEffectMultiplierArmor>
+            <StuffEffectMultiplierInsulation_Cold>0.32</StuffEffectMultiplierInsulation_Cold>
+            <StuffEffectMultiplierInsulation_Heat>0.05</StuffEffectMultiplierInsulation_Heat>
+            <EquipDelay>1.5</EquipDelay>
+          </statBases>
+        </value>
+      </Operation>
+
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/ThingDef[defName="VAE_Apparel_Blouse"]</xpath>
+        <value>
+          <stuffCategories Operation="AddOrReplace">
+            <li>Fabric</li>
+          </stuffCategories>
+          <statBases Operation="AddOrReplace">
+            <MaxHitPoints>100</MaxHitPoints>
+            <WorkToMake>2000</WorkToMake>
+            <Mass>0.3</Mass>
+            <StuffEffectMultiplierArmor>0.2</StuffEffectMultiplierArmor>
+            <StuffEffectMultiplierInsulation_Cold>0.05</StuffEffectMultiplierInsulation_Cold>
+            <StuffEffectMultiplierInsulation_Heat>0.32</StuffEffectMultiplierInsulation_Heat>
+            <EquipDelay>1.5</EquipDelay>
+          </statBases>
+        </value>
+      </Operation>
+
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/ThingDef[defName="VAE_Apparel_Apron"]</xpath>
+        <value>
+          <costStuffCount Operation="AddOrReplace">50</costStuffCount>
+          <statBases Operation="AddOrReplace">
+            <MaxHitPoints>100</MaxHitPoints>
+            <WorkToMake>3600</WorkToMake>
+            <Mass>0.8</Mass>
+            <StuffEffectMultiplierArmor>0.1</StuffEffectMultiplierArmor>
+            <StuffEffectMultiplierInsulation_Cold>0.0</StuffEffectMultiplierInsulation_Cold>
+            <StuffEffectMultiplierInsulation_Heat>0.0</StuffEffectMultiplierInsulation_Heat>
+            <EquipDelay>2</EquipDelay>
+          </statBases>
+          <equippedStatOffsets Operation="AddOrReplace">
+            <GeneralLaborSpeed>0.10</GeneralLaborSpeed>
+          </equippedStatOffsets>
+          <apparel>
+            <bodyPartGroups Operation="AddOrReplace">
+              <li>Torso</li>
+              <li>Legs</li>
+            </bodyPartGroups>
+          </apparel>
+        </value>
+      </Operation>
+    </caseTrue>
+  </Operation>
+
+  <!-- ######################################### CATEGORIES #################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyCategories</settingName>
+    <caseTrue>
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <xpath>
+          Defs/ThingDef[
+          defName="VAE_Apparel_Tunic" or
+          defName="VAE_Apparel_Blouse" or
+          defName="VAE_Apparel_Apron"
+          ]
+        </xpath>
+        <value>
+          <thingCategories Operation="AddOrReplace" Inherit="False">
+            <li>LemonSkin_MedievalApparel</li>
+          </thingCategories>
+        </value>
+      </Operation>
+    </caseTrue>
+  </Operation>
+
+  <!-- ######################################### END ########################################### -->
+</Patch>

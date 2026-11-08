@@ -1,47 +1,45 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-
+﻿using HarmonyLib;
 using UnityEngine;
 using Verse;
-using Verse.AI;
-using Verse.AI.Group;
-using Verse.Sound;
-using Verse.Noise;
-using Verse.Grammar;
-using RimWorld;
-using RimWorld.Planet;
 
-// *Uncomment for Harmony*
-using System.Reflection;
-using HarmonyLib;
-
-namespace ProgressionAttire
+namespace ferny.ProgressionAttire
 {
-    [StaticConstructorOnStartup]
-    public static class Start
+    public class ProgressionAttire : Mod
     {
-        static Start()
+        public static ProgressionAttireSettings Settings { get; private set; }
+
+        public ProgressionAttire(ModContentPack content) : base(content)
         {
-            int vanityItemsPatched = 0;
-            int costumeItemsPatched = 0;
-            foreach (ThingDef thingDef in DefDatabase<ThingDef>.AllDefs)
-            {
-                if (thingDef.recipeMaker?.recipeUsers?.Contains(DefDatabase<ThingDef>.GetNamed("Ferny_VanityTable", false)) == true)
-                {
-                    vanityItemsPatched += Vanity.PatchApparel(thingDef);
-                }
-                if (thingDef.recipeMaker?.recipeUsers?.Contains(DefDatabase<ThingDef>.GetNamed("Ferny_CostumingTable", false)) == true)
-                {
-                    costumeItemsPatched += Costume.PatchApparel(thingDef);
-                }
-            }
-            Utils.RefreshModifiedCategories();
-            Utils.RefreshAllModifiedRecipes();
-            Log.Message($"Progression: Attire: Patched {vanityItemsPatched} vanity items & {costumeItemsPatched} costume items");
-            Log.Message("Progression: Attire loaded successfully");
+            Settings = GetSettings<ProgressionAttireSettings>();
+            // Harmony harmony = new("ferny.progressionattire");
+            // harmony.PatchAll();
+            new Harmony("ferny.progressionattire").PatchAll();
+        }
+
+        public override string SettingsCategory() => "Progression: Attire";
+
+        public override void DoSettingsWindowContents(Rect inRect)
+        {
+            Listing_Standard listing = new();
+            listing.Begin(inRect);
+            listing.CheckboxLabeled("Apply Categories", ref Settings.applyCategories);
+            listing.CheckboxLabeled("Apply Rebalances", ref Settings.applyRebalances);
+            listing.End();
+        }
+
+        public static void Log(string message)
+        {
+            Verse.Log.Message($"[Progression: Attire] {message}");
+        }
+
+        public static void Warning(string message)
+        {
+            Verse.Log.Warning($"[Progression: Attire] {message}");
+        }
+
+        public static void Error(string message)
+        {
+            Verse.Log.Error($"[Progression: Attire] {message}");
         }
     }
 }

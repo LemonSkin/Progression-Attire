@@ -1,13 +1,24 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Patch>
+  <!-- Change Research Requirement -->
+  <!-- ######################################### LABELS ######################################## -->
 
-	<!-- Change Research Requirement -->
+  <!-- ######################################### RESEARCH ###################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+    <xpath>Defs/ResearchProjectDef[defName="BotchJob_DivineOrderSmithing"]</xpath>
+    <value>
+      <recipeMaker>
+        <prerequisites Operation="AddOrReplace">
+          <li>LemonSkin_RusticClothing</li>
+          <li>Smithing</li>
+        </prerequisites>
+      </recipeMaker>
+    </value>
+  </Operation>
 
-	<Operation Class="PatchOperationReplace">
-		<xpath>/Defs/ResearchProjectDef[defName = "BotchJob_DivineOrderSmithing"]/prerequisites/li[text()="ComplexClothing"]</xpath>
-		<value>
-			<li>LemonSkin_RusticClothing</li>
-		</value>
-	</Operation>
+  <!-- ######################################### REBALANCES #################################### -->
 
+  <!-- ######################################### CATEGORIES #################################### -->
+
+  <!-- ######################################### END ########################################### -->
 </Patch>

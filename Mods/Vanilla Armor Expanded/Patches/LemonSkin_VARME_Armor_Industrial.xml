@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <!-- ######################################### LABELS ######################################## -->
+
+  <!-- ######################################### RESEARCH ###################################### -->
+
+  <!-- ######################################### REBALANCES #################################### -->
+
+  <!-- ######################################### CATEGORIES #################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyCategories</settingName>
+    <caseTrue>
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <xpath>
+          Defs/ThingDef[
+          defName="VAE_Apparel_GhillieSuit" or
+          defName="VAE_Apparel_HAZMATSuit"
+          ]
+        </xpath>
+        <value>
+          <thingCategories Operation="AddOrReplace" Inherit="False">
+            <li>LemonSkin_IndustrialApparel</li>
+          </thingCategories>
+        </value>
+      </Operation>
+    </caseTrue>
+  </Operation>
+
+  <!-- ######################################### END ########################################### -->
+</Patch>

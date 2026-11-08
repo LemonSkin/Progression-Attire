@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <!-- ######################################### LABELS ######################################## -->
+
+  <!-- ######################################### RESEARCH ###################################### -->
+
+  <!-- ######################################### REBALANCES #################################### -->
+
+  <!-- ######################################### CATEGORIES #################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyCategories</settingName>
+    <caseTrue>
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/ThingDef[defName="VAE_Apparel_RiotArmor"]</xpath>
+        <value>
+          <thingCategories Operation="AddOrReplace" Inherit="False">
+            <li>LemonSkin_IndustrialArmor</li>
+          </thingCategories>
+        </value>
+      </Operation>
+
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/ThingDef[defName="VAE_Apparel_RiotHelmet"]</xpath>
+        <value>
+          <thingCategories Operation="AddOrReplace" Inherit="False">
+            <li>LemonSkin_IndustrialArmorHeadgear</li>
+          </thingCategories>
+        </value>
+      </Operation>
+
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/ThingDef[@Name="VAE_Apparel_BaseShield"]</xpath>
+        <value>
+          <thingCategories Operation="AddOrReplace" Inherit="False">
+            <li>LemonSkin_IndustrialShields</li>
+          </thingCategories>
+        </value>
+      </Operation>
+    </caseTrue>
+  </Operation>
+
+  <!-- ######################################### END ########################################### -->
+</Patch>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <!-- ######################################### LABELS ######################################## -->
+
+  <!-- ######################################### RESEARCH ###################################### -->
+
+  <!-- ######################################### REBALANCES #################################### -->
+
+  <!-- ######################################### CATEGORIES #################################### -->
+
+  <!-- ######################################### MO DE-DUPE #################################### -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="DankPyon_Shield"]</xpath>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/PawnKindDef/apparelRequired/li[.="VFEM2_Shield_Round"]</xpath>
+          <value>
+            <li>DankPyon_Shield</li>
+          </value>
+        </li>
+
+        <li Class="PatchOperationRemove">
+          <xpath>Defs/ThingDef[defName="VFEM2_Shield_Round"]</xpath>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="DankPyon_ShieldHeater"]</xpath>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/PawnKindDef/apparelRequired/li[.="VFEM2_Shield_Heater"]</xpath>
+          <value>
+            <li>DankPyon_ShieldHeater</li>
+          </value>
+        </li>
+
+        <li Class="PatchOperationRemove">
+          <xpath>Defs/ThingDef[defName="VFEM2_Shield_Heater"]</xpath>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+  <!-- ######################################### END ########################################### -->
+</Patch>

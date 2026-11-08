@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <!-- ######################################### LABELS ######################################## -->
+
+  <!-- ######################################### RESEARCH ###################################### -->
+
+  <!-- ######################################### REBALANCES #################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyRebalances</settingName>
+    <caseTrue>
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/ThingDef[defName="VAE_Headgear_Balaclava"]</xpath>
+        <value>
+          <stuffCategories Operation="AddOrReplace">
+            <li>Fabric</li>
+          </stuffCategories>
+          <statBases Operation="AddOrReplace">
+            <MaxHitPoints>80</MaxHitPoints>
+            <WorkToMake>1800</WorkToMake>
+            <Mass>0.07</Mass>
+            <StuffEffectMultiplierArmor>0.15</StuffEffectMultiplierArmor>
+            <StuffEffectMultiplierInsulation_Cold>0.55</StuffEffectMultiplierInsulation_Cold>
+            <StuffEffectMultiplierInsulation_Heat>0.0</StuffEffectMultiplierInsulation_Heat>
+            <EquipDelay>0.8</EquipDelay>
+          </statBases>
+          <equippedStatOffsets Operation="AddOrReplace">
+            <MoveSpeed>-0.4</MoveSpeed>
+          </equippedStatOffsets>
+        </value>
+      </Operation>
+    </caseTrue>
+  </Operation>
+  <!-- ######################################### CATEGORIES #################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyCategories</settingName>
+    <caseTrue>
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <xpath>
+          Defs/ThingDef[
+          defName="VAE_Headgear_Balaclava" or
+          defName="VAE_Headgear_GhillieHood" or
+          defName="VAE_Headgear_HAZMATMask"
+          ]
+        </xpath>
+        <value>
+          <thingCategories Operation="AddOrReplace" Inherit="False">
+            <li>LemonSkin_IndustrialHeadgear</li>
+          </thingCategories>
+        </value>
+      </Operation>
+    </caseTrue>
+  </Operation>
+
+  <!-- ######################################### TACTICOOL DE-DUPE ############################# -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[@Name="TACTICOOL_BalaclavaBase"]</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs/ThingDef[defName="VAE_Headgear_Balaclava"]</xpath>
+    </match>
+  </Operation>
+
+  <!-- ######################################### END ########################################### -->
+</Patch>

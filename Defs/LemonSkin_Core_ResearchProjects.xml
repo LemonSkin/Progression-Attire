@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ResearchProjectDef>
+    <defName>LemonSkin_RusticClothing</defName>
+    <label>tailor bench</label>
+    <description>Tailor simple garments.</description>
+    <baseCost>400</baseCost>
+    <techLevel>Medieval</techLevel>
+    <researchViewX>0.00</researchViewX>
+    <researchViewY>4.90</researchViewY>
+    <prerequisites>
+      <li MayRequire="ferny.progressionfurniture">Ferny_Tables</li>
+    </prerequisites>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>LemonSkin_ElectricTailoringBench</defName>
+    <label>electric tailor bench</label>
+    <description>Use powered equipment to tailor garments more efficiently.</description>
+    <baseCost>400</baseCost>
+    <techLevel>Industrial</techLevel>
+    <researchViewX>1.00</researchViewX>
+    <researchViewY>4.90</researchViewY>
+    <prerequisites>
+      <li>LemonSkin_RusticClothing</li>
+      <li>Electricity</li>
+    </prerequisites>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>Ferny_VanityTable</defName>
+    <label>vanity table</label>
+    <description>Tailor beautiful garments for women.</description>
+    <baseCost>400</baseCost>
+    <techLevel>Medieval</techLevel>
+    <researchViewX>0.00</researchViewX>
+    <researchViewY>4.90</researchViewY>
+    <prerequisites>
+      <li>LemonSkin_RusticClothing</li>
+    </prerequisites>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>Ferny_CostumingTable</defName>
+    <label>costuming table</label>
+    <description>Tailor costumes and masks for your colonists.</description>
+    <baseCost>400</baseCost>
+    <techLevel>Medieval</techLevel>
+    <researchViewX>0.00</researchViewX>
+    <researchViewY>4.90</researchViewY>
+    <prerequisites>
+      <li>LemonSkin_RusticClothing</li>
+    </prerequisites>
+  </ResearchProjectDef>
+</Defs>

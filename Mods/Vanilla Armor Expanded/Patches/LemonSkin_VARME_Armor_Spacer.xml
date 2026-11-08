@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <!-- ######################################### LABELS ######################################## -->
+
+  <!-- ######################################### RESEARCH ###################################### -->
+
+  <!-- ######################################### REBALANCES #################################### -->
+
+  <!-- ######################################### CATEGORIES #################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyCategories</settingName>
+    <caseTrue>
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <xpath>
+          Defs/ThingDef[
+          defName="VAE_Headgear_TrooperHelmet" or
+          defName="VAE_Headgear_HeavyMarineHelmet"
+          ]
+        </xpath>
+        <value>
+          <thingCategories Operation="AddOrReplace" Inherit="False">
+            <li>LemonSkin_SpacerArmorHeadgear</li>
+          </thingCategories>
+        </value>
+      </Operation>
+
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <xpath>
+          Defs/ThingDef[
+          defName="VAE_Apparel_TrooperArmor" or
+          defName="VAE_Apparel_HeavyMarineArmor"
+          ]
+        </xpath>
+        <value>
+          <thingCategories Operation="AddOrReplace" Inherit="False">
+            <li>LemonSkin_SpacerArmor</li>
+          </thingCategories>
+        </value>
+      </Operation>
+    </caseTrue>
+  </Operation>
+
+  <!-- ######################################### END ########################################### -->
+</Patch>

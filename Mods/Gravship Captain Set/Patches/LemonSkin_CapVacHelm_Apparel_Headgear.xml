@@ -1,24 +1,37 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <!-- GravshipCaptainVacsuitHelmet -->
-  <Operation Class="PatchOperationAdd">
-    <xpath>Defs/ThingDef[defName="GravshipCaptainVacsuitHelmet"]</xpath>
-    <value>
-      <thingCategories Inherit="False">
-        <li>LemonSkin_SpacerArmorHeadgear</li>
-      </thingCategories>
-    </value>
+  <!-- ######################################### LABELS ######################################## -->
+
+  <!-- ######################################### RESEARCH ###################################### -->
+
+  <!-- ######################################### REBALANCES #################################### -->
+
+  <!-- ######################################### CATEGORIES #################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyCategories</settingName>
+    <caseTrue>
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/ThingDef[defName="GravshipCaptainVacsuitHelmet"]</xpath>
+        <value>
+          <thingCategories Operation="AddOrReplace" Inherit="False">
+            <li>LemonSkin_SpacerArmorHeadgear</li>
+          </thingCategories>
+        </value>
+      </Operation>
+
+      <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="PrestigeGravshipCaptainVacsuitHelmet"]</xpath>
+        <match Class="ferny.ProgressionAttire.PatchOperationMerge">
+          <xpath>Defs/ThingDef[defName="PrestigeGravshipCaptainVacsuitHelmet"]</xpath>
+          <value>
+            <thingCategories Operation="AddOrReplace" Inherit="False">
+              <li>LemonSkin_SpacerArmorHeadgear</li>
+            </thingCategories>
+          </value>
+        </match>
+      </Operation>
+    </caseTrue>
   </Operation>
-  <!-- GravshipCaptainVacsuitHelmet -->
-  <Operation Class="PatchOperationConditional">
-    <xpath>Defs/ThingDef[defName="PrestigeGravshipCaptainVacsuitHelmet"]</xpath>
-    <match Class="PatchOperationAdd">
-      <xpath>Defs/ThingDef[defName="PrestigeGravshipCaptainVacsuitHelmet"]</xpath>
-      <value>
-        <thingCategories Inherit="False">
-          <li>LemonSkin_SpacerArmorHeadgear</li>
-        </thingCategories>
-      </value>
-    </match>
-  </Operation>
+
+  <!-- ######################################### END ########################################### -->
 </Patch>

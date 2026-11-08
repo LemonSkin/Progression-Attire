@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-
-
+  <!-- ######################################### LABELS ######################################## -->
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="AT_AmorphousDress"]/label</xpath>
     <value>
@@ -9,30 +8,25 @@
     </value>
   </Operation>
 
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="AT_AmorphousDress"]/recipeMaker</xpath>
-    <value>
-      <recipeMaker Inherit="False">
-        <recipeUsers Inherit="False">
-          <li>Ferny_VanityTable</li>
-        </recipeUsers>
-        <researchPrerequisite Inherit="False">Ferny_VanityTable</researchPrerequisite>
-      </recipeMaker>
-    </value>
-  </Operation>
-
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="AT_Pileum"]/recipeMaker</xpath>
+  <!-- ######################################### RESEARCH ###################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+    <xpath>
+      Defs/ThingDef[
+      defName="AT_AmorphousDress" or
+      defName="AT_Pileum"
+      ]
+    </xpath>
     <value>
       <recipeMaker>
-        <recipeUsers Inherit="False">
-          <li>Ferny_VanityTable</li>
-        </recipeUsers>
-        <researchPrerequisite Inherit="False">Ferny_VanityTable</researchPrerequisite>
+        <researchPrerequisite Operation="AddOrReplace">Ferny_VanityTable</researchPrerequisite>
+        <researchPrerequisites Operation="SafeRemove" />
       </recipeMaker>
     </value>
   </Operation>
 
+  <!-- ######################################### REBALANCES #################################### -->
 
+  <!-- ######################################### CATEGORIES #################################### -->
 
+  <!-- ######################################### END ########################################### -->
 </Patch>

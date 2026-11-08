@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ResearchProjectDef[defName="DankPyon_ProtectiveClothing"]</xpath>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="ferny.ProgressionAttire.PatchOperationMerge">
+          <xpath>Defs/ResearchProjectDef[defName="LemonSkin_LeatherArmour"]</xpath>
+          <value>
+            <prerequisites Operation="AddOrReplace">
+              <li>DankPyon_ProtectiveClothing</li>
+            </prerequisites>
+            <hiddenPrerequisites Operation="AddOrReplace">
+              <li>DankPyon_LeatherTanning</li>
+            </hiddenPrerequisites>
+            <researchViewX Operation="AddOrReplace">9</researchViewX>
+            <researchViewY Operation="AddOrReplace">1.2</researchViewY>
+            <tab Operation="AddOrReplace">DankPyon_MedievalResearchTab</tab>
+          </value>
+        </li>
+
+        <li Class="PatchOperationConditional">
+          <xpath>/Defs/ResearchProjectDef[defName="RoyalApparel"]</xpath>
+          <match Class="PatchOperationReplace">
+            <xpath>/Defs/ResearchProjectDef[defName="RoyalApparel"]/researchViewY</xpath>
+            <value>
+              <researchViewY>0</researchViewY>
+            </value>
+          </match>
+        </li>
+
+        <li Class="PatchOperationConditional">
+          <xpath>/Defs/ResearchProjectDef[defName="DankPyon_AdornedArmor"]</xpath>
+          <match Class="PatchOperationReplace">
+            <xpath>/Defs/ResearchProjectDef[defName="DankPyon_AdornedArmor"]/researchViewY</xpath>
+            <value>
+              <researchViewY>0.70</researchViewY>
+            </value>
+          </match>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+</Patch>

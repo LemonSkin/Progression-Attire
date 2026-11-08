@@ -1,25 +1,38 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <Operation Class="PatchOperationConditional">
-    <xpath>Defs/ThingDef[defName="TSFApparel_KidKamon"]</xpath>
-    <match Class="PatchOperationReplace">
-      <xpath>Defs/ThingDef[defName="TSFApparel_KidKamon"]/thingCategories</xpath>
-      <value>
-        <thingCategories Inherit="False">
-          <li>LemonSkin_KidApparel</li>
-        </thingCategories>
-      </value>
-    </match>
+  <!-- ######################################### LABELS ######################################## -->
+
+  <!-- ######################################### RESEARCH ###################################### -->
+
+  <!-- ######################################### REBALANCES #################################### -->
+
+  <!-- ######################################### CATEGORIES #################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyCategories</settingName>
+    <caseTrue>
+      <Operation Class="PatchOperationConditional">
+        <xpath>
+          Defs/ThingDef[
+          defName="TSFApparel_KidKamon" or
+          defName="TSFApparel_KidGi"
+          ]
+        </xpath>
+        <match Class="ferny.ProgressionAttire.PatchOperationMerge">
+          <xpath>
+            Defs/ThingDef[
+            defName="TSFApparel_KidKamon" or
+            defName="TSFApparel_KidGi"
+            ]
+          </xpath>
+          <value>
+            <thingCategories Operation="AddOrReplace" Inherit="False">
+              <li>LemonSkin_KidApparel</li>
+            </thingCategories>
+          </value>
+        </match>
+      </Operation>
+    </caseTrue>
   </Operation>
-  <Operation Class="PatchOperationConditional">
-    <xpath>Defs/ThingDef[defName="TSFApparel_KidGi"]</xpath>
-    <match Class="PatchOperationReplace">
-      <xpath>Defs/ThingDef[defName="TSFApparel_KidGi"]/thingCategories</xpath>
-      <value>
-        <thingCategories Inherit="False">
-          <li>LemonSkin_KidApparel</li>
-        </thingCategories>
-      </value>
-    </match>
-  </Operation>
+
+  <!-- ######################################### END ########################################### -->
 </Patch>

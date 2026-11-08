@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <!-- Make Pants Craftable in Medieval without Medieval Overhaul (There's no pants otherwise) -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Medieval Overhaul</li>
+    </mods>
+    <nomatch Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <xpath>Defs/ThingDef[defName="Apparel_Pants"]</xpath>
+      <value>
+        <recipeMaker>
+          <researchPrerequisite Operation="AddOrReplace">LemonSkin_RusticClothing</researchPrerequisite>
+          <researchPrerequisites Operation="SafeRemove" />
+        </recipeMaker>
+      </value>
+    </nomatch>
+  </Operation>
+</Patch>

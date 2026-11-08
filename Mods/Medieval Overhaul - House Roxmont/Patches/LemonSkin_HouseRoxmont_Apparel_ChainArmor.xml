@@ -1,9 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Patch>
+  <!-- ######################################### LABELS ######################################## -->
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Heraldic_Hauberk_Roxmont"]/label</xpath>
     <value>
       <label>heraldic heavy hauberk (Roxmont)</label>
     </value>
   </Operation>
+
+  <!-- ######################################### RESEARCH ###################################### -->
+
+  <!-- ######################################### REBALANCES #################################### -->
+
+  <!-- ######################################### CATEGORIES #################################### -->
+
+  <!-- ######################################### END ########################################### -->
 </Patch>

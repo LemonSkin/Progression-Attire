@@ -1,39 +1,28 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <!-- UNAGIDDress - duster dress -->
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="UNAGIDDress"]/thingCategories</xpath>
+  <!-- ######################################### LABELS ######################################## -->
+
+  <!-- ######################################### RESEARCH ###################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+    <xpath>
+      Defs/ThingDef[
+      defName="UNAGIDDress" or
+      defName="UNAGIDcoat" or
+      defName="UNAGIDsailor" or
+      defName="UNAGIribbonshirt"
+      ]
+    </xpath>
     <value>
-      <thingCategories Inherit="False">
-        <li>LemonSkin_IndustrialApparel</li>
-      </thingCategories>
+      <recipeMaker>
+        <researchPrerequisite Operation="AddOrReplace">Ferny_VanityTable</researchPrerequisite>
+        <researchPrerequisites Operation="SafeRemove" />
+      </recipeMaker>
     </value>
   </Operation>
-  <!-- UNAGIDcoat - duffle coat -->
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="UNAGIDcoat"]/thingCategories</xpath>
-    <value>
-      <thingCategories Inherit="False">
-        <li>LemonSkin_IndustrialApparel</li>
-      </thingCategories>
-    </value>
-  </Operation>
-  <!-- UNAGIDsailor - sailor coat -->
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="UNAGIDsailor"]/thingCategories</xpath>
-    <value>
-      <thingCategories Inherit="False">
-        <li>LemonSkin_IndustrialApparel</li>
-      </thingCategories>
-    </value>
-  </Operation>
-  <!-- UNAGIribbonshirt - ribbon shirt -->
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="UNAGIribbonshirt"]/thingCategories</xpath>
-    <value>
-      <thingCategories Inherit="False">
-        <li>LemonSkin_IndustrialApparel</li>
-      </thingCategories>
-    </value>
-  </Operation>
+
+  <!-- ######################################### REBALANCES #################################### -->
+
+  <!-- ######################################### CATEGORIES #################################### -->
+
+  <!-- ######################################### END ########################################### -->
 </Patch>

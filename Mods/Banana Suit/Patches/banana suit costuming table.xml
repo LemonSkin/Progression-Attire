@@ -1,38 +1,34 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="BananaSuit_TheSuit"]/recipeMaker</xpath>
+  <!-- ######################################### LABELS ######################################## -->
+
+  <!-- ######################################### RESEARCH ###################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+    <xpath>Defs/ThingDef[defName="BananaSuit_TheSuit"]</xpath>
     <value>
       <recipeMaker>
-        <recipeUsers Inherit="False">
-          <li>Ferny_CostumingTable</li>
-        </recipeUsers>
-        <researchPrerequisite Inherit="False">Ferny_CostumingTable</researchPrerequisite>
+        <researchPrerequisite Operation="AddOrReplace">Ferny_CostumingTable</researchPrerequisite>
+        <researchPrerequisites Operation="SafeRemove" />
       </recipeMaker>
     </value>
   </Operation>
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="BananaSuit_TheSuit"]/thingCategories</xpath>
-    <value>
-      <thingCategories>
-        <li>LemonSkin_IndustrialApparel</li>
-      </thingCategories>
-    </value>
-  </Operation>
-  <Operation Class="PatchOperationFindMod">
-    <mods>
-      <li>Biotech</li>
-    </mods>
-    <match Class="PatchOperationReplace">
-      <xpath>Defs/ThingDef[defName="BananaSuit_TheKidSuit"]/recipeMaker</xpath>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="BananaSuit_TheKidSuit"]</xpath>
+    <match Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <xpath>Defs/ThingDef[defName="BananaSuit_TheKidSuit"]</xpath>
       <value>
         <recipeMaker>
-          <recipeUsers Inherit="False">
-            <li>Ferny_CostumingTable</li>
-          </recipeUsers>
-          <researchPrerequisite Inherit="False">Ferny_CostumingTable</researchPrerequisite>
+          <researchPrerequisite Operation="AddOrReplace">Ferny_CostumingTable</researchPrerequisite>
+          <researchPrerequisites Operation="SafeRemove" />
         </recipeMaker>
       </value>
     </match>
   </Operation>
+
+  <!-- ######################################### REBALANCES #################################### -->
+
+  <!-- ######################################### CATEGORIES #################################### -->
+
+  <!-- ######################################### END ########################################### -->
 </Patch>

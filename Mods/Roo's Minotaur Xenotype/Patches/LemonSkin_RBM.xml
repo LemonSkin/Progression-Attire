@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <!-- ######################################### LABELS ######################################## -->
+
+  <!-- ######################################### RESEARCH ###################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+    <xpath>Defs/ThingDef[defName="RBApparel_Tailcoat"]</xpath>
+    <value>
+      <recipeMaker>
+        <researchPrerequisite Operation="SafeRemove" />
+        <researchPrerequisites Operation="AddOrReplace">
+          <li>ComplexClothing</li>
+          <li MayRequire="Ludeon.RimWorld.Royalty">NobleApparel</li>
+        </researchPrerequisites>
+      </recipeMaker>
+    </value>
+  </Operation>
+
+  <!-- ######################################### REBALANCES #################################### -->
+
+  <!-- ######################################### CATEGORIES #################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyCategories</settingName>
+    <caseTrue>
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/ThingDef[defName="RBApparel_Tailcoat"]</xpath>
+        <value>
+          <thingCategories Operation="AddOrReplace" Inherit="False">
+            <li>ApparelNoble</li>
+          </thingCategories>
+        </value>
+      </Operation>
+    </caseTrue>
+  </Operation>
+
+  <!-- ######################################### END ########################################### -->
+</Patch>

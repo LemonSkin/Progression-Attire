@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LanguageData>
+  <Apparel_PackHunter_Toxic.label>hunter pack (toxic)</Apparel_PackHunter_Toxic.label>
+  <Grenade_HunterPackToxic.label>hunter capsule (toxic)</Grenade_HunterPackToxic.label>
+
+  <Apparel_PackHunter_AntigrainWarhead.label>hunter pack (antigrain)</Apparel_PackHunter_AntigrainWarhead.label>
+  <Grenade_HunterPackAntigrainWarhead.label>hunter capsule (antigrain)</Grenade_HunterPackAntigrainWarhead.label>
+
+  <Apparel_PackHunter_Incendiary.label>hunter pack (incendiary)</Apparel_PackHunter_Incendiary.label>
+  <Grenade_HunterPackIncendiaryTrap.label>hunter capsule (incendiary)</Grenade_HunterPackIncendiaryTrap.label>
+
+  <Apparel_PackHunter_EMP.label>hunter pack (EMP)</Apparel_PackHunter_EMP.label>
+  <Grenade_HunterPackEMPTrap.label>hunter capsule (EMP)</Grenade_HunterPackEMPTrap.label>
+
+  <Apparel_PackHunter_Smoke.label>hunter pack (smoke)</Apparel_PackHunter_Smoke.label>
+  <Grenade_HunterPackEMPTrap.label>hunter capsule (smoke)</Grenade_HunterPackEMPTrap.label>
+</LanguageData>

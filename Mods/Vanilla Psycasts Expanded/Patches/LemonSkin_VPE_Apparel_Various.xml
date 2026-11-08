@@ -1,33 +1,50 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <!-- VPE_Apparel_PlateArmorPrestige - prestige plate armor -->
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="VPE_Apparel_PlateArmorPrestige"]/recipeMaker/skillRequirements/Crafting</xpath>
-    <value>
-      <Crafting>10</Crafting>
-    </value>
+  <!-- ######################################### LABELS ######################################## -->
+
+  <!-- ######################################### RESEARCH ###################################### -->
+
+  <!-- ######################################### REBALANCES #################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyRebalances</settingName>
+    <caseTrue>
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/ThingDef[defName="VPE_Apparel_PlateArmorPrestige"]</xpath>
+        <value>
+          <costStuffCount Operation="AddOrReplace">200</costStuffCount>
+          <recipeMaker>
+            <skillRequirements Operation="AddOrReplace">
+              <Crafting>10</Crafting>
+            </skillRequirements>
+          </recipeMaker>
+        </value>
+      </Operation>
+    </caseTrue>
   </Operation>
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="VPE_Apparel_PlateArmorPrestige"]/costStuffCount</xpath>
-    <value>
-      <costStuffCount>200</costStuffCount>
-    </value>
+
+  <!-- ######################################### CATEGORIES #################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyCategories</settingName>
+    <caseTrue>
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/ThingDef[defName="VPE_Apparel_PlateArmorPrestige"]</xpath>
+        <value>
+          <thingCategories Operation="AddOrReplace" Inherit="False">
+            <li>LemonSkin_MedievalArmor</li>
+          </thingCategories>
+        </value>
+      </Operation>
+
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/ThingDef[defName="VPE_Psyring"]</xpath>
+        <value>
+          <thingCategories Operation="AddOrReplace" Inherit="False">
+            <li>LemonSkin_UltraUtility</li>
+          </thingCategories>
+        </value>
+      </Operation>
+    </caseTrue>
   </Operation>
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="VPE_Apparel_PlateArmorPrestige"]/thingCategories</xpath>
-    <value>
-      <thingCategories Inherit="False">
-        <li>LemonSkin_MedievalArmor</li>
-      </thingCategories>
-    </value>
-  </Operation>
-  <!-- VPE_Psyring -->
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="VPE_Psyring"]/thingCategories</xpath>
-    <value>
-      <thingCategories Inherit="False">
-        <li>LemonSkin_UltraUtility</li>
-      </thingCategories>
-    </value>
-  </Operation>
+
+  <!-- ######################################### END ########################################### -->
 </Patch>

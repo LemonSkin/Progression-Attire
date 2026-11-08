@@ -1,29 +1,42 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Patch>
+  <!-- ######################################### LABELS ######################################## -->
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ZweihanderHelmRoxmont"]/label</xpath>
     <value>
       <label>zweihander helm (Roxmont)</label>
     </value>
   </Operation>
+
   <Operation Class="PatchOperationReplace">
     <xpath>Defs/ThingDef[defName="DankPyon_Headgear_HeraldicGreatHelmRoxmont"]/label</xpath>
     <value>
       <label>heraldic great helm (Roxmont)</label>
     </value>
   </Operation>
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="DankPyon_Headgear_HeraldicGreatHelmRoxmont"]/recipeMaker/skillRequirements/Crafting</xpath>
-    <value>
-      <Crafting>9</Crafting>
-    </value>
+  <!-- ######################################### RESEARCH ###################################### -->
+
+  <!-- ######################################### REBALANCES #################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyRebalances</settingName>
+    <caseTrue>
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_HeraldicGreatHelmRoxmont"]</xpath>
+        <value>
+          <statBases Operation="AddOrReplace">
+            <Insulation_Cold>10</Insulation_Cold>
+          </statBases>
+          <recipeMaker>
+            <skillRequirements Operation="AddOrReplace">
+              <Crafting>9</Crafting>
+            </skillRequirements>
+          </recipeMaker>
+        </value>
+      </Operation>
+    </caseTrue>
   </Operation>
-  <Operation Class="PatchOperationAdd">
-    <xpath>Defs/ThingDef[defName="DankPyon_Headgear_HeraldicGreatHelmRoxmont"]</xpath>
-    <value>
-      <statBases>
-        <Insulation_Cold>10</Insulation_Cold>
-      </statBases>
-    </value>
-  </Operation>
+
+  <!-- ######################################### CATEGORIES #################################### -->
+
+  <!-- ######################################### END ########################################### -->
 </Patch>

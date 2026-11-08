@@ -1,28 +1,26 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <!-- ck_ShirtBase: force vanity table + vanity research -->
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[@Name="ck_ShirtBase"]/recipeMaker</xpath>
+  <!-- ######################################### LABELS ##############################$######### -->
+
+  <!-- ######################################### RESEARCH ###################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+    <xpath>
+      Defs/ThingDef[
+      @Name="ck_ShirtBase" or
+      @Name="ck_bag"
+      ]
+    </xpath>
     <value>
       <recipeMaker>
-        <recipeUsers Inherit="False">
-          <li>Ferny_VanityTable</li>
-        </recipeUsers>
-        <researchPrerequisite Inherit="False">Ferny_VanityTable</researchPrerequisite>
+        <researchPrerequisite Operation="AddOrReplace">Ferny_VanityTable</researchPrerequisite>
+        <researchPrerequisites Operation="SafeRemove" />
       </recipeMaker>
     </value>
   </Operation>
 
-  <!-- ck_bag: force vanity table + vanity research -->
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[@Name="ck_bag"]/recipeMaker</xpath>
-    <value>
-      <recipeMaker>
-        <recipeUsers Inherit="False">
-          <li>Ferny_VanityTable</li>
-        </recipeUsers>
-        <researchPrerequisite Inherit="False">Ferny_VanityTable</researchPrerequisite>
-      </recipeMaker>
-    </value>
-  </Operation>
+  <!-- ######################################### REBALANCES #################################### -->
+
+  <!-- ######################################### CATEGORIES #################################### -->
+
+  <!-- ######################################### END ########################################$$# -->
 </Patch>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <!-- ######################################### LABELS ######################################## -->
+
+  <!-- ######################################### RESEARCH ###################################### -->
+
+  <!-- ######################################### REBALANCES #################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyRebalances</settingName>
+    <caseTrue>
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/ThingDef[defName="VAE_Handwear_PlateGloves"]</xpath>
+        <value>
+          <costStuffCount Operation="AddOrReplace">35</costStuffCount>
+          <statBases Operation="AddOrReplace">
+            <WorkToMake>6000</WorkToMake>
+            <MaxHitPoints>140</MaxHitPoints>
+            <Mass>2</Mass>
+            <StuffEffectMultiplierArmor>0.438</StuffEffectMultiplierArmor>
+            <StuffEffectMultiplierInsulation_Cold>0.15</StuffEffectMultiplierInsulation_Cold>
+            <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
+            <EquipDelay>2.5</EquipDelay>
+          </statBases>
+          <equippedStatOffsets Operation="AddOrReplace">
+            <WorkSpeedGlobal>-0.1</WorkSpeedGlobal>
+          </equippedStatOffsets>
+          <recipeMaker>
+            <skillRequirements Operation="AddOrReplace">
+              <Crafting>7</Crafting>
+            </skillRequirements>
+          </recipeMaker>
+        </value>
+      </Operation>
+    </caseTrue>
+  </Operation>
+
+  <!-- ######################################### CATEGORIES #################################### -->
+  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyCategories</settingName>
+    <caseTrue>
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/ThingDef[defName="VAE_Handwear_PlateGloves"]</xpath>
+        <value>
+          <thingCategories Operation="AddOrReplace" Inherit="False">
+            <li>LemonSkin_MedievalArmor</li>
+          </thingCategories>
+        </value>
+      </Operation>
+
+      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/ThingDef[defName="VAE_Handwear_MarineGloves"]</xpath>
+        <value>
+          <thingCategories Operation="AddOrReplace" Inherit="False">
+            <li>LemonSkin_SpacerArmor</li>
+          </thingCategories>
+        </value>
+      </Operation>
+    </caseTrue>
+  </Operation>
+
+  <!-- ######################################### MO DE-DUPE #################################### -->
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="DankPyon_Handwear_GlovesPlate"]</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs/ThingDef[defName="VAE_Handwear_PlateGloves"]</xpath>
+    </match>
+  </Operation>
+
+  <!-- ######################################### END ########################################### -->
+</Patch>

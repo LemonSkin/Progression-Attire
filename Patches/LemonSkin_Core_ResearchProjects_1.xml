@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+    <xpath>Defs/ResearchProjectDef[defName="ComplexClothing"]</xpath>
+    <value>
+      <techLevel>Industrial</techLevel>
+      <prerequisites Operation="AddOrReplace">
+        <li>LemonSkin_RusticClothing</li>
+      </prerequisites>
+      <researchViewX>1.0</researchViewX>
+    </value>
+  </Operation>
+
+  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+    <xpath>Defs/ResearchProjectDef[defName="PlateArmor"]</xpath>
+    <value>
+      <prerequisites Operation="AddOrReplace">
+        <li>LemonSkin_RusticClothing</li>
+        <li>Smithing</li>
+      </prerequisites>
+    </value>
+  </Operation>
+</Patch>
