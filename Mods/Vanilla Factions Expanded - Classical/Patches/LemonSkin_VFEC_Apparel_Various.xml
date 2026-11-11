@@ -5,10 +5,10 @@
   <!-- ######################################### RESEARCH ###################################### -->
 
   <!-- ######################################### REBALANCES #################################### -->
-  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+  <Operation Class="ProgressionAttire.PatchOperationCheckSetting">
     <settingName>applyRebalances</settingName>
     <caseTrue>
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VFEC_Toga"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">50</costStuffCount>
@@ -37,7 +37,7 @@
         </value>
       </Operation>
 
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VFEC_Apparel_LegionnaireArmor"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">140</costStuffCount>
@@ -58,7 +58,7 @@
         </value>
       </Operation>
 
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VFEC_Apparel_CenturionArmor"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">180</costStuffCount>
@@ -85,10 +85,10 @@
   </Operation>
 
   <!-- ######################################### CATEGORIES #################################### -->
-  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+  <Operation Class="ProgressionAttire.PatchOperationCheckSetting">
     <settingName>applyCategories</settingName>
     <caseTrue>
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VFEC_Toga"]</xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -97,7 +97,7 @@
         </value>
       </Operation>
 
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>
           Defs/ThingDef[
           defName="VFEC_Apparel_LegionnaireArmor" or

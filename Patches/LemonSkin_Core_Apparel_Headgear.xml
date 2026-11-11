@@ -5,7 +5,7 @@
   <!-- ######################################### RESEARCH ###################################### -->
   <Operation Class="PatchOperationConditional">
     <xpath>Defs/VFETribals.TribalResearchProjectDef[defName="LemonSkin_TribalHeaddress"]</xpath>
-    <match Class="ferny.ProgressionAttire.PatchOperationMerge">
+    <match Class="ProgressionAttire.PatchOperationMerge">
       <xpath>Defs/ThingDef[defName="Apparel_TribalHeaddress"]</xpath>
       <value>
         <recipeMaker>
@@ -18,7 +18,7 @@
 
   <Operation Class="PatchOperationConditional">
     <xpath>Defs/VFETribals.TribalResearchProjectDef[defName="LemonSkin_WarMasks"]</xpath>
-    <match Class="ferny.ProgressionAttire.PatchOperationMerge">
+    <match Class="ProgressionAttire.PatchOperationMerge">
       <xpath>Defs/ThingDef[defName="Apparel_WarMask"]</xpath>
       <value>
         <recipeMaker>
@@ -29,7 +29,7 @@
     </match>
   </Operation>
 
-  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+  <Operation Class="ProgressionAttire.PatchOperationMerge">
     <xpath>Defs/ThingDef[defName="Apparel_HatHood"]</xpath>
     <value>
       <recipeMaker>
@@ -39,7 +39,7 @@
     </value>
   </Operation>
 
-  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+  <Operation Class="ProgressionAttire.PatchOperationMerge">
     <xpath>Defs/ThingDef[defName="Apparel_SimpleHelmet"]</xpath>
     <value>
       <recipeMaker>
@@ -53,10 +53,10 @@
   </Operation>
 
   <!-- ######################################### REBALANCES #################################### -->
-  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+  <Operation Class="ProgressionAttire.PatchOperationCheckSetting">
     <settingName>applyRebalances</settingName>
     <caseTrue>
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="Apparel_CowboyHat"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -75,7 +75,7 @@
         </value>
       </Operation>
 
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="Apparel_BowlerHat"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -97,7 +97,7 @@
         <mods>
           <li>Ideology</li>
         </mods>
-        <match Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <match Class="ProgressionAttire.PatchOperationMerge">
           <xpath>Defs/ThingDef[defName="Apparel_HatHood"]</xpath>
           <value>
             <equippedStatOffsets Operation="AddOrReplace">
@@ -110,10 +110,10 @@
   </Operation>
 
   <!-- ######################################### CATEGORIES #################################### -->
-  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+  <Operation Class="ProgressionAttire.PatchOperationCheckSetting">
     <settingName>applyRebalances</settingName>
     <caseTrue>
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>
           Defs/ThingDef[
           @Name="HatBase" or
@@ -127,7 +127,7 @@
         </value>
       </Operation>
 
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[@Name="ArmorHelmetMakeableBase"]</xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -136,7 +136,7 @@
         </value>
       </Operation>
 
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>
           Defs/ThingDef[
           @Name="ApparelArmorHelmetPowerBase" or
@@ -150,7 +150,7 @@
         </value>
       </Operation>
 
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>
           Defs/ThingDef[
           defName="Apparel_TribalHeaddress" or
@@ -165,7 +165,7 @@
         </value>
       </Operation>
 
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="Apparel_HatHood"]</xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">

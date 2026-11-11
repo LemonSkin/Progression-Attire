@@ -17,10 +17,10 @@
   <!-- ######################################### RESEARCH ###################################### -->
 
   <!-- ######################################### REBALANCES #################################### -->
-  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+  <Operation Class="ProgressionAttire.PatchOperationCheckSetting">
     <settingName>applyRebalances</settingName>
     <caseTrue>
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="DankPyon_Headgear_HeraldicGreatHelmRoxmont"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">

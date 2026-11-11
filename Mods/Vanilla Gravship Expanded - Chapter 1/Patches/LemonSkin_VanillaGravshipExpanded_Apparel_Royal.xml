@@ -7,12 +7,12 @@
   <!-- ######################################### REBALANCES #################################### -->
 
   <!-- ######################################### CATEGORIES #################################### -->
-  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+  <Operation Class="ProgressionAttire.PatchOperationCheckSetting">
     <settingName>applyCategories</settingName>
     <caseTrue>
       <Operation Class="PatchOperationConditional">
         <xpath>Defs/ThingDef[defName="VGE_Apparel_Vacsuit_Prestige"]</xpath>
-        <match Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <match Class="ProgressionAttire.PatchOperationMerge">
           <xpath>Defs/ThingDef[defName="VGE_Apparel_Vacsuit_Prestige"]</xpath>
           <value>
             <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -24,7 +24,7 @@
 
       <Operation Class="PatchOperationConditional">
         <xpath>Defs/ThingDef[defName="VGE_Apparel_VacsuitHelmet_Prestige"]</xpath>
-        <match Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <match Class="ProgressionAttire.PatchOperationMerge">
           <xpath>Defs/ThingDef[defName="VGE_Apparel_VacsuitHelmet_Prestige"]</xpath>
           <value>
             <thingCategories Operation="AddOrReplace" Inherit="False">

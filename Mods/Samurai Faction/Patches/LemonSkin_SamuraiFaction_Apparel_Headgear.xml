@@ -9,7 +9,7 @@
   </Operation>
 
   <!-- ######################################### RESEARCH ###################################### -->
-  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+  <Operation Class="ProgressionAttire.PatchOperationMerge">
     <xpath>Defs/ThingDef[defName="TSFApparel_Headband"]</xpath>
     <value>
       <recipeMaker>
@@ -19,7 +19,7 @@
     </value>
   </Operation>
 
-  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+  <Operation Class="ProgressionAttire.PatchOperationMerge">
     <xpath>Defs/ThingDef[defName="TSFApparel_DaimyoHelmet"]</xpath>
     <value>
       <recipeMaker>
@@ -33,10 +33,10 @@
   </Operation>
 
   <!-- ######################################### REBALANCES #################################### -->
-  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+  <Operation Class="ProgressionAttire.PatchOperationCheckSetting">
     <settingName>applyRebalances</settingName>
     <caseTrue>
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="TSFApparel_Headband"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">15</costStuffCount>
@@ -55,7 +55,7 @@
         </value>
       </Operation>
 
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="TSFApparel_AshigaruHelmet"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">60</costStuffCount>
@@ -80,7 +80,7 @@
         </value>
       </Operation>
 
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="TSFApparel_SamuraiHelmet"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">70</costStuffCount>
@@ -111,7 +111,7 @@
         </value>
       </Operation>
 
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="TSFApparel_DaimyoHelmet"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">70</costStuffCount>
@@ -146,10 +146,10 @@
   </Operation>
 
   <!-- ######################################### CATEGORIES #################################### -->
-  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+  <Operation Class="ProgressionAttire.PatchOperationCheckSetting">
     <settingName>applyCategories</settingName>
     <caseTrue>
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>
           Defs/ThingDef[
           defName="TSFApparel_Headband" or
@@ -163,7 +163,7 @@
         </value>
       </Operation>
 
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>
           Defs/ThingDef[
           defName="TSFApparel_AshigaruHelmet" or
@@ -178,7 +178,7 @@
         </value>
       </Operation>
 
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="TSFApparel_OniHelmet"]</xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">

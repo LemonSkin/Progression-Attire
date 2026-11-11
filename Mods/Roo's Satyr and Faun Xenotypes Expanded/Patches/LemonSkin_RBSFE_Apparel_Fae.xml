@@ -8,7 +8,7 @@
     </value>
   </Operation>
 
-  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+  <Operation Class="ProgressionAttire.PatchOperationMerge">
     <xpath>Defs/ThingDef[defName="RBSFE_Faerose"]</xpath>
     <value>
       <label Operation="AddOrReplace">rose</label>
@@ -34,7 +34,7 @@
   <!-- Research Changes -->
   <Operation Class="PatchOperationConditional">
     <xpath>Defs/VFETribals.TribalResearchProjectDef[defName="LemonSkin_Leafwear"]</xpath>
-    <match Class="ferny.ProgressionAttire.PatchOperationMerge">
+    <match Class="ProgressionAttire.PatchOperationMerge">
       <xpath>
         Defs/ThingDef[
         @Name="FaeApparelBase" or
@@ -55,7 +55,7 @@
 
   <Operation Class="PatchOperationConditional">
     <xpath>Defs/VFETribals.TribalResearchProjectDef[defName="LemonSkin_Leafwear"]</xpath>
-    <match Class="ferny.ProgressionAttire.PatchOperationMerge">
+    <match Class="ProgressionAttire.PatchOperationMerge">
       <xpath>
         Defs/ThingDef[
         defName="RBSFE_Faemail" or
@@ -75,10 +75,10 @@
   </Operation>
 
   <!-- ######################################### REBALANCES #################################### -->
-  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+  <Operation Class="ProgressionAttire.PatchOperationCheckSetting">
     <settingName>applyRebalances</settingName>
     <caseTrue>
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="RBSFE_Faegarms"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -95,7 +95,7 @@
         </value>
       </Operation>
 
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="RBSFE_KidFaegarms"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -112,7 +112,7 @@
         </value>
       </Operation>
 
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="RBSFE_Faepron"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -130,7 +130,7 @@
         </value>
       </Operation>
 
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="RBSFE_Faecloak"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -150,7 +150,7 @@
         </value>
       </Operation>
 
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="RBSFE_Faeleaf"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -167,7 +167,7 @@
         </value>
       </Operation>
 
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="RBSFE_Faemail"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">140</costStuffCount>
@@ -193,7 +193,7 @@
         </value>
       </Operation>
 
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="RBSFE_Faecrown"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -211,7 +211,7 @@
           </equippedStatOffsets>
         </value>
       </Operation>
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="RBSFE_Faerose"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -230,7 +230,7 @@
         </value>
       </Operation>
 
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="RBSFE_Faecap"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -249,7 +249,7 @@
         </value>
       </Operation>
 
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="RBSFE_Faescarf"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -273,7 +273,7 @@
         </value>
       </Operation>
 
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="RBSF_Faehelm"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -303,10 +303,10 @@
   </Operation>
 
   <!-- ######################################### CATEGORIES #################################### -->
-  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+  <Operation Class="ProgressionAttire.PatchOperationCheckSetting">
     <settingName>applyCategories</settingName>
     <caseTrue>
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[@Name="FaeApparelBase"]</xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -315,7 +315,7 @@
         </value>
       </Operation>
 
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="RBSFE_KidFaegarms"]</xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -324,7 +324,7 @@
         </value>
       </Operation>
 
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="RBSFE_Faemail"]</xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -333,7 +333,7 @@
         </value>
       </Operation>
 
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>
           Defs/ThingDef[
           defName="RBSFE_Faecrown" or
@@ -349,7 +349,7 @@
         </value>
       </Operation>
 
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="RBSF_Faehelm"]</xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">

@@ -1,7 +1,7 @@
 ﻿using System.Xml;
 using Verse;
 
-namespace ferny.ProgressionAttire
+namespace ProgressionAttire
 {
 
     public class PatchOperationCheckSetting : PatchOperation
@@ -9,7 +9,7 @@ namespace ferny.ProgressionAttire
         public string settingName;
         public OperationList caseTrue;
         public OperationList caseFalse;
-
+        public bool stopOnFailure = false;
 
         protected override bool ApplyWorker(XmlDocument xml)
         {
@@ -40,8 +40,7 @@ namespace ferny.ProgressionAttire
                 if (!op.Apply(xml))
                 {
                     ProgressionAttire.Error($"PatchOperationCheckSetting: operation failed: {op}");
-                    // return false;
-                    // Keep processing others, one failure shouldn't halt progress matey
+                    if (stopOnFailure) return false;
                 }
             }
             return true;

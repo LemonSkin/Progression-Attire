@@ -7,10 +7,10 @@
   <!-- ######################################### REBALANCES #################################### -->
 
   <!-- ######################################### CATEGORIES #################################### -->
-  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+  <Operation Class="ProgressionAttire.PatchOperationCheckSetting">
     <settingName>applyCategories</settingName>
     <caseTrue>
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>
           Defs/ThingDef[
           defName="Apparel_KidFlakVest" or
@@ -36,7 +36,7 @@
           defName="Apparel_KidEltexVest"
           ]
         </xpath>
-        <match Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <match Class="ProgressionAttire.PatchOperationMerge">
           <xpath>
             Defs/ThingDef[
             defName="Apparel_KidEltexRobe" or

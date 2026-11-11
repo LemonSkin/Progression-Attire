@@ -4,7 +4,7 @@
     <xpath>Defs/ResearchProjectDef[defName="DankPyon_ProtectiveClothing"]</xpath>
     <match Class="PatchOperationSequence">
       <operations>
-        <li Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <li Class="ProgressionAttire.PatchOperationMerge">
           <xpath>Defs/ResearchProjectDef[defName="LemonSkin_LeatherArmour"]</xpath>
           <value>
             <prerequisites Operation="AddOrReplace">

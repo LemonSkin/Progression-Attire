@@ -11,7 +11,7 @@
     </value>
   </Operation>
 
-  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+  <Operation Class="ProgressionAttire.PatchOperationMerge">
     <xpath>Defs/RecipeDef[defName="DankPyon_MendApparel"]</xpath>
     <value>
       <researchPrerequisite Operation="AddOrReplace">LemonSkin_RusticClothing</researchPrerequisite>
@@ -78,7 +78,7 @@
     </value>
   </Operation>
 
-  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+  <Operation Class="ProgressionAttire.PatchOperationMerge">
     <xpath>Defs/RecipeDef[defName="DankPyon_MendArmor"]</xpath>
     <value>
       <ingredients Operation="AddOrReplace">

@@ -3,7 +3,7 @@
   <!-- ######################################### LABELS ######################################## -->
 
   <!-- ######################################### RESEARCH ###################################### -->
-  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+  <Operation Class="ProgressionAttire.PatchOperationMerge">
     <xpath>Defs/ThingDef[defName="VFET_Apparel_TribalHeavy"]</xpath>
     <value>
       <recipeMaker>
@@ -13,7 +13,7 @@
     </value>
   </Operation>
 
-  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+  <Operation Class="ProgressionAttire.PatchOperationMerge">
     <xpath>Defs/ThingDef[defName="VFET_Apparel_TribalWar"]</xpath>
     <value>
       <recipeMaker>
@@ -24,10 +24,10 @@
   </Operation>
 
   <!-- ######################################### REBALANCES #################################### -->
-  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+  <Operation Class="ProgressionAttire.PatchOperationCheckSetting">
     <settingName>applyRebalances</settingName>
     <caseTrue>
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VFET_Apparel_TribalLight"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -42,7 +42,7 @@
         </value>
       </Operation>
 
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VFET_Apparel_TribalHeavy"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -57,7 +57,7 @@
         </value>
       </Operation>
 
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VFET_Apparel_TribalWar"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -77,10 +77,10 @@
   </Operation>
 
   <!-- ######################################### CATEGORIES #################################### -->
-  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+  <Operation Class="ProgressionAttire.PatchOperationCheckSetting">
     <settingName>applyCategories</settingName>
     <caseTrue>
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>
           Defs/ThingDef[
           defName="VFET_Apparel_TribalLight" or
@@ -94,7 +94,7 @@
         </value>
       </Operation>
 
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VFET_Apparel_TribalWar"]</xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">

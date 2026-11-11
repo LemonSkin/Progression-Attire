@@ -7,10 +7,10 @@
   <!-- ######################################### REBALANCES #################################### -->
 
   <!-- ######################################### CATEGORIES #################################### -->
-  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+  <Operation Class="ProgressionAttire.PatchOperationCheckSetting">
     <settingName>applyCategories</settingName>
     <caseTrue>
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="CAT_Handwear_EltexGloves"]</xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -19,7 +19,7 @@
         </value>
       </Operation>
 
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>
           Defs/ThingDef[
           defName="CAT_Handwear_ReconGloves" or
@@ -35,7 +35,7 @@
 
       <Operation Class="PatchOperationConditional">
         <xpath>Defs/ThingDef[defName="CAT_Handwear_EnsignGloves"]</xpath>
-        <match Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <match Class="ProgressionAttire.PatchOperationMerge">
           <xpath>Defs/ThingDef[defName="CAT_Handwear_EnsignGloves"]</xpath>
           <value>
             <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -47,7 +47,7 @@
 
       <Operation Class="PatchOperationConditional">
         <xpath>Defs/ThingDef[defName="CAT_Handwear_CrusaderGloves"]</xpath>
-        <match Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <match Class="ProgressionAttire.PatchOperationMerge">
           <xpath>Defs/ThingDef[defName="CAT_Handwear_CrusaderGloves"]</xpath>
           <value>
             <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -57,7 +57,7 @@
         </match>
       </Operation>
 
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>
           Defs/ThingDef[
           defName="CAT_Handwear_FlakGloves" or
@@ -73,7 +73,7 @@
 
       <Operation Class="PatchOperationConditional">
         <xpath>Defs/ThingDef[defName="CAT_Handwear_VacsuitGloves"]</xpath>
-        <match Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <match Class="ProgressionAttire.PatchOperationMerge">
           <xpath>Defs/ThingDef[defName="CAT_Handwear_VacsuitGloves"]</xpath>
           <value>
             <thingCategories Operation="AddOrReplace" Inherit="False">

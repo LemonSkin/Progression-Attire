@@ -5,7 +5,7 @@
     <mods>
       <li>Medieval Overhaul</li>
     </mods>
-    <nomatch Class="ferny.ProgressionAttire.PatchOperationMerge">
+    <nomatch Class="ProgressionAttire.PatchOperationMerge">
       <xpath>Defs/ThingDef[defName="Apparel_Pants"]</xpath>
       <value>
         <recipeMaker>

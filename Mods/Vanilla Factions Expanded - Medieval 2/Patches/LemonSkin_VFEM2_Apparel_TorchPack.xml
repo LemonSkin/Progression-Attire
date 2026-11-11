@@ -5,10 +5,10 @@
   <!-- ######################################### RESEARCH ###################################### -->
 
   <!-- ######################################### CATEGORIES #################################### -->
-  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+  <Operation Class="ProgressionAttire.PatchOperationCheckSetting">
     <settingName>applyCategories</settingName>
     <caseTrue>
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VFEM2_Apparel_TorchBelt"]</xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">

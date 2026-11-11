@@ -3,7 +3,7 @@
   <!-- ######################################### LABELS ######################################## -->
 
   <!-- ######################################### RESEARCH ###################################### -->
-  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+  <Operation Class="ProgressionAttire.PatchOperationMerge">
     <xpath>Defs/ThingDef[defName="RBME_Chiton"]</xpath>
     <value>
       <techLevel Operation="AddOrReplace">Neolithic</techLevel>
@@ -17,7 +17,7 @@
 
   <Operation Class="PatchOperationConditional">
     <xpath>Defs/ResearchProjectDef[defName="VFEC_Togas"]</xpath>
-    <match Class="ferny.ProgressionAttire.PatchOperationMerge">
+    <match Class="ProgressionAttire.PatchOperationMerge">
       <xpath>Defs/ThingDef[defName="RBME_Chiton"]</xpath>
       <value>
         <recipeMaker>
@@ -28,7 +28,7 @@
     </match>
   </Operation>
 
-  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+  <Operation Class="ProgressionAttire.PatchOperationMerge">
     <xpath>Defs/ThingDef[defName="RBME_RoyalHellenicHelmet"]</xpath>
     <value>
       <recipeMaker>
@@ -41,7 +41,7 @@
     </value>
   </Operation>
 
-  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+  <Operation Class="ProgressionAttire.PatchOperationMerge">
     <xpath>Defs/ThingDef[defName="RBME_Cowbell"]</xpath>
     <value>
       <techLevel Operation="AddOrReplace">Neolithic</techLevel>
@@ -56,10 +56,10 @@
   </Operation>
 
   <!-- ######################################### REBALANCES #################################### -->
-  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+  <Operation Class="ProgressionAttire.PatchOperationCheckSetting">
     <settingName>applyRebalances</settingName>
     <caseTrue>
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="RBME_Chiton"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">50</costStuffCount>
@@ -75,7 +75,7 @@
         </value>
       </Operation>
 
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="RBME_HellenicHelmet"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">70</costStuffCount>
@@ -94,7 +94,7 @@
         </value>
       </Operation>
 
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="RBME_RoyalHellenicHelmet"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">70</costStuffCount>
@@ -115,7 +115,7 @@
         </value>
       </Operation>
 
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="RBME_Cowbell"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">15</costStuffCount>
@@ -131,10 +131,10 @@
   </Operation>
 
   <!-- ######################################### CATEGORIES #################################### -->
-  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+  <Operation Class="ProgressionAttire.PatchOperationCheckSetting">
     <settingName>applyCategories</settingName>
     <caseTrue>
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="RBME_Chiton"]</xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -143,7 +143,7 @@
         </value>
       </Operation>
 
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="RBME_Panoply"]</xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -152,7 +152,7 @@
         </value>
       </Operation>
 
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>
           Defs/ThingDef[
           defName="RBME_HellenicHelmet" or
@@ -166,7 +166,7 @@
         </value>
       </Operation>
 
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="RBME_Cowbell"]</xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">

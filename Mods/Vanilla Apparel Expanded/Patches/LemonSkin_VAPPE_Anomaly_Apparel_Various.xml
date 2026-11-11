@@ -5,14 +5,14 @@
     <xpath>Defs/ThingDef[defName="Apparel_LabCoat"]</xpath>
     <match Class="PatchOperationSequence">
       <operations>
-        <li Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <li Class="ProgressionAttire.PatchOperationMerge">
           <xpath>Defs/ThingDef[defName="Apparel_LabCoat"]</xpath>
           <value>
             <label Operation="AddOrReplace">researcher's lab coat</label>
           </value>
         </li>
 
-        <li Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <li Class="ProgressionAttire.PatchOperationMerge">
           <xpath>Defs/ThingDef[defName="VAE_Apparel_LabCoat"]</xpath>
           <value>
             <label Operation="AddOrReplace">chemist's lab coat</label>
@@ -25,7 +25,7 @@
   <!-- ######################################### RESEARCH ###################################### -->
   <Operation Class="PatchOperationConditional">
     <xpath>Defs/ThingDef[defName="Apparel_LabCoat"]</xpath>
-    <match Class="ferny.ProgressionAttire.PatchOperationMerge">
+    <match Class="ProgressionAttire.PatchOperationMerge">
       <xpath>Defs/ThingDef[defName="Apparel_LabCoat"]</xpath>
       <value>
         <recipeMaker>

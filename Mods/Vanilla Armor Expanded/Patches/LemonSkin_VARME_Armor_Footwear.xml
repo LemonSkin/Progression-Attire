@@ -5,10 +5,10 @@
   <!-- ######################################### RESEARCH ###################################### -->
 
   <!-- ######################################### REBALANCES #################################### -->
-  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+  <Operation Class="ProgressionAttire.PatchOperationCheckSetting">
     <settingName>applyRebalances</settingName>
     <caseTrue>
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VAE_Footwear_PlateBoots"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">45</costStuffCount>
@@ -32,10 +32,10 @@
   </Operation>
 
   <!-- ######################################### CATEGORIES #################################### -->
-  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+  <Operation Class="ProgressionAttire.PatchOperationCheckSetting">
     <settingName>applyCategories</settingName>
     <caseTrue>
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VAE_Footwear_PlateBoots"]</xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -44,7 +44,7 @@
         </value>
       </Operation>
 
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VAE_Footwear_MarineBoots"]</xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -56,7 +56,7 @@
   </Operation>
 
   <!-- ######################################### MO DE-DUPE #################################### -->
-  <Operation Class="PatchOperationConditional">
+  <!-- <Operation Class="PatchOperationConditional">
     <xpath>Defs/ThingDef[defName="DankPyon_Footwear_BootsPlate"]</xpath>
     <match Class="PatchOperationConditional">
       <xpath>/Defs/PawnKindDef/apparelRequired/li[.="VAE_Footwear_PlateBoots"]</xpath>
@@ -74,6 +74,39 @@
     <match Class="PatchOperationRemove">
       <xpath>Defs/ThingDef[defName="VAE_Footwear_PlateBoots"]</xpath>
     </match>
+  </Operation> -->
+
+  <!-- ######################################### STYLES ######################################## -->
+  <Operation Class="ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>createStyles</settingName>
+    <caseTrue>
+      <Operation Class="ProgressionAttire.PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="DankPyon_Footwear_BootsPlate"]</xpath>
+        <caseTrue>
+          <Operation Class="ProgressionAttire.PatchOperationMerge">
+            <xpath>/Defs/ThingDef[defName="DankPyon_Footwear_BootsPlate"]</xpath>
+            <value>
+              <randomStyleChance Operation="SafeAdd">0.5</randomStyleChance>
+              <randomStyle>
+                <li Operation="Add">
+                  <styleDef>VAE_Footwear_PlateBoots</styleDef>
+                </li>
+              </randomStyle>
+            </value>
+          </Operation>
+
+          <Operation Class="PatchOperationAdd">
+            <xpath>Defs/ReplaceLib.ReplacerDef[defName="ProgressionAttire"]/replacers</xpath>
+            <value>
+              <li>
+                <replace>VAE_Footwear_PlateBoots</replace>
+                <with>DankPyon_Footwear_BootsPlate</with>
+              </li>
+            </value>
+          </Operation>
+        </caseTrue>
+      </Operation>
+    </caseTrue>
   </Operation>
 
   <!-- ######################################### END ########################################### -->

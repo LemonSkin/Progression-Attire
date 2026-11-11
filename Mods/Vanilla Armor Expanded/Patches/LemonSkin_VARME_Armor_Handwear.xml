@@ -5,10 +5,10 @@
   <!-- ######################################### RESEARCH ###################################### -->
 
   <!-- ######################################### REBALANCES #################################### -->
-  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+  <Operation Class="ProgressionAttire.PatchOperationCheckSetting">
     <settingName>applyRebalances</settingName>
     <caseTrue>
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VAE_Handwear_PlateGloves"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">35</costStuffCount>
@@ -35,10 +35,10 @@
   </Operation>
 
   <!-- ######################################### CATEGORIES #################################### -->
-  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+  <Operation Class="ProgressionAttire.PatchOperationCheckSetting">
     <settingName>applyCategories</settingName>
     <caseTrue>
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VAE_Handwear_PlateGloves"]</xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -47,7 +47,7 @@
         </value>
       </Operation>
 
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VAE_Handwear_MarineGloves"]</xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -60,11 +60,44 @@
 
   <!-- ######################################### MO DE-DUPE #################################### -->
 
-  <Operation Class="PatchOperationConditional">
+  <!-- <Operation Class="PatchOperationConditional">
     <xpath>Defs/ThingDef[defName="DankPyon_Handwear_GlovesPlate"]</xpath>
     <match Class="PatchOperationRemove">
       <xpath>Defs/ThingDef[defName="VAE_Handwear_PlateGloves"]</xpath>
     </match>
+  </Operation> -->
+
+  <!-- ######################################### STYLES ######################################## -->
+  <Operation Class="ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>createStyles</settingName>
+    <caseTrue>
+      <Operation Class="ProgressionAttire.PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="DankPyon_Handwear_GlovesPlate"]</xpath>
+        <caseTrue>
+          <Operation Class="ProgressionAttire.PatchOperationMerge">
+            <xpath>/Defs/ThingDef[defName="DankPyon_Handwear_GlovesPlate"]</xpath>
+            <value>
+              <randomStyleChance Operation="SafeAdd">0.5</randomStyleChance>
+              <randomStyle>
+                <li Operation="Add">
+                  <styleDef>VAE_Handwear_PlateGloves</styleDef>
+                </li>
+              </randomStyle>
+            </value>
+          </Operation>
+
+          <Operation Class="PatchOperationAdd">
+            <xpath>Defs/ReplaceLib.ReplacerDef[defName="ProgressionAttire"]/replacers</xpath>
+            <value>
+              <li>
+                <replace>VAE_Handwear_PlateGloves</replace>
+                <with>DankPyon_Handwear_GlovesPlate</with>
+              </li>
+            </value>
+          </Operation>
+        </caseTrue>
+      </Operation>
+    </caseTrue>
   </Operation>
 
   <!-- ######################################### END ########################################### -->

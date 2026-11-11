@@ -1,7 +1,7 @@
 ﻿using Verse;
 using HarmonyLib;
 
-namespace ferny.ProgressionAttire
+namespace ProgressionAttire
 {
     public class ProgressionAttireSettings : ModSettings
     {

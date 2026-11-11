@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
   <!-- ######################################### LABELS ######################################## -->
-  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+  <Operation Class="ProgressionAttire.PatchOperationMerge">
     <xpath>Defs/ThingDef[defName="Apparel_mini"]</xpath>
     <value>
       <label>miniature hat</label>
@@ -9,7 +9,7 @@
     </value>
   </Operation>
 
-  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+  <Operation Class="ProgressionAttire.PatchOperationMerge">
     <xpath>Defs/ThingDef[defName="Apparel_ribondress"]</xpath>
     <value>
       <label>ribbon dress</label>
@@ -17,7 +17,7 @@
     </value>
   </Operation>
 
-  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+  <Operation Class="ProgressionAttire.PatchOperationMerge">
     <xpath>Defs/ThingDef[defName="Apparel_ribonhat"]</xpath>
     <value>
       <label>ribbon hat</label>
@@ -25,14 +25,14 @@
     </value>
   </Operation>
 
-  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+  <Operation Class="ProgressionAttire.PatchOperationMerge">
     <xpath>Defs/ThingDef[defName="Apparel_maid"]</xpath>
     <value>
       <label>cutesy maid dress</label>
     </value>
   </Operation>
 
-  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+  <Operation Class="ProgressionAttire.PatchOperationMerge">
     <xpath>Defs/ThingDef[defName="Apparel_hairband"]</xpath>
     <value>
       <label>cutesy maid head band</label>
@@ -40,7 +40,7 @@
     </value>
   </Operation>
 
-  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+  <Operation Class="ProgressionAttire.PatchOperationMerge">
     <xpath>Defs/ThingDef[defName="Apparel_neat"]</xpath>
     <value>
       <label>off-shoulder turtleneck sweater</label>
@@ -48,7 +48,7 @@
     </value>
   </Operation>
 
-  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+  <Operation Class="ProgressionAttire.PatchOperationMerge">
     <xpath>Defs/ThingDef[defName="Apparel_nuns"]</xpath>
     <value>
       <label>nun dress</label>
@@ -56,7 +56,7 @@
     </value>
   </Operation>
 
-  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+  <Operation Class="ProgressionAttire.PatchOperationMerge">
     <xpath>Defs/ThingDef[defName="Apparel_nunsveil"]</xpath>
     <value>
       <label>nun veil</label>
@@ -65,7 +65,7 @@
   </Operation>
 
   <!-- ######################################### RESEARCH ###################################### -->
-  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+  <Operation Class="ProgressionAttire.PatchOperationMerge">
     <xpath>Defs/ThingDef[@Name="GD_ApparelBase"]</xpath>
     <value>
       <recipeMaker>

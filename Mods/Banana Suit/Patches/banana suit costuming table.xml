@@ -3,7 +3,7 @@
   <!-- ######################################### LABELS ######################################## -->
 
   <!-- ######################################### RESEARCH ###################################### -->
-  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+  <Operation Class="ProgressionAttire.PatchOperationMerge">
     <xpath>Defs/ThingDef[defName="BananaSuit_TheSuit"]</xpath>
     <value>
       <recipeMaker>
@@ -15,7 +15,7 @@
 
   <Operation Class="PatchOperationConditional">
     <xpath>Defs/ThingDef[defName="BananaSuit_TheKidSuit"]</xpath>
-    <match Class="ferny.ProgressionAttire.PatchOperationMerge">
+    <match Class="ProgressionAttire.PatchOperationMerge">
       <xpath>Defs/ThingDef[defName="BananaSuit_TheKidSuit"]</xpath>
       <value>
         <recipeMaker>

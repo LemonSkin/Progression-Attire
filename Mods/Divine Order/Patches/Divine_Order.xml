@@ -4,7 +4,7 @@
   <!-- ######################################### LABELS ######################################## -->
 
   <!-- ######################################### RESEARCH ###################################### -->
-  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+  <Operation Class="ProgressionAttire.PatchOperationMerge">
     <xpath>Defs/ResearchProjectDef[defName="BotchJob_DivineOrderSmithing"]</xpath>
     <value>
       <recipeMaker>

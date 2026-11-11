@@ -77,12 +77,12 @@
   <!-- ######################################### REBALANCES #################################### -->
 
   <!-- ######################################### CATEGORIES #################################### -->
-  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+  <Operation Class="ProgressionAttire.PatchOperationCheckSetting">
     <settingName>applyCategories</settingName>
     <caseTrue>
       <Operation Class="PatchOperationConditional">
         <xpath>Defs/ThingDef[defName="Apparel_PackHunter_Toxic"]</xpath>
-        <match Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <match Class="ProgressionAttire.PatchOperationMerge">
           <xpath>Defs/ThingDef[defName="Apparel_PackHunter_Toxic"]</xpath>
           <value>
             <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -92,7 +92,7 @@
         </match>
       </Operation>
 
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>
           Defs/ThingDef[
           defName="Apparel_PackHunter_AntigrainWarhead" or

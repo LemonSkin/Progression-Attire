@@ -7,7 +7,7 @@
   <!-- ######################################### REBALANCES #################################### -->
 
   <!-- ######################################### CATEGORIES #################################### -->
-  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+  <Operation Class="ProgressionAttire.PatchOperationCheckSetting">
     <settingName>applyCategories</settingName>
     <caseTrue>
       <Operation Class="PatchOperationConditional">
@@ -17,7 +17,7 @@
           defName="TSFApparel_KidGi"
           ]
         </xpath>
-        <match Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <match Class="ProgressionAttire.PatchOperationMerge">
           <xpath>
             Defs/ThingDef[
             defName="TSFApparel_KidKamon" or

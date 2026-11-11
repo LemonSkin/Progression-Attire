@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+  <Operation Class="ProgressionAttire.PatchOperationMerge">
     <xpath>Defs/ResearchProjectDef[defName="FlakArmor"]</xpath>
     <value>
       <hiddenPrerequisites Operation="AddOrReplace">

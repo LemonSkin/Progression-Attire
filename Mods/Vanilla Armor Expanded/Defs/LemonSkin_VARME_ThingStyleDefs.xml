@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ThingStyleDef>
+    <defName>VAE_Footwear_PlateBoots</defName>
+    <graphicData>
+      <texPath>Things/Footwear/PlateBoots</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingStyleDef>
+
+  <ThingStyleDef>
+    <defName>VAE_Handwear_PlateGloves</defName>
+    <graphicData>
+      <texPath>Things/Handwear/PlateGloves</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingStyleDef>
+
+  <ThingStyleDef>
+    <defName>VAE_Apparel_Gambeson</defName>
+    <wornGraphicPath>Things/Apparel/Gambeson/Gambeson</wornGraphicPath>
+    <graphicData>
+      <texPath>Things/Apparel/Gambeson/Gambeson</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingStyleDef>
+
+  <ThingStyleDef>
+    <defName>VAE_Apparel_QuiltedVest</defName>
+    <wornGraphicPath>Things/Apparel/QuiltedVest/QuiltedVest</wornGraphicPath>
+    <graphicData>
+      <texPath>Things/Apparel/QuiltedVest/QuiltedVest</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingStyleDef>
+
+  <ThingStyleDef>
+    <defName>VAE_Apparel_Chestplate</defName>
+    <wornGraphicPath>Things/Apparel/Chestplate/Chestplate</wornGraphicPath>
+    <graphicData>
+      <texPath>Things/Apparel/Chestplate/Chestplate</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingStyleDef>
+
+  <ThingStyleDef>
+    <defName>VAE_Apparel_PlateHelmet</defName>
+    <wornGraphicPath>Things/Headgear/PlateHelmet/PlateHelmet</wornGraphicPath>
+    <graphicData>
+      <texPath>Things/Headgear/PlateHelmet/PlateHelmet</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingStyleDef>
+</Defs>

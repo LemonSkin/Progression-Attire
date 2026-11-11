@@ -3,7 +3,7 @@ using System.Xml;
 using Verse;
 using System.Collections.Generic;
 
-namespace ferny.ProgressionAttire
+namespace ProgressionAttire
 {
     public class OperationList
     {

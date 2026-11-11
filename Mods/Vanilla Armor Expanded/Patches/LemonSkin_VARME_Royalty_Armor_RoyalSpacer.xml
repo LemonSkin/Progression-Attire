@@ -7,7 +7,7 @@
   <!-- ######################################### REBALANCES #################################### -->
 
   <!-- ######################################### CATEGORIES #################################### -->
-  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+  <Operation Class="ProgressionAttire.PatchOperationCheckSetting">
     <settingName>applyCategories</settingName>
     <caseTrue>
       <Operation Class="PatchOperationConditional">
@@ -17,7 +17,7 @@
           defName="VAE_Headgear_RoyalSiegeHelmet"
           ]
         </xpath>
-        <match Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <match Class="ProgressionAttire.PatchOperationMerge">
           <xpath>
             Defs/ThingDef[
             defName="VAE_Headgear_RoyalTrooperHelmet" or
@@ -39,7 +39,7 @@
           defName="VAE_Apparel_RoyalSiegeArmor"
           ]
         </xpath>
-        <match Class="ferny.ProgressionAttire.PatchOperationMerge">
+        <match Class="ProgressionAttire.PatchOperationMerge">
           <xpath>
             Defs/ThingDef[
             defName="VAE_Apparel_RoyalTrooperArmor" or

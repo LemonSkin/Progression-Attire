@@ -3,7 +3,7 @@ using Verse;
 using HarmonyLib;
 // using XmlExtensions;
 
-namespace ferny.ProgressionAttire
+namespace ProgressionAttire
 {
     [HarmonyPatch(typeof(DefGenerator), nameof(DefGenerator.GenerateImpliedDefs_PreResolve))]
     public static class DefGenerator_PreResolve_Patch

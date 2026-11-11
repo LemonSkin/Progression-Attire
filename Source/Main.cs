@@ -2,7 +2,7 @@
 using UnityEngine;
 using Verse;
 
-namespace ferny.ProgressionAttire
+namespace ProgressionAttire
 {
     public class ProgressionAttire : Mod
     {
@@ -11,9 +11,9 @@ namespace ferny.ProgressionAttire
         public ProgressionAttire(ModContentPack content) : base(content)
         {
             Settings = GetSettings<ProgressionAttireSettings>();
-            // Harmony harmony = new("ferny.progressionattire");
+            // Harmony harmony = new("lemonskin.progressionattire");
             // harmony.PatchAll();
-            new Harmony("ferny.progressionattire").PatchAll();
+            new Harmony("lemonskin.progressionattire").PatchAll();
         }
 
         public override string SettingsCategory() => "Progression: Attire";

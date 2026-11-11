@@ -11,7 +11,7 @@
   <!-- ######################################### RESEARCH ###################################### -->
   <Operation Class="PatchOperationConditional">
     <xpath>Defs/ResearchProjectDef[defName="NobleApparel"]</xpath>
-    <match Class="ferny.ProgressionAttire.PatchOperationMerge">
+    <match Class="ProgressionAttire.PatchOperationMerge">
       <xpath>Defs/ThingDef[defName="VFEM2_Apparel_JesterOutfit"]</xpath>
       <value>
         <recipeMaker>
@@ -20,7 +20,7 @@
         </recipeMaker>
       </value>
     </match>
-    <nomatch Class="ferny.ProgressionAttire.PatchOperationMerge">
+    <nomatch Class="ProgressionAttire.PatchOperationMerge">
       <xpath>Defs/ThingDef[defName="VFEM2_Apparel_JesterOutfit"]</xpath>
       <value>
         <recipeMaker>
@@ -33,7 +33,7 @@
 
   <Operation Class="PatchOperationConditional">
     <xpath>Defs/ResearchProjectDef[defName="RoyalApparel"]</xpath>
-    <match Class="ferny.ProgressionAttire.PatchOperationMerge">
+    <match Class="ProgressionAttire.PatchOperationMerge">
       <xpath>
         Defs/ThingDef[
         defName="VFEM2_Apparel_DameDress" or
@@ -47,7 +47,7 @@
         </recipeMaker>
       </value>
     </match>
-    <nomatch Class="ferny.ProgressionAttire.PatchOperationMerge">
+    <nomatch Class="ProgressionAttire.PatchOperationMerge">
       <xpath>
         Defs/ThingDef[
         defName="VFEM2_Apparel_DameDress" or
@@ -68,7 +68,7 @@
       <li>Royalty</li>
     </mods>
     <caseTrue>
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VFEM2_Apparel_JesterOutfit"]</xpath>
         <value>
           <recipeMaker Operation="Safe">
@@ -78,7 +78,7 @@
         </value>
       </Operation>
 
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>
           Defs/ThingDef[defName="VFEM2_Apparel_DameDress" or
           defName="VFEM2_Apparel_KingsRobes"]
@@ -93,7 +93,7 @@
     </caseTrue>
 
     <caseFalse>
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>
           Defs/ThingDef[defName="VFEM2_Apparel_JesterOutfit" or
           defName="VFEM2_Apparel_DameDress" or
@@ -109,7 +109,7 @@
     </caseFalse>
   </Operation> -->
 
-  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+  <Operation Class="ProgressionAttire.PatchOperationMerge">
     <xpath>
       Defs/ThingDef[
       defName="VFEM2_Apparel_HeavyLeatherArmor" or
@@ -124,7 +124,7 @@
     </value>
   </Operation>
 
-  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+  <Operation Class="ProgressionAttire.PatchOperationMerge">
     <xpath>
       Defs/ThingDef[
       defName="VFEM2_Apparel_PaddedArmor" or
@@ -140,10 +140,10 @@
   </Operation>
 
   <!-- ######################################### REBALANCES #################################### -->
-  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+  <Operation Class="ProgressionAttire.PatchOperationCheckSetting">
     <settingName>applyRebalances</settingName>
     <caseTrue>
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VFEM2_Apparel_PlateArmorHeavy"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -166,7 +166,7 @@
         </value>
       </Operation>
 
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VFEM2_Apparel_JesterOutfit"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">80</costStuffCount>
@@ -187,7 +187,7 @@
         </value>
       </Operation>
 
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VFEM2_Apparel_DameDress"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">100</costStuffCount>
@@ -203,7 +203,7 @@
         </value>
       </Operation>
 
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VFEM2_Apparel_KingsRobes"]</xpath>
         <value>
           <costList Operation="AddOrReplace">
@@ -234,7 +234,7 @@
         </value>
       </Operation>
 
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VFEM2_Apparel_HeavyLeatherArmor"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">180</costStuffCount>
@@ -268,7 +268,7 @@
         </value>
       </Operation>
 
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VFEM2_Apparel_LeatherArmor"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">160</costStuffCount>
@@ -302,7 +302,7 @@
         </value>
       </Operation>
 
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VFEM2_Apparel_PaddedArmor"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -317,7 +317,7 @@
         </value>
       </Operation>
 
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VFEM2_Apparel_Mantle"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -335,10 +335,10 @@
   </Operation>
 
   <!-- ######################################### CATEGORIES #################################### -->
-  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+  <Operation Class="ProgressionAttire.PatchOperationCheckSetting">
     <settingName>applyCategories</settingName>
     <caseTrue>
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>
           Defs/ThingDef[
           defName="VFEM2_Apparel_PlateArmorHeavy" or
@@ -354,7 +354,7 @@
         </value>
       </Operation>
 
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>
           Defs/ThingDef[
           defName="VFEM2_Apparel_JesterOutfit" or
@@ -369,7 +369,7 @@
         </value>
       </Operation>
 
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>
           Defs/ThingDef[
           defName="VFEM2_Apparel_DameDress" or

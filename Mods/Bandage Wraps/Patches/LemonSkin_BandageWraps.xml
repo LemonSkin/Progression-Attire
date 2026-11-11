@@ -42,7 +42,7 @@
     </match>
   </Operation>
 
-  <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+  <Operation Class="ProgressionAttire.PatchOperationMerge">
     <xpath>
       Defs/ThingDef[
       defName="Bandagewraps_Bodywrap" or
@@ -60,7 +60,7 @@
 
   <Operation Class="PatchOperationConditional">
     <xpath>Defs/ResearchProjectDef[defName="VAE_SterileAttire"]</xpath>
-    <match Class="ferny.ProgressionAttire.PatchOperationMerge">
+    <match Class="ProgressionAttire.PatchOperationMerge">
       <xpath>
         Defs/ThingDef[
         defName="Bandagewraps_BodywrapA" or
@@ -75,7 +75,7 @@
         </recipeMaker>
       </value>
     </match>
-    <nomatch Class="ferny.ProgressionAttire.PatchOperationMerge">
+    <nomatch Class="ProgressionAttire.PatchOperationMerge">
       <xpath>
         Defs/ThingDef[
         defName="Bandagewraps_BodywrapA" or
@@ -93,10 +93,10 @@
   </Operation>
 
   <!-- ######################################### REBALANCES #################################### -->
-  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+  <Operation Class="ProgressionAttire.PatchOperationCheckSetting">
     <settingName>applyRebalances</settingName>
     <caseTrue>
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="Bandagewraps_Bodywrap"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -114,7 +114,7 @@
         </value>
       </Operation>
 
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="Bandagewraps_BodywrapA"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -133,7 +133,7 @@
         </value>
       </Operation>
 
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="Bandagewraps_HeadBandage"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -152,7 +152,7 @@
         </value>
       </Operation>
 
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="Bandagewraps_HeadBandageA"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -175,10 +175,10 @@
   </Operation>
 
   <!-- ######################################### CATEGORIES #################################### -->
-  <Operation Class="ferny.ProgressionAttire.PatchOperationCheckSetting">
+  <Operation Class="ProgressionAttire.PatchOperationCheckSetting">
     <settingName>applyCategories</settingName>
     <caseTrue>
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="Bandagewraps_Bodywrap"]</xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -187,7 +187,7 @@
         </value>
       </Operation>
 
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="Bandagewraps_BodywrapA"]</xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -196,7 +196,7 @@
         </value>
       </Operation>
 
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="Bandagewraps_HeadBandage"]</xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
@@ -205,7 +205,7 @@
         </value>
       </Operation>
 
-      <Operation Class="ferny.ProgressionAttire.PatchOperationMerge">
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="Bandagewraps_HeadBandageA"]</xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
