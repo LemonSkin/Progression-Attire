@@ -11,13 +11,29 @@
     </value>
   </Operation>
 
-  <Operation Class="ProgressionAttire.PatchOperationMerge">
-    <xpath>Defs/ResearchProjectDef[defName="PlateArmor"]</xpath>
-    <value>
-      <prerequisites Operation="AddOrReplace">
-        <li>LemonSkin_RusticClothing</li>
-        <li>Smithing</li>
-      </prerequisites>
-    </value>
+  <Operation Class="ProgressionAttire.PatchOperationConditional">
+    <xpath>Defs/ResearchProjectDef[defName="DankPyon_ChainArmor"]</xpath>
+    <caseTrue>
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/ResearchProjectDef[defName="PlateArmor"]</xpath>
+        <value>
+          <prerequisites Operation="AddOrReplace">
+            <li>DankPyon_ChainArmor</li>
+            <li>Smithing</li>
+          </prerequisites>
+        </value>
+      </Operation>
+    </caseTrue>
+    <caseFalse>
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/ResearchProjectDef[defName="PlateArmor"]</xpath>
+        <value>
+          <prerequisites Operation="AddOrReplace">
+            <li>LemonSkin_RusticClothing</li>
+            <li>Smithing</li>
+          </prerequisites>
+        </value>
+      </Operation>
+    </caseFalse>
   </Operation>
 </Patch>

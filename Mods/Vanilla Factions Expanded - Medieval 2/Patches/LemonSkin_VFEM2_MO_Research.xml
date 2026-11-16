@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-  <Operation Class="PatchOperationConditional">
+  <!-- <Operation Class="PatchOperationConditional">
     <xpath>Defs/ResearchProjectDef[defName="DankPyon_ProtectiveClothing"]</xpath>
     <match Class="PatchOperationSequence">
       <operations>
@@ -40,5 +40,5 @@
         </li>
       </operations>
     </match>
-  </Operation>
+  </Operation> -->
 </Patch>

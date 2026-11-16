@@ -98,7 +98,38 @@
     </value>
   </Operation>
 
-  <Operation Class="ProgressionAttire.PatchOperationMerge">
+  <Operation Class="ProgressionAttire.PatchOperationConditional">
+    <xpath>Defs/ResearchProjectDef[defName="DankPyon_LeatherTanning"]</xpath>
+    <caseTrue>
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/ThingDef[defName="VFEM2_Apparel_LeatherHelmet"]</xpath>
+        <value>
+          <recipeMaker>
+            <researchPrerequisite Operation="SafeRemove" />
+            <researchPrerequisites Operation="AddOrReplace">
+              <li>DankPyon_ProtectiveClothing</li>
+              <li>DankPyon_LeatherTanning</li>
+            </researchPrerequisites>
+          </recipeMaker>
+        </value>
+      </Operation>
+
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/ThingDef[defName="VFEM2_Apparel_HeavyLeatherHelmet"]</xpath>
+        <value>
+          <recipeMaker>
+            <researchPrerequisite Operation="SafeRemove" />
+            <researchPrerequisites Operation="AddOrReplace">
+              <li>DankPyon_ChainArmor</li>
+              <li>DankPyon_LeatherTanning</li>
+            </researchPrerequisites>
+          </recipeMaker>
+        </value>
+      </Operation>
+    </caseTrue>
+  </Operation>
+
+  <!-- <Operation Class="ProgressionAttire.PatchOperationMerge">
     <xpath>
       Defs/ThingDef[
       defName="VFEM2_Apparel_HeavyLeatherHelmet" or
@@ -111,7 +142,7 @@
         <researchPrerequisites Operation="SafeRemove" />
       </recipeMaker>
     </value>
-  </Operation>
+  </Operation> -->
 
   <!-- ######################################### REBALANCES #################################### -->
   <Operation Class="ProgressionAttire.PatchOperationCheckSetting">

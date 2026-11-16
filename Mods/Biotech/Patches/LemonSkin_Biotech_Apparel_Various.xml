@@ -19,6 +19,27 @@
   </Operation>
 
   <!-- ######################################### REBALANCES #################################### -->
+  <Operation Class="ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyRebalances</settingName>
+    <caseTrue>
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/ThingDef[defName="Apparel_Bandolier"]</xpath>
+        <value>
+          <apparel>
+            <bodyPartGroups Operation="AddOrReplace">
+              <li>Waist</li>
+            </bodyPartGroups>
+            <layers Operation="AddOrReplace">
+              <li>Belt</li>
+            </layers>
+            <wornGraphicData Operation="AddOrReplace">
+              <renderUtilityAsPack>false</renderUtilityAsPack>
+            </wornGraphicData>
+          </apparel>
+        </value>
+      </Operation>
+    </caseTrue>
+  </Operation>
 
   <!-- ######################################### CATEGORIES #################################### -->
   <Operation Class="ProgressionAttire.PatchOperationCheckSetting">

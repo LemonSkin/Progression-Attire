@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <!-- Rewire military clothing if it exists and then delete VAE LeatherTanning research -->
+  <Operation Class="ProgressionAttire.PatchOperationConditional">
+    <xpath>Defs/ResearchProjectDef[defName="DankPyon_LeatherTanning"]</xpath>
+    <caseTrue>
+      <Operation Class="PatchOperationFindMod">
+        <mods>
+          <li>Vanilla Apparel Expanded</li>
+        </mods>
+        <nomatch Class="PatchOperationRemove">
+          <xpath>Defs/ResearchProjectDef[defName="VAE_MilitaryClothing"]/prerequisites</xpath>
+          <success>Always</success>
+        </nomatch>
+      </Operation>
+
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/ThingDef[defName="VAE_Apparel_Gambeson" or defName="VAE_Apparel_QuiltedVest"]</xpath>
+        <value>
+          <recipeMaker>
+            <researchPrerequisite Operation="SafeRemove" />
+            <researchPrerequisites Operation="AddOrReplace">
+              <li>DankPyon_ProtectiveClothing</li>
+              <li>DankPyon_LeatherTanning</li>
+            </researchPrerequisites>
+          </recipeMaker>
+        </value>
+      </Operation>
+
+      <Operation Class="PatchOperationConditional">
+        <xpath>Defs/AchievementsExpanded.AchievementDef[defName="leatherThatsKinky"]</xpath>
+        <match Class="PatchOperationReplace">
+          <xpath>Defs/AchievementsExpanded.AchievementDef[defName="leatherThatsKinky"]/tracker</xpath>
+          <value>
+            <tracker Class="AchievementsExpanded.ResearchTracker">
+              <def>DankPyon_LeatherTanning</def>
+            </tracker>
+          </value>
+        </match>
+      </Operation>
+
+      <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ReplaceLib.ReplacerDef[defName="ProgressionAttire"]/replacers</xpath>
+        <value>
+          <li>
+            <replace>VAE_LeatherTanning</replace>
+            <with>DankPyon_LeatherTanning</with>
+          </li>
+        </value>
+      </Operation>
+
+      <Operation Class="PatchOperationRemove">
+        <xpath>Defs/ResearchProjectDef[defName="VAE_LeatherTanning"]</xpath>
+      </Operation>
+    </caseTrue>
+  </Operation>
+</Patch>

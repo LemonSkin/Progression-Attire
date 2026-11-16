@@ -1,0 +1,26 @@
+- Move Hunter Visage: Spacer armour headgear -> Industrial armour headgear
+- Move Learnlink: Spacer armour headgear -> Kid apparel headgear
+- Move Visage Mask: Medieval headgear -> Neolithic headgear
+- Noble Apparel
+  - Cape: Medieval apparel
+  - Corset: Medieval apparel
+  - Cowboy Vest: Industrial apparel
+  - Dame Dress: Medieval apparel
+  - Formal shirt: Industrial apparel
+  - Formal vest: Industrial apparel
+  - Great dress: Industrial apparel
+  - King's robes: Medieval apparel
+  - Prestige robe: Medieval apparel
+  - Shirt and tie: Industrial apparel
+  - Skirt: Industrial apparel
+  - Smoking jacket: Industrial apparel
+  - Stellic robe: Medieval apparel
+  - Suit jacket: Industrial apparel
+  - Suit trousers: Industrial apparel
+  - Tailcoat: Industrial apparel
+  - Waistcoat: Industrial apparel
+- Move Ninja Mask -> Medieval amour headgear
+- Rename "crusader sabatons" -> crusader boots
+- Rename "crusader gauntlets" -> crusader gloves
+- Rename heavy marine gloves/boots -> siegebreaker or grenadier
+- Rename "boater Hat" -> boater hat

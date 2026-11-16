@@ -8,7 +8,8 @@
       Defs/ThingDef[
       defName="Apparel_UNA_weddingveil" or
       defName="UNA_KingCrown" or
-      defName="Apparel_UNA_TogeHelm"
+      defName="Apparel_UNA_TogeHelm" or
+      defName="UNA_Ohanabousi"
       ]
     </xpath>
     <value>

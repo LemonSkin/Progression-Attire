@@ -13,16 +13,34 @@
       ]
     </xpath>
     <value>
+      <recipeMaker>
+        <researchPrerequisite Operation="AddOrReplace">Ferny_VanityTable</researchPrerequisite>
+        <researchPrerequisites Operation="SafeRemove" />
+        <recipeUsers Operation="AddOrReplace" />
+      </recipeMaker>
+    </value>
+  </Operation>
+
+  <!-- <Operation Class="ProgressionAttire.PatchOperationMerge">
+    <xpath>
+      Defs/ThingDef[
+      defName="UNAGImohukepu" or
+      defName="UNAGIapaka" or
+      defName="UNAGIfazukin" or
+      defName="UNAGIsantabo"
+      ]
+    </xpath>
+    <value>
       <techLevel Operation="AddOrReplace">Industrial</techLevel>
       <recipeMaker>
         <researchPrerequisite Operation="AddOrReplace">ComplexClothing</researchPrerequisite>
         <researchPrerequisites Operation="SafeRemove" />
       </recipeMaker>
     </value>
-  </Operation>
+  </Operation> -->
 
   <!-- ######################################### REBALANCES #################################### -->
-  <Operation Class="ProgressionAttire.PatchOperationCheckSetting">
+  <!-- <Operation Class="ProgressionAttire.PatchOperationCheckSetting">
     <settingName>applyRebalances</settingName>
     <caseTrue>
       <Operation Class="ProgressionAttire.PatchOperationMerge">
@@ -57,10 +75,10 @@
         </value>
       </Operation>
     </caseTrue>
-  </Operation>
+  </Operation> -->
 
   <!-- ######################################### CATEGORIES #################################### -->
-  <Operation Class="ProgressionAttire.PatchOperationCheckSetting">
+  <!-- <Operation Class="ProgressionAttire.PatchOperationCheckSetting">
     <settingName>applyCategories</settingName>
     <caseTrue>
       <Operation Class="ProgressionAttire.PatchOperationMerge">
@@ -77,7 +95,7 @@
         </value>
       </Operation>
     </caseTrue>
-  </Operation>
+  </Operation> -->
 
   <!-- ######################################### END ########################################### -->
 </Patch>

@@ -35,16 +35,21 @@
       <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="DankPyon_Apparel_ChaussesPadded"]</xpath>
         <value>
-          <costStuffCount Operation="Add">60</costStuffCount>
+          <costStuffCount Operation="AddOrReplace">40</costStuffCount>
           <statBases Operation="AddOrReplace">
-            <WorkToMake>1800</WorkToMake>
             <MaxHitPoints>100</MaxHitPoints>
+            <WorkToMake>2000</WorkToMake>
             <Mass>1.5</Mass>
-            <StuffEffectMultiplierArmor>0.30</StuffEffectMultiplierArmor>
-            <StuffEffectMultiplierInsulation_Cold>1.2</StuffEffectMultiplierInsulation_Cold>
-            <StuffEffectMultiplierInsulation_Heat>0.2</StuffEffectMultiplierInsulation_Heat>
+            <StuffEffectMultiplierArmor>0.2</StuffEffectMultiplierArmor>
+            <StuffEffectMultiplierInsulation_Cold>0.2</StuffEffectMultiplierInsulation_Cold>
+            <StuffEffectMultiplierInsulation_Heat>0.08</StuffEffectMultiplierInsulation_Heat>
             <EquipDelay>1.5</EquipDelay>
           </statBases>
+          <apparel>
+            <tags Operation="AddOrReplace">
+              <li>MedievalMilitaryBasic</li>
+            </tags>
+          </apparel>
         </value>
       </Operation>
 

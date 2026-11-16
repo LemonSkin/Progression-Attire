@@ -28,14 +28,15 @@
     <xpath>
       Defs/ThingDef[
       defName="DankPyon_Apparel_Leather_Tunic" or
-      defName="Dankpyon_Apparel_Gambeson"
+      defName="Dankpyon_Apparel_Gambeson" or
+      defName="DankPyon_Apparel_Light_Lamellar"
       ]
     </xpath>
     <value>
       <recipeMaker>
         <researchPrerequisite Operation="SafeRemove" />
         <researchPrerequisites Operation="AddOrReplace">
-          <li>LemonSkin_RusticClothing</li>
+          <li>DankPyon_ProtectiveClothing</li>
           <li>DankPyon_LeatherTanning</li>
         </researchPrerequisites>
       </recipeMaker>
@@ -67,23 +68,33 @@
         </value>
       </Operation>
 
+      <!-- Labelled vest in game -->
       <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Leather_Tunic"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">55</costStuffCount>
           <statBases Operation="AddOrReplace">
-            <WorkToMake>5000</WorkToMake>
             <MaxHitPoints>100</MaxHitPoints>
-            <Mass>2</Mass>
+            <WorkToMake>3000</WorkToMake>
+            <Mass>1</Mass>
             <StuffEffectMultiplierArmor>0.3</StuffEffectMultiplierArmor>
-            <StuffEffectMultiplierInsulation_Cold>0.25</StuffEffectMultiplierInsulation_Cold>
-            <StuffEffectMultiplierInsulation_Heat>0.11</StuffEffectMultiplierInsulation_Heat>
+            <StuffEffectMultiplierInsulation_Cold>0.2</StuffEffectMultiplierInsulation_Cold>
+            <StuffEffectMultiplierInsulation_Heat>0.08</StuffEffectMultiplierInsulation_Heat>
             <EquipDelay>1.5</EquipDelay>
           </statBases>
+          <recipeMaker>
+            <skillRequirements Operation="AddOrReplace">
+              <Crafting>4</Crafting>
+            </skillRequirements>
+          </recipeMaker>
           <apparel>
             <bodyPartGroups Operation="AddOrReplace">
               <li>Torso</li>
             </bodyPartGroups>
+            <tags Operation="AddOrReplace">
+              <li>MedievalBasic</li>
+              <li>MedievalMilitaryBasic</li>
+            </tags>
           </apparel>
         </value>
       </Operation>

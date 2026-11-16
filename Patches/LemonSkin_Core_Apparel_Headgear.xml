@@ -154,13 +154,21 @@
         <xpath>
           Defs/ThingDef[
           defName="Apparel_TribalHeaddress" or
-          defName="Apparel_WarMask" or
           defName="Apparel_WarVeil"
           ]
         </xpath>
         <value>
           <thingCategories Operation="AddOrReplace" Inherit="False">
             <li>LemonSkin_NeolithicHeadgear</li>
+          </thingCategories>
+        </value>
+      </Operation>
+
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/ThingDef[defName="Apparel_WarMask"]</xpath>
+        <value>
+          <thingCategories Operation="AddOrReplace" Inherit="False">
+            <li>LemonSkin_NeolithicArmorHeadgear</li>
           </thingCategories>
         </value>
       </Operation>

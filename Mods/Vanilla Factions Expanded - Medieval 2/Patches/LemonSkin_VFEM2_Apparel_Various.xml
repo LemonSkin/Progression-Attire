@@ -63,53 +63,38 @@
     </nomatch>
   </Operation>
 
-  <!-- <Operation Class="XmlExtensions.FindMod">
-    <mods>
-      <li>Royalty</li>
-    </mods>
+  <Operation Class="ProgressionAttire.PatchOperationConditional">
+    <xpath>Defs/ResearchProjectDef[defName="DankPyon_LeatherTanning"]</xpath>
     <caseTrue>
       <Operation Class="ProgressionAttire.PatchOperationMerge">
-        <xpath>Defs/ThingDef[defName="VFEM2_Apparel_JesterOutfit"]</xpath>
+        <xpath>Defs/ThingDef[defName="VFEM2_Apparel_LeatherArmor"]</xpath>
         <value>
-          <recipeMaker Operation="Safe">
-            <researchPrerequisite Operation="AddOrReplace">NobleApparel</researchPrerequisite>
-            <researchPrerequisites Operation="SafeRemove" />
+          <recipeMaker>
+            <researchPrerequisite Operation="SafeRemove" />
+            <researchPrerequisites Operation="AddOrReplace">
+              <li>DankPyon_ProtectiveClothing</li>
+              <li>DankPyon_LeatherTanning</li>
+            </researchPrerequisites>
           </recipeMaker>
         </value>
       </Operation>
 
       <Operation Class="ProgressionAttire.PatchOperationMerge">
-        <xpath>
-          Defs/ThingDef[defName="VFEM2_Apparel_DameDress" or
-          defName="VFEM2_Apparel_KingsRobes"]
-        </xpath>
+        <xpath>Defs/ThingDef[defName="VFEM2_Apparel_HeavyLeatherArmor"]</xpath>
         <value>
-          <recipeMaker Operation="Safe">
-            <researchPrerequisite Operation="AddOrReplace">RoyalApparel</researchPrerequisite>
-            <researchPrerequisites Operation="SafeRemove" />
+          <recipeMaker>
+            <researchPrerequisite Operation="SafeRemove" />
+            <researchPrerequisites Operation="AddOrReplace">
+              <li>DankPyon_ChainArmor</li>
+              <li>DankPyon_LeatherTanning</li>
+            </researchPrerequisites>
           </recipeMaker>
         </value>
       </Operation>
     </caseTrue>
+  </Operation>
 
-    <caseFalse>
-      <Operation Class="ProgressionAttire.PatchOperationMerge">
-        <xpath>
-          Defs/ThingDef[defName="VFEM2_Apparel_JesterOutfit" or
-          defName="VFEM2_Apparel_DameDress" or
-          defName="VFEM2_Apparel_KingsRobes"]
-        </xpath>
-        <value>
-          <recipeMaker Operation="Safe">
-            <researchPrerequisite Operation="AddOrReplace">LemonSkin_RusticClothing</researchPrerequisite>
-            <researchPrerequisites Operation="SafeRemove" />
-          </recipeMaker>
-        </value>
-      </Operation>
-    </caseFalse>
-  </Operation> -->
-
-  <Operation Class="ProgressionAttire.PatchOperationMerge">
+  <!-- <Operation Class="ProgressionAttire.PatchOperationMerge">
     <xpath>
       Defs/ThingDef[
       defName="VFEM2_Apparel_HeavyLeatherArmor" or
@@ -122,7 +107,7 @@
         <researchPrerequisites Operation="SafeRemove" />
       </recipeMaker>
     </value>
-  </Operation>
+  </Operation> -->
 
   <Operation Class="ProgressionAttire.PatchOperationMerge">
     <xpath>
