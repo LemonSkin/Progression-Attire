@@ -29,6 +29,50 @@
             <StuffEffectMultiplierInsulation_Heat>0.15</StuffEffectMultiplierInsulation_Heat>
             <EquipDelay>2</EquipDelay>
           </statBases>
+          <apparel>
+            <tags Operation="AddOrReplace" />
+          </apparel>
+        </value>
+      </Operation>
+
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
+        <xpath>
+          Defs/ThingDef[
+          defName="DankPyon_Apparel_Hose" or
+          defName="DankPyon_Apparel_Trousers"
+          ]
+        </xpath>
+        <value>
+          <apparel>
+            <tags Operation="AddOrReplace">
+              <li>MedievalBasic</li>
+              <li>MedievalNoble</li>
+            </tags>
+          </apparel>
+        </value>
+      </Operation>
+
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Braies"]</xpath>
+        <value>
+          <apparel>
+            <tags Operation="AddOrReplace" Inherit="False">
+              <li>MedievalPeasant</li>
+              <li>MedievalBasic</li>
+            </tags>
+          </apparel>
+        </value>
+      </Operation>
+
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/ThingDef[@Name="DankPyon_Base_ArmoredPants"]</xpath>
+        <value>
+          <apparel>
+            <layers Operation="AddOrReplace">
+              <li>OnSkin</li>
+              <li>Middle</li>
+            </layers>
+          </apparel>
         </value>
       </Operation>
 
@@ -47,7 +91,7 @@
           </statBases>
           <apparel>
             <tags Operation="AddOrReplace">
-              <li>MedievalMilitaryBasic</li>
+              <li>MedievalBasic</li>
             </tags>
           </apparel>
         </value>
@@ -56,36 +100,42 @@
       <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="DankPyon_Apparel_ChaussesSplinted"]</xpath>
         <value>
+          <costStuffCount Operation="AddOrReplace">60</costStuffCount>
           <statBases Operation="AddOrReplace">
             <WorkToMake>6000</WorkToMake>
-            <MaxHitPoints>120</MaxHitPoints>
-            <Mass>2</Mass>
-            <StuffEffectMultiplierArmor>0.378</StuffEffectMultiplierArmor>
-            <StuffEffectMultiplierInsulation_Cold>0.15</StuffEffectMultiplierInsulation_Cold>
+            <MaxHitPoints>150</MaxHitPoints>
+            <Mass>3</Mass>
+            <StuffEffectMultiplierArmor>0.3</StuffEffectMultiplierArmor>
+            <StuffEffectMultiplierInsulation_Cold>0.5</StuffEffectMultiplierInsulation_Cold>
             <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
-            <EquipDelay>2.5</EquipDelay>
+            <Insulation_Cold>2</Insulation_Cold>
+            <Insulation_Heat>0.5</Insulation_Heat>
+            <EquipDelay>3</EquipDelay>
           </statBases>
           <equippedStatOffsets Operation="AddOrReplace">
             <MoveSpeed>-0.05</MoveSpeed>
           </equippedStatOffsets>
-          <recipeMaker>
-            <skillRequirements Operation="AddOrReplace">
-              <Crafting>5</Crafting>
-            </skillRequirements>
-          </recipeMaker>
+          <apparel>
+            <tags Operation="AddOrReplace">
+              <li>MedievalMilitaryBasic</li>
+            </tags>
+          </apparel>
         </value>
       </Operation>
 
       <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="DankPyon_Apparel_ChaussesPlate"]</xpath>
         <value>
+          <costStuffCount Operation="AddOrReplace">80</costStuffCount>
           <statBases Operation="AddOrReplace">
             <WorkToMake>8000</WorkToMake>
-            <MaxHitPoints>140</MaxHitPoints>
+            <MaxHitPoints>200</MaxHitPoints>
             <Mass>3</Mass>
-            <StuffEffectMultiplierArmor>0.458</StuffEffectMultiplierArmor>
-            <StuffEffectMultiplierInsulation_Cold>0.15</StuffEffectMultiplierInsulation_Cold>
+            <StuffEffectMultiplierArmor>0.45</StuffEffectMultiplierArmor>
+            <StuffEffectMultiplierInsulation_Cold>0.5</StuffEffectMultiplierInsulation_Cold>
             <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
+            <Insulation_Cold>2</Insulation_Cold>
+            <Insulation_Heat>0.5</Insulation_Heat>
             <EquipDelay>3</EquipDelay>
           </statBases>
           <equippedStatOffsets Operation="AddOrReplace">
@@ -93,9 +143,14 @@
           </equippedStatOffsets>
           <recipeMaker>
             <skillRequirements Operation="AddOrReplace">
-              <Crafting>7</Crafting>
+              <Crafting>8</Crafting>
             </skillRequirements>
           </recipeMaker>
+          <apparel>
+            <tags Operation="AddOrReplace">
+              <li>MedievalMilitaryAdvanced</li>
+            </tags>
+          </apparel>
         </value>
       </Operation>
     </caseTrue>

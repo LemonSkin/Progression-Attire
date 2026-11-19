@@ -314,18 +314,23 @@
           ]
         </xpath>
         <value>
-          <costStuffCount Operation="AddOrReplace">40</costStuffCount>
           <statBases Operation="AddOrReplace">
-            <WorkToMake>4000</WorkToMake>
+            <WorkToMake>8000</WorkToMake>
             <MaxHitPoints>100</MaxHitPoints>
-            <Mass>2.75</Mass>
-            <StuffEffectMultiplierArmor>0.34</StuffEffectMultiplierArmor>
-            <Insulation_Cold>6</Insulation_Cold>
-            <EquipDelay>2.5</EquipDelay>
+            <Mass>2</Mass>
+            <StuffEffectMultiplierArmor>0.4</StuffEffectMultiplierArmor>
+            <Insulation_Cold>9</Insulation_Cold>
+            <EquipDelay>3</EquipDelay>
           </statBases>
-          <equippedStatOffsets Operation="AddOrReplace">
-            <ShootingAccuracyPawn>-2</ShootingAccuracyPawn>
-          </equippedStatOffsets>
+          <equippedStatOffsets Operation="AddOrReplace" />
+          <apparel>
+            <layers Operation="AddOrReplace">
+              <li>Overhead</li>
+            </layers>
+            <tags Operation="AddOrReplace">
+              <li>MedievalMilitaryBasic</li>
+            </tags>
+          </apparel>
         </value>
       </Operation>
 
@@ -333,24 +338,41 @@
         <xpath>
           Defs/ThingDef[
           defName="DankPyon_Headgear_ChainCoif" or
-          defName="DankPyon_Headgear_ChainCoifClosed"
+          defName="DankPyon_Headgear_ChainCoifClosed" or
+          defName="DankPyon_Headgear_ChainCoifFull"
           ]
         </xpath>
         <value>
-          <costStuffCount Operation="AddOrReplace">40</costStuffCount>
+          <recipeMaker>
+            <skillRequirements Operation="AddOrReplace">
+              <Crafting>6</Crafting>
+            </skillRequirements>
+          </recipeMaker>
+          <costStuffCount Operation="AddOrReplace">65</costStuffCount>
           <statBases Operation="AddOrReplace">
-            <WorkToMake>7600</WorkToMake>
-            <MaxHitPoints>120</MaxHitPoints>
-            <Mass>2</Mass>
+            <WorkToMake>10000</WorkToMake>
+            <MaxHitPoints>150</MaxHitPoints>
+            <Mass>1.5</Mass>
             <StuffEffectMultiplierArmor>0.40</StuffEffectMultiplierArmor>
             <StuffEffectMultiplierInsulation_Cold>0.15</StuffEffectMultiplierInsulation_Cold>
             <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
-            <EquipDelay>2.5</EquipDelay>
+            <EquipDelay>3</EquipDelay>
           </statBases>
+          <equippedStatOffsets Operation="AddOrReplace">
+            <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.05</SlaveSuppressionOffset>
+          </equippedStatOffsets>
+          <apparel>
+            <bodyPartGroups Operation="AddOrReplace">
+              <li>UpperHead</li>
+            </bodyPartGroups>
+            <tags Operation="AddOrReplace">
+              <li>MedievalMilitaryBasic</li>
+            </tags>
+          </apparel>
         </value>
       </Operation>
 
-      <Operation Class="ProgressionAttire.PatchOperationMerge">
+      <!-- <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ChainCoifFull"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -366,7 +388,7 @@
             <ShootingAccuracyPawn>-1</ShootingAccuracyPawn>
           </equippedStatOffsets>
         </value>
-      </Operation>
+      </Operation> -->
 
       <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>
@@ -375,35 +397,51 @@
           defName="DankPyon_Headgear_ChainNasalHelmet" or
           defName="DankPyon_Headgear_ChainNasalRedHelmet" or
           defName="DankPyon_Headgear_Chain_FlatTopHelmet" or
-          defName="DankPyon_Headgear_ClosedChain_FlatTopHelmet"
+          defName="DankPyon_Headgear_ClosedChain_FlatTopHelmet" or
+          defName="DankPyon_Headgear_ChainClosedFlatTopHelmet"
           ]
         </xpath>
         <value>
+          <recipeMaker>
+            <skillRequirements Operation="AddOrReplace">
+              <Crafting>6</Crafting>
+            </skillRequirements>
+          </recipeMaker>
+          <costStuffCount Operation="AddOrReplace">75</costStuffCount>
           <statBases Operation="AddOrReplace">
-            <WorkToMake>11200</WorkToMake>
-            <MaxHitPoints>120</MaxHitPoints>
-            <Mass>2</Mass>
-            <StuffEffectMultiplierArmor>0.55</StuffEffectMultiplierArmor>
+            <WorkToMake>12000</WorkToMake>
+            <MaxHitPoints>150</MaxHitPoints>
+            <Mass>2.5</Mass>
+            <StuffEffectMultiplierArmor>0.5</StuffEffectMultiplierArmor>
             <StuffEffectMultiplierInsulation_Cold>0.15</StuffEffectMultiplierInsulation_Cold>
             <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
-            <EquipDelay>2.5</EquipDelay>
+            <EquipDelay>3</EquipDelay>
           </statBases>
           <equippedStatOffsets Operation="AddOrReplace">
-            <ShootingAccuracyPawn>-4</ShootingAccuracyPawn>
+            <ShootingAccuracyPawn>-3</ShootingAccuracyPawn>
+            <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.05</SlaveSuppressionOffset>
           </equippedStatOffsets>
+          <apparel>
+            <bodyPartGroups Operation="AddOrReplace">
+              <li>FullHead</li>
+            </bodyPartGroups>
+            <tags Operation="AddOrReplace">
+              <li>MedievalMilitaryBasic</li>
+            </tags>
+          </apparel>
         </value>
       </Operation>
 
       <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ChainNasalRedHelmet"]</xpath>
         <value>
-          <costStuffCount Operation="AddOrReplace">55</costStuffCount>
+          <costStuffCount Operation="AddOrReplace">70</costStuffCount>
           <costList Operation="AddOrReplace">
             <Cloth>5</Cloth>
           </costList>
         </value>
       </Operation>
-
+      <!--
       <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ChainClosedFlatTopHelmet"]</xpath>
         <value>
@@ -421,86 +459,126 @@
             <ShootingAccuracyPawn>-5</ShootingAccuracyPawn>
           </equippedStatOffsets>
         </value>
-      </Operation>
+      </Operation> -->
 
       <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>
           Defs/ThingDef[
           defName="DankPyon_Headgear_HeavyBarbrute" or
-          defName="DankPyon_Headgear_OpenBascinet"
+          defName="DankPyon_Headgear_OpenBascinet" or
+          defName="DankPyon_Headgear_WolfBascinet"
           ]
         </xpath>
         <value>
+          <recipeMaker>
+            <skillRequirements Operation="AddOrReplace">
+              <Crafting>8</Crafting>
+            </skillRequirements>
+          </recipeMaker>
+          <costStuffCount Operation="AddOrReplace">80</costStuffCount>
           <statBases Operation="AddOrReplace">
-            <WorkToMake>14600</WorkToMake>
-            <MaxHitPoints>140</MaxHitPoints>
+            <WorkToMake>1500</WorkToMake>
+            <MaxHitPoints>175</MaxHitPoints>
             <Mass>3.5</Mass>
-            <StuffEffectMultiplierArmor>0.72</StuffEffectMultiplierArmor>
+            <StuffEffectMultiplierArmor>0.6</StuffEffectMultiplierArmor>
             <StuffEffectMultiplierInsulation_Cold>0.15</StuffEffectMultiplierInsulation_Cold>
             <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
-            <EquipDelay>2.5</EquipDelay>
+            <EquipDelay>3</EquipDelay>
           </statBases>
           <equippedStatOffsets Operation="AddOrReplace">
-            <ShootingAccuracyPawn>-6</ShootingAccuracyPawn>
+            <ShootingAccuracyPawn>-3</ShootingAccuracyPawn>
+            <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.05</SlaveSuppressionOffset>
           </equippedStatOffsets>
+          <apparel>
+            <bodyPartGroups Operation="AddOrReplace">
+              <li>UpperHead</li>
+            </bodyPartGroups>
+            <tags Operation="AddOrReplace">
+              <li>MedievalMilitaryAdvanced</li>
+            </tags>
+          </apparel>
         </value>
       </Operation>
 
       <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[@Name="DankPyon_ZweihanderHelmBase"]</xpath>
         <value>
-          <statBases Operation="AddOrReplace">
-            <WorkToMake>13000</WorkToMake>
-            <MaxHitPoints>120</MaxHitPoints>
-            <Mass>3</Mass>
-            <StuffEffectMultiplierArmor>0.50</StuffEffectMultiplierArmor>
-            <StuffEffectMultiplierInsulation_Cold>0.15</StuffEffectMultiplierInsulation_Cold>
-            <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
-            <EquipDelay>2.5</EquipDelay>
-          </statBases>
-          <equippedStatOffsets Operation="AddOrReplace">
-            <ShootingAccuracyPawn>-2</ShootingAccuracyPawn>
-            <PainShockThreshold>0.10</PainShockThreshold>
-            <SocialImpact>0.1</SocialImpact>
-          </equippedStatOffsets>
           <recipeMaker>
             <skillRequirements Operation="AddOrReplace">
-              <Crafting>7</Crafting>
+              <Crafting>10</Crafting>
             </skillRequirements>
           </recipeMaker>
+          <costStuffCount Operation="AddOrReplace">80</costStuffCount>
+          <costList Operation="AddOrReplace">
+            <Cloth>20</Cloth>
+          </costList>
+          <statBases Operation="AddOrReplace">
+            <WorkToMake>17000</WorkToMake>
+            <MaxHitPoints>175</MaxHitPoints>
+            <Mass>3.5</Mass>
+            <StuffEffectMultiplierArmor>0.6</StuffEffectMultiplierArmor>
+            <StuffEffectMultiplierInsulation_Cold>0.15</StuffEffectMultiplierInsulation_Cold>
+            <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
+            <EquipDelay>3</EquipDelay>
+          </statBases>
+          <equippedStatOffsets Operation="AddOrReplace">
+            <ShootingAccuracyPawn>-3</ShootingAccuracyPawn>
+            <SocialImpact>0.05</SocialImpact>
+            <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.1</SlaveSuppressionOffset>
+          </equippedStatOffsets>
           <apparel>
             <bodyPartGroups Operation="AddOrReplace">
               <li>UpperHead</li>
             </bodyPartGroups>
+            <layers>
+              <li>Overhead</li>
+            </layers>
+            <tags Operation="AddOrReplace">
+              <li>MedievalNoble</li>
+            </tags>
           </apparel>
         </value>
       </Operation>
 
       <Operation Class="ProgressionAttire.PatchOperationMerge">
-        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ClosedBascinetHelmet"]</xpath>
+        <xpath>
+          Defs/ThingDef[
+          defName="DankPyon_Headgear_ClosedBascinetHelmet" or
+          defName="DankPyon_Headgear_Bascinet_KlappvisierHelmetClosed" or
+          defName="DankPyon_Headgear_KlappvisorBascinet" or
+          defName="DankPyon_Headgear_HounskullHelmet" or
+          @Name="DankPyon_SalletBase"
+          ]
+        </xpath>
         <value>
-          <statBases Operation="AddOrReplace">
-            <WorkToMake>20000</WorkToMake>
-            <MaxHitPoints>160</MaxHitPoints>
-            <Mass>3.5</Mass>
-            <StuffEffectMultiplierArmor>0.81</StuffEffectMultiplierArmor>
-            <StuffEffectMultiplierInsulation_Cold>0.15</StuffEffectMultiplierInsulation_Cold>
-            <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
-            <EquipDelay>4</EquipDelay>
-          </statBases>
-          <equippedStatOffsets Operation="AddOrReplace">
-            <ShootingAccuracyPawn>-7.0</ShootingAccuracyPawn>
-            <MeleeHitChance>-0.5</MeleeHitChance>
-          </equippedStatOffsets>
           <recipeMaker>
             <skillRequirements Operation="AddOrReplace">
               <Crafting>9</Crafting>
             </skillRequirements>
           </recipeMaker>
+          <costStuffCount Operation="AddOrReplace">80</costStuffCount>
+          <statBases Operation="AddOrReplace">
+            <WorkToMake>16000</WorkToMake>
+            <MaxHitPoints>200</MaxHitPoints>
+            <Mass>3.5</Mass>
+            <StuffEffectMultiplierArmor>0.65</StuffEffectMultiplierArmor>
+            <StuffEffectMultiplierInsulation_Cold>0.15</StuffEffectMultiplierInsulation_Cold>
+            <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
+            <EquipDelay>3</EquipDelay>
+          </statBases>
+          <equippedStatOffsets Operation="AddOrReplace">
+            <ShootingAccuracyPawn>-6.0</ShootingAccuracyPawn>
+            <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.05</SlaveSuppressionOffset>
+          </equippedStatOffsets>
+          <apparel>
+            <tags Operation="AddOrReplace">
+              <li>MedievalMilitaryAdvanced</li>
+            </tags>
+          </apparel>
         </value>
       </Operation>
 
-      <Operation Class="ProgressionAttire.PatchOperationMerge">
+      <!-- <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="DankPyon_Headgear_WolfBascinet"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">70</costStuffCount>
@@ -522,9 +600,9 @@
             </skillRequirements>
           </recipeMaker>
         </value>
-      </Operation>
+      </Operation> -->
 
-      <Operation Class="ProgressionAttire.PatchOperationMerge">
+      <!-- <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>
           Defs/ThingDef[
           defName="DankPyon_Headgear_Bascinet_KlappvisierHelmetClosed" or
@@ -553,33 +631,62 @@
             </skillRequirements>
           </recipeMaker>
         </value>
+      </Operation> -->
+
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
+        <xpath>
+          Defs/ThingDef[
+          defName="DankPyon_Headgear_GreatHelm" or
+          @Name="DankPyon_HeraldicGreatHelm" or
+          defName="DankPyon_Headgear_Armet"
+          ]
+        </xpath>
+        <value>
+          <recipeMaker>
+            <skillRequirements Operation="AddOrReplace">
+              <Crafting>10</Crafting>
+            </skillRequirements>
+          </recipeMaker>
+          <costStuffCount Operation="AddOrReplace">100</costStuffCount>
+          <statBases Operation="AddOrReplace">
+            <WorkToMake>18000</WorkToMake>
+            <MaxHitPoints>250</MaxHitPoints>
+            <Mass>3.5</Mass>
+            <StuffEffectMultiplierArmor>0.7</StuffEffectMultiplierArmor>
+            <StuffEffectMultiplierInsulation_Cold>0.15</StuffEffectMultiplierInsulation_Cold>
+            <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
+            <EquipDelay>3</EquipDelay>
+          </statBases>
+          <equippedStatOffsets Operation="AddOrReplace">
+            <ShootingAccuracyPawn>-8.0</ShootingAccuracyPawn>
+            <PainShockThreshold>0.05</PainShockThreshold>
+            <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.05</SlaveSuppressionOffset>
+          </equippedStatOffsets>
+          <apparel>
+            <layers Operation="AddOrReplace">
+              <li>Overhead</li>
+            </layers>
+          </apparel>
+        </value>
       </Operation>
 
       <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>
           Defs/ThingDef[
           defName="DankPyon_Headgear_GreatHelm" or
-          @Name="DankPyon_HeraldicGreatHelm"
+          defName="DankPyon_Headgear_Armet"
           ]
         </xpath>
         <value>
-          <statBases Operation="AddOrReplace">
-            <WorkToMake>20000</WorkToMake>
-            <MaxHitPoints>160</MaxHitPoints>
-            <Mass>3.5</Mass>
-            <StuffEffectMultiplierArmor>0.81</StuffEffectMultiplierArmor>
-            <StuffEffectMultiplierInsulation_Cold>0.15</StuffEffectMultiplierInsulation_Cold>
-            <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
-            <EquipDelay>4</EquipDelay>
-          </statBases>
-          <equippedStatOffsets Operation="AddOrReplace">
-            <ShootingAccuracyPawn>-7.0</ShootingAccuracyPawn>
-            <MeleeHitChance>-0.5</MeleeHitChance>
-          </equippedStatOffsets>
+          <apparel>
+            <tags Operation="AddOrReplace">
+              <li>MedievalMilitaryAdvanced</li>
+            </tags>
+          </apparel>
         </value>
       </Operation>
 
-      <Operation Class="ProgressionAttire.PatchOperationMerge">
+      <!-- <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="DankPyon_Headgear_Armet"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
@@ -601,38 +708,85 @@
             </skillRequirements>
           </recipeMaker>
         </value>
-      </Operation>
+      </Operation> -->
 
       <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ArmetGilded"]</xpath>
         <value>
+          <recipeMaker>
+            <skillRequirements Operation="AddOrReplace">
+              <Crafting>14</Crafting>
+            </skillRequirements>
+          </recipeMaker>
+          <costStuffCount Operation="AddOrReplace">100</costStuffCount>
           <statBases Operation="AddOrReplace">
-            <WorkToMake>35800</WorkToMake>
-            <MaxHitPoints>170</MaxHitPoints>
+            <WorkToMake>22000</WorkToMake>
+            <MaxHitPoints>250</MaxHitPoints>
             <Mass>3.5</Mass>
-            <StuffEffectMultiplierArmor>0.9</StuffEffectMultiplierArmor>
+            <StuffEffectMultiplierArmor>0.7</StuffEffectMultiplierArmor>
             <StuffEffectMultiplierInsulation_Cold>0.15</StuffEffectMultiplierInsulation_Cold>
             <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
-            <EquipDelay>4</EquipDelay>
+            <EquipDelay>3</EquipDelay>
           </statBases>
           <equippedStatOffsets Operation="AddOrReplace">
             <ShootingAccuracyPawn>-8.0</ShootingAccuracyPawn>
-            <MeleeHitChance>-1</MeleeHitChance>
-            <SocialImpact>0.25</SocialImpact>
-            <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.2</SlaveSuppressionOffset>
+            <PainShockThreshold>0.05</PainShockThreshold>
+            <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.1</SlaveSuppressionOffset>
+            <SocialImpact>0.1</SocialImpact>
           </equippedStatOffsets>
+          <apparel>
+            <tags Operation="AddOrReplace">
+              <li>MedievalRoyal</li>
+            </tags>
+          </apparel>
         </value>
       </Operation>
 
       <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="DankPyon_Headgear_ArmetNamed"]</xpath>
         <value>
+          <statBases Operation="AddOrReplace">
+            <MarketValue>3940</MarketValue>
+            <WorkToMake>25000</WorkToMake>
+            <MaxHitPoints>755</MaxHitPoints>
+            <DeteriorationRate>0.2</DeteriorationRate>
+            <Mass>3.5</Mass>
+            <ArmorRating_Sharp>1.50</ArmorRating_Sharp>
+            <ArmorRating_Blunt>0.75</ArmorRating_Blunt>
+            <ArmorRating_Heat>0.819</ArmorRating_Heat>
+            <Insulation_Cold>2</Insulation_Cold>
+            <EquipDelay>3</EquipDelay>
+          </statBases>
           <equippedStatOffsets Operation="AddOrReplace">
             <ShootingAccuracyPawn>-8.0</ShootingAccuracyPawn>
-            <MeleeHitChance>-1</MeleeHitChance>
-            <SocialImpact>0.35</SocialImpact>
-            <PainShockThreshold>0.15</PainShockThreshold>
-            <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.2</SlaveSuppressionOffset>
+            <PainShockThreshold>0.05</PainShockThreshold>
+            <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.15</SlaveSuppressionOffset>
+            <SocialImpact>0.15</SocialImpact>
+          </equippedStatOffsets>
+        </value>
+      </Operation>
+
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/ThingDef[defName="DankPyon_Headgear_Lindwurm"]</xpath>
+        <value>
+          <statBases Operation="AddOrReplace">
+            <MaxHitPoints>300</MaxHitPoints>
+            <WorkToMake>25000</WorkToMake>
+            <Mass>3.50</Mass>
+            <DeteriorationRate>0.2</DeteriorationRate>
+            <StuffEffectMultiplierArmor>0.1</StuffEffectMultiplierArmor>
+            <ArmorRating_Sharp>0.60</ArmorRating_Sharp>
+            <ArmorRating_Blunt>0.35</ArmorRating_Blunt>
+            <ArmorRating_Heat>0.20</ArmorRating_Heat>
+            <Insulation_Cold>2</Insulation_Cold>
+            <Insulation_Heat>4</Insulation_Heat>
+            <EquipDelay>3</EquipDelay>
+          </statBases>
+          <equippedStatOffsets Operation="AddOrReplace">
+            <ShootingAccuracyPawn>-6.0</ShootingAccuracyPawn>
+            <PainShockThreshold>0.05</PainShockThreshold>
+            <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.1</SlaveSuppressionOffset>
+            <SocialImpact>0.1</SocialImpact>
           </equippedStatOffsets>
         </value>
       </Operation>

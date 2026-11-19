@@ -9,6 +9,14 @@
     </value>
   </Operation>
 
+  <!-- Force every MO item thingDef to have a medieval tech level just in case -->
+  <Operation Class="ProgressionAttire.PatchOperationMerge">
+    <xpath>/Defs/ThingDef[starts-with(defName, "DankPyon_")]</xpath>
+    <value>
+      <techLevel Operation="AddOrReplace">Medieval</techLevel>
+    </value>
+  </Operation>
+
   <!-- 9859 ms -->
   <!-- <Operation Class="PatchOperationAdd">
     <xpath>//*/recipeMaker/recipeUsers[li[.='FueledSmithy'] and not(li[.='DankPyon_Anvil'])]</xpath>

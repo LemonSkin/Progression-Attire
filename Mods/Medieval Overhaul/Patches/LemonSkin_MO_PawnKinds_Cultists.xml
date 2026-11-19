@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <Operation Class="ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyRebalances</settingName>
+    <caseTrue>
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/PawnKindDef[@Name="DankPyon_CultistPawnBase"]</xpath>
+        <value>
+          <apparelRequired Operation="AddOrReplace">
+            <li>DankPyon_Headgear_CultistHood</li>
+          </apparelRequired>
+          <specificApparelRequirements Operation="AddOrReplace">
+            <li>
+              <bodyPartGroup>UpperHead</bodyPartGroup>
+              <apparelLayer>Overhead</apparelLayer>
+              <stuff>Leather_Bear</stuff>
+            </li>
+          </specificApparelRequirements>
+          <apparelMoney Operation="AddOrReplace">300~500</apparelMoney>
+          <apparelTags Operation="AddOrReplace">
+            <li>MedievalPeasant</li>
+            <li>MedievalBasic</li>
+          </apparelTags>
+        </value>
+      </Operation>
+
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/PawnKindDef[defName="DankPyon_Cultist_Novice"]</xpath>
+        <value>
+          <apparelRequired Operation="AddOrReplace">
+            <li>DankPyon_Footwear_BootsLeather</li>
+            <!-- <li>DankPyon_Apparel_Braies</li> -->
+          </apparelRequired>
+        </value>
+      </Operation>
+
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/PawnKindDef[@Name="DankPyon_CultistAcolyteBase"]</xpath>
+        <value>
+          <apparelRequired Operation="AddOrReplace">
+            <li>DankPyon_Apparel_Light_Lamellar</li>
+            <li>DankPyon_Apparel_ChaussesPadded</li>
+            <li>DankPyon_Footwear_BootsLeather</li>
+            <li>DankPyon_Handwear_GlovesLeather</li>
+          </apparelRequired>
+          <apparelMoney Operation="AddOrReplace">500~700</apparelMoney>
+          <specificApparelRequirements Operation="AddOrReplace">
+            <li>
+              <bodyPartGroup>Torso</bodyPartGroup>
+              <apparelLayer>Shell</apparelLayer>
+              <stuff>Leather_Bear</stuff>
+            </li>
+            <li>
+              <bodyPartGroup>Legs</bodyPartGroup>
+              <apparelLayer>Middle</apparelLayer>
+              <stuff>Leather_Bear</stuff>
+            </li>
+          </specificApparelRequirements>
+        </value>
+      </Operation>
+
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/PawnKindDef[@Name="DankPyon_CultistAdeptBase"]</xpath>
+        <value>
+          <apparelRequired Operation="AddOrReplace">
+            <li>DankPyon_Apparel_Padded_Leather</li>
+            <li>DankPyon_Footwear_BootsLeather</li>
+            <li>DankPyon_Handwear_GlovesLeather</li>
+            <!-- <li>DankPyon_Apparel_Trousers</li> -->
+          </apparelRequired>
+          <apparelMoney Operation="AddOrReplace">700~900</apparelMoney>
+          <specificApparelRequirements Operation="AddOrReplace">
+            <li>
+              <bodyPartGroup>Torso</bodyPartGroup>
+              <apparelLayer>Shell</apparelLayer>
+              <stuff>Leather_Bear</stuff>
+            </li>
+          </specificApparelRequirements>
+          <apparelTags Operation="AddOrReplace">
+            <li>MedievalMilitaryBasic</li>
+          </apparelTags>
+        </value>
+      </Operation>
+
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/PawnKindDef[@Name="DankPyon_Cultist_HighPristBase"]</xpath>
+        <value>
+          <apparelRequired Operation="AddOrReplace">
+            <li>DankPyon_Apparel_Heavy_Hauberk</li>
+            <li>DankPyon_Footwear_BootsSplinted</li>
+            <li>DankPyon_Handwear_GlovesSplinted</li>
+            <!-- <li>DankPyon_Apparel_Trousers</li> -->
+          </apparelRequired>
+          <apparelMoney Operation="AddOrReplace">900~1100</apparelMoney>
+
+          <specificApparelRequirements Operation="AddOrReplace">
+            <li>
+              <bodyPartGroup>Torso</bodyPartGroup>
+              <apparelLayer>Shell</apparelLayer>
+              <stuff>Steel</stuff>
+            </li>
+            <li>
+              <bodyPartGroup>Feet</bodyPartGroup>
+              <apparelLayer>Middle</apparelLayer>
+              <stuff>Steel</stuff>
+            </li>
+            <li>
+              <bodyPartGroup>Hands</bodyPartGroup>
+              <apparelLayer>Middle</apparelLayer>
+              <stuff>Steel</stuff>
+            </li>
+          </specificApparelRequirements>
+          <apparelTags Operation="AddOrReplace">
+            <li>MedievalMilitaryBasic</li>
+          </apparelTags>
+        </value>
+      </Operation>
+    </caseTrue>
+  </Operation>
+</Patch>

@@ -46,35 +46,23 @@
   <Operation Class="ProgressionAttire.PatchOperationCheckSetting">
     <settingName>applyRebalances</settingName>
     <caseTrue>
-      <!-- ######################################### VANILLA ITEM CHANGES ######################################### -->
-      <Operation Class="ProgressionAttire.PatchOperationMerge">
-        <xpath>Defs/ThingDef[defName="Apparel_PlateArmor"]</xpath>
-        <value>
-          <costStuffCount Operation="AddOrReplace">200</costStuffCount>
-          <recipeMaker>
-            <skillRequirements Operation="AddOrReplace">
-              <Crafting>10</Crafting>
-            </skillRequirements>
-          </recipeMaker>
-        </value>
-      </Operation>
-
       <!-- ######################################### MO ITEM CHANGES ######################################### -->
       <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Brigandine"]</xpath>
         <value>
-          <costStuffCount Operation="AddOrReplace">120</costStuffCount>
+          <costStuffCount Operation="AddOrReplace">85</costStuffCount>
           <statBases Operation="AddOrReplace">
-            <WorkToMake>15600</WorkToMake>
-            <MaxHitPoints>230</MaxHitPoints>
-            <Mass>10</Mass>
-            <StuffEffectMultiplierArmor>0.67</StuffEffectMultiplierArmor>
-            <StuffEffectMultiplierInsulation_Cold>0.15</StuffEffectMultiplierInsulation_Cold>
+            <WorkToMake>15000</WorkToMake>
+            <MaxHitPoints>200</MaxHitPoints>
+            <Mass>8</Mass>
+            <StuffEffectMultiplierArmor>0.6</StuffEffectMultiplierArmor>
+            <StuffEffectMultiplierInsulation_Cold>1.0</StuffEffectMultiplierInsulation_Cold>
             <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
-            <EquipDelay>8</EquipDelay>
+            <EquipDelay>6</EquipDelay>
           </statBases>
           <equippedStatOffsets Operation="AddOrReplace">
-            <MoveSpeed>-0.3</MoveSpeed>
+            <MoveSpeed>-0.25</MoveSpeed>
+            <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.1</SlaveSuppressionOffset>
           </equippedStatOffsets>
           <recipeMaker>
             <skillRequirements Operation="AddOrReplace">
@@ -85,7 +73,15 @@
             <bodyPartGroups Operation="AddOrReplace">
               <li>Neck</li>
               <li>Torso</li>
+              <li>Shoulders</li>
+              <li>Arms</li>
             </bodyPartGroups>
+            <layers Operation="AddOrReplace">
+              <li>Middle</li>
+            </layers>
+            <tags Operation="AddOrReplace">
+              <li>MedievalMilitaryAdvanced</li>
+            </tags>
           </apparel>
         </value>
       </Operation>
@@ -93,18 +89,19 @@
       <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Breast_Plate"]</xpath>
         <value>
-          <costStuffCount Operation="AddOrReplace">100</costStuffCount>
+          <costStuffCount Operation="AddOrReplace">85</costStuffCount>
           <statBases Operation="AddOrReplace">
-            <WorkToMake>20000</WorkToMake>
-            <MaxHitPoints>250</MaxHitPoints>
-            <Mass>8</Mass>
-            <StuffEffectMultiplierArmor>0.78</StuffEffectMultiplierArmor>
-            <StuffEffectMultiplierInsulation_Cold>0.15</StuffEffectMultiplierInsulation_Cold>
+            <WorkToMake>15000</WorkToMake>
+            <MaxHitPoints>200</MaxHitPoints>
+            <Mass>6</Mass>
+            <StuffEffectMultiplierArmor>0.7</StuffEffectMultiplierArmor>
+            <StuffEffectMultiplierInsulation_Cold>1</StuffEffectMultiplierInsulation_Cold>
             <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
             <EquipDelay>5</EquipDelay>
           </statBases>
           <equippedStatOffsets Operation="AddOrReplace">
-            <MoveSpeed>-0.35</MoveSpeed>
+            <MoveSpeed>-0.15</MoveSpeed>
+            <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.1</SlaveSuppressionOffset>
           </equippedStatOffsets>
           <recipeMaker>
             <skillRequirements Operation="AddOrReplace">
@@ -116,6 +113,12 @@
               <li>Neck</li>
               <li>Torso</li>
             </bodyPartGroups>
+            <layers Operation="AddOrReplace">
+              <li>Middle</li>
+            </layers>
+            <tags Operation="AddOrReplace">
+              <li>MedievalMilitaryAdvanced</li>
+            </tags>
           </apparel>
         </value>
       </Operation>
@@ -123,82 +126,161 @@
       <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[@Name="DankPyon_ZweihanderCuirassBase"]</xpath>
         <value>
+          <costStuffCount Operation="AddOrReplace">75</costStuffCount>
+          <costList Operation="AddOrReplace">
+            <DankPyon_Linen>20</DankPyon_Linen>
+          </costList>
           <statBases Operation="AddOrReplace">
-            <WorkToMake>23600</WorkToMake>
-            <MaxHitPoints>250</MaxHitPoints>
-            <Mass>8</Mass>
-            <StuffEffectMultiplierArmor>0.78</StuffEffectMultiplierArmor>
-            <StuffEffectMultiplierInsulation_Cold>1.0</StuffEffectMultiplierInsulation_Cold>
+            <WorkToMake>2000</WorkToMake>
+            <MaxHitPoints>200</MaxHitPoints>
+            <Mass>6</Mass>
+            <StuffEffectMultiplierArmor>0.7</StuffEffectMultiplierArmor>
+            <StuffEffectMultiplierInsulation_Cold>1</StuffEffectMultiplierInsulation_Cold>
             <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
             <EquipDelay>5</EquipDelay>
           </statBases>
           <equippedStatOffsets Operation="AddOrReplace">
-            <MoveSpeed>-0.4</MoveSpeed>
+            <MoveSpeed>-0.15</MoveSpeed>
             <SocialImpact>0.1</SocialImpact>
+            <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.1</SlaveSuppressionOffset>
           </equippedStatOffsets>
           <recipeMaker>
             <skillRequirements Operation="AddOrReplace">
               <Crafting>10</Crafting>
             </skillRequirements>
           </recipeMaker>
+          <apparel>
+            <layers Operation="AddOrReplace">
+              <li>Middle</li>
+            </layers>
+            <tags Operation="AddOrReplace">
+              <li>MedievalNoble</li>
+            </tags>
+          </apparel>
         </value>
       </Operation>
 
       <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="DankPyon_Apparel_FullPlate"]</xpath>
         <value>
+          <costStuffCount Operation="AddOrReplace">170</costStuffCount>
           <statBases Operation="AddOrReplace">
-            <WorkToMake>25400</WorkToMake>
+            <WorkToMake>38000</WorkToMake>
             <MaxHitPoints>290</MaxHitPoints>
-            <Mass>10</Mass>
+            <Mass>15</Mass>
             <StuffEffectMultiplierArmor>0.9</StuffEffectMultiplierArmor>
             <StuffEffectMultiplierInsulation_Cold>1.0</StuffEffectMultiplierInsulation_Cold>
             <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
-            <EquipDelay>10</EquipDelay>
+            <EquipDelay>15</EquipDelay>
           </statBases>
           <equippedStatOffsets Operation="AddOrReplace">
-            <MoveSpeed>-0.70</MoveSpeed>
+            <MoveSpeed>-0.80</MoveSpeed>
+            <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.1</SlaveSuppressionOffset>
           </equippedStatOffsets>
+          <apparel>
+            <layers Operation="AddOrReplace">
+              <li>Middle</li>
+              <li>Shell</li>
+            </layers>
+            <tags Operation="AddOrReplace">
+              <li>MedievalMilitaryAdvanced</li>
+            </tags>
+          </apparel>
         </value>
       </Operation>
 
       <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="DankPyon_Apparel_FullPlateGilded"]</xpath>
         <value>
+          <costStuffCount Operation="AddOrReplace">170</costStuffCount>
           <statBases Operation="AddOrReplace">
-            <WorkToMake>36200</WorkToMake>
+            <WorkToMake>45000</WorkToMake>
             <MaxHitPoints>290</MaxHitPoints>
-            <Mass>10</Mass>
+            <Mass>15</Mass>
             <StuffEffectMultiplierArmor>0.9</StuffEffectMultiplierArmor>
             <StuffEffectMultiplierInsulation_Cold>1.0</StuffEffectMultiplierInsulation_Cold>
             <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
-            <EquipDelay>10</EquipDelay>
+            <EquipDelay>15</EquipDelay>
           </statBases>
           <equippedStatOffsets Operation="AddOrReplace">
-            <MoveSpeed>-0.7</MoveSpeed>
-            <SocialImpact>0.25</SocialImpact>
+            <MoveSpeed>-0.8</MoveSpeed>
+            <SocialImpact>0.2</SocialImpact>
             <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.2</SlaveSuppressionOffset>
           </equippedStatOffsets>
+          <recipeMaker>
+            <skillRequirements Operation="AddOrReplace">
+              <Crafting>14</Crafting>
+            </skillRequirements>
+          </recipeMaker>
+          <apparel>
+            <layers Operation="AddOrReplace">
+              <li>Middle</li>
+              <li>Shell</li>
+            </layers>
+            <tags Operation="AddOrReplace">
+              <li>MedievalRoyal</li>
+            </tags>
+          </apparel>
         </value>
       </Operation>
 
       <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="DankPyon_Apparel_FullPlateNamed"]</xpath>
         <value>
-          <statBases Operation="AddOrReplace">
-            <WorkToMake>36200</WorkToMake>
-            <MaxHitPoints>290</MaxHitPoints>
-            <Mass>10</Mass>
-            <StuffEffectMultiplierArmor>0.9</StuffEffectMultiplierArmor>
-            <StuffEffectMultiplierInsulation_Cold>1.0</StuffEffectMultiplierInsulation_Cold>
-            <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
-            <EquipDelay>10</EquipDelay>
-          </statBases>
+          <!-- <statBases Operation="AddOrReplace">
+            <MarketValue>5405</MarketValue>
+            <WorkToMake>70000</WorkToMake>
+            <MaxHitPoints>870</MaxHitPoints>
+            <DeteriorationRate>0.2</DeteriorationRate>
+            <Mass>15</Mass>
+            <ArmorRating_Sharp>1.55</ArmorRating_Sharp>
+            <ArmorRating_Blunt>0.75</ArmorRating_Blunt>
+            <ArmorRating_Heat>0.854</ArmorRating_Heat>
+            <Insulation_Cold>5</Insulation_Cold>
+            <EquipDelay>15</EquipDelay>
+          </statBases> -->
           <equippedStatOffsets Operation="AddOrReplace">
-            <MoveSpeed>-0.7</MoveSpeed>
-            <SocialImpact>0.35</SocialImpact>
+            <MoveSpeed>-0.8</MoveSpeed>
+            <SocialImpact>0.3</SocialImpact>
             <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.2</SlaveSuppressionOffset>
           </equippedStatOffsets>
+          <apparel>
+            <layers Operation="AddOrReplace">
+              <li>Middle</li>
+              <li>Shell</li>
+            </layers>
+            <tags Operation="AddOrReplace" />
+          </apparel>
+        </value>
+      </Operation>
+
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/ThingDef[defName="DankPyon_Apparel_Lindwurm"]</xpath>
+        <value>
+          <!-- <statBases Operation="AddOrReplace">
+            <WorkToMake>38000</WorkToMake>
+            <MaxHitPoints>300</MaxHitPoints>
+            <Mass>10</Mass>
+            <StuffEffectMultiplierArmor>0.25</StuffEffectMultiplierArmor>
+            <ArmorRating_Sharp>0.60</ArmorRating_Sharp>
+            <ArmorRating_Blunt>0.35</ArmorRating_Blunt>
+            <ArmorRating_Heat>0.20</ArmorRating_Heat>
+            <Insulation_Cold>2</Insulation_Cold>
+            <Insulation_Heat>4</Insulation_Heat>
+            <EquipDelay>15</EquipDelay>
+          </statBases> -->
+          <equippedStatOffsets Operation="AddOrReplace">
+            <MoveSpeed>-0.60</MoveSpeed>
+            <SocialImpact>0.20</SocialImpact>
+            <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.2</SlaveSuppressionOffset>
+          </equippedStatOffsets>
+          <apparel>
+            <layers Operation="AddOrReplace">
+              <li>Middle</li>
+              <li>Shell</li>
+            </layers>
+            <tags Operation="AddOrReplace" />
+          </apparel>
         </value>
       </Operation>
     </caseTrue>

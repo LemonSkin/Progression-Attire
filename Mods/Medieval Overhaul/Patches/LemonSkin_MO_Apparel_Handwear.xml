@@ -30,22 +30,24 @@
         <xpath>Defs/ThingDef[defName="DankPyon_Handwear_GlovesSplinted"]</xpath>
         <value>
           <statBases Operation="AddOrReplace">
+            <MaxHitPoints>150</MaxHitPoints>
             <WorkToMake>4000</WorkToMake>
-            <MaxHitPoints>120</MaxHitPoints>
             <Mass>1</Mass>
-            <StuffEffectMultiplierArmor>0.378</StuffEffectMultiplierArmor>
-            <StuffEffectMultiplierInsulation_Cold>0.15</StuffEffectMultiplierInsulation_Cold>
+            <StuffEffectMultiplierArmor>0.3</StuffEffectMultiplierArmor>
+            <StuffEffectMultiplierInsulation_Cold>0.5</StuffEffectMultiplierInsulation_Cold>
             <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
             <EquipDelay>2</EquipDelay>
           </statBases>
-          <equippedStatOffsets Operation="AddOrReplace">
-            <WorkSpeedGlobal>-0.05</WorkSpeedGlobal>
-          </equippedStatOffsets>
           <recipeMaker>
             <skillRequirements Operation="AddOrReplace">
-              <Crafting>5</Crafting>
+              <Crafting>6</Crafting>
             </skillRequirements>
           </recipeMaker>
+          <apparel>
+            <tags Operation="AddOrReplace">
+              <li>MedievalMilitaryBasic</li>
+            </tags>
+          </apparel>
         </value>
       </Operation>
 
@@ -54,21 +56,23 @@
         <value>
           <statBases Operation="AddOrReplace">
             <WorkToMake>6000</WorkToMake>
-            <MaxHitPoints>140</MaxHitPoints>
+            <MaxHitPoints>200</MaxHitPoints>
             <Mass>2</Mass>
-            <StuffEffectMultiplierArmor>0.438</StuffEffectMultiplierArmor>
-            <StuffEffectMultiplierInsulation_Cold>0.15</StuffEffectMultiplierInsulation_Cold>
+            <StuffEffectMultiplierArmor>0.45</StuffEffectMultiplierArmor>
+            <StuffEffectMultiplierInsulation_Cold>0.5</StuffEffectMultiplierInsulation_Cold>
             <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
-            <EquipDelay>2.5</EquipDelay>
+            <EquipDelay>2</EquipDelay>
           </statBases>
-          <equippedStatOffsets Operation="AddOrReplace">
-            <WorkSpeedGlobal>-0.1</WorkSpeedGlobal>
-          </equippedStatOffsets>
           <recipeMaker>
             <skillRequirements Operation="AddOrReplace">
-              <Crafting>7</Crafting>
+              <Crafting>8</Crafting>
             </skillRequirements>
           </recipeMaker>
+          <apparel>
+            <tags Operation="AddOrReplace">
+              <li>MedievalMilitaryAdvanced</li>
+            </tags>
+          </apparel>
         </value>
       </Operation>
     </caseTrue>

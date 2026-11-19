@@ -41,6 +41,30 @@
   </Operation>
 
   <!-- ######################################### REBALANCES #################################### -->
+  <Operation Class="ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyRebalances</settingName>
+    <caseTrue>
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/ThingDef[defName="Apparel_PlateArmor"]</xpath>
+        <value>
+          <equippedStatOffsets Operation="AddOrReplace">
+            <MoveSpeed>-0.8</MoveSpeed>
+            <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.1</SlaveSuppressionOffset>
+          </equippedStatOffsets>
+          <recipeMaker>
+            <skillRequirements Operation="AddOrReplace">
+              <Crafting>10</Crafting>
+            </skillRequirements>
+          </recipeMaker>
+          <apparel>
+            <tags Operation="AddOrReplace">
+              <li>MedievalMilitaryAdvanced</li>
+            </tags>
+          </apparel>
+        </value>
+      </Operation>
+    </caseTrue>
+  </Operation>
 
   <!-- ######################################### CATEGORIES #################################### -->
   <Operation Class="ProgressionAttire.PatchOperationCheckSetting">

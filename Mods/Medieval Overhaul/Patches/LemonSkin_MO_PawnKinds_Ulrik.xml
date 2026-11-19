@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <Operation Class="ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyRebalances</settingName>
+    <caseTrue>
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/PawnKindDef[defName="DankPyon_Ulrik_Initiate"]</xpath>
+        <value>
+          <apparelRequired Operation="AddOrReplace">
+            <li>DankPyon_Apparel_AdornedMailShirt</li>
+            <li>DankPyon_Footwear_BootsLeather</li>
+            <li>DankPyon_Handwear_GlovesLeather</li>
+            <li>DankPyon_Adorned_HeavyMailCoif</li>
+          </apparelRequired>
+          <apparelTags Operation="AddOrReplace">
+            <li>MedievalPeasant</li>
+            <li>MedievalBasic</li>
+            <!-- <li>Ulrik_Initiate</li> -->
+          </apparelTags>
+          <specificApparelRequirements Operation="AddOrReplace">
+            <li>
+              <apparelLayer>Overhead</apparelLayer>
+              <stuff>Steel</stuff>
+            </li>
+            <li>
+              <bodyPartGroup>Torso</bodyPartGroup>
+              <apparelLayer>Shell</apparelLayer>
+              <stuff>Steel</stuff>
+            </li>
+            <li>
+              <bodyPartGroup>Feet</bodyPartGroup>
+              <apparelLayer>Middle</apparelLayer>
+              <stuff>Leather_Bear</stuff>
+            </li>
+            <li>
+              <bodyPartGroup>Hands</bodyPartGroup>
+              <apparelLayer>Middle</apparelLayer>
+              <stuff>Leather_Bear</stuff>
+            </li>
+          </specificApparelRequirements>
+        </value>
+      </Operation>
+
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/PawnKindDef[defName="DankPyon_Ulrik_Warrior"]</xpath>
+        <value>
+          <apparelTags Operation="AddOrReplace">
+            <li>MedievalPeasant</li>
+            <li>MedievalBasic</li>
+            <!-- <li>Ulrik_Warrior</li> -->
+          </apparelTags>
+          <!-- <apparelRequired Operation="AddOrReplace">
+            <li>DankPyon_Apparel_AdornedWarriorArmor</li>
+            <li>DankPyon_Footwear_BootsSplinted</li>
+            <li>DankPyon_Handwear_GlovesSplinted</li>
+            <li>DankPyon_Adorned_FlatTop</li>
+          </apparelRequired> -->
+          <specificApparelRequirements Operation="AddOrReplace">
+            <li>
+              <apparelLayer>Overhead</apparelLayer>
+              <stuff>Steel</stuff>
+            </li>
+            <li>
+              <bodyPartGroup>Torso</bodyPartGroup>
+              <apparelLayer>Shell</apparelLayer>
+              <stuff>Steel</stuff>
+            </li>
+            <li>
+              <bodyPartGroup>Feet</bodyPartGroup>
+              <apparelLayer>Middle</apparelLayer>
+              <stuff>Steel</stuff>
+            </li>
+            <li>
+              <bodyPartGroup>Hands</bodyPartGroup>
+              <apparelLayer>Middle</apparelLayer>
+              <stuff>Steel</stuff>
+            </li>
+          </specificApparelRequirements>
+        </value>
+      </Operation>
+
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/PawnKindDef[defName="DankPyon_Ulrik_Oathbound"]</xpath>
+        <value>
+          <apparelTags Operation="AddOrReplace">
+            <li>MedievalBasic</li>
+            <li>MedievalNoble</li>
+            <!-- <li>Ulrik_Oathbound</li> -->
+          </apparelTags>
+          <!-- <apparelRequired Operation="AddOrReplace">
+            <li>DankPyon_Apparel_AdornedHeavyPlate</li>
+            <li>DankPyon_Footwear_BootsPlate</li>
+            <li>DankPyon_Handwear_GlovesPlate</li>
+          </apparelRequired> -->
+          <specificApparelRequirements Operation="AddOrReplace">
+            <li>
+              <apparelLayer>Overhead</apparelLayer>
+              <stuff>Steel</stuff>
+            </li>
+            <li>
+              <bodyPartGroup>Torso</bodyPartGroup>
+              <apparelLayer>Shell</apparelLayer>
+              <stuff>Steel</stuff>
+            </li>
+            <li>
+              <bodyPartGroup>Feet</bodyPartGroup>
+              <apparelLayer>Middle</apparelLayer>
+              <stuff>Steel</stuff>
+            </li>
+            <li>
+              <bodyPartGroup>Hands</bodyPartGroup>
+              <apparelLayer>Middle</apparelLayer>
+              <stuff>Steel</stuff>
+            </li>
+          </specificApparelRequirements>
+        </value>
+      </Operation>
+
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/PawnKindDef[defName="DankPyon_Ulrik_Lord"]</xpath>
+        <value>
+          <apparelTags Operation="AddOrReplace">
+            <li>MedievalBasic</li>
+            <li>MedievalNoble</li>
+            <!-- <li>Ulrik_Oathbound</li> -->
+          </apparelTags>
+          <!-- <apparelRequired Operation="AddOrReplace">
+            <li>DankPyon_Apparel_AdornedHeavyPlate</li>
+            <li>DankPyon_Footwear_BootsPlate</li>
+            <li>DankPyon_Handwear_GlovesPlate</li>
+          </apparelRequired> -->
+          <specificApparelRequirements Operation="AddOrReplace">
+            <li>
+              <apparelLayer>Overhead</apparelLayer>
+              <stuff>Steel</stuff>
+            </li>
+            <li>
+              <bodyPartGroup>Torso</bodyPartGroup>
+              <apparelLayer>Shell</apparelLayer>
+              <stuff>Steel</stuff>
+            </li>
+            <li>
+              <bodyPartGroup>Feet</bodyPartGroup>
+              <apparelLayer>Middle</apparelLayer>
+              <stuff>Steel</stuff>
+            </li>
+            <li>
+              <bodyPartGroup>Hands</bodyPartGroup>
+              <apparelLayer>Middle</apparelLayer>
+              <stuff>Steel</stuff>
+            </li>
+          </specificApparelRequirements>
+        </value>
+      </Operation>
+    </caseTrue>
+  </Operation>
+</Patch>
