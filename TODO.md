@@ -24,3 +24,16 @@
 - Rename "crusader gauntlets" -> crusader gloves
 - Rename heavy marine gloves/boots -> siegebreaker or grenadier
 - Rename "boater Hat" -> boater hat
+
+- Apex Mechanoids - Done
+- Arsenal - Orbital Security Done
+- Amnabi's Flags
+- VFE - Deserters DONE
+- Vanilla Weapons Expanded - Heavy Weapons DONE
+- Map Vehicles - Ocean Expansion DONE
+- Cybranian - Anomaly Lich DONE
+- Alpha Mechs DONE
+- Vanilla Ideology Expanded - Memes and Structures ???
+- Astrofuel Gear DONE
+- Mechanoid Upgrades - Archotech DONE
+- Pumpkinlass: Veils and Scarves DONE

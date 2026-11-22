@@ -18,6 +18,39 @@
     <settingName>applyRebalances</settingName>
     <caseTrue>
       <Operation Class="ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/ThingDef[defName="VAE_Apparel_Gambeson"]</xpath>
+        <value>
+          <recipeMaker>
+            <skillRequirements Operation="SafeRemove" />
+          </recipeMaker>
+          <costStuffCount Operation="AddOrReplace">55</costStuffCount>
+          <statBases Operation="AddOrReplace">
+            <MaxHitPoints>100</MaxHitPoints>
+            <WorkToMake>3600</WorkToMake>
+            <Mass>0.3</Mass>
+            <StuffEffectMultiplierArmor>0.3</StuffEffectMultiplierArmor>
+            <StuffEffectMultiplierInsulation_Cold>0.32</StuffEffectMultiplierInsulation_Cold>
+            <StuffEffectMultiplierInsulation_Heat>0.1</StuffEffectMultiplierInsulation_Heat>
+            <EquipDelay>1.5</EquipDelay>
+          </statBases>
+          <stuffCategories Operation="AddOrReplace">
+            <li>Leathery</li>
+          </stuffCategories>
+          <apparel>
+            <bodyPartGroups Operation="AddOrReplace">
+              <li>Neck</li>
+              <li>Shoulders</li>
+              <li>Torso</li>
+              <li>Arms</li>
+            </bodyPartGroups>
+            <tags Operation="AddOrReplace">
+              <li>MedievalBasic</li>
+            </tags>
+          </apparel>
+        </value>
+      </Operation>
+
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VAE_Apparel_LightPlateArmor"]</xpath>
         <value>
           <costStuffCount Operation="AddOrReplace">150</costStuffCount>

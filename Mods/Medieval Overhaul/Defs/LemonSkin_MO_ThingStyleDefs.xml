@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
+  <ThingStyleDef>
+    <defName>FullArmingCap</defName>
+    <!-- <overrideLabel>padded kettle helm</overrideLabel> -->
+    <wornGraphicPath>Things/Pawn/Humanlike/Apparel/Headgear/ArmingCapFull/ArmingCapFull</wornGraphicPath>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/Headgear/ArmingCapFull/ArmingCapFull</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingStyleDef>
+
   <!-- ######################################### PADDED ######################################## -->
   <ThingStyleDef>
     <defName>PaddedHelmet_Kettle</defName>

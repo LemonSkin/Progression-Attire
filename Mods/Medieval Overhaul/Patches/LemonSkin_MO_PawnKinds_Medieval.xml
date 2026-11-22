@@ -1,2 +1,142 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<Patch />
+<Patch>
+  <Operation Class="ProgressionAttire.PatchOperationCheckSetting">
+    <settingName>applyRebalances</settingName>
+    <caseTrue>
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/PawnKindDef[defName="DankPyon_Medieval_Peasant"]</xpath>
+        <value>
+          <apparelAllowHeadgearChance>0.6</apparelAllowHeadgearChance>
+          <apparelTags Operation="AddOrReplace">
+            <li>MedievalPeasant</li>
+          </apparelTags>
+        </value>
+      </Operation>
+
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/PawnKindDef[defName="DankPyon_Medieval_Merchant"]</xpath>
+        <value>
+          <apparelAllowHeadgearChance>0.8</apparelAllowHeadgearChance>
+          <apparelTags Operation="AddOrReplace">
+            <li>MedievalPeasant</li>
+            <li>MedievalBasic</li>
+          </apparelTags>
+        </value>
+      </Operation>
+
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/PawnKindDef[defName="DankPyon_Medieval_Mercenary"]</xpath>
+        <value>
+          <apparelAllowHeadgearChance>0.8</apparelAllowHeadgearChance>
+          <apparelRequired Operation="AddOrReplace">
+            <li>DankPyon_Apparel_Hauberk</li>
+          </apparelRequired>
+          <apparelTags Operation="AddOrReplace">
+            <li>MedievalPeasant</li>
+            <li>MedievalBasic</li>
+            <li>MedievalMilitaryBasic</li>
+          </apparelTags>
+        </value>
+      </Operation>
+
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/PawnKindDef[defName="DankPyon_Medieval_MercenaryHeavy"]</xpath>
+        <value>
+          <apparelAllowHeadgearChance>0.6</apparelAllowHeadgearChance>
+          <apparelRequired Operation="AddOrReplace">
+            <li>DankPyon_Apparel_Heavy_Hauberk</li>
+          </apparelRequired>
+          <apparelTags Operation="AddOrReplace">
+            <li>MedievalPeasant</li>
+            <li>MedievalBasic</li>
+            <li>MedievalMilitaryBasic</li>
+          </apparelTags>
+        </value>
+      </Operation>
+
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/PawnKindDef[@Name="DankPyon_FootmanBase"]</xpath>
+        <value>
+          <apparelTags Operation="AddOrReplace">
+            <li>MedievalBasic</li>
+            <li>MedievalMilitaryBasic</li>
+          </apparelTags>
+        </value>
+      </Operation>
+
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/PawnKindDef[defName="DankPyon_Medieval_Billman"]</xpath>
+        <value>
+          <apparelTags Operation="AddOrReplace">
+            <li>MedievalBasic</li>
+            <li>MedievalMilitaryBasic</li>
+          </apparelTags>
+        </value>
+      </Operation>
+
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/PawnKindDef[@Name="DankPyon_StandardBase"]</xpath>
+        <value>
+          <apparelTags Operation="AddOrReplace">
+            <li>MedievalBasic</li>
+            <li>MedievalMilitaryBasic</li>
+          </apparelTags>
+        </value>
+      </Operation>
+
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/PawnKindDef[defName="DankPyon_Medieval_Bowman"]</xpath>
+        <value>
+          <apparelTags Operation="AddOrReplace">
+            <li>MedievalBasic</li>
+            <li>MedievalMilitaryBasic</li>
+          </apparelTags>
+        </value>
+      </Operation>
+
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/PawnKindDef[defName="DankPyon_Medieval_Arbalester"]</xpath>
+        <value>
+          <apparelTags Operation="AddOrReplace">
+            <li>MedievalBasic</li>
+            <li>MedievalMilitaryBasic</li>
+          </apparelTags>
+        </value>
+      </Operation>
+
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/PawnKindDef[@Name="DankPyon_Zweihander"]</xpath>
+        <value>
+          <apparelTags Operation="AddOrReplace">
+            <li>MedievalBasic</li>
+            <li>MedievalMilitaryBasic</li>
+            <li>MedievalMilitaryAdvanced</li>
+          </apparelTags>
+          <apparelRequired Operation="AddOrReplace">
+            <li>DankPyon_Apparel_Zweihanders_Cuirass</li>
+            <li>DankPyon_Footwear_BootsPlate</li>
+            <li>DankPyon_Handwear_GlovesPlate</li>
+            <li>DankPyon_Apparel_ChaussesPlate</li>
+          </apparelRequired>
+        </value>
+      </Operation>
+
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/PawnKindDef[@Name="DankPyon_Zweihander"]</xpath>
+        <value>
+          <apparelTags Operation="AddOrReplace">
+            <li>MedievalBasic</li>
+            <li>MedievalMilitaryBasic</li>
+            <li>MedievalMilitaryAdvanced</li>
+          </apparelTags>
+          <apparelRequired Operation="AddOrReplace">
+            <li>DankPyon_Apparel_Zweihanders_Cuirass</li>
+            <li>DankPyon_Footwear_BootsPlate</li>
+            <li>DankPyon_Handwear_GlovesPlate</li>
+            <li>DankPyon_Apparel_ChaussesPlate</li>
+          </apparelRequired>
+        </value>
+      </Operation>
+    </caseTrue>
+  </Operation>
+</Patch>

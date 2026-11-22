@@ -4,10 +4,19 @@
     <settingName>applyRebalances</settingName>
     <caseTrue>
       <Operation Class="ProgressionAttire.PatchOperationMerge">
+        <xpath>Defs/PawnKindDef[@Name="DankPyon_SettlementPawnBase"]</xpath>
+        <value>
+          <specificApparelRequirements Operation="AddOrReplace" />
+        </value>
+      </Operation>
+
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/PawnKindDef[@Name="DankPyon_SettlementPeasant"]</xpath>
         <value>
+          <itemQuality>Normal</itemQuality>
+          <apparelAllowHeadgearChance>0.4</apparelAllowHeadgearChance>
           <apparelRequired Operation="AddOrReplace">
-            <li>DankPyon_Apparel_Braies</li>
+            <!-- <li>DankPyon_Apparel_Braies</li> -->
           </apparelRequired>
           <specificApparelRequirements Operation="AddOrReplace" />
           <apparelMoney Operation="AddOrReplace">300~500</apparelMoney>
@@ -36,11 +45,6 @@
           <apparelRequired Operation="AddOrReplace">
             <li>DankPyon_Headgear_ChainCoif</li>
 
-            <!-- <li>DankPyon_Apparel_Light_Lamellar</li> -->
-            <!-- <li>DankPyon_Apparel_Leather_Tunic</li> -->
-            <li>Dankpyon_Apparel_Gambeson</li>
-            <!-- <li>DankPyon_Apparel_ChaussesPadded</li> -->
-
             <li>DankPyon_Handwear_GlovesLeather</li>
             <li>DankPyon_Footwear_BootsLeather</li>
 
@@ -51,21 +55,6 @@
               <apparelLayer>Overhead</apparelLayer>
               <stuff>Steel</stuff>
             </li>
-            <!-- <li>
-          <bodyPartGroup>Torso</bodyPartGroup>
-          <apparelLayer>Shell</apparelLayer>
-          <stuff>Leather_Plain</stuff>
-        </li> -->
-            <!-- <li>
-          <bodyPartGroup>Torso</bodyPartGroup>
-          <apparelLayer>Middle</apparelLayer>
-          <stuff>Leather_Plain</stuff>
-        </li> -->
-            <!-- <li>
-          <bodyPartGroup>Legs</bodyPartGroup>
-          <apparelLayer>Middle</apparelLayer>
-          <stuff>Leather_Plain</stuff>
-        </li> -->
             <li>
               <bodyPartGroup>Hands</bodyPartGroup>
               <apparelLayer>Middle</apparelLayer>
@@ -85,11 +74,6 @@
         <value>
           <apparelRequired Operation="AddOrReplace">
             <li>DankPyon_Headgear_ChainNasalHelmet</li>
-
-            <!-- <li>DankPyon_Apparel_Hauberk</li> -->
-            <li>Dankpyon_Apparel_Gambeson</li>
-            <!-- <li>DankPyon_Apparel_ChaussesSplinted</li> -->
-
             <li>DankPyon_Handwear_GlovesSplinted</li>
             <li>DankPyon_Footwear_BootsSplinted</li>
           </apparelRequired>
@@ -98,21 +82,6 @@
               <apparelLayer>Overhead</apparelLayer>
               <stuff>Steel</stuff>
             </li>
-            <!-- <li>
-          <bodyPartGroup>Torso</bodyPartGroup>
-          <apparelLayer>Shell</apparelLayer>
-          <stuff>Leather_Plain</stuff>
-        </li> -->
-            <!-- <li>
-          <bodyPartGroup>Torso</bodyPartGroup>
-          <apparelLayer>Middle</apparelLayer>
-          <stuff>Steel</stuff>
-        </li> -->
-            <!-- <li>
-          <bodyPartGroup>Legs</bodyPartGroup>
-          <apparelLayer>Middle</apparelLayer>
-          <stuff>Steel</stuff>
-        </li> -->
             <li>
               <bodyPartGroup>Hands</bodyPartGroup>
               <apparelLayer>Middle</apparelLayer>
@@ -130,20 +99,19 @@
       <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/PawnKindDef[@Name="DankPyon_SettlementKnight"]</xpath>
         <value>
+          <!-- <apparelMoney Operation="AddOrReplace">700~900</apparelMoney> -->
           <apparelRequired Operation="AddOrReplace">
-            <!-- <li>DankPyon_Headgear_ClosedBascinetHelmet</li> -->
-
             <li>DankPyon_Apparel_FullPlate</li>
-            <li>Dankpyon_Apparel_Gambeson</li>
-
+            <li>DankPyon_Apparel_Braies</li>
             <li>DankPyon_Handwear_GlovesPlate</li>
             <li>DankPyon_Footwear_BootsPlate</li>
           </apparelRequired>
           <specificApparelRequirements Operation="AddOrReplace">
-            <!-- <li>
-          <apparelLayer>Overhead</apparelLayer>
-          <stuff>Steel</stuff>
-        </li> -->
+            <li>
+              <bodyPartGroup>FullHead</bodyPartGroup>
+              <apparelLayer>Overhead</apparelLayer>
+              <stuff>Steel</stuff>
+            </li>
             <li>
               <bodyPartGroup>Torso</bodyPartGroup>
               <apparelLayer>Middle</apparelLayer>
@@ -159,7 +127,26 @@
               <apparelLayer>Middle</apparelLayer>
               <stuff>Steel</stuff>
             </li>
+            <li>
+              <apparelLayer>VFEC_OuterShell</apparelLayer>
+              <stuff>Steel</stuff>
+            </li>
           </specificApparelRequirements>
+        </value>
+      </Operation>
+
+      <!-- Bugged tag needs to be removed -->
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
+        <xpath>
+          Defs/PawnKindDef[
+          defName="DankPyon_Amboisse_Knight" or
+          defName="DankPyon_Soren_Knight" or
+          defName="DankPyon_Oswin_Knight" or
+          defName="DankPyon_Hesse_Knight"
+          ]
+        </xpath>
+        <value>
+          <specificApparelRequirements Operation="SafeRemove" />
         </value>
       </Operation>
 
@@ -170,12 +157,14 @@
             <li>DankPyon_Headgear_ZweihanderHelm</li>
 
             <li>DankPyon_Apparel_Zweihanders_Cuirass</li>
-            <li>Dankpyon_Apparel_Gambeson</li>
             <li>DankPyon_Apparel_ChaussesPlate</li>
 
             <li>DankPyon_Handwear_GlovesPlate</li>
             <li>DankPyon_Footwear_BootsPlate</li>
           </apparelRequired>
+          <apparelDisallowTags>
+            <li>Neolithic</li>
+          </apparelDisallowTags>
           <specificApparelRequirements Operation="AddOrReplace">
             <li>
               <apparelLayer>Overhead</apparelLayer>

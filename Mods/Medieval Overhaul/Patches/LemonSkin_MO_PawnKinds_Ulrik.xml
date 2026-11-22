@@ -15,7 +15,6 @@
           <apparelTags Operation="AddOrReplace">
             <li>MedievalPeasant</li>
             <li>MedievalBasic</li>
-            <!-- <li>Ulrik_Initiate</li> -->
           </apparelTags>
           <specificApparelRequirements Operation="AddOrReplace">
             <li>
@@ -47,14 +46,7 @@
           <apparelTags Operation="AddOrReplace">
             <li>MedievalPeasant</li>
             <li>MedievalBasic</li>
-            <!-- <li>Ulrik_Warrior</li> -->
           </apparelTags>
-          <!-- <apparelRequired Operation="AddOrReplace">
-            <li>DankPyon_Apparel_AdornedWarriorArmor</li>
-            <li>DankPyon_Footwear_BootsSplinted</li>
-            <li>DankPyon_Handwear_GlovesSplinted</li>
-            <li>DankPyon_Adorned_FlatTop</li>
-          </apparelRequired> -->
           <specificApparelRequirements Operation="AddOrReplace">
             <li>
               <apparelLayer>Overhead</apparelLayer>
@@ -85,13 +77,7 @@
           <apparelTags Operation="AddOrReplace">
             <li>MedievalBasic</li>
             <li>MedievalNoble</li>
-            <!-- <li>Ulrik_Oathbound</li> -->
           </apparelTags>
-          <!-- <apparelRequired Operation="AddOrReplace">
-            <li>DankPyon_Apparel_AdornedHeavyPlate</li>
-            <li>DankPyon_Footwear_BootsPlate</li>
-            <li>DankPyon_Handwear_GlovesPlate</li>
-          </apparelRequired> -->
           <specificApparelRequirements Operation="AddOrReplace">
             <li>
               <apparelLayer>Overhead</apparelLayer>
@@ -122,13 +108,14 @@
           <apparelTags Operation="AddOrReplace">
             <li>MedievalBasic</li>
             <li>MedievalNoble</li>
-            <!-- <li>Ulrik_Oathbound</li> -->
           </apparelTags>
-          <!-- <apparelRequired Operation="AddOrReplace">
+          <apparelRequired Operation="AddOrReplace">
             <li>DankPyon_Apparel_AdornedHeavyPlate</li>
             <li>DankPyon_Footwear_BootsPlate</li>
             <li>DankPyon_Handwear_GlovesPlate</li>
-          </apparelRequired> -->
+            <li>DankPyon_Adorned_GreatHelm</li>
+            <li>DankPyon_Apparel_RunesAndSigils</li>
+          </apparelRequired>
           <specificApparelRequirements Operation="AddOrReplace">
             <li>
               <apparelLayer>Overhead</apparelLayer>

@@ -163,6 +163,16 @@
     <li IfModActive="Ushanka.BiologicalWarfare">Mods/Ushanka's Biological Warfare</li>
     <li IfModActive="CatLover366.BootsAndGloves">Mods/Cat's Boots and Gloves</li>
     <li IfModActive="River.Tribal.Shoes">Mods/River's Tribal Shoes</li>
+    <li IfModActive="Mortis.ApexMechanoids">Mods/Apex Mechanoids</li>
+    <li IfModActive="ICC.AOV.OSEC">Mods/Arsenal - Orbital Security</li>
+    <li IfModActive="GoGaTio.MechanoidUpgrades.Archotech">Mods/Mechanoid Upgrades - Archotech</li>
+    <li IfModActive="lts.AG">Mods/Astrofuel Gear</li>
+    <li IfModActive="sarg.alphamechs">Mods/Alpha Mechs</li>
+    <li IfModActive="DimonSever000.AnomalyLich">Mods/Cybranian - Anomaly Lich</li>
+    <li IfModActive="VanillaExpanded.VWEHW">Mods/Vanilla Weapons Expanded - Heavy Weapons</li>
+    <li IfModActive="OELS.MapVehicles.OceanExpansion">Mods/Map Vehicles - Ocean Expansion</li>
+    <li IfModActive="OskarPotocki.VFE.Deserters">Mods/Vanilla Factions Expanded - Deserters</li>
+    <li IfModActive="Mlie.AmnabisFlags">Mods/Amnabi's Flags</li>
 
     <!-- For bench organization -->
     <li IfModActive="Gunmar.VictorianEraApparels">Mods/Victorian Era Apparels!</li>
@@ -187,6 +197,8 @@
     <li IfModActive="cat.imperial.attires">Mods/Imperial Attires</li>
     <li IfModActive="BotchJob.divineorder">Mods/Divine Order</li>
     <li IfModActive="River.Tribal.Mittens">Mods/River's Tribal Mittens</li>
+    <li IfModActive="Pumpkinlass.VeilsNScarves">Mods/Pumpkinlass: Veils and Scarves</li>
+
     <!-- <li IfModActive="smiley.faced.mask">Mods/Smiley Face Mask</li> -->
   </v1.7>
 </loadFolders>

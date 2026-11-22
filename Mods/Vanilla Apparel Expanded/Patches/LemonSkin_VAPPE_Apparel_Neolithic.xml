@@ -32,6 +32,13 @@
             <StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
             <EquipDelay>3</EquipDelay>
           </statBases>
+          <apparel>
+            <tags Operation="AddOrReplace">
+              <li>Neolithic</li>
+              <li>MedievalPeasant</li>
+              <li>MedievalBasic</li>
+            </tags>
+          </apparel>
         </value>
       </Operation>
 

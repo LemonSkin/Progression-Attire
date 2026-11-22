@@ -22,11 +22,11 @@
         <value>
           <statBases Operation="AddOrReplace">
             <MaxHitPoints>100</MaxHitPoints>
-            <WorkToMake>2000</WorkToMake>
-            <Mass>0.6</Mass>
+            <WorkToMake>1600</WorkToMake>
+            <Mass>0.5</Mass>
             <StuffEffectMultiplierArmor>0.2</StuffEffectMultiplierArmor>
-            <StuffEffectMultiplierInsulation_Cold>0.15</StuffEffectMultiplierInsulation_Cold>
-            <StuffEffectMultiplierInsulation_Heat>0.15</StuffEffectMultiplierInsulation_Heat>
+            <StuffEffectMultiplierInsulation_Cold>0.2</StuffEffectMultiplierInsulation_Cold>
+            <StuffEffectMultiplierInsulation_Heat>0.08</StuffEffectMultiplierInsulation_Heat>
             <EquipDelay>2</EquipDelay>
           </statBases>
           <apparel>

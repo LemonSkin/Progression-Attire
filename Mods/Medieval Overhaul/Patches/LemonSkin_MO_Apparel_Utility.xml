@@ -36,6 +36,24 @@
           </apparel>
         </value>
       </Operation>
+
+      <Operation Class="ProgressionAttire.PatchOperationMerge">
+        <xpath>
+          Defs/ThingDef[
+          defName="DankPyon_Apparel_FlashPotBelt" or
+          defName="DankPyon_Apparel_FirePotBelt" or
+          defName="DankPyon_Apparel_SmokePotBelt" or
+          defName="DankPyon_Apparel_AcidFlaskBelt"
+          ]
+        </xpath>
+        <value>
+          <apparel>
+            <tags Operation="AddOrReplace">
+              <li>MedievalUtility</li>
+            </tags>
+          </apparel>
+        </value>
+      </Operation>
     </caseTrue>
   </Operation>
 

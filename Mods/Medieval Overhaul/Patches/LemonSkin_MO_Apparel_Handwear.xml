@@ -23,6 +23,14 @@
           <equippedStatOffsets Operation="AddOrReplace">
             <ShootingAccuracyPawn>2</ShootingAccuracyPawn>
           </equippedStatOffsets>
+          <apparel>
+            <tags Operation="AddOrReplace">
+              <li>MedievalPeasant</li>
+              <li>MedievalBasic</li>
+              <li>MedievalNoble</li>
+              <li>MedievalRoyal</li>
+            </tags>
+          </apparel>
         </value>
       </Operation>
 

@@ -29,31 +29,43 @@
           <costStuffCount Operation="AddOrReplace">45</costStuffCount>
           <statBases Operation="AddOrReplace">
             <MaxHitPoints>100</MaxHitPoints>
-            <WorkToMake>2000</WorkToMake>
+            <WorkToMake>2700</WorkToMake>
             <Mass>0.3</Mass>
             <StuffEffectMultiplierArmor>0.2</StuffEffectMultiplierArmor>
             <StuffEffectMultiplierInsulation_Cold>0.32</StuffEffectMultiplierInsulation_Cold>
             <StuffEffectMultiplierInsulation_Heat>0.05</StuffEffectMultiplierInsulation_Heat>
             <EquipDelay>1.5</EquipDelay>
           </statBases>
+          <apparel>
+            <tags Operation="AddOrReplace">
+              <li>MedievalBasic</li>
+            </tags>
+          </apparel>
         </value>
       </Operation>
 
       <Operation Class="ProgressionAttire.PatchOperationMerge">
         <xpath>Defs/ThingDef[defName="VAE_Apparel_Blouse"]</xpath>
         <value>
-          <stuffCategories Operation="AddOrReplace">
-            <li>Fabric</li>
-          </stuffCategories>
+          <costStuffCount Operation="AddOrReplace">40</costStuffCount>
           <statBases Operation="AddOrReplace">
             <MaxHitPoints>100</MaxHitPoints>
-            <WorkToMake>2000</WorkToMake>
-            <Mass>0.3</Mass>
-            <StuffEffectMultiplierArmor>0.2</StuffEffectMultiplierArmor>
+            <WorkToMake>2700</WorkToMake>
+            <Mass>0.2</Mass>
+            <StuffEffectMultiplierArmor>0.1</StuffEffectMultiplierArmor>
             <StuffEffectMultiplierInsulation_Cold>0.05</StuffEffectMultiplierInsulation_Cold>
             <StuffEffectMultiplierInsulation_Heat>0.32</StuffEffectMultiplierInsulation_Heat>
             <EquipDelay>1.5</EquipDelay>
           </statBases>
+          <stuffCategories Operation="AddOrReplace">
+            <li>Fabric</li>
+          </stuffCategories>
+          <apparel>
+            <tags Operation="AddOrReplace">
+              <li>MedievalBasic</li>
+              <li>IndustrialBasic</li>
+            </tags>
+          </apparel>
         </value>
       </Operation>
 
@@ -78,6 +90,10 @@
               <li>Torso</li>
               <li>Legs</li>
             </bodyPartGroups>
+            <tags Operation="AddOrReplace">
+              <li>MedievalBasic</li>
+              <li>IndustrialBasic</li>
+            </tags>
           </apparel>
         </value>
       </Operation>
